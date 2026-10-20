@@ -48,7 +48,7 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 
 - **Wat:** pamandsam.com, twee AI-gesprekspartners (Pam: warm en empathisch, Sam: direct en nuchter), geïnspireerd door de methode van Caren Pardovitch (stress rond werk, privéleven en ingrijpende veranderingen). Product van SEC Pardo BV. Nog in de testfase.
 - **Opdracht:** Studio.Edu analyseert en verbetert strategie, positionering, grafisch ontwerp, UX, webdev en de app.
-- **Status:** zie `analyse/01-diepte-analyse.md` en `analyse/02-strategie-positionering.md` (voorstel: route 2, het traject; nog te bevestigen).
+- **Status:** zie `analyse/01-diepte-analyse.md` en `analyse/02-strategie-positionering.md` en `analyse/03-trajecten-en-merkarchitectuur.md`. Richting: route 2 (trajecten) met de splitsing uit route 3 als één huis, twee trajecten (Werk: "grip", Verandering: "houvast"), twee stemmen (Pam en Sam). Werk eerst. Nog te bevestigen bij de opdrachtgever en Caren.
 - **Werkhypothese voor de doelgroep** (nog niet bevestigd): werkenden onder druk en mensen in een ingrijpende overgang, met Caren als bron van de methode.
 - **Open:** het doel van de opdrachtgever en Caren (eigen inkomstenbron, instroom voor haar praktijk, of schaalbaar product).
 - **Nooit** naar buiten "therapie" noemen. Nooit verzonnen reviews of testimonials gebruiken.
