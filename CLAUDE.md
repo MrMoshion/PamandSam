@@ -50,5 +50,6 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 - **Opdracht:** Studio.Edu analyseert en verbetert strategie, positionering, grafisch ontwerp, UX, webdev en de app.
 - **Status:** zie `analyse/01-diepte-analyse.md` en `analyse/02-strategie-positionering.md` en `analyse/03-trajecten-en-merkarchitectuur.md`. Richting: route 2 (trajecten) met de splitsing uit route 3 als één huis, twee trajecten (Werk: "grip", Verandering: "houvast"), twee stemmen (Pam en Sam). Werk eerst. Nog te bevestigen bij de opdrachtgever en Caren.
 - **Werkhypothese voor de doelgroep** (nog niet bevestigd): werkenden onder druk en mensen in een ingrijpende overgang, met Caren als bron van de methode.
+- **Contact:** Pardo, contactpersoon en het brein achter Pam & Sam. Eerst een kort telefoongesprek (05), daarna een 1-op-1 (04).
 - **Open:** het doel van de opdrachtgever en Caren (eigen inkomstenbron, instroom voor haar praktijk, of schaalbaar product).
 - **Nooit** naar buiten "therapie" noemen. Nooit verzonnen reviews of testimonials gebruiken.

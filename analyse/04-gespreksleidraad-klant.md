@@ -1,6 +1,7 @@
 # 04 · Gespreksleidraad: ambitiegesprek met de klant
 
 Studio.Edu · 21 oktober 2026
+**Bewaard voor de 1-op-1 met Pardo** (contactpersoon en het brein achter Pam & Sam). Dit gesprek volgt na het korte telefoongesprek uit `05-telefoongesprek-serieusheid.md`.
 Doel: de ambitie van de opdrachtgever en Caren helder krijgen, zodat we kunnen kiezen tussen de richtingen uit 02 en 03.
 Duur: 60–75 minuten.
 
