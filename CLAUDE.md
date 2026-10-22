@@ -41,6 +41,8 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 
 - Werk per onderdeel, in deze volgorde: strategie en positionering → merkidee en grafisch ontwerp → UX en product → webdev en app → presentatie.
 - Vat bij een nieuwe vraag eerst samen wat je begrijpt, en vraag om bevestiging voordat je aan groot werk begint.
+- **Schetsen vóór vorm.** Een schets ontwikkelt een idee, niet een vorm. Dat is trial and error: zet een idee neer in één zin, stel de vraag die het onder druk zet, en noteer wat overblijft (groeit, verandert of sterft). Werk socratisch: bevraag je eigen ideeën tot ze breken of sterker worden. Lever veel schetsen, ook mislukte, en kom niet te snel tot een conclusie. Pas als de ontwerper sporen heeft gekozen, volgt de vorm.
+- **Vraag eerst of een schetsronde gewenst is.** Claude kan niet goed inschatten wanneer dat zo is. Vraag het dus bij elke ontwerp- of conceptvraag, in plaats van zelf te beslissen.
 - Schrijf in het Nederlands, helder en zonder jargon. Gebruik vakbegrippen alleen met uitleg.
 - Sla alle uitkomsten op in deze repository onder `analyse/` (genummerd, Markdown), en commit en push ze.
 
