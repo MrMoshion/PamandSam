@@ -54,5 +54,5 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 - **Werkhypothese voor de doelgroep** (nog niet bevestigd): werkenden onder druk en mensen in een ingrijpende overgang, met Caren als bron van de methode.
 - **Contact:** Pardo, contactpersoon en het brein achter Pam & Sam. Eerst een kort telefoongesprek (05), daarna een 1-op-1 (04).
 - **Uit het gesprek met Pardo (08):** hij doet het alleen (Caren levert ervaring en methode). Ontstaan uit zijn eigen gebruik van zelfhulpboeken; hij is 65. Een experiment dat zichzelf moet terugbetalen, met openheid voor een bedrijf en een ingang naar een bestaande praktijk. 1 à 2 dagen per week, al ongeveer 500 uur werk. **Vaste essentie: je komt zelf op het antwoord.** Vorm, model en vormgeving mogen veranderen.
-- **Open:** het doel van de opdrachtgever en Caren (eigen inkomstenbron, instroom voor haar praktijk, of schaalbaar product).
+- **Open (de ontwerper vraagt dit uit bij Pardo; bouw daarna verder op de antwoorden, zie 08):** 1) wiens praktijk de ingang is en of Caren dat wil, 2) budget en terugverdientijd, 3) of zijn eigen verhaal (zelfhulpboeken) in het merk mag.
 - **Nooit** naar buiten "therapie" noemen. Nooit verzonnen reviews of testimonials gebruiken.

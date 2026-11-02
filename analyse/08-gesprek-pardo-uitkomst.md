@@ -19,3 +19,9 @@ Niveau 3: een serieus bijproject. Hij wil investeren en tijd vrijmaken, maar het
 - Hoe verhouden Pardo en Caren zich tot elkaar en tot SEC Pardo BV?
 - Om welke orde van grootte gaat het budget, en wanneer moet het zichzelf terugbetalen?
 - Mag zijn eigen verhaal (zelfhulpboeken) onderdeel worden van het merk?
+
+## Notitie: zelf uitvragen bij Pardo (meeting woensdag)
+De ontwerper vraagt deze drie punten zelf uit. **Bouw daarna verder op de antwoorden**: werk 02, 03 en het plan in fases bij zodra ze bekend zijn.
+1. **De praktijk:** wiens praktijk is de ingang (die van Caren?), wil zij dat, en hoeveel ruimte heeft ze?
+2. **Budget en terugverdientijd:** om welke orde van grootte gaat het, en binnen welke termijn moet het zich terugbetalen?
+3. **Zijn verhaal:** mag zijn eigen ervaring met zelfhulpboeken onderdeel worden van het merk?
