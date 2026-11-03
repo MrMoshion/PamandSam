@@ -16,4 +16,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/12-drie-kandidaten-ronde-1.md`: drie kandidaten (het eigen boek, de kamer, het gesprek met jezelf) als idee ontwikkeld
 - `analyse/13-notes-presentatie.md`: notes voor de presentatie (opbouw en kernpunten)
 - `analyse/14-schetsronde-de-kamer.md`: schetsronde voor de kamer (15 schetsen, vier sporen)
+- `analyse/15-de-kamer-samengevat.md`: de kamer na de keuze van de ontwerper
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
