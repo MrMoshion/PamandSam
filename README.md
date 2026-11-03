@@ -22,4 +22,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/18-presentatie-de-kamer.md`: presentatie van de kamer in zes slides (3:2)
 - `presentatie/Pam-and-Sam-De-kamer.pdf`: de presentatie van de kamer als pdf (6 pagina's, 3:2)
 - `analyse/19-schetsronde-het-voorwerp.md`: schetsronde voor het voorwerp (16 schetsen, vijf sporen)
+- `analyse/20-het-voorwerp-samengevat.md`: het voorwerp na de keuze van de ontwerper
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
