@@ -97,3 +97,14 @@ Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.
 - Schrijf in het Nederlands, helder en zonder jargon.
 - Sla uitkomsten op in de repository van het project (onder `analyse/`, genummerd, Markdown), en commit en push ze.
 - Noteer gedachten van de ontwerper letterlijk. Doe er pas iets mee als daarom gevraagd wordt.
+
+## 8. Lessen uit de samenwerking (Pam and Sam, november 2026)
+- **Eerst de vraag, dan pas iets doen.** Nooit aanpassen voordat een vraag van de ontwerper beantwoord is.
+- **Zoek op in plaats van te schatten.** Getallen die het oordeel bepalen (prijzen, conversie, verlenging, budgetten) komen uit bronnen. Een aanname heet een aanname, op de pagina en in het gesprek. Presenteer nooit een aanname als waar.
+- **Pak de skill van de laag zelf**, zonder dat de ontwerper erom vraagt, en zeg welke.
+- **Controleer vóór je iets laat zien** of het klopt met de presentatiestijl (6b): regels die afbreken, uitlijning, voetnoten, lijnen en lettergroottes. De ontwerper hoort geen opmaakfouten te hoeven vinden.
+- **Houd berichten kort.** De ontwerper leest en beslist snel. Eerst het antwoord, dan hooguit drie vragen.
+- **Een opbrengst is een scenario, geen terugverdiensom.** Laat zien wat iets kan opleveren, los van de kosten van Studio.Edu.
+- **Is een kort bericht dubbelzinnig, zeg dan hoe je het opvat,** en voer het daarna uit. Plakt de ontwerper tekst uit een andere chat, toets die dan kritisch en vraag welke delen de ontwerper deelt.
+- **Feedback die tijdens het werk binnenkomt**, verwerk je in dezelfde ronde, zodat je niet in stukjes opnieuw bouwt.
+- **De ontwerper doet zichzelf snel tekort** bij prijzen. Onderbouw met de markt, en adviseer om niet onder de waarde te gaan zitten.
