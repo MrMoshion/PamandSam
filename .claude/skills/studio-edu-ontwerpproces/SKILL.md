@@ -78,6 +78,7 @@ Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.
 - Zwart is nooit hard zwart: gebruik donkergrijs (#262626).
 - Veel wit, weinig elementen. Het werk spreekt.
 - **Voetnoten horen bij de pagina.** Ze staan los van Studio.Edu onderaan, als onderdeel van de inhoud: duidelijk zichtbaar, zonder lijn erboven, en op elke pagina op dezelfde hoogte. Schrijf ze als gewone zinnen.
+- **Geen lijnen als opsmuk.** Lijnen alleen in tabellen, waar ze helpen lezen. Opsommingen, blokken, getallen en voetnoten staan zonder lijnen.
 - **Getallen staan op één lijn.** Prijzen in een kolom lijnen rechts uit, zodat de bedragen onder elkaar staan. Woorden als "vanaf" mogen een bedrag niet laten verspringen.
 - **Een regel per punt.** Een opsomming past per punt op één regel. Is een zin te lang, maak hem korter of de tekst een maat kleiner.
 - **Uitnodigend openen.** Begin een beoordeling met meer sterke punten dan kritiekpunten (bijvoorbeeld twee tegen één), en formuleer kritiek vooruitwijzend.
