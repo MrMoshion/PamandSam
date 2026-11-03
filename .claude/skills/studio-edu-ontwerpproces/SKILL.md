@@ -70,6 +70,9 @@ Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.
 - **Opbouw als een casepagina:** een grote titel linksboven, een korte inleiding op leesbare grootte, daarna beeld op volle breedte en gewone lopende tekst.
 - **Geen kleine kapitalen-labels** met letterspatiëring, geen mini-ondertitels, geen grijze tag-blokjes. Gewone zinnen op gewone grootte.
 - Bijschriften zijn gewone zinnen onder het beeld, niet in het klein.
+- **Drie lettergroottes, niet meer:** koppen 44 px, lopende tekst Hanken Grotesk 24, subtekst Hanken Grotesk 18 (bijschriften, kleurnamen, namen van letters). Wat in een ontwerp zelf staat (logo, voorbeeldtekst in een venster), hoort bij het ontwerp en valt hierbuiten.
+- **Geen tekst die beschrijft wat je al ziet** (zoals "donker · cursor · licht"). Vertrouw op de kijker. De ontwerper licht mondeling toe: per slide alleen wat je niet kunt zien.
+- Zwart is nooit hard zwart: gebruik donkergrijs (#262626).
 - Veel wit, weinig elementen. Het werk spreekt.
 
 ## 6. Rolverdeling en eerlijkheid
