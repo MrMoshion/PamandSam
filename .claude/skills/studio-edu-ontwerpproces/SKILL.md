@@ -80,6 +80,7 @@ Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.
 - Zeg wanneer iets een aanname is, wanneer je iets niet hebt kunnen controleren, en wanneer smaak of praktijkervaring nodig is.
 - "Dit is gemiddeld" is stuurinformatie. Pas de richting aan en verdedig haar niet.
 - **Ingrijpende aanpassingen eerst voorleggen** (aan werkafspraken, skills, structuur, branches of eerdere keuzes): meld het, loop het samen door, en voer het pas uit na akkoord. Kleine aanvullingen mogen direct, maar meld ze.
+- **Vragen gaan vóór aanpassen.** Beantwoord een vraag van de ontwerper eerst en verander niets. Staat er feedback in hetzelfde bericht: eerst antwoorden, samenvatten wat je gaat aanpassen, en pas na akkoord uitvoeren.
 - Neem beslissingen van de ontwerper over, ook als je eerder iets anders voorstelde. Begin er niet opnieuw over.
 - Doe je nooit voor als een bestaand bureau of persoon. "Denken als een studio zoals Pentagram" is een werkwijze, geen naam.
 
