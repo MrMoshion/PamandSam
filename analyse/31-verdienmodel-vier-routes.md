@@ -48,3 +48,37 @@ Het blok "Wat het kan opleveren" komt vóór Deel A. De opbrengst staat los van 
 - De kosten per gebruiker.
 - Gebruikers blijven een jaar lang; mensen die opzeggen zijn niet meegerekend.
 - De prijzen voor werkgevers, coaches en praktijken.
+
+## Bijgewerkt: scenario's op basis van benchmarks
+**Bronnen** (bijna allemaal partijen met een eigen belang, dus indicatief):
+- RevenueCat 2026 (https://www.revenuecat.com/state-of-subscription-apps), voor gezondheid en welzijn:
+  - 2,9% van aanmelding naar betalend;
+  - 57% verlengt een maandabonnement na de eerste maand, 25% een jaarabonnement na het eerste jaar (https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category);
+  - jaarabonnementen leveren 60,6% van de omzet op (Adapty via Airbridge).
+- Apps voor mentale gezondheid: na 30 dagen gebruikt mediaan 3,3% de app nog (JMIR 2019, Baumel e.a.).
+- Kleine zakelijke verkoop:
+  - de verkoop duurt 1 tot 3 maanden (Cometly);
+  - van serieus gesprek naar klant 25–40% (Landbase, Prospeo). Gerekend met 30%.
+
+**Correctie:** € 42 per gebruiker per jaar ging uit van een vol jaar. Met de verlengcijfers is het in het eerste jaar ongeveer **€ 28** per betalende gebruiker:
+- een maandabonnee betaalt gemiddeld zo'n 4 maanden, samen € 16. Aanname: na de eerste verlenging blijft elke maand 85%;
+- een jaarabonnee levert € 40 op;
+- gerekend met half om half.
+
+Per 1.000 aanmeldingen: 29 betalende gebruikers, samen € 810 per jaar.
+
+| Route | Jaar 1 | Jaar 3 |
+|---|---|---|
+| Particulieren | 500 aanmeldingen per maand: € 4.900 | 2.000 per maand: € 19.500 |
+| Werkgevers | 10 gesprekken × 30% = 3: € 12.000 | 9: € 36.000 |
+| Coaches | 40 gesprekken × 30% = 12: € 5.040 | 36: € 15.120 |
+| Praktijken | 1 met Start: € 1.800 | 4 (2 Start, 1 Praktijk, 1 op maat): € 17.100 |
+| **Totaal** | **€ 23.740** | **€ 87.720** |
+
+**Aannames:**
+- het aantal aanmeldingen en verkoopgesprekken;
+- werkgevers van 100 medewerkers;
+- zakelijke klanten verlengen elk jaar;
+- jaar 3 gaat uit van Deel B.
+
+**Nieuwe open vraag aan Pardo:** hoeveel aanmeldingen, betalende gebruikers en opzeggers zijn er nu?
