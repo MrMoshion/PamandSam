@@ -44,6 +44,7 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 - **Schetsen vóór vorm.** Een schets ontwikkelt een idee, niet een vorm. Dat is trial and error: zet een idee neer in één zin, stel de vraag die het onder druk zet, en noteer wat overblijft (groeit, verandert of sterft). Werk socratisch: bevraag je eigen ideeën tot ze breken of sterker worden. Lever veel schetsen, ook mislukte, en kom niet te snel tot een conclusie. Pas als de ontwerper sporen heeft gekozen, volgt de vorm.
 - **In de ideefase: weinig kaders.** Leg geen trajecten, doelgroepen of thema's (zoals "werk") op de ideeën voordat ze gevormd zijn. Focus op het idee en hoe het wordt toegepast; de vorm ontstaat vanzelf. Kaders en strategie komen pas als het idee staat.
 - **Vraag eerst of een schetsronde gewenst is.** Claude kan niet goed inschatten wanneer dat zo is. Vraag het dus bij elke ontwerp- of conceptvraag, in plaats van zelf te beslissen.
+- **Ingrijpende aanpassingen eerst voorleggen.** Wil je iets ingrijpends veranderen (aan werkafspraken, skills, structuur, branches of eerdere keuzes), meld het dan eerst, loop het samen met de ontwerper door, en voer het pas uit na akkoord. Kleine aanvullingen mogen direct, maar meld ze.
 - Schrijf in het Nederlands, helder en zonder jargon. Gebruik vakbegrippen alleen met uitleg.
 - Sla alle uitkomsten op in deze repository onder `analyse/` (genummerd, Markdown), en commit en push ze.
 

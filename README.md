@@ -13,4 +13,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/09-aanpak-meeting-woensdag.md`: aanpak voor de meeting met Pardo (eerst drie schetsen, dan de presentatie stap voor stap)
 - `analyse/10-losse-gedachten-ontwerper.md`: losse gedachten van de ontwerper en eerder opgemerkte ideeën, vertrekpunt voor de drie schetsen
 - `analyse/11-denkrichting-samengevat.md`: de samengevatte denkrichting, vertrekpunt voor drie kandidaten
+- `analyse/12-drie-kandidaten-ronde-1.md`: drie kandidaten (het eigen boek, de kamer, het gesprek met jezelf) als idee ontwikkeld
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
