@@ -52,3 +52,9 @@ Status: **notitie.** Volgende stap: de drie beste kandidaten kiezen en die schaa
 ## Volgende stap
 1. **De drie beste kandidaten kiezen** uit deze bouwstenen.
 2. **Elke kandidaat schaalbaar uitwerken**, van alleen vormgeving tot volledige strategie, en alles daartussen. Elke kandidaat in dezelfde lagen, zodat ze naast elkaar te vergelijken zijn.
+
+## Aanvulling (3 november)
+- **Het thema werk is losgelaten.** Geen traject Werk of Verandering in deze fase. De focus ligt op de ideeën en hoe ze worden toegepast; de vorm ontstaat vanzelf.
+- **Weinig kaders in deze fase** (geleerd: niet te vroeg structuur opleggen).
+- **Uitwerken in lagen** die naast elkaar te leggen zijn: vormgeving → merk → product → model → strategie. Je kunt stoppen na alleen de vormgeving.
+- **Model:** meerdere manieren van verdienen onderzoeken, niet alleen een ingang naar een praktijk.
