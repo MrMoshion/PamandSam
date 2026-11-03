@@ -56,10 +56,13 @@ Hulpskills volgen dit proces, niet andersom. Gebruik ze alleen in de laag waar z
 | Product | `design:ux-copy` | Teksten in de app: knoppen, lege schermen, foutmeldingen | Schrijf in het Nederlands. Bij gevoelige onderwerpen gaat de gemoedstoestand van de gebruiker voor |
 | Product | `design:user-research`, `design:research-synthesis` | Interviews met echte gebruikers voorbereiden en verwerken | |
 | Model | `marketing-ideas:idea-payback-check`, `idea-test-card` | Terugverdienen narekenen, goedkope testen met grenzen vooraf | |
+| Model | `prijsonderbouwing` | Prijzen van Studio.Edu bepalen en onderbouwen met marktprijzen | Eigen skill van Studio.Edu |
 | Model | `marketing-psychology:dark-pattern-check`, `price-framing` | Gratis instap, betaalmuur en opzeggen toetsen aan de EU-regels | Altijd bij kwetsbare gebruikers |
 | Strategie | `arn-spark:arn-spark-stress-premortem`, `arn-spark-stress-prfaq` | Een concept onder druk zetten als het staat | Vraagt een productconcept als document en de `## Arness`-instelling: eerst toestemming |
 | Strategie | `arn-spark:arn-spark-stress-interview` | Gesprekken met nagespeelde gebruikers | **Nooit** in plaats van echte gebruikers. Uitkomsten zijn hypotheses, geen bewijs |
 | Strategie | `marketing:competitive-brief`, `copywriting-kit:copy-diagnose` | Concurrenten en de huidige boodschap doorlichten | |
+
+**Skills per laag.** Gebruik bij elke stap de hulpskill van die laag en zeg welke. Laad hem één keer als de laag verandert, niet bij elk bericht. Zoek alleen uitgebreid op internet bij feiten die het oordeel bepalen (prijzen, regels, bronnen). Prijzen onderbouwen: skill `prijsonderbouwing`.
 
 **Niet gebruiken:** `arn-spark:arn-brainstorming` en `arn-spark-discover`. Die leggen een vast stappenplan voor softwareprojecten op, en dat botst met schetsen vóór vorm en weinig kaders in de ideefase. Ook geen hulpskills die doen alsof bekende ontwerpers meepraten.
 

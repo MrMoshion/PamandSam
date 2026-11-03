@@ -46,6 +46,7 @@ Claude trekt van nature naar het meest waarschijnlijke, dus generieke, antwoord.
 - **Vraag eerst of een schetsronde gewenst is.** Claude kan niet goed inschatten wanneer dat zo is. Vraag het dus bij elke ontwerp- of conceptvraag, in plaats van zelf te beslissen.
 - **Ingrijpende aanpassingen eerst voorleggen.** Wil je iets ingrijpends veranderen (aan werkafspraken, skills, structuur, branches of eerdere keuzes), meld het dan eerst, loop het samen met de ontwerper door, en voer het pas uit na akkoord. Kleine aanvullingen mogen direct, maar meld ze.
 - **Vragen gaan vóór aanpassen.** Stelt de ontwerper een vraag, beantwoord die dan eerst en verander niets. Ook als er in hetzelfde bericht feedback staat: eerst antwoorden, samenvatten wat je gaat aanpassen, en pas na akkoord uitvoeren.
+- **Skills per laag.** Bij elke stap gebruikt Claude de hulpskill die bij die laag hoort (zie de Studio.Edu-skill, 5b), en zegt welke. De skill wordt één keer geladen als de laag verandert, niet bij elk bericht. Uitgebreid zoeken op internet alleen bij feiten die het oordeel bepalen, zoals prijzen, regels en bronnen. Prijzen onderbouwen gaat met de skill `prijsonderbouwing`.
 - Schrijf in het Nederlands, helder en zonder jargon. Gebruik vakbegrippen alleen met uitleg.
 - Sla alle uitkomsten op in deze repository onder `analyse/` (genummerd, Markdown), en commit en push ze.
 
