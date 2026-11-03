@@ -32,4 +32,6 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/26-de-gedachte-interactie.md`: de gedachte, de interactie in drie uitingen
 - `analyse/27-presentatie-de-gedachte.md`: presentatie van de gedachte in zes slides
 - `presentatie/Pam-and-Sam-De-gedachte.pdf`: de gedachte als pdf (6 pagina's, 3:2)
+- `analyse/28-presentatie-analyse-en-geheel.md`: de analysepagina's en de opbouw van de hele presentatie
+- `presentatie/Pam-and-Sam-Presentatie.pdf`: de hele presentatie (21 pagina's, 3:2)
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
