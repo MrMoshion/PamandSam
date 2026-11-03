@@ -77,7 +77,7 @@ Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.
 - **Geen tekst die beschrijft wat je al ziet** (zoals "donker · cursor · licht"). Vertrouw op de kijker. De ontwerper licht mondeling toe: per slide alleen wat je niet kunt zien.
 - Zwart is nooit hard zwart: gebruik donkergrijs (#262626).
 - Veel wit, weinig elementen. Het werk spreekt.
-- **Voetnoten horen bij de pagina.** Ze staan los van Studio.Edu onderaan, als onderdeel van de inhoud: duidelijk zichtbaar, met een dunne lijn erboven, en op elke pagina op dezelfde hoogte. Schrijf ze als gewone zinnen.
+- **Voetnoten horen bij de pagina.** Ze staan los van Studio.Edu onderaan, als onderdeel van de inhoud: duidelijk zichtbaar, zonder lijn erboven, en op elke pagina op dezelfde hoogte. Schrijf ze als gewone zinnen.
 - **Getallen staan op één lijn.** Prijzen in een kolom lijnen rechts uit, zodat de bedragen onder elkaar staan. Woorden als "vanaf" mogen een bedrag niet laten verspringen.
 - **Een regel per punt.** Een opsomming past per punt op één regel. Is een zin te lang, maak hem korter of de tekst een maat kleiner.
 - **Uitnodigend openen.** Begin een beoordeling met meer sterke punten dan kritiekpunten (bijvoorbeeld twee tegen één), en formuleer kritiek vooruitwijzend.
