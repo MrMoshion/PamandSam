@@ -81,4 +81,4 @@ Per 1.000 aanmeldingen: 29 betalende gebruikers, samen € 810 per jaar.
 - zakelijke klanten verlengen elk jaar;
 - jaar 3 gaat uit van Deel B.
 
-**Nieuwe open vraag aan Pardo:** hoeveel aanmeldingen, betalende gebruikers en opzeggers zijn er nu?
+**Vervallen:** de vraag naar de huidige aanmeldingen staat niet in de presentatie (keuze ontwerper).
