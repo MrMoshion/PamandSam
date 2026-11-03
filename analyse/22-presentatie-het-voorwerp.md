@@ -11,7 +11,7 @@ Zes slides van 1200 × 800 (3:2) in Studio.Edu-stijl.
 - **Het logo van het schrift:** "Pam and Sam" op een schrijflijn. Neutraal in EB Garamond, donkergrijs. Na de keuze de Pam- of Sam-versie.
 - **Geel is de standaard markeerkleur** (#EFE1A2), voor beide. Later zelf aan te passen.
 - **De AI vraagt door:** vraag en eigen tekst wisselen elkaar af, tot jij je conclusie schrijft. Daarna vraagt de AI niets meer.
-- **Het openen zoals een boek:** een dicht omslag, dan de dikte van wat je al schreef, dan de bladzijde waar je was. Zonder bladwijzer.
+- **Het openen zoals een boek, abstract:** een smalle strook (dicht, van de zijkant), die openvouwt met een vouw in het midden, en dan de bladzijde waar je was. Geen omslag, geen bladwijzer.
 
 ## De slides
 1. **Het voorwerp:** het neutrale logo op de schrijflijn
