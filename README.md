@@ -18,4 +18,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/14-schetsronde-de-kamer.md`: schetsronde voor de kamer (15 schetsen, vier sporen)
 - `analyse/15-de-kamer-samengevat.md`: de kamer na de keuze van de ontwerper
 - `analyse/16-de-kamer-drie-voorbeelden.md`: de kamer, drie voorbeelden van vormgeving (Lichtval, Houding, De cursor als lamp)
+- `analyse/17-de-kamer-studio-edu.md`: de kamer uitgewerkt in Studio.Edu-stijl (lichtval en cursor, IBM Plex)
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)

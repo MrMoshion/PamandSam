@@ -63,6 +63,15 @@ Hulpskills volgen dit proces, niet andersom. Gebruik ze alleen in de laag waar z
 
 **Niet gebruiken:** `arn-spark:arn-brainstorming` en `arn-spark-discover`. Die leggen een vast stappenplan voor softwareprojecten op, en dat botst met schetsen vóór vorm en weinig kaders in de ideefase. Ook geen hulpskills die doen alsof bekende ontwerpers meepraten.
 
+## 6b. Presentatiestijl van Studio.Edu
+Presentaties, borden en voorstellen voor klanten maak je in de stijl van Studio.Edu, niet in de standaardstijl van Claude.
+- **Wit canvas**, zwarte tekst (#111). Geen donkere achtergrond voor de presentatie zelf.
+- **Hanken Grotesk** (Google Fonts), Light (300) voor bijna alles, Medium (500) spaarzaam. Cursief voor titels van werk en namen.
+- **Opbouw als een casepagina:** een grote titel linksboven, een korte inleiding op leesbare grootte, daarna beeld op volle breedte en gewone lopende tekst.
+- **Geen kleine kapitalen-labels** met letterspatiëring, geen mini-ondertitels, geen grijze tag-blokjes. Gewone zinnen op gewone grootte.
+- Bijschriften zijn gewone zinnen onder het beeld, niet in het klein.
+- Veel wit, weinig elementen. Het werk spreekt.
+
 ## 6. Rolverdeling en eerlijkheid
 - **Claude verbreedt:** onderzoek, schetsen, richtingen, uitwerking. **De ontwerper kiest:** smaak en oordeel. **De klant en echte gebruikers corrigeren.**
 - Zeg wanneer iets een aanname is, wanneer je iets niet hebt kunnen controleren, en wanneer smaak of praktijkervaring nodig is.
