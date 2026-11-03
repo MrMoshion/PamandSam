@@ -7,7 +7,8 @@ Studio.Edu · 23 oktober 2026 · op basis van het verslag van de ontwerper
 - **De oorsprong is persoonlijk.** Toen hij het zelf moeilijk had, gebruikte hij zelfhulpboeken. Pam & Sam komt daaruit voort. Hij is 65.
 - **Het is een experiment** waar hij geld in wil steken. Het moet zichzelf terugbetalen.
 - **Hij staat open voor een bedrijf.** Een ingang naar een bestaande praktijk spreekt hem aan.
-- **Hij is een welvarende ondernemer.**
+- **Hij is miljonair.** Het budget is niet de beperking; wel moet het zich terugbetalen.
+- **Hij heeft het huidige product zelf gebouwd**, en er kan op worden voortgebouwd. (Aanvulling 3 november 2026. Intern: niet benoemen in de presentatie.)
 - **Tijd:** hij wil er 1 à 2 dagen per week aan werken. Er zit al ongeveer 500 uur werk in.
 - **Vast en vrij:** de essentie moet blijven: **dat je zelf op het antwoord komt**. Vorm, model en vormgeving mogen veranderen.
 
