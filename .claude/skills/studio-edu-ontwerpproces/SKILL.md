@@ -43,6 +43,26 @@ Als de ontwerper kandidaten heeft gekozen, werk je ze uit in dezelfde lagen, zod
 
 Merk en vormgeving: eerst het idee, dan de vorm. Een systeem gaat boven een stijl, en typografie draagt het merk. Toets: herken je het zonder logo?
 
+## 5b. Hulpskills per laag
+Hulpskills volgen dit proces, niet andersom. Gebruik ze alleen in de laag waar ze horen, en pas als de ontwerper daarmee instemt.
+
+| Laag | Hulpskill | Waarvoor | Let op |
+|---|---|---|---|
+| Ideefase (1–3) | geen | Schetsen en bevragen doen we zelf | Geen hulpskill die kaders, persona's of een vast stappenplan oplegt |
+| Vormgeving | `design:design-critique` | Kritiek op een ontwerp dat al vorm heeft | Pas na de schetsfase, niet om ideeën te beoordelen |
+| Vormgeving | `design:accessibility-review` | Contrast, leesbaarheid, aanraakvlakken | |
+| Merk | `arn-spark:arn-spark-naming` | Namen bedenken en toetsen | Kies de EU als markt (Nederlands en Engels). Vraagt een `## Arness`-sectie in `CLAUDE.md` en eigen mappen: vraag de ontwerper eerst toestemming |
+| Merk | `copywriting-kit:brand-voice`, `marketing:brand-review` | Toon van het merk vastleggen en teksten daaraan toetsen | Werk uit de eigen woorden van de klant |
+| Product | `design:ux-copy` | Teksten in de app: knoppen, lege schermen, foutmeldingen | Schrijf in het Nederlands. Bij gevoelige onderwerpen gaat de gemoedstoestand van de gebruiker voor |
+| Product | `design:user-research`, `design:research-synthesis` | Interviews met echte gebruikers voorbereiden en verwerken | |
+| Model | `marketing-ideas:idea-payback-check`, `idea-test-card` | Terugverdienen narekenen, goedkope testen met grenzen vooraf | |
+| Model | `marketing-psychology:dark-pattern-check`, `price-framing` | Gratis instap, betaalmuur en opzeggen toetsen aan de EU-regels | Altijd bij kwetsbare gebruikers |
+| Strategie | `arn-spark:arn-spark-stress-premortem`, `arn-spark-stress-prfaq` | Een concept onder druk zetten als het staat | Vraagt een productconcept als document en de `## Arness`-instelling: eerst toestemming |
+| Strategie | `arn-spark:arn-spark-stress-interview` | Gesprekken met nagespeelde gebruikers | **Nooit** in plaats van echte gebruikers. Uitkomsten zijn hypotheses, geen bewijs |
+| Strategie | `marketing:competitive-brief`, `copywriting-kit:copy-diagnose` | Concurrenten en de huidige boodschap doorlichten | |
+
+**Niet gebruiken:** `arn-spark:arn-brainstorming` en `arn-spark-discover`. Die leggen een vast stappenplan voor softwareprojecten op, en dat botst met schetsen vóór vorm en weinig kaders in de ideefase. Ook geen hulpskills die doen alsof bekende ontwerpers meepraten.
+
 ## 6. Rolverdeling en eerlijkheid
 - **Claude verbreedt:** onderzoek, schetsen, richtingen, uitwerking. **De ontwerper kiest:** smaak en oordeel. **De klant en echte gebruikers corrigeren.**
 - Zeg wanneer iets een aanname is, wanneer je iets niet hebt kunnen controleren, en wanneer smaak of praktijkervaring nodig is.
