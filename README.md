@@ -20,4 +20,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/16-de-kamer-drie-voorbeelden.md`: de kamer, drie voorbeelden van vormgeving (Lichtval, Houding, De cursor als lamp)
 - `analyse/17-de-kamer-studio-edu.md`: de kamer uitgewerkt in Studio.Edu-stijl (lichtval en cursor, IBM Plex)
 - `analyse/18-presentatie-de-kamer.md`: presentatie van de kamer in zes slides (3:2)
+- `presentatie/Pam-and-Sam-De-kamer.pdf`: de presentatie van de kamer als pdf (6 pagina's, 3:2)
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
