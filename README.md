@@ -29,4 +29,5 @@ Werkmap voor de analyse en het herontwerp van [pamandsam.com](https://pamandsam.
 - `analyse/23-schetsronde-de-gedachte.md`: schetsronde voor de gedachte (17 schetsen, vier sporen)
 - `analyse/24-de-gedachte-samengevat.md`: de gedachte na de keuze van de ontwerper, en de regels voor het product
 - `analyse/25-de-gedachte-drie-voorbeelden.md`: de gedachte, drie voorbeelden (de rij, neerleggen, de kern)
+- `analyse/26-de-gedachte-interactie.md`: de gedachte, de interactie in drie uitingen
 - `analyse/screenshots/`: de huidige site op desktop en mobiel (oktober 2026)
