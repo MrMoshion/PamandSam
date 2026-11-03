@@ -2,7 +2,10 @@
 
 Studio.Edu · 3 november 2026 · bijgewerkt na de prijsonderbouwing (skills: `prijsonderbouwing`, `price-framing`)
 
-## Opbouw van de hele presentatie (37 pagina's)
+## Opbouw van de hele presentatie (40 pagina's)
+
+> Bijgewerkt: het blok "Wat het kan opleveren" (vier routes, zie 31) staat nu vóór Deel A. De pagina's "De kans zit bij organisaties", "Meerdere manieren van verdienen" (oud) en "€ 42 per gebruiker / terugverdienen" zijn vervangen. De volgorde: merk, product, app, veiligheid, strategie · wat het kan opleveren (overzicht, particulieren, werkgevers, coaches, praktijken, samen) · Deel A (drie pagina's met de inhoud, dan de prijzen) · Deel B · twee vragen · het besluit.
+
 1. **Analyse (4):**
    - *Pam and Sam nu:* een sterk idee (vragen in plaats van antwoorden) · een scherp verschil met een gratis chatbot · het beeld vertelt dat idee nog niet.
    - *Wat we meenemen* · *Wat wij toevoegen* · *Eén idee, drie vormen.*
