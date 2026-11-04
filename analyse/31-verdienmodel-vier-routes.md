@@ -82,3 +82,30 @@ Per 1.000 aanmeldingen: 29 betalende gebruikers, samen € 810 per jaar.
 - jaar 3 gaat uit van Deel B.
 
 **Vervallen:** de vraag naar de huidige aanmeldingen staat niet in de presentatie (keuze ontwerper).
+
+## Bijgewerkt: "Wat moet er waar zijn?" in plaats van twee scenario's
+Kader: Roger Martin, "wat moet er waar zijn". Doel: de cijfers laten landen als hypothese, niet als belofte. Zo vermijd je de valkuil van "1% van een grote markt".
+
+- **Jaar 1, wat we toetsen: ± € 25.000.**
+  - 500 aanmeldingen per maand, via één kanaal;
+  - 3 werkgevers;
+  - 12 coaches;
+  - 1 praktijk.
+
+  Getoetst in Deel A.
+- **Jaar 3, de richting: ± € 90.000.**
+  - groei via coaches, praktijken en werkgevers, die ook particulieren binnenbrengen;
+  - werkgevers en coaches verlengen;
+  - meer praktijken.
+
+  Uit te werken in Deel B.
+- **Bedragen afgerond.** De 3% staat alleen op de pagina Particulieren, zodat er geen verwarring is met de drempel van 10% bij de toets. Die 10% gaat over de deelnemers aan de toets, de 3% over alle aanmeldingen.
+- **Voetnoot:** een hypothese. De percentages komen uit Amerikaanse apps en uit onderzoek naar therapie. De kosten om klanten te werven zijn niet meegerekend.
+- **Deel B, "Naar buiten":** de kanalen kiezen en opschalen.
+
+**Mogelijke kanalen**, nog te toetsen:
+1. via coaches, praktijken en werkgevers. Dat is het sterkste kanaal, omdat de zakelijke routes ook particulieren binnenbrengen;
+2. via het netwerk en de praktijk van Caren;
+3. via zelfhulp: uitgevers, podcasts en boekhandels;
+4. via zoeken;
+5. via het verhaal van Pardo, als hij dat goedvindt.
