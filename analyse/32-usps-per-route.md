@@ -81,3 +81,13 @@ Terugverdienen volgt uit deze successen. Het is de uitkomst, niet de maatstaf.
 - Gebruik van EAP's: https://health.calm.com/resources/blog/elevating-your-employee-assistance-program/, https://yorku.ca/yfile/2022/09/29/ivona-hideg-2, Milot (2019): https://archive.hshsl.umaryland.edu/handle/10713/8515
 - Huiswerk en uitkomst: https://pmc.ncbi.nlm.nih.gov/articles/PMC2939342, https://openresearch-repository.anu.edu.au/items/7c8a2dc0-0366-4437-a722-1a074e44ef2a
 - Zelfovertuiging: https://aminer.org/pub/63ecd46190e50fcafd495d4c/persuasive-benefits-of-self-generated-arguments-moderation-and-mechanism, https://ideas.repec.org/a/plo/pone00/0128635.html
+
+## Doorgevoerd in de presentatie (41 pagina's)
+- **Nieuwe pagina "Waarom het werkt"** vóór "Wat het kan opleveren": zelfhulp die terugvraagt in plaats van antwoordt. Je komt zelf op het antwoord, een gesprek met een eind, een verslag om mee te nemen.
+- **Per route één regel "waarom"** als ondertitel, en de bronnen in de voetnoten.
+- **Deel A:** de kolom "Beslismoment" heet nu "Succes als":
+  - de richting staat;
+  - het werkt voor mensen;
+  - eigen antwoord, 10% betaalt.
+- **Toetsen:** "Succes: zelf tot een antwoord, terugkomen als het nodig is, 1 op 10 betaalt."
+- **Het InDesign-sjabloon** is bijgewerkt.
