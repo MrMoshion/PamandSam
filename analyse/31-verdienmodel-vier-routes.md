@@ -84,6 +84,8 @@ Per 1.000 aanmeldingen: 29 betalende gebruikers, samen € 810 per jaar.
 **Vervallen:** de vraag naar de huidige aanmeldingen staat niet in de presentatie (keuze ontwerper).
 
 ## Bijgewerkt: "Wat moet er waar zijn?" in plaats van twee scenario's
+
+> Later aangepast: de titel is nu "Wat er nodig is", met de ondertitel "Jaar 1 is het doel, jaar 3 de richting". Links staat "Jaar 1: het doel" en daaronder "Deel A toetst of dit haalbaar is". In Deel A worden namelijk de voorwaarden getoetst, niet de aantallen.
 Kader: Roger Martin, "wat moet er waar zijn". Doel: de cijfers laten landen als hypothese, niet als belofte. Zo vermijd je de valkuil van "1% van een grote markt".
 
 - **Jaar 1, wat we toetsen: ± € 25.000.**
