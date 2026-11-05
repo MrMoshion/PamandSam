@@ -55,3 +55,14 @@ Studio.Edu · 5 november 2026. Skills: `design:design-critique` en `design:acces
 3. **Een vangnet in de chat:** "Hulp nodig?", altijd zichtbaar.
 4. **Rustige beweging:** de cursor stopt met knipperen, *reduced motion* wordt gerespecteerd, en schermlezers krijgen de hele tekst.
 5. **"Ik ben er" toetsen**, met een alternatief achter de hand.
+
+## Besluiten van de ontwerper na de toets
+- **Geparkeerd:** het vangnet ("Hulp nodig?") en het toetsen van "Ik ben er".
+- **Het gesprek:** de chatbot stuurt aan op een conclusie in de woorden van de gebruiker.
+- **Even groot:** de huidige vraag en de eigen tekst. De vraag staat in de stem van Pam of Sam, de eigen tekst in Plex Sans Light in de donkerste kleur. Het eerdere gesprek is kleiner en zachter, maar leesbaar.
+- **De hele hoogte, zoals in een gewone chat:**
+  - het schrijfveld staat vast onderaan, met *Vat het samen* en *Verstuur*;
+  - het gesprek groeit naar boven;
+  - geen tekstballonnen.
+- **Ruimte:** meer ademruimte rondom en tussen de regels.
+- **De plek van de kolom:** op desktop iets links van het midden. Op mobiel staat het schrijfveld onderaan, in het bereik van de duim. Zie beelden 22 en 23.
