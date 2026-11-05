@@ -1,0 +1,809 @@
+<title>Pam &amp; Sam</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:ital,wght@1,300&display=swap">
+<style>
+/* De kamer: je komt binnen in een warme schemering met een lamp, het licht valt schuin binnen en wordt geleidelijk dag.
+   Eén bewust gekozen uitstraling (geen donker thema): alle kleuren staan hieronder vast. */
+:root{
+  color-scheme: light;
+  --dusk: #2F2924;
+  --dusk-text: #F6EFE4;
+  --dusk-soft: rgba(246,239,228,.74);
+  --light: #F8F4EE;
+  --paper: #FCFAF6;
+  --ink: #2E2822;
+  --ink-soft: #625649;
+  --line: rgba(46,40,34,.22);
+  --lamp: rgba(255,220,170,.18);
+  /* Pam: lamplicht */
+  --pam-bg: #FCF5E4;
+  --pam-ink: #2A2118;
+  --pam-voice: #74593C;
+  --pam-soft: #5E4E3A;
+  --pam-cursor: #C9A15F;
+  --pam-glow: 214,170,96;
+  --pam-mark: rgba(238,200,110,.55);
+  --pam-dot: #E3B860;
+  /* Sam: daglicht */
+  --sam-bg: #EEF3F8;
+  --sam-ink: #101923;
+  --sam-voice: #36506E;
+  --sam-soft: #3E4C5C;
+  --sam-cursor: #4F6F92;
+  --sam-glow: 110,155,205;
+  --sam-mark: rgba(150,190,235,.55);
+  --sam-dot: #7FA8D8;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --step-0: 1.0625rem;  /* 17 */
+  --step-1: 1.25rem;    /* 20 */
+  --step-2: 1.625rem;   /* 26 */
+  --step-3: 2.5rem;     /* 40 */
+  --step-4: clamp(2.25rem, 5vw, 3.75rem);
+  --col: 40rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid #C9A15F;outline-offset:3px;border-radius:4px}
+.wrap{max-width:72rem;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:760px){.wrap{padding-left:max(48px, env(safe-area-inset-left, 0px));padding-right:max(48px, env(safe-area-inset-right, 0px))}}
+h1,h2,h3{font-weight:300;letter-spacing:-.015em;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- korrel ---------- */
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.10;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ---------- cursor ---------- */
+.cur{position:relative;display:inline-block;vertical-align:-.12em;width:3px;height:1.05em;margin-left:.12em;border-radius:2px;background:var(--c,#fff)}
+.cur::before{content:"";position:absolute;left:-.6em;right:-.6em;top:-.35em;bottom:-.35em;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(var(--g,255,255,255),.55),rgba(var(--g,255,255,255),.22) 45%,rgba(var(--g,255,255,255),0))}
+.blink{animation:blink 1.1s steps(1) 5}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.blink{animation:none}}
+
+/* ---------- kop ---------- */
+.hero{position:relative;overflow:hidden;color:var(--dusk-text);
+  background:linear-gradient(#2F2924 0%,#342D27 10%,#3D352E 20%,#4A4138 30%,#5B5045 40%,#706457 50%,#877A6C 59%,#A09384 67%,#B9AD9E 75%,#CFC5B8 83%,#E0D8CD 89%,#ECE6DD 94%,var(--light) 100%)}
+.hero .lamp{position:absolute;inset:0;background:radial-gradient(ellipse 45% 40% at 20% 14%,var(--lamp),rgba(255,220,170,0) 70%);pointer-events:none}
+.beam{position:absolute;inset:-60px;filter:blur(28px);pointer-events:none}
+.beam::before{content:"";position:absolute;inset:0;clip-path:polygon(60% 0%,84% 0%,52% 100%,20% 100%);
+  background:linear-gradient(to bottom,rgba(255,232,196,.24),rgba(255,232,196,.12) 40%,rgba(255,232,196,.03) 75%,rgba(255,232,196,0))}
+.nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:28px}
+.logo{display:inline-flex;align-items:center;font-size:1.375rem;letter-spacing:-.01em;text-decoration:none;color:inherit;white-space:nowrap}
+.logo .cur{height:1.1em}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--dusk-soft)}
+.nav a:hover{color:var(--dusk-text)}
+.nav .try{border:1px solid rgba(246,239,228,.6);border-radius:40px;padding:8px 16px;color:var(--dusk-text)}
+@media (max-width:760px){.nav ul li:not(.keep){display:none}}
+.hero-body{position:relative;z-index:2;padding-block:clamp(56px,11vw,120px) clamp(120px,18vw,200px)}
+@media (max-width:760px){.hero-body{padding-block:56px 240px}}
+.hero h1{font-size:var(--step-4);line-height:1.08;max-width:19ch}
+.hero .sub{margin-top:28px;font-size:var(--step-1);line-height:1.5;color:var(--dusk-soft)}
+.hero .sub .you{color:var(--dusk-text)}
+.hero .cta-row{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.btn{font:inherit;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border-radius:40px;cursor:pointer;text-decoration:none;background:transparent;border:1px solid var(--line);color:var(--ink)}
+.hero .btn{border-color:rgba(246,239,228,.65);color:var(--dusk-text)}
+.hero .small{font-size:.95rem;color:var(--dusk-soft)}
+
+/* ---------- brug ---------- */
+.bridge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-block:8px 72px}
+.bridge h3{font-size:var(--step-1)}
+.bridge p{color:var(--ink-soft);margin-top:6px}
+@media (max-width:760px){.bridge{grid-template-columns:1fr;gap:24px}}
+
+/* ---------- kies (chatvoorbeeld) ---------- */
+section{padding-block:88px}
+.sec-head{display:flex;flex-direction:column;gap:12px;max-width:var(--col);margin-bottom:44px}
+.sec-head h2{font-size:var(--step-3);line-height:1.12}
+.sec-head p{color:var(--ink-soft)}
+.choose{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media (max-width:760px){.choose{grid-template-columns:1fr}}
+.door{position:relative;display:flex;flex-direction:column;gap:28px}
+.door button.room{all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:300px;padding:36px;border-radius:16px;box-shadow:0 30px 60px -40px rgba(46,40,34,.45)}
+.door button.room:focus-visible{outline:2px solid #C9A15F;outline-offset:4px}
+.door.pam .room{background:radial-gradient(ellipse at 28% 40%,#FFFDF6 0%,#FCF5E4 42%,#F1E2C0 82%,#E6D2A6 100%);color:var(--pam-ink)}
+.door.sam .room{background:var(--sam-bg);color:var(--sam-ink)}
+.door.sam .room::before{content:"";position:absolute;inset:0;background:#F8FBFE;clip-path:polygon(0 0,70% 0,48% 100%,0 100%)}
+.room > *{position:relative}
+.room .who{display:flex;align-items:center;font-size:2.25rem;line-height:1}
+.door.pam .who{font-family:var(--serif);font-style:italic}
+.door.sam .who{font-weight:400;letter-spacing:-.02em}
+.room .first{font-size:var(--step-1);line-height:1.45;max-width:28ch}
+.door.pam .first{font-family:var(--serif);font-style:italic;color:var(--pam-voice)}
+.door.sam .first{color:var(--sam-voice)}
+.room .fake-input{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid currentColor;padding-bottom:10px;opacity:.85;font-size:1rem}
+.door .desc h3{font-size:var(--step-1)}
+.door .desc .tag{color:var(--ink-soft)}
+.door .desc p{margin-top:10px;max-width:var(--col)}
+.door .desc ul{margin:14px 0 0;padding-left:1.1em;color:var(--ink-soft)}
+.door .desc li{margin-top:4px}
+
+/* ---------- inhoud ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:s}
+.steps div{display:flex;flex-direction:column;gap:8px}
+.steps .n{font-size:.95rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.steps h3{font-size:var(--step-1)}
+.steps p{color:var(--ink-soft)}
+@media (max-width:760px){.steps{grid-template-columns:1fr;gap:28px}}
+.principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.principles q,.quote{font-family:var(--serif);font-style:italic;font-size:var(--step-2);line-height:1.3;quotes:"“" "”"}
+.principles p{margin-top:12px;color:var(--ink-soft)}
+@media (max-width:760px){.principles{grid-template-columns:1fr;gap:32px}}
+.caren{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.caren .body{display:flex;flex-direction:column;gap:16px}
+.caren .role{color:var(--ink-soft)}
+@media (max-width:860px){.caren{grid-template-columns:1fr;gap:32px}}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:18px 20px 18px 0;border-bottom:1px solid var(--line)}
+th{font-weight:400;font-size:.95rem;color:var(--ink-soft)}
+td:first-child{color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:14px;background:var(--paper);text-decoration:none}
+.card h3{font-size:var(--step-1)}
+.card p{color:var(--ink-soft)}
+.card span{margin-top:auto;padding-top:8px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.price{display:flex;flex-direction:column;gap:10px;padding:32px;border-radius:14px;background:var(--paper)}
+.price.best{outline:1px solid var(--ink)}
+.price .lbl{font-size:.95rem;color:var(--ink-soft)}
+.price .amt{font-size:var(--step-3);line-height:1;font-variant-numeric:tabular-nums}
+.price .per{color:var(--ink-soft)}
+.price p{color:var(--ink-soft)}
+.price .btn{margin-top:auto;align-self:flex-start}
+@media (max-width:860px){.prices{grid-template-columns:1fr}}
+.note{margin-top:24px;color:var(--ink-soft);max-width:var(--col)}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin-top:40px}
+.two-col h3{font-size:var(--step-1);margin-bottom:10px}
+.two-col ul{margin:0;padding-left:1.1em;color:var(--ink-soft)}
+@media (max-width:760px){.two-col{grid-template-columns:1fr;gap:28px}}
+.prose{max-width:var(--col);display:flex;flex-direction:column;gap:14px}
+details{border-bottom:1px solid var(--line);max-width:48rem}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding-block:20px;font-size:var(--step-1)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--ink-soft)}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:22px;color:var(--ink-soft);max-width:var(--col)}
+form.simple{display:grid;gap:14px;max-width:32rem;margin-top:24px}
+form.simple label{display:grid;gap:6px;font-size:.95rem;color:var(--ink-soft)}
+form.simple input,form.simple textarea{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+form.simple .done{color:var(--ink)}
+.share{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.closing{text-align:left}
+.closing .quote{max-width:30ch}
+.closing .who{margin-top:12px;color:var(--ink-soft)}
+.checks{display:flex;flex-wrap:wrap;gap:12px 28px;margin:24px 0 32px;padding:0;list-style:none;color:var(--ink-soft)}
+footer{padding-block:48px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.95rem}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px}
+footer a{text-decoration:none}
+
+/* ---------- chat ---------- */
+.chat{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;overflow:hidden;
+  clip-path:inset(0 round 0);transition:clip-path .55s cubic-bezier(.2,.7,.2,1)}
+.chat[data-voice="pam"]{--bg:var(--pam-bg);--ink:var(--pam-ink);--voice:var(--pam-voice);--soft:var(--pam-soft);--c:var(--pam-cursor);--g:var(--pam-glow);--mk:var(--pam-mark);--dot:var(--pam-dot);
+  background:radial-gradient(ellipse 75% 80% at 28% 40%,#FFFDF7 0%,#FCF5E4 45%,#F3E6C9 85%,#ECDCB8 100%);color:var(--pam-ink)}
+.chat[data-voice="sam"]{--bg:var(--sam-bg);--ink:var(--sam-ink);--voice:var(--sam-voice);--soft:var(--sam-soft);--c:var(--sam-cursor);--g:var(--sam-glow);--mk:var(--sam-mark);--dot:var(--sam-dot);
+  background:var(--sam-bg);color:var(--sam-ink)}
+.chat[data-voice="sam"]::before{content:"";position:absolute;inset:0;background:#F8FBFE;clip-path:polygon(0 0,74% 0,52% 100%,0 100%);pointer-events:none}
+.chat[data-voice="pam"]::before{content:"";position:absolute;inset:-60px;filter:blur(30px);pointer-events:none;
+  background:linear-gradient(to bottom,rgba(255,255,250,.5),rgba(255,255,250,.12) 60%,rgba(255,255,250,0));clip-path:polygon(14% 0%,40% 0%,62% 100%,30% 100%)}
+.chat > *{position:relative}
+@media (prefers-reduced-motion: reduce){.chat{transition:none}}
+.chat-top{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-top:calc(28px + env(safe-area-inset-top, 0px));padding-bottom:16px;
+  padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
+@media (min-width:760px){.chat-top{padding-left:max(64px, env(safe-area-inset-left, 0px));padding-right:max(64px, env(safe-area-inset-right, 0px));padding-top:calc(44px + env(safe-area-inset-top, 0px))}}
+.chat-top .logo{font-size:1.25rem;color:var(--ink)}
+.chat[data-voice="pam"] .chat-top .logo{font-family:var(--serif);font-style:italic}
+.chat[data-voice="sam"] .chat-top .logo{font-weight:400}
+.chat-top nav{display:flex;gap:8px}
+.ghost{font:inherit;font-size:.95rem;background:none;border:0;color:var(--soft);cursor:pointer;padding:12px 12px;min-height:44px;border-radius:30px}
+.ghost:hover{color:var(--ink)}
+.scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
+.log{width:min(var(--col),100%);margin:auto auto 0;padding:24px max(24px, env(safe-area-inset-left, 0px)) 8px max(24px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:0;
+  font-size:var(--step-1);line-height:1.55}
+@media (min-width:760px){.log{padding-left:0;padding-right:0}}
+.msg{margin:0}
+.msg.q{font-family:inherit;color:var(--voice);margin-top:36px}
+.msg.q:first-child{margin-top:0}
+.chat[data-voice="pam"] .msg.q{font-family:var(--serif);font-style:italic}
+.msg.a{font-weight:300;color:var(--ink);margin-top:10px;white-space:pre-wrap}
+.msg.q.thinking::after{content:"";display:inline-block;width:3px;height:1em;margin-left:.15em;vertical-align:-.12em;background:var(--c);border-radius:2px;
+  box-shadow:0 0 10px 3px rgba(var(--g),.45);animation:breathe 1.6s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.25}}
+@media (prefers-reduced-motion: reduce){.msg.q.thinking::after{animation:none}}
+.w{border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.w.mk{background:var(--mk)}
+.w.st{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:currentColor;opacity:.7}
+.log.marking{touch-action:none;cursor:crosshair;user-select:none;-webkit-user-select:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{font:inherit;font-size:1rem;cursor:pointer;color:var(--ink);background:rgba(255,255,255,.45);border:1px solid rgba(0,0,0,.16);border-radius:30px;padding:10px 16px;min-height:44px}
+.dock{width:min(var(--col),100%);margin:0 auto;padding:16px max(24px, env(safe-area-inset-right, 0px)) calc(48px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px))}
+@media (min-width:760px){.dock{padding-left:0;padding-right:0;padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))}}
+.tools{display:flex;gap:10px;margin-bottom:14px}
+.dock{position:relative}
+@media (min-width:1100px){
+  .tools{position:absolute;right:calc(100% + 48px);top:16px;flex-direction:column;align-items:flex-start;margin:0}
+}
+.tool{font:inherit;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:var(--ink);background:transparent;border:1px solid rgba(0,0,0,.28);border-radius:30px;padding:8px 16px;min-height:44px}
+.tool[aria-pressed="true"]{background:var(--mk);border-color:transparent}
+.tool .dot{width:12px;height:12px;border-radius:50%;background:var(--dot)}
+.tool .bar{width:16px;border-top:1.5px solid currentColor}
+.field{display:flex;align-items:flex-end;border-bottom:1px solid rgba(0,0,0,.4);padding-bottom:10px}
+.field textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-weight:300;font-size:var(--step-1);line-height:1.45;max-height:9em;padding:0;caret-color:var(--c)}
+.field textarea::placeholder{color:var(--soft);opacity:.85}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
+.pill{font:inherit;font-size:1rem;cursor:pointer;color:var(--ink);background:transparent;border:1px solid rgba(0,0,0,.32);border-radius:30px;padding:10px 22px;min-height:44px}
+.pill.primary{background:rgba(255,255,255,.55)}
+.pill:disabled{opacity:.5;cursor:default}
+.status{min-height:1.4em;margin-top:10px;font-size:.95rem;color:var(--soft)}
+
+/* ---------- verslag ---------- */
+.report{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;background:var(--paper);color:#2E2822;overflow-y:auto}
+.report .inner{width:min(var(--col),100%);margin:0 auto;padding:calc(48px + env(safe-area-inset-top, 0px)) max(24px, env(safe-area-inset-right, 0px)) 64px max(24px, env(safe-area-inset-left, 0px));display:flex;flex-direction:column;gap:22px}
+@media (min-width:760px){.report .inner{padding-left:0;padding-right:0}}
+.report h2{font-size:var(--step-3)}
+.report .meta{color:#625649}
+.report ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px;font-size:var(--step-1);line-height:1.55}
+.report li{padding-left:18px;border-left:3px solid var(--dot)}
+.report .empty{font-size:var(--step-1);color:#625649}
+.report .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.report .pill{color:#2E2822;border-color:rgba(46,40,34,.35)}
+[hidden]{display:none!important}
+@media (max-width:560px){.ghost .long{display:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+
+<!-- ================= KOP ================= -->
+<header class="hero grain">
+  <div class="lamp"></div><div class="beam"></div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a class="logo" href="#top" id="top">Pam &amp; Sam<span class="cur blink" style="--c:#FFFFFF;--g:255,255,255"></span></a>
+      <ul>
+        <li><a href="#aanpak">Aanpak</a></li>
+        <li><a href="#tarieven">Tarieven</a></li>
+        <li><a href="#kies">Pam &amp; Sam</a></li>
+        <li class="keep"><a class="try" href="#kies">Probeer gratis</a></li>
+      </ul>
+    </nav>
+    <div class="hero-body">
+      <h1>Iedereen worstelt weleens met zichzelf.</h1>
+      <p class="sub" aria-label="Pam en Sam stellen de vragen. Jij komt op het antwoord.">
+        <span aria-hidden="true">Pam en Sam stellen de vragen.<br><span class="you" id="typed">Jij komt op het antwoord.</span><span class="cur blink" id="typedCur" style="--c:#FFF6E8;--g:255,226,186"></span></span>
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#kies">Begin een gesprek</a>
+        <span class="small">Gratis kennismaken · Zelfhulp, met AI als gesprekspartner</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= BRUG ================= -->
+  <div class="wrap">
+    <div class="bridge">
+      <div><h3>Je komt zelf op het antwoord</h3><p>Pam en Sam vragen, ze geven geen advies.</p></div>
+      <div><h3>Een gesprek met een eind</h3><p>Als je er bent, laten ze je los.</p></div>
+      <div><h3>Een verslag om mee te nemen</h3><p>Je eigen woorden, om op terug te vallen.</p></div>
+    </div>
+  </div>
+
+  <!-- ================= KIES ================= -->
+  <section id="kies" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Kies je gesprekspartner</span>
+        <h2>Pam of Sam?</h2>
+        <p>Beide gesprekspartners zijn geïnspireerd door gesprekken met Caren. Pam is warm en empathisch. Sam is direct en nuchter. Kies wie het beste bij jou past.</p>
+      </div>
+      <div class="choose">
+        <div class="door pam">
+          <button class="room" type="button" data-open="pam" aria-label="Begin een gesprek met Pam">
+            <span class="who">Pam<span class="cur" style="--c:var(--pam-cursor);--g:var(--pam-glow)"></span></span>
+            <span class="first">Fijn dat je er bent. Vertel me rustig waar je mee zit.</span>
+            <span class="fake-input"><span>Begin bij Pam</span><span aria-hidden="true">→</span></span>
+          </button>
+          <div class="desc">
+            <h3>Pam <span class="tag">· Warm &amp; empathisch</span></h3>
+            <p>Pam geeft eerst ruimte aan wat je voelt. Betrokken, zorgzaam, maar ook duidelijk. Voor mensen die behoefte hebben aan begrip én richting.</p>
+            <ul>
+              <li>Kies Pam als je het gevoel hebt dat er iets niet klopt, maar het niet kunt benoemen</li>
+              <li>Moeite hebt met stilstaan bij wat je echt voelt</li>
+              <li>Jezelf of je relaties beter wilt begrijpen</li>
+              <li>Ergens mee zit en het gewoon kwijt wilt</li>
+            </ul>
+          </div>
+        </div>
+        <div class="door sam">
+          <button class="room" type="button" data-open="sam" aria-label="Begin een gesprek met Sam">
+            <span class="who">Sam<span class="cur" style="--c:var(--sam-cursor);--g:var(--sam-glow);border-radius:0"></span></span>
+            <span class="first">Waar gaat het om?</span>
+            <span class="fake-input"><span>Begin bij Sam</span><span aria-hidden="true">→</span></span>
+          </button>
+          <div class="desc">
+            <h3>Sam <span class="tag">· Direct &amp; nuchter</span></h3>
+            <p>Sam gaat snel naar de kern. Direct, nuchter, soms confronterend. Altijd goed bedoeld. Voor mensen die duidelijkheid willen zonder omwegen.</p>
+            <ul>
+              <li>Kies Sam als je een keuze moet maken maar blijft hangen</li>
+              <li>Steeds dezelfde patronen herhaalt in werk of relaties</li>
+              <li>Behoefte hebt aan duidelijkheid en structuur</li>
+              <li>Een situatie wilt doorbreken die al te lang duurt</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">Je kunt later altijd wisselen. Pam en Sam zijn AI-gesprekspartners, geïnspireerd door gesprekken met Caren.</p>
+    </div>
+  </section>
+
+  <!-- ================= HOE HET WERKT ================= -->
+  <section id="aanpak">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Hoe het werkt</span><h2>Drie stappen. Niet meer.</h2></div>
+      <div class="steps">
+        <div><span class="n">01</span><h3>Vertel wat er speelt</h3><p>Pam of Sam stelt je gerichte vragen om de kern van je situatie te begrijpen. Geen oordeel. Geen jargon. Gewoon luisteren.</p></div>
+        <div><span class="n">02</span><h3>Ontdek de echte vraag</h3><p>Vaak is het probleem niet wat het lijkt. We zoeken samen de oorzaak, niet het symptoom. Dat maakt het verschil.</p></div>
+        <div><span class="n">03</span><h3>Eén concrete stap</h3><p>Geen lange to-do-lijst. Je gaat weg met één ding dat je vandaag nog kunt doen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRINCIPES ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">De twee principes</span><h2>Eerlijk, ook als het ongemakkelijk is.</h2></div>
+      <div class="principles">
+        <div><q>Zonder lef verandert er niets.</q><p>Begrijpen waarom je vastloopt is de eerste stap. De tweede stap is er iets aan doen. Pam en Sam helpen je met allebei.</p></div>
+        <div><q>Zachte heelmeesters maken stinkende wonden.</q><p>Altijd gelijk krijgen voelt fijn, maar brengt je nergens. Pam en Sam zeggen wat je nodig hebt, niet wat je wilt horen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAREN ================= -->
+  <section>
+    <div class="wrap">
+      <div class="caren">
+        <div class="sec-head" style="margin:0"><span class="eyebrow">Waar het idee vandaan komt</span><h2>Caren</h2><p class="role">Adviseur bij Pam &amp; Sam</p></div>
+        <div class="body">
+          <p>Caren Pardovitch is gespecialiseerd in stress gerelateerde thema’s rondom werk, privéleven en ingrijpende veranderingen. Zij ontwikkelde een methode voor persoonlijke ontwikkeling waarin zij NLP, Transactionele Analyse, Systemisch Werk, cognitieve gedragstherapie en creatieve coaching methoden combineert.</p>
+          <p>Haar aanpak helpt cliënten inzichten te krijgen in hun gedachten, gedrag en onderliggende patronen zodat er ruimte ontstaat voor meer rust en blijvende verandering.</p>
+          <p>Uit de gesprekken met Caren zijn Pam en Sam geboren. Een rustige plek om dingen op een rij te zetten, wanneer jij dat nodig hebt. Pam en Sam geven je geen kant-en-klaar antwoord. Ze stellen de vragen die je naar het antwoord leiden dat al in jezelf zit. En een antwoord dat je zelf vindt, blijft veel langer bij je dan een antwoord dat je krijgt aangereikt.</p>
+          <p class="quote" style="margin-top:12px">“Wat je overkomt hoeft je leven niet te bepalen, je kunt kiezen hoe je erop reageert.”</p>
+          <p class="role">Caren, adviseur bij Pam &amp; Sam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DE EERLIJKE VRAAG ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">De eerlijke vraag</span><h2>Waarom niet gewoon een gratis chatbot?</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Een gratis chatbot</th><th scope="col">Pam &amp; Sam</th></tr></thead>
+          <tbody>
+            <tr><td>Geeft je snel een kant-en-klaar antwoord — dat je morgen weer kwijt bent.</td><td>Stelt vragen tot jij zelf het inzicht hebt. Dat blijft hangen.</td></tr>
+            <tr><td>Eén neutrale assistent, voor alles en iedereen hetzelfde.</td><td>Twee vaste persoonlijkheden: Pam (warm en empathisch) en Sam (direct en nuchter). Jij kiest wie bij je past.</td></tr>
+            <tr><td>Glijdt steeds terug naar antwoorden geven, ook als je vraagt om mee te denken.</td><td>Houdt één vaste, bevragende aanpak vast: naar de oorzaak, niet het symptoom.</td></tr>
+            <tr><td>Bewaart je gesprekken op hun servers, gekoppeld aan je account.</td><td>Niets op onze servers. Je gesprek blijft in je eigen browser en jij wist het wanneer je wilt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERKEN JE JEZELF ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Waar gaat het over?</span><h2>Herken je jezelf hierin?</h2></div>
+      <div class="cards">
+        <a class="card" href="#kies"><h3>Vast in een keuze?</h3><p>Je hebt alle voor- en nadelen op een rij, en je komt nog steeds geen stap verder.</p><span>Lees meer →</span></a>
+        <a class="card" href="#kies"><h3>Spanning in je relatie?</h3><p>Steeds dezelfde discussie, of juist een stilte die blijft hangen.</p><span>Lees meer →</span></a>
+        <a class="card" href="#kies"><h3>Werk wordt te veel?</h3><p>Je lijst wordt langer, je energie korter, en je weet niet waar je moet beginnen.</p><span>Lees meer →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ERVARINGEN ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Wat mensen zeggen</span><h2>Geen marketing. Gewoon ervaringen.</h2></div>
+      <h3 style="font-size:var(--step-1)">Deel jouw ervaring</h3>
+      <p class="note" style="margin-top:8px">Een korte reactie helpt anderen. Je reactie verschijnt pas na een korte controle.</p>
+      <form class="simple" id="expForm">
+        <label for="expText">Je ervaring<textarea id="expText" rows="3"></textarea></label>
+        <button class="btn" type="submit" style="justify-self:start">Versturen</button>
+        <p class="done" id="expDone" hidden>Dank je. In deze testversie wordt niets verstuurd.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= TARIEVEN ================= -->
+  <section id="tarieven">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Tarieven</span><h2>Transparant. Geen kleine lettertjes.</h2>
+        <p>Niets op onze servers, je gesprek blijft van jou. 12% van onze jaarwinst voor belasting gaat naar een goed doel voor mentale gezondheid — elk jaar maken we bekend hoeveel en aan welk doel.</p></div>
+      <div class="prices">
+        <div class="price"><span class="lbl">Kennismaking</span><span class="amt">Gratis</span><span class="per">eerste 6 vragen aan Pam of Sam</span><p>Kies Pam of Sam en ontdek of Pam &amp; Sam bij jou past. Geen verplichtingen.</p><a class="btn" href="#kies">Start gratis →</a></div>
+        <div class="price"><span class="lbl">Flexibel · Maandabonnement</span><span class="amt">€5,99</span><span class="per">per maand, opzegbaar</span><p>Onbeperkt chatten met Pam én Sam. Doorlopende begeleiding. Opzegbaar per maand. Spreken of typen. Allebei mogelijk.</p><a class="btn" href="#kies">Nu starten →</a></div>
+        <div class="price best"><span class="lbl">Meest gekozen · Jaarabonnement</span><span class="amt">€60,-</span><span class="per">per jaar, vooruit betaald · 2 maanden gratis</span><p>Onbeperkt chatten met Pam én Sam. Een heel jaar begeleiding voor de prijs van tien maanden. Spreken of typen. Allebei mogelijk.</p><a class="btn" href="#kies">Nu starten →</a></div>
+      </div>
+      <p class="note">Na betaling ontvang je een toegangscode per e-mail. Daarmee log je in.</p>
+    </div>
+  </section>
+
+  <!-- ================= BELANGRIJK ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Belangrijk om te weten</span><h2>Pam &amp; Sam is geen therapie.</h2></div>
+      <div class="prose">
+        <p>Pam en Sam zijn AI-gesprekspartners die je helpen nadenken over je situatie. Ze stellen vragen, geven een ander perspectief en helpen je een concrete stap te zetten. Dat is iets anders dan professionele psychologische begeleiding.</p>
+        <p>Bij ernstige psychische klachten, trauma of crisis raden we altijd aan professionele hulp te zoeken. Pam en Sam kunnen je daarbij helpen de juiste stap te zetten, maar zijn geen vervanging voor een therapeut of huisarts. Bij acuut gevaar bel 112. Voor donkere of suïcidale gedachten kun je dag en nacht terecht bij 113 Zelfmoordpreventie via 113 of 0800-0113. Ben je in een ander land? Bel dan je lokale alarmnummer en kijk op <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a> voor een hulplijn bij jou in de buurt.</p>
+      </div>
+      <div class="two-col">
+        <div><h3>Pam &amp; Sam is goed voor</h3><ul><li>Alledaagse vraagstukken en dilemma's</li><li>Een ander perspectief op een situatie</li><li>Zakelijke en persoonlijke beslissingen</li><li>Een veilig gesprek zonder oordeel</li></ul></div>
+        <div><h3>Zoek professionele hulp bij</h3><ul><li>Ernstige depressie of angststoornissen</li><li>Trauma of PTSS</li><li>Medicatie of medische vragen</li><li>Acute crisis of gevaar</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Veelgestelde vragen</span><h2>Antwoorden op jouw vragen</h2></div>
+      <details><summary>Is mijn gesprek echt anoniem?</summary><p>Wij bewaren je gesprekken niet op onze servers. Ben je gratis gebruiker, dan wordt er niets opgeslagen: sluit je de browser, dan is het gesprek weg. Heb je een abonnement, dan wordt je gesprek alleen lokaal in je eigen browser bewaard zodat je later verder kunt, en je kunt het op elk moment zelf wissen. Om je een antwoord te geven worden je berichten verwerkt door de AI-techniek achter Pam en Sam. Van jou kennen wij alleen je e-mailadres. Caren heeft geen toegang tot de inhoud van je gesprekken.</p></details>
+      <details><summary>Wat is het verschil tussen Pam en Sam?</summary><p>Pam is warm en empathisch. Ze geeft eerst ruimte aan wat je voelt voordat ze vragen stelt. Sam is rationeel en analytisch. Hij kijkt naar feiten, oorzaken en concrete stappen. Beide zijn geïnspireerd door gesprekken met Caren.</p></details>
+      <details><summary>Is dit hetzelfde als therapie?</summary><p>Nee. Pam en Sam zijn AI-gesprekspartners, geen therapeuten of psychologen. Ze helpen je nadenken en een stap te zetten. Bij ernstige psychische klachten raden we altijd professionele hulp aan.</p></details>
+      <details><summary>Hoe zeg ik mijn abonnement op?</summary><p>Klik rechtsboven op "Mijn account" en daarna op "Abonnement beheren". Daar kun je op elk moment zelf opzeggen, zonder gedoe.</p></details>
+      <details><summary>Kan ik wisselen tussen Pam en Sam?</summary><p>Ja, altijd. Via de wisselknop in het chatvenster schakel je direct over. Het gesprek gaat naadloos verder, de nieuwe gesprekspartner heeft de context gelezen.</p></details>
+      <details><summary>Wat als ik het niet prettig vind?</summary><p>Dan zeg je het abonnement op en betaal je niets meer. Geen gedoe, geen verborgen kosten. De 6 gratis kennismakingsvragen zijn er juist voor om te ontdekken of het bij je past.</p></details>
+      <details><summary>Wordt mijn gesprek opgeslagen?</summary><p>Voor abonnees wordt het gesprek automatisch lokaal opgeslagen in je eigen browser, zodat je later verder kunt gaan waar je gebleven bent. Je kunt je gesprek op elk moment wissen via de wisknop in de chat. Voor gratis gebruikers wordt niets opgeslagen.</p></details>
+      <details><summary>Wat gebeurt er na de zes gratis vragen?</summary><p>Er wordt niets afgeschreven. Je ziet de keuze tussen maandelijks en jaarlijks. Let op: een gratis gesprek wordt niet bewaard, dus na betaling begin je een nieuw gesprek. De zes vragen zijn er om te ontdekken of dit bij je past.</p></details>
+      <details><summary>Kan ik praten in plaats van typen?</summary><p>Ja. Als abonnee kun je spreken in plaats van typen, in hetzelfde gesprek.</p></details>
+      <details><summary>Hoe log ik in?</summary><p>Na betaling krijg je een toegangscode per e-mail. Log in met je e-mailadres en die code. Code kwijt? Klik op “Code vergeten?” en we sturen je een nieuwe.</p></details>
+    </div>
+  </section>
+
+  <!-- ================= VERTROUWEN, DELEN, CONTACT ================= -->
+  <section>
+    <div class="wrap">
+      <div class="two-col" style="margin-top:0">
+        <div class="prose">
+          <span class="eyebrow">Jouw vertrouwen staat voorop</span>
+          <p>Wat je deelt blijft vertrouwelijk: we bewaren je gesprekken niet op onze servers, als abonnee blijft je gesprek alleen in je eigen browser en kun je het altijd zelf wissen, en Caren leest niet mee.</p>
+          <span class="eyebrow" style="margin-top:28px">Ken je iemand die hier iets aan heeft?</span>
+          <p>Pam &amp; Sam groeit van mens tot mens, niet via reclame. Deel het met iemand die het kan gebruiken.</p>
+          <div class="share">
+            <a class="btn" href="https://wa.me/?text=Pam%20%26%20Sam%3A%20https%3A%2F%2Fpamandsam.com" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpamandsam.com" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 style="font-size:var(--step-3);margin-top:12px">Stel een vraag.</h2>
+          <p class="note" style="margin-top:12px">Heb je een vraag over Pam &amp; Sam? Vul het formulier in en we reageren binnen 24 uur.</p>
+          <form class="simple" id="contactForm">
+            <label for="cName">Naam<input id="cName" autocomplete="name"></label>
+            <label for="cMail">E-mailadres<input id="cMail" type="email" autocomplete="email"></label>
+            <label for="cMsg">Bericht<textarea id="cMsg" rows="4"></textarea></label>
+            <button class="btn" type="submit" style="justify-self:start">Verstuur bericht</button>
+            <p class="done" id="contactDone" hidden>Dank je. In deze testversie wordt niets verstuurd.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AFSLUITING ================= -->
+  <section class="closing">
+    <div class="wrap">
+      <p class="quote">“I am not a product of my circumstances. I am a product of my decisions.”</p>
+      <p class="who">— Stephen Covey, The 7 Habits of Highly Effective People</p>
+      <h2 style="font-size:var(--step-3);margin-top:64px">Klaar om te beginnen?</h2>
+      <p class="note" style="margin-top:12px">Start gratis. Geen creditcard nodig. Anoniem. Altijd opzegbaar.</p>
+      <ul class="checks"><li>✓ Eerste 6 vragen gratis</li><li>✓ Geen creditcard</li><li>✓ Anoniem gesprek</li></ul>
+      <a class="btn" href="#kies">Gratis kennismaking starten</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span>Pam &amp; Sam · Privacy · Voorwaarden · Contact · info@pamandsam.com</span>
+      <span>Waar gaat het over? Vast in een keuze · Spanning in je relatie · Werk wordt te veel</span>
+    </div>
+    <p style="margin-top:16px">© 2026 Pam &amp; Sam · een product van SEC Pardo BV, Amsterdam · KVK: 57637686</p>
+    <p style="margin-top:8px">Testversie van Studio.Edu. Gesprekken lopen via Claude en worden niet bewaard.</p>
+  </div>
+</footer>
+
+<!-- ================= CHAT ================= -->
+<div class="chat grain" id="chat" role="dialog" aria-modal="true" aria-labelledby="chatTitle" hidden>
+  <div class="chat-top">
+    <span class="logo" id="chatTitle">Pam &amp; Sam<span class="cur" id="chatCur"></span></span>
+    <nav>
+      <button class="ghost" type="button" id="switchBtn">Wissel</button>
+      <button class="ghost" type="button" id="reportBtn">Verslag</button>
+      <button class="ghost" type="button" id="closeBtn">Sluiten</button>
+    </nav>
+  </div>
+  <div class="scroll" id="scroll">
+    <div class="log" id="log" aria-live="polite"></div>
+  </div>
+  <div class="dock">
+    <div class="tools" role="group" aria-label="Markeren">
+      <button class="tool" type="button" id="toolMark" aria-pressed="false"><span class="dot"></span>Markeer</button>
+      <button class="tool" type="button" id="toolStrike" aria-pressed="false"><span class="bar"></span>Doorstreep</button>
+    </div>
+    <form id="sendForm">
+      <div class="field">
+        <label class="sr" for="input">Jouw antwoord</label>
+        <textarea id="input" rows="1" placeholder="Schrijf hier…"></textarea>
+      </div>
+      <div class="actions">
+        <button class="pill" type="button" id="sumBtn">Vat het samen</button>
+        <button class="pill primary" type="submit" id="sendBtn">Verstuur</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+    </form>
+  </div>
+  <div class="report" id="report" hidden>
+    <div class="inner">
+      <span class="eyebrow" style="color:#625649">Verslag</span>
+      <h2>Jouw woorden</h2>
+      <p class="meta" id="reportMeta"></p>
+      <div id="reportBody"></div>
+      <div class="row">
+        <button class="pill" type="button" id="copyBtn">Kopieer</button>
+        <button class="pill" type="button" id="backBtn">Terug naar het gesprek</button>
+      </div>
+      <p class="meta" id="copyNote"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- getypte zin ---------- */
+  const typed = document.getElementById('typed');
+  if (!reduce && typed) {
+    const full = typed.textContent; typed.textContent = '';
+    let i = 0;
+    const tick = () => {
+      if (i >= full.length) return;
+      typed.textContent += full[i++];
+      const ch = full[i-1];
+      const pause = ch === ' ' ? 120 : (ch === '.' ? 0 : 55 + Math.random()*70);
+      setTimeout(tick, i === 4 ? 380 : pause);
+    };
+    setTimeout(tick, 900);
+  }
+
+  /* ---------- formulieren (test) ---------- */
+  for (const [f, d] of [['expForm','expDone'],['contactForm','contactDone']]) {
+    document.getElementById(f).addEventListener('submit', e => { e.preventDefault(); document.getElementById(d).hidden = false; });
+  }
+
+  /* ---------- gesprek ---------- */
+  const FIRST = { pam: 'Fijn dat je er bent. Vertel me rustig waar je mee zit.', sam: 'Waar gaat het om?' };
+  const CHIPS = ['Ik zit met een keuze waar ik niet uitkom', "Er speelt iets in m'n relatie", 'Het loopt vast op werk', 'Ik weet niet waar ik moet beginnen'];
+  const FALLBACK = {
+    pam: ['Wat raakt je daar het meest aan?', 'Wat voel je als je daar nu aan denkt?', 'Wat zou je willen dat er anders was?', 'Wat weet je eigenlijk al, diep vanbinnen?', 'Als je het in één zin zou zeggen: wat neem je hieruit mee?', 'Welke kleine stap kies je zelf voor vandaag?'],
+    sam: ['Wat is precies het probleem?', 'Wat heb je al geprobeerd?', 'Wat houdt je tegen?', 'Wat wil jij, los van anderen?', 'Wat is je conclusie, in één zin?', 'Wat is je eerste stap?']
+  };
+  const RULES = v => {
+    const base = v === 'pam'
+      ? 'Je bent Pam van Pam & Sam: een warme, empathische gesprekspartner, geïnspireerd door de methode van coach Caren Pardovitch. Je geeft eerst kort ruimte aan wat iemand voelt, daarna stel je een vraag.'
+      : 'Je bent Sam van Pam & Sam: een directe, nuchtere gesprekspartner, geïnspireerd door de methode van coach Caren Pardovitch. Je gaat snel naar de kern, zonder omwegen, maar altijd goed bedoeld.';
+    return base + `
+Het doel: de gebruiker komt zelf op het antwoord. Jij geeft nooit advies, oplossingen, meningen of lijstjes.
+Regels:
+- Elke beurt is kort (${v === 'pam' ? 'hooguit 40' : 'hooguit 25'} woorden) en eindigt met precies één vraag.
+- Gebruik waar het kan de eigen woorden van de gebruiker.
+- Werk toe naar een conclusie. Na vier à zes vragen vraag je de gebruiker om in één zin zelf te zeggen wat hij of zij nu weet. Daarna vraag je welke ene kleine stap de gebruiker zelf kiest.
+- Heeft de gebruiker een eigen conclusie en een stap genoemd, sluit dan af met één korte zin zonder vraag, en nodig uit om met "Vat het samen" het verslag te maken.
+- Schrijf in het Nederlands. Geen opsommingstekens, geen vetgedrukte tekst, geen emoji, geen aanhalingstekens rond je antwoord.
+- Noem jezelf nooit therapeut. Bij signalen van acuut gevaar verwijs je rustig naar 113 Zelfmoordpreventie (113 of 0800-0113) of 112.
+- Antwoord alleen met jouw volgende beurt.`;
+  };
+
+  const chat = document.getElementById('chat'), log = document.getElementById('log'), scroll = document.getElementById('scroll');
+  const input = document.getElementById('input'), sendBtn = document.getElementById('sendBtn'), status = document.getElementById('status');
+  const toolMark = document.getElementById('toolMark'), toolStrike = document.getElementById('toolStrike');
+  const report = document.getElementById('report');
+  let voice = null, msgs = [], marks = new Map(), mode = null, busy = false, ctl = null, origin = null, fbIndex = 0, live = true;
+  const samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null);
+
+  function setVoice(v) {
+    voice = v; chat.dataset.voice = v;
+    const cur = document.getElementById('chatCur');
+    cur.style.setProperty('--c', getComputedStyle(document.documentElement).getPropertyValue(v === 'pam' ? '--pam-cursor' : '--sam-cursor'));
+    cur.style.setProperty('--g', getComputedStyle(document.documentElement).getPropertyValue(v === 'pam' ? '--pam-glow' : '--sam-glow'));
+    document.getElementById('switchBtn').innerHTML = 'Wissel<span class="long"> naar ' + (v === 'pam' ? 'Sam' : 'Pam') + '</span>';
+  }
+
+  function words(text, mi) {
+    const frag = document.createDocumentFragment();
+    text.split(/(\s+)/).forEach((tok, wi) => {
+      if (!tok) return;
+      const s = document.createElement('span'); s.className = /^\s+$/.test(tok) ? 'w sp' : 'w'; s.dataset.k = mi + ':' + wi; s.textContent = tok;
+      const m = marks.get(s.dataset.k); if (m) s.classList.add(m);
+      frag.append(s);
+    });
+    return frag;
+  }
+  function render() {
+    log.replaceChildren();
+    msgs.forEach((m, mi) => {
+      const p = document.createElement('p'); p.className = 'msg ' + m.who + (m.thinking ? ' thinking' : '');
+      if (m.thinking && !m.text) p.setAttribute('aria-label', (voice === 'pam' ? 'Pam' : 'Sam') + ' denkt na');
+      p.append(m.streaming ? document.createTextNode(m.text) : words(m.text, mi));
+      log.append(p);
+    });
+    if (msgs.length === 1) {
+      const c = document.createElement('div'); c.className = 'chips';
+      CHIPS.forEach(t => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t; b.onclick = () => { input.value = t; send(); }; c.append(b); });
+      log.append(c);
+    }
+    scroll.scrollTop = scroll.scrollHeight;
+  }
+
+  /* ---------- openen en sluiten ---------- */
+  function openChat(v, fromEl) {
+    if (voice !== v) { msgs = [{ who: 'q', text: FIRST[v] }]; marks.clear(); fbIndex = 0; }
+    setVoice(v); render();
+    chat.hidden = false; document.body.style.overflow = 'hidden';
+    origin = fromEl || null;
+    if (fromEl && !reduce) {
+      const r = fromEl.getBoundingClientRect(), W = innerWidth, H = innerHeight;
+      chat.style.transition = 'none';
+      chat.style.clipPath = `inset(${r.top}px ${W - r.right}px ${H - r.bottom}px ${r.left}px round 16px)`;
+      chat.getBoundingClientRect();
+      chat.style.transition = '';
+      requestAnimationFrame(() => { chat.style.clipPath = 'inset(0 0 0 0 round 0)'; });
+    } else { chat.style.clipPath = 'inset(0 0 0 0 round 0)'; }
+    setTimeout(() => input.focus({ preventScroll: true }), reduce ? 0 : 450);
+  }
+  function closeChat() {
+    if (ctl) ctl.abort();
+    report.hidden = true;
+    const done = () => { chat.hidden = true; document.body.style.overflow = ''; if (origin) origin.focus(); };
+    if (origin && !reduce) {
+      const r = origin.getBoundingClientRect(), W = innerWidth, H = innerHeight;
+      chat.style.clipPath = `inset(${r.top}px ${W - r.right}px ${H - r.bottom}px ${r.left}px round 16px)`;
+      setTimeout(done, 520);
+    } else done();
+  }
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => openChat(b.dataset.open, b)));
+  document.getElementById('closeBtn').onclick = closeChat;
+  document.getElementById('switchBtn').onclick = () => {
+    const v = voice === 'pam' ? 'sam' : 'pam'; setVoice(v); render();
+    status.textContent = (v === 'pam' ? 'Pam' : 'Sam') + ' heeft het gesprek gelezen en gaat verder.';
+  };
+  addEventListener('keydown', e => {
+    if (e.key !== 'Escape' || chat.hidden) return;
+    if (!report.hidden) { report.hidden = true; input.focus(); } else closeChat();
+  });
+
+  /* ---------- versturen ---------- */
+  input.addEventListener('input', () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; });
+  input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
+  document.getElementById('sendForm').addEventListener('submit', e => { e.preventDefault(); send(); });
+
+  async function send() {
+    const text = input.value.trim(); if (!text || busy) return;
+    input.value = ''; input.style.height = 'auto';
+    msgs.push({ who: 'a', text });
+    const q = { who: 'q', text: '', thinking: true, streaming: true }; msgs.push(q); render();
+    busy = true; sendBtn.disabled = true; status.textContent = '';
+    const sample = live ? await samplePromise : null;
+    try {
+      if (!sample) throw { code: 'no_sample' };
+      const asked = msgs.filter(m => m.who === 'q' && !m.thinking).length;
+      const turns = [{ role: 'user', content: RULES(voice) + `\n\nJe hebt in dit gesprek al ${asked} vragen gesteld. Het gesprek begint met jouw openingsvraag.` }];
+      msgs.slice(0, -1).forEach(m => turns.push({ role: m.who === 'q' ? 'assistant' : 'user', content: m.text }));
+      if (turns[1] && turns[1].role === 'assistant') { /* openingsvraag als context: zet er een korte gebruikersbeurt voor */
+        turns.splice(1, 0, { role: 'user', content: '(De gebruiker opent het gesprek.)' });
+      }
+      ctl = new AbortController();
+      const { text: out } = await sample(turns, { cache: false, modelTier: 'quick', signal: ctl.signal,
+        onText: ({ text }) => { q.thinking = false; q.text = clean(text); render(); } });
+      q.text = clean(out);
+    } catch (e) {
+      if (e && e.code === 'cancelled') { q.text = q.text || '…'; }
+      else {
+        if (e && e.code !== 'no_sample' && ['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e.code)) live = false;
+        if (e && e.code === 'no_sample') live = false;
+        const list = FALLBACK[voice]; q.text = list[Math.min(fbIndex++, list.length - 1)];
+        status.textContent = live ? 'Dit antwoord kwam niet door. Probeer het zo nog eens.' : 'Dit is de oefenversie: Pam en Sam stellen hier vaste vragen.';
+        if (!reduce) { const full = q.text; q.text = ''; q.thinking = true; render(); await new Promise(r => setTimeout(r, 700)); q.thinking = false; q.text = full; }
+      }
+    } finally {
+      q.thinking = false; q.streaming = false; busy = false; sendBtn.disabled = false; render(); input.focus({ preventScroll: true });
+    }
+  }
+  const clean = t => t.replace(/\*\*?|__|#+\s/g, '').replace(/^["“]|["”]$/g, '').trim();
+
+  /* ---------- markeren en doorstrepen ---------- */
+  function setMode(m) {
+    mode = mode === m ? null : m;
+    toolMark.setAttribute('aria-pressed', String(mode === 'mk'));
+    toolStrike.setAttribute('aria-pressed', String(mode === 'st'));
+    log.classList.toggle('marking', !!mode);
+  }
+  toolMark.onclick = () => setMode('mk');
+  toolStrike.onclick = () => setMode('st');
+  let painting = false, paintAction = null;
+  function paint(el) {
+    if (!el || !el.classList || !el.classList.contains('w')) return;
+    const k = el.dataset.k;
+    if (paintAction === 'add') { marks.set(k, mode); el.classList.remove('mk','st'); el.classList.add(mode); }
+    else { marks.delete(k); el.classList.remove('mk','st'); }
+  }
+  log.addEventListener('pointerdown', e => {
+    if (!mode) return; const el = e.target.closest('.w'); if (!el) return;
+    e.preventDefault(); painting = true; paintAction = marks.get(el.dataset.k) === mode ? 'remove' : 'add'; paint(el);
+  });
+  addEventListener('pointermove', e => { if (painting) paint(document.elementFromPoint(e.clientX, e.clientY)); });
+  function fillGaps() {
+    log.querySelectorAll('.w.sp').forEach(sp => {
+      const a = sp.previousElementSibling, b = sp.nextElementSibling;
+      const ma = a && marks.get(a.dataset.k), mb = b && marks.get(b.dataset.k);
+      sp.classList.remove('mk','st');
+      if (ma && ma === mb) { marks.set(sp.dataset.k, ma); sp.classList.add(ma); } else marks.delete(sp.dataset.k);
+    });
+  }
+  addEventListener('pointerup', () => { if (painting) fillGaps(); painting = false; });
+  addEventListener('pointercancel', () => { painting = false; });
+
+  /* ---------- verslag ---------- */
+  function buildReport() {
+    const body = document.getElementById('reportBody'); body.replaceChildren();
+    const parts = []; let cur = null;
+    msgs.forEach((m, mi) => {
+      m.text.split(/(\s+)/).forEach((tok, wi) => {
+        if (!tok || /^\s+$/.test(tok)) return;
+        if (marks.get(mi + ':' + wi) === 'mk') { if (cur && cur.mi === mi && cur.last === wi - 2) { cur.text += ' ' + tok; cur.last = wi; } else { cur = { mi, last: wi, text: tok, q: m.who === 'q' }; parts.push(cur); } }
+      });
+    });
+    const d = new Date();
+    document.getElementById('reportMeta').textContent = 'Gesprek met ' + (voice === 'pam' ? 'Pam' : 'Sam') + ' · ' + d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+    if (!parts.length) {
+      const p = document.createElement('p'); p.className = 'empty';
+      p.textContent = 'Je hebt nog niets gemarkeerd. Zet Markeer aan en strijk over de woorden die je wilt bewaren. Wat je doorstreept, laat je hier los.';
+      body.append(p); return '';
+    }
+    const ol = document.createElement('ol');
+    parts.forEach(pt => { const li = document.createElement('li'); li.textContent = pt.text; if (pt.q) li.style.fontStyle = 'italic'; ol.append(li); });
+    body.append(ol);
+    return parts.map(p => '• ' + p.text).join('\n');
+  }
+  let reportText = '';
+  const showReport = () => { reportText = buildReport(); document.getElementById('copyNote').textContent = ''; report.hidden = false; document.getElementById('backBtn').focus(); };
+  document.getElementById('sumBtn').onclick = showReport;
+  document.getElementById('reportBtn').onclick = showReport;
+  document.getElementById('backBtn').onclick = () => { report.hidden = true; input.focus(); };
+  document.getElementById('copyBtn').onclick = () => {
+    const note = document.getElementById('copyNote');
+    if (!reportText) { note.textContent = 'Er is nog niets om te kopiëren.'; return; }
+    navigator.clipboard.writeText(reportText).then(() => { note.textContent = 'Gekopieerd.'; }, () => {
+      note.textContent = 'Kopiëren lukte niet. Selecteer de tekst hierboven en kopieer hem zelf.';
+    });
+  };
+})();
+</script>
