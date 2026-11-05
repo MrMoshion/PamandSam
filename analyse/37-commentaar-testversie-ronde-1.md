@@ -108,5 +108,5 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - **Vast menu:** zodra je voorbij de kop scrolt, komt het menu rustig bovenaan in beeld, op een licht vlak. "Probeer gratis" gloeit erin.
 - **"Waarom niet een gratis chatbot?"** staat nu in avondblauw, opgebouwd uit Sams blauw. Pam & Sam blijft het verlichte raam in wit licht.
 - **Rustig binnenkomen:** koppen, tekst en vlakken vervagen één keer zacht in (0,9 s). Vlakken naast elkaar komen één voor één, met 0,12 s ertussen. "Herken je jezelf hierin?" en "Klaar om te beginnen?" worden getypt, met dezelfde cursor als in de kop. Wie in het systeem minder beweging heeft ingesteld, ziet alles direct.
-- **De lichtbaan** is weg uit de site en de koppen. Ze hoort alleen in de chatvensters, want daarbuiten oogde ze als een gimmick (besluit ontwerper).
+- **De lichtbaan** is weg uit de secties en de koppen van de onderwerppagina's. In de kop van de homepage blijft ze, als opener (besluit ontwerper). Ze hoort alleen in de chatvensters, want daarbuiten oogde ze als een gimmick (besluit ontwerper).
 - **Favicon en app-icoon:** de witte cursor met de gloed van de lamp, op de schemering. Bestanden in `assets/icon/`: favicon.svg, en app-icon in svg, 180 en 512 pixels.
