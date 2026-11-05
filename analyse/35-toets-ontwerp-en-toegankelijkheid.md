@@ -66,3 +66,10 @@ Studio.Edu · 5 november 2026. Skills: `design:design-critique` en `design:acces
   - geen tekstballonnen.
 - **Ruimte:** meer ademruimte rondom en tussen de regels.
 - **De plek van de kolom:** op desktop iets links van het midden. Op mobiel staat het schrijfveld onderaan, in het bereik van de duim. Zie beelden 22 en 23.
+- **Bijgesteld:** de kolom staat toch in het midden, ook op desktop.
+- **Markeren (gekozen: strijken, zoals met een stift):**
+  - boven het schrijfveld staan twee standen: *Markeer* (met een stip in de markeerkleur) en *Doorstreep*;
+  - in een stand strijk je met muis of vinger over de woorden;
+  - **alles mag gemarkeerd worden:** je eigen tekst en de vragen van Pam en Sam;
+  - de markeerkleur is warm geel bij Pam en lichtblauw bij Sam; later kies je hem zelf.
+- ***Vat het samen* maakt het verslag uit wat jij hebt gemarkeerd,** in je eigen woorden. Wat je doorstreept, verdwijnt aan het eind. Zie beelden 24 en 25.
