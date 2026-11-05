@@ -88,3 +88,5 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
   - Wisselen van onderwerp vloeit over, net als wisselen tussen Pam en Sam.
   - Nieuwe berichten verschijnen zacht.
   - Onderwerppagina's vloeien over.
+- **Ruimte rond knoppen (desktop):** bij alle knoppen en links is de afstand tot de tekst erboven nagemeten. Waar het krap was, is het minstens 24 px geworden: "Lees meer" op de kaarten, de knoppen bij de tarieven en de knoppen onder de formulieren. Knoppen naast elkaar staan op één lijn.
+- **Les:** meet na elke ronde zelf de ruimte rond alle knoppen. Wacht daar niet mee tot de ontwerper het opmerkt.
