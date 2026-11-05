@@ -877,7 +877,7 @@ Regels:
   let chatFs = 15; try { chatFs = [15, 17, 19].includes(+localStorage.getItem('pamsam-tekst')) ? +localStorage.getItem('pamsam-tekst') : 15; } catch (e) {}
   let convs = []; try { convs = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { convs = []; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(convs.slice(0, 30))); } catch (e) {} };
-  let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true, anim = false;
+  let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true, anim = false, askId = 0, handTimer = null;
   const chat = $('chat'), roomBg = $('roomBg'), log = $('log'), scroll = $('scroll'), input = $('input'), sendBtn = $('sendBtn'), status = $('status');
   const samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null);
   const newConv = (voice, topic) => { const c = { id: Date.now().toString(36), voice, topic: topic || null, title: topic ? TOPICS[topic].title.replace('?', '') : 'Nieuw onderwerp', msgs: [{ who: 'q', voice, text: INTRO[voice] }], marks: {}, fb: 0, at: Date.now() }; convs.unshift(c); save(); return c; };
@@ -1053,7 +1053,14 @@ Regels:
 
   /* ---------- wisselen: snelle overgang, en de nieuwe stem stelt zich voor ---------- */
   $('switchBtn').onclick = () => {
-    if (busy || anim) return;
+    if (anim) return;
+    clearTimeout(handTimer);
+    if (busy) {
+      askId++; if (ctl) ctl.abort();
+      const last = conv.msgs[conv.msgs.length - 1];
+      if (last && last.who === 'q' && (last.thinking || last.streaming)) conv.msgs.pop();
+      busy = false; sendBtn.disabled = false;
+    }
     const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam';
     const ghost = snapshot(false); closeMenu();
     if (!reduce) { log.classList.remove('arrive'); void log.offsetWidth; log.classList.add('arrive'); }
@@ -1062,7 +1069,7 @@ Regels:
     if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
     applyVoice(to); render(); save(); status.textContent = '';
     dissolve(ghost);
-    if (talked) setTimeout(() => ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`), reduce ? 0 : 500);
+    if (talked) handTimer = setTimeout(() => ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`), reduce ? 0 : 500);
   };
 
   /* ---------- versturen ---------- */
@@ -1088,6 +1095,7 @@ Regels:
     c.msgs.push({ who: 'a', text }); ask(c, null);
   }
   async function ask(c, extra) {
+    const id = ++askId, stale = () => id !== askId;
     const q = { who: 'q', voice: c.voice, text: '', thinking: true, streaming: true }; c.msgs.push(q); c.at = Date.now(); render();
     busy = true; sendBtn.disabled = true;
     const sample = live ? await samplePromise : null;
@@ -1099,7 +1107,7 @@ Regels:
       if (extra) pushTurn(turns, 'user', extra);
       ctl = new AbortController();
       const { text: out } = await sample(turns, { cache: false, modelTier: 'quick', signal: ctl.signal,
-        onText: ({ text }) => { q.thinking = false; q.text = clean(text); if (conv === c) render(); } });
+        onText: ({ text }) => { if (stale()) return; q.thinking = false; q.text = clean(text); if (conv === c) render(); } });
       q.text = clean(out);
     } catch (e) {
       if (e && e.code === 'cancelled') { q.text = q.text || '…'; }
@@ -1107,9 +1115,10 @@ Regels:
         if (!e || ['no_sample','not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e.code)) live = false;
         const list = FALLBACK[c.voice]; q.text = (extra ? HANDOVER[c.voice] + ' ' : '') + list[Math.min(c.fb++, list.length - 1)];
         status.textContent = live ? 'Dit antwoord kwam niet door. Probeer het zo nog eens.' : 'Dit is de oefenversie: Pam en Sam stellen hier vaste vragen.';
-        if (!reduce) { const full = q.text; q.text = ''; q.thinking = true; render(); await new Promise(r => setTimeout(r, 700)); q.thinking = false; q.text = full; }
+        if (!reduce) { const full = q.text; q.text = ''; q.thinking = true; render(); await new Promise(r => setTimeout(r, 700)); if (stale()) return; q.thinking = false; q.text = full; }
       }
     } finally {
+      if (stale()) return;
       q.thinking = false; q.streaming = false; busy = false; sendBtn.disabled = false; save(); if (conv === c) render(); if (!chat.hidden) input.focus({ preventScroll: true });
     }
   }
