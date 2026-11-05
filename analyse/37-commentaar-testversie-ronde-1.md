@@ -131,3 +131,9 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - **Mobiel:** de tekst in het gesprek is 15 px, de schrijfregel 16 px. Onder de 16 px zoomt de iPhone bij het typen vanzelf in.
 - **Oorzaak van het eerdere probleem:** de regels voor mobiel stonden in het stijlblad vóór de gewone regels en werden daardoor overschreven. De tekst bleef dus 20 px, ook nadat ik meldde dat hij kleiner was. Het mobiele blok staat nu achteraan.
 - **Les:** meet na elke wijziging de werkelijke waarde in de browser (lettergrootte, afstand), en lees die niet alleen af uit de code. En lees een opdracht van de ontwerper zin voor zin terug voordat ik bouw.
+
+## Ronde 11
+
+- **Wisselen op mobiel:** de oude knoppen en de balk zitten niet meer in de laag die wegvloeit, dus je ziet geen dubbele knoppen meer. Het oude gesprek vervaagt eerst (0,45 s), daarna komt het nieuwe (0,6 s). Ze lopen niet meer door elkaar.
+- **Tekstgrootte in het menu op mobiel:** 15 px als standaard (door de ontwerper goedgekeurd), en twee stappen groter: 17 en 19 px. De keuze blijft bewaard, en het voorproefje schaalt mee.
+- **Toetsenbord sluiten:** in de Claude-app ontbreekt de knop die Safari zelf laat zien. Daarom staat er een eigen icoon in de schrijfregel, een toetsenbord met een pijltje omlaag. Het verschijnt alleen op een touchscreen en alleen tijdens het typen. De Enter-toets van het toetsenbord heet "verstuur".

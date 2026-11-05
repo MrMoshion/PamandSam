@@ -259,6 +259,7 @@ html{scrollbar-gutter:stable}
 .chat-top{position:relative}
 #menuBtn{display:none}
 #switchBtn2{display:none}
+.sizes{display:none}
 .m-only{display:none}
 .ghost .x{width:20px;height:20px;display:block}
 #closeBtn{width:44px;justify-content:center;padding:0;display:inline-flex;align-items:center}
@@ -310,6 +311,9 @@ html{scrollbar-gutter:stable}
 @media (prefers-reduced-motion: reduce){.demo.mk .ink{animation:none;background-size:100% 100%}.demo.st .ink::after{animation:none;width:100%}}
 .field{display:flex;align-items:flex-end;border-bottom:1px solid rgba(0,0,0,.4);padding-bottom:10px}
 .field textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:var(--step-1);line-height:1.45;max-height:9em;padding:0;caret-color:var(--c)}
+.kbd{display:none;flex:none;width:44px;height:44px;margin:-10px -10px -6px 4px;align-items:center;justify-content:center;border:0;border-radius:50%;background:transparent;color:var(--soft);cursor:pointer}
+.kbd svg{width:24px;height:24px}
+.field.typing .kbd{display:inline-flex}
 .field textarea::placeholder{color:var(--soft);opacity:.85}
 .actions{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
 .pill{font:inherit;font-size:1rem;cursor:pointer;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:30px;padding:10px 22px;min-height:46px}
@@ -339,6 +343,8 @@ html{scrollbar-gutter:stable}
 .report{position:absolute;inset:0;z-index:5;overflow-y:auto;opacity:0;transform:translateY(12px);transition:opacity .42s var(--ease),transform .42s var(--ease)}
 .report.in{opacity:1;transform:none}
 .log .enter{animation:rise .7s var(--ease) both}
+.log.arrive{animation:arrive .6s var(--ease) .3s both}
+@keyframes arrive{from{opacity:0}}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}}
 #home,#topics{transition:opacity .3s var(--ease)}
 html.page-out #home,html.page-out #topics{opacity:0}
@@ -371,7 +377,12 @@ html.page-out #home,html.page-out #topics{opacity:0}
   .menu.in{opacity:1;transform:none;pointer-events:auto}
   .menu .ghost{text-align:left;font-size:16px;padding:12px 14px}
   .ghost{font-size:15px}
-  .log{font-size:15px;line-height:1.6;padding-top:24px}
+  .log{font-size:var(--chat-fs,15px);line-height:1.6;padding-top:24px}
+  .sizes{display:flex;align-items:center;gap:2px;margin-top:4px;padding:8px 6px 2px 14px;border-top:1px solid rgba(0,0,0,.08);font-size:15px;color:var(--soft)}
+  .sizes span{flex:1}
+  .sizes button{all:unset;cursor:pointer;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:var(--ink);transition:background .25s}
+  .sizes button:nth-of-type(1){font-size:14px}.sizes button:nth-of-type(2){font-size:17px}.sizes button:nth-of-type(3){font-size:20px}
+  .sizes button[aria-pressed="true"]{background:rgba(var(--g),.22)}
   .turn{margin-top:32px}
   .msg.a{margin-top:12px}
   .turn .name{font-size:12.5px}
@@ -380,7 +391,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
   .actions{align-items:center;margin-top:18px}
   #sumBtn{border:0;padding:10px 2px;font-size:15px;text-decoration:underline;text-decoration-color:rgba(0,0,0,.28);text-underline-offset:5px}
   .pill{font-size:15px}
-  .report .body{font-size:15px;line-height:1.6}
+  .report .body{font-size:var(--chat-fs,15px);line-height:1.6}
   .report h2{font-size:1.75rem}
   .room .mini-send span.out{border-color:transparent;padding-left:0;text-decoration:underline}
 }
@@ -661,6 +672,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
           <button class="ghost" type="button" id="switchBtn">Wissel</button>
           <button class="ghost" type="button" id="reportBtn"><span class="d-only">Verslag</span><span class="m-only">Vat het samen</span></button>
+          <div class="sizes" role="group" aria-label="Tekstgrootte"><span>Tekstgrootte</span><button type="button" data-fs="15" aria-label="Normale tekst">A</button><button type="button" data-fs="17" aria-label="Grotere tekst">A</button><button type="button" data-fs="19" aria-label="Grootste tekst">A</button></div>
         </div>
         <button class="ghost" type="button" id="closeBtn" aria-label="Sluiten"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
       </nav>
@@ -681,7 +693,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
         </div>
       </div>
       <form id="sendForm">
-        <div class="field"><label class="sr" for="input">Jouw antwoord</label><textarea id="input" rows="1" placeholder="Schrijf hier…"></textarea></div>
+        <div class="field"><label class="sr" for="input">Jouw antwoord</label><textarea id="input" rows="1" placeholder="Schrijf hier…" enterkeyhint="send"></textarea><button class="kbd" type="button" id="kbdBtn" aria-label="Toetsenbord sluiten"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 7.5h1M9 7.5h1M12 7.5h1M15 7.5h1M18 7.5h.01M6 10.5h1M9 10.5h1M12 10.5h1M15 10.5h1M18 10.5h.01M8 13h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9 18.5l3 2.5 3-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
         <div class="actions">
           <button class="pill" type="button" id="sumBtn">Vat het samen</button>
           <button class="pill" type="button" id="switchBtn2">Wissel</button>
@@ -862,6 +874,7 @@ Regels:
 - Antwoord alleen met jouw volgende beurt, zonder je naam ervoor.`;
 
   const KEY = 'pamsam-onderwerpen-v2';
+  let chatFs = 15; try { chatFs = [15, 17, 19].includes(+localStorage.getItem('pamsam-tekst')) ? +localStorage.getItem('pamsam-tekst') : 15; } catch (e) {}
   let convs = []; try { convs = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { convs = []; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(convs.slice(0, 30))); } catch (e) {} };
   let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true, anim = false;
@@ -873,20 +886,21 @@ Regels:
   const hide = el => { if (el.hidden) return; el.classList.remove('in'); clearTimeout(el._t); el._t = setTimeout(() => { el.hidden = true; }, reduce ? 0 : 430); };
   const seen = new WeakMap();
   /* het oude venster blijft even liggen en vloeit rustig weg boven het nieuwe: nooit eerst naar leeg */
-  function snapshot() {
+  function snapshot(keepChrome = true) {
     if (reduce) return null;
     const ghost = document.createElement('div'); ghost.className = 'chat ' + conv.voice; ghost.setAttribute('aria-hidden', 'true');
     ghost.style.cssText = 'z-index:51;pointer-events:none;opacity:1;height:' + chat.style.height + ';transform:' + chat.style.transform;
     const bg = roomBg.cloneNode(true), lay = chat.querySelector('.layer').cloneNode(true);
     [bg, lay, ...lay.querySelectorAll('[id]')].forEach(e => e.removeAttribute('id'));
     lay.querySelectorAll('.menu').forEach(e => e.classList.remove('in'));
+    if (!keepChrome) lay.querySelectorAll('.chat-top, .dock').forEach(e => { e.style.visibility = 'hidden'; });
     ghost.append(bg, lay); document.body.append(ghost);
     const sc = lay.querySelector('.scroll'); if (sc) sc.scrollTop = scroll.scrollTop;
     return ghost;
   }
   function dissolve(ghost) {
     if (!ghost) return;
-    ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .8s cubic-bezier(.4,0,.2,1)';
+    ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .45s cubic-bezier(.4,0,.2,1)';
     requestAnimationFrame(() => { ghost.style.opacity = '0'; });
     setTimeout(() => ghost.remove(), 850);
   }
@@ -926,7 +940,7 @@ Regels:
     const vw = document.documentElement.clientWidth, tw = vw >= 760 ? Math.min(640, vw) : Math.min(640, vw) - 48;
     document.querySelectorAll('.room').forEach(r => {
       const cs = getComputedStyle(r), inner = r.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-      r.style.setProperty('--tw', tw + 'px'); r.style.setProperty('--fs', (vw < 600 ? 15 : 20) + 'px'); r.style.setProperty('--s', Math.min(.8, inner / tw).toFixed(4));
+      r.style.setProperty('--tw', tw + 'px'); r.style.setProperty('--fs', (vw < 600 ? chatFs : 20) + 'px'); r.style.setProperty('--s', Math.min(.8, inner / tw).toFixed(4));
     });
   }
   addEventListener('resize', sizeMinis); sizeMinis();
@@ -1009,6 +1023,14 @@ Regels:
   });
   $('closeBtn').onclick = closeChat;
   $('switchBtn2').onclick = () => $('switchBtn').onclick();
+  function setFs(v) {
+    chatFs = v; chat.style.setProperty('--chat-fs', v + 'px');
+    document.querySelectorAll('.sizes button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.fs === v)));
+    try { localStorage.setItem('pamsam-tekst', String(v)); } catch (e) {}
+    sizeMinis(); scroll.scrollTop = scroll.scrollHeight;
+  }
+  document.querySelectorAll('.sizes button').forEach(b => { b.onclick = () => setFs(+b.dataset.fs); });
+  setFs(chatFs);
   function closeMenu() { $('menu').classList.remove('in'); $('menuBtn').setAttribute('aria-expanded', 'false'); }
   $('menuBtn').onclick = () => { const open = !$('menu').classList.contains('in'); $('menu').classList.toggle('in', open); $('menuBtn').setAttribute('aria-expanded', String(open)); };
   chat.addEventListener('click', e => { if (!e.target.closest('#menu, #menuBtn')) closeMenu(); });
@@ -1033,7 +1055,8 @@ Regels:
   $('switchBtn').onclick = () => {
     if (busy || anim) return;
     const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam';
-    const ghost = snapshot(); closeMenu();
+    const ghost = snapshot(false); closeMenu();
+    if (!reduce) { log.classList.remove('arrive'); void log.offsetWidth; log.classList.add('arrive'); }
     conv.voice = to;
     const talked = hasAnswers(conv);
     if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
@@ -1044,6 +1067,11 @@ Regels:
 
   /* ---------- versturen ---------- */
   input.addEventListener('input', () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; });
+  const touch = matchMedia('(pointer: coarse)').matches, field = input.closest('.field');
+  input.addEventListener('focus', () => { if (touch) field.classList.add('typing'); });
+  input.addEventListener('blur', () => field.classList.remove('typing'));
+  $('kbdBtn').addEventListener('pointerdown', e => e.preventDefault());
+  $('kbdBtn').addEventListener('click', () => input.blur());
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
   $('sendForm').addEventListener('submit', e => { e.preventDefault(); send(); });
   const clean = t => t.replace(/\*\*?|__|#+\s/g, '').replace(/^\[?(Pam|Sam)\]?:?\s+/, '').replace(/^["“]|["”]$/g, '').trim();
