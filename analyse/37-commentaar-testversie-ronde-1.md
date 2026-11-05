@@ -121,3 +121,4 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - De warme linnen secties lopen langer en zachter uit.
 - De blauwe secties (Caren en "Belangrijk om te weten") zijn nu een vlakke, lichtblauwe box (#E9EEF2), zonder verloop. Regel: blauw staat nooit als verloop, alleen als box.
 - De FAQ klapt zacht open en dicht. Er staat steeds maar één vraag open: opent er een nieuwe, dan klapt de vorige rustig dicht.
+- Lichtblauwe boxen staan nu bij Caren, bij "Belangrijk om te weten" en bij "Stel een vraag" (vertrouwen, delen en contact).

@@ -98,7 +98,7 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 .tone-linen{background:linear-gradient(var(--light),#F5EEE1 18%,#F3EAD8 40%,#F3EAD8 60%,#F5EEE1 82%,var(--light))}
 .daybox{background:#E9EEF2;border-radius:28px;padding:clamp(28px,5vw,56px)}
 @media (max-width:760px){.daybox{border-radius:22px;padding:28px 20px}}
-.daybox .card{background:#FCFAF6}
+.daybox .card,.daybox form.simple input,.daybox form.simple textarea{background:#FCFAF6}
 .tone-beam > .wrap{position:relative}
 .tone-linen .step,.tone-linen .card,.tone-stone .card,.tone-linen form.simple input,.tone-linen form.simple textarea{background:#FCFAF6}
 .sec-head{display:flex;flex-direction:column;gap:12px;max-width:var(--col);margin-bottom:44px}
@@ -587,8 +587,8 @@ html.page-out #home,html.page-out #topics{opacity:0}
     </div>
   </section>
 
-  <section class="tone-linen">
-    <div class="wrap">
+  <section>
+    <div class="wrap"><div class="daybox">
       <div class="two-col" style="margin-top:0">
         <div class="prose">
           <span class="eyebrow">Jouw vertrouwen staat voorop</span>
@@ -613,7 +613,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
           </form>
         </div>
       </div>
-    </div>
+    </div></div>
   </section>
 
   <section class="tone-beam">
