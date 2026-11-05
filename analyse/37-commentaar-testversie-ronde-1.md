@@ -90,3 +90,15 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
   - Onderwerppagina's vloeien over.
 - **Ruimte rond knoppen (desktop):** bij alle knoppen en links is de afstand tot de tekst erboven nagemeten. Waar het krap was, is het minstens 24 px geworden: "Lees meer" op de kaarten, de knoppen bij de tarieven en de knoppen onder de formulieren. Knoppen naast elkaar staan op één lijn.
 - **Les:** meet na elke ronde zelf de ruimte rond alle knoppen. Wacht daar niet mee tot de ontwerper het opmerkt.
+
+## Ronde 6
+
+- **Mobiel menu:** Onderwerpen, Wissel naar Pam of Sam, en Vat het samen. "Sluiten" is een X. "Verstuur" staat rechts.
+- **Onderwerpen:** het paneel heeft geen vervaging van de achtergrond meer. Die zorgde voor haperingen tijdens het inschuiven. Het schuift nu strak in.
+- **Sluiten na een wissel:** het venster gaat altijd terug naar het vlak van de stem waarbij je eindigt. Staat dat vlak buiten beeld, dan schuift de pagina er eerst onzichtbaar naartoe.
+- **Probeer gratis:** gloeit, net als de hoofdknoppen.
+- **Accenten (besluit ontwerper):** de gloed is het algemene accent. Pam is vlak geel (#C9A15F), Sam vlak blauw (#4F6F92), allebei zonder verloop. Ze komen terug als sporen van hun identiteit:
+  - de knoppen "Begin bij Pam" en "Begin bij Sam";
+  - de knoppen "Met Pam" en "Met Sam" op de onderwerppagina's;
+  - een stip voor elk label.
+- **Afwisseling in de secties:** warm linnen (een spoor van Pam), koel daglicht (een spoor van Sam) en lichtval (een zachte, schuine bundel licht). Daarnaast de schemering bij de vergelijking. Elke sectie loopt zacht in en uit, zonder harde randen.
