@@ -36,3 +36,45 @@ Mensen weer zelf laten nadenken, zodat ze zichzelf kunnen helpen en er sterker v
 - AI en het uitbesteden van denken.
 - Stichting Levensportret.
 - Kritiek op AI bij rouw (*griefbots*): Pam and Sam mag daar niet op lijken.
+
+## Onderzoek ter voorbereiding op de brainstorm (5 november 2026)
+**Iedereen worstelt met zichzelf, in cijfers**
+- 42% van de volwassenen voelde zich in juni 2025 enigszins tot sterk eenzaam. 25% ervoer stress in de vier weken daarvoor. Bron: RIVM, kwartaalonderzoek volwassenen (https://www.rivm.nl/gezondheidsonderzoek-covid-19/kwartaalonderzoek-volwassenen/mentale-gezondheid).
+- Ruim 45% van de volwassenen had in de laatste vier weken angst- of depressieve klachten, volgens CBS en Trimbos (via Quest). Het jaar is niet vermeld, dus dit nog controleren.
+- Sterke eenzaamheid: 10,4% bij vrouwen en 9,2% bij mannen. Bron: Trimbos, Monitor mentale gezondheid 2025 (https://www.trimbos.nl/wp-content/uploads/2025/12/Rapport-Monitor-mentale-gezondheid-2025.pdf).
+- Een landelijk cijfer over piekeren bij volwassenen heb ik niet gevonden.
+
+**Zelfhulp als markt**
+- De Nederlandse boekenmarkt in 2025: 44 miljoen boeken en € 637 miljoen omzet. Non-fictie daalde het sterkst. Abonnementen op e-boeken en luisterboeken groeiden met 36%. Bron: CPNB (https://nltimes.nl/2026/01/22/dutch-book-sales-drop-2-million-2025-english-titles-tick-audiobooks-soar).
+- Losse cijfers voor zelfhulp heb ik niet gevonden. Die zijn op te vragen bij CPNB of NielsenIQ.
+
+**AI en het uitbesteden van denken**
+- MIT Media Lab, "Your Brain on ChatGPT" (Kosmyna e.a., 2025, nog niet beoordeeld door vakgenoten):
+  - schrijvers met ChatGPT lieten de zwakste hersenverbinding zien;
+  - ze voelden het minst eigenaarschap over hun tekst;
+  - zonder AI hadden ze daarna moeite met focus en onthouden.
+  - Kleine steekproef (54 studenten). Bron: https://lirneasia.net/2025/12/lirneasia-journal-club-your-brain-on-chatgpt-exploring-the-cognitive-debt-of-ai-assisted-writing
+- OpenAI en MIT (2025): intensief emotioneel gebruik hangt samen met meer eenzaamheid en afhankelijkheid (zie 32).
+
+**Stichting Levensportret**
+- Maakt kosteloos video- en levensportretten van mensen die ongeneeslijk ziek zijn. Rond de 600 à 700 portretten, met vijftig vrijwilligers.
+- Elk portret eindigt met de vraag: "Hoe zou jij herinnerd willen worden?"
+- Opgericht door **Brian de Hond**, geïnspireerd door zijn broer Marc de Hond. Bronnen: MAX Vandaag (https://www.maxvandaag.nl/carrie-op-vrijdag/uit-de-uitzending/stichting-levensportret-brengt-het-verhaal-van-ongeneeslijk-zieke-mensen-in-beeld-heel-waardevol/), nieuws.nl.
+- Mogelijk is dit de Brian met wie de ontwerper sprak. Dat is niet bevestigd.
+- De vraag aan het eind van een portret ligt dicht bij de werkwijze van Pam and Sam: een vraag waarop je zelf het antwoord geeft.
+
+**AI en rouw (griefbots)**
+- Ethici van Cambridge (*Philosophy & Technology*, mei 2024) waarschuwen voor chatbots die overledenen nadoen:
+  - "digitale spoken";
+  - reclame gericht op nabestaanden;
+  - manipulatie.
+- Hun aanbevelingen: een uitknop, zichtbare waarschuwingen, en geen kinderen. Bron: https://cordis.europa.eu/article/id/451347-move-over-chatbot-here-comes-the-deadbot
+- Pam and Sam doet nooit iemand na en laat je los. Dat is het tegenovergestelde, en het moet ook zo blijven.
+
+## Methode voor de brainstorm
+Er komt geen hulpskill voor de brainstorm zelf. De Studio.Edu-werkwijze (2 en 5b) schrijft schetsen vóór vorm voor:
+- een idee in één zin;
+- de vraag die het onder druk zet;
+- wat er overblijft: groeit, verandert of sterft.
+
+`arn-spark:arn-brainstorming` staat bewust op de lijst "niet gebruiken", omdat het een vast stappenplan oplegt. Pas als er een concept staat, kan `arn-spark-stress-premortem` het onder druk zetten, met toestemming.
