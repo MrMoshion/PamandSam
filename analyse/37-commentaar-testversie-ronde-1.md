@@ -122,3 +122,5 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - De blauwe secties (Caren en "Belangrijk om te weten") zijn nu een vlakke, lichtblauwe box (#E9EEF2), zonder verloop. Regel: blauw staat nooit als verloop, alleen als box.
 - De FAQ klapt zacht open en dicht. Er staat steeds maar één vraag open: opent er een nieuwe, dan klapt de vorige rustig dicht.
 - Lichtblauwe boxen staan nu bij Caren, bij "Belangrijk om te weten" en bij "Stel een vraag" (vertrouwen, delen en contact).
+- Cursief bij Pam staat alleen nog bij wat zij zegt en bij haar logo. Het menu, Onderwerpen en de titel van het verslag zijn roman.
+- "Sluiten" is ook op desktop een X.

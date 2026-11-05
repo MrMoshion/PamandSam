@@ -259,7 +259,8 @@ html{scrollbar-gutter:stable}
 .chat-top{position:relative}
 #menuBtn{display:none}
 .m-only{display:none}
-.ghost .x{width:20px;height:20px}
+.ghost .x{width:20px;height:20px;display:block}
+#closeBtn{width:44px;justify-content:center;padding:0;display:inline-flex;align-items:center}
 .menu{display:contents}
 /* mobiel: het gesprek ademt */
 @media (max-width:600px){
@@ -350,7 +351,7 @@ html{scrollbar-gutter:stable}
 .drawer .panel{transform:translateX(-100%);transition:transform .42s var(--ease)}
 .drawer.in .panel{transform:none}
 .drawer h2{font-size:var(--step-2);margin-bottom:8px}
-.chat.pam .drawer h2{font-family:var(--serif);font-style:italic}
+
 .topic-item{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px}
 .topic-item:hover,.topic-item[aria-current="true"]{background:rgba(var(--g),.14)}
 .chat.pam .drawer .panel,.chat.pam .menu{background:#FCF5E4}
@@ -358,8 +359,8 @@ html{scrollbar-gutter:stable}
 .drawer .panel{color:var(--ink)}
 .drawer .panel h2{color:var(--ink)}
 .topic-item span{color:var(--voice)}
-.chat.pam .topic-item span{font-family:var(--serif);font-style:italic}
-.chat.pam .menu .ghost{font-family:var(--serif);font-style:italic}
+
+
 .topic-item small{color:var(--soft);font-size:.875rem}
 /* verslag, in de stijl van Pam of Sam */
 .report{position:absolute;inset:0;z-index:5;overflow-y:auto;opacity:0;transform:translateY(12px);transition:opacity .42s var(--ease),transform .42s var(--ease)}
@@ -373,7 +374,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
 @media (min-width:760px){.report .inner{padding-left:0;padding-right:0}}
 .report .eyebrow{color:var(--soft)}
 .report h2{font-size:var(--step-3);color:var(--ink)}
-.chat.pam .report h2{font-family:var(--serif);font-style:italic}
+
 .chat.sam .report h2{font-weight:400}
 .report .meta{color:var(--soft)}
 .report .body{font-size:var(--step-1);line-height:1.55}
@@ -657,7 +658,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="ghost" type="button" id="switchBtn">Wissel</button>
           <button class="ghost" type="button" id="reportBtn"><span class="d-only">Verslag</span><span class="m-only">Vat het samen</span></button>
         </div>
-        <button class="ghost" type="button" id="closeBtn" aria-label="Sluiten"><span class="d-only">Sluiten</span><svg class="m-only x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <button class="ghost" type="button" id="closeBtn" aria-label="Sluiten"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
       </nav>
     </div>
     <div class="scroll" id="scroll"><div class="log" id="log" aria-live="polite"></div></div>
