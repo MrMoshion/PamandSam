@@ -78,3 +78,12 @@ Er komt geen hulpskill voor de brainstorm zelf. De Studio.Edu-werkwijze (2 en 5b
 - wat er overblijft: groeit, verandert of sterft.
 
 `arn-spark:arn-brainstorming` staat bewust op de lijst "niet gebruiken", omdat het een vast stappenplan oplegt. Pas als er een concept staat, kan `arn-spark-stress-premortem` het onder druk zetten, met toestemming.
+
+## Aanvullingen (5 november 2026)
+- **Brian is Brian de Hond,** een van de beste vrienden van de ontwerper. De ontwerper is nauw betrokken bij Stichting Levensportret.
+- **Griefbots zijn niet aan de orde.** Pam and Sam pretendeert dat niet te zijn.
+- **Schetsen wacht nog.** Het onderzoek hierboven is de basis voor de brainstorm.
+
+## Afspraken voor het bouwen van de site
+- Eerst vier beelden in de kamer: de homepage, kiezen tussen Pam en Sam, de chat met Pam, en de chat met Sam. Elk beeld op laptop en telefoon tegelijk, fullscreen in 3:2, zonder de opmaak van Studio.Edu.
+- Daarna bouwen we het echt: meteen de nieuwe versie, zonder de oude site als vergelijking. De chat begint als nagespeeld gesprek, te bekijken via een privé-link. Bouwen en dan itereren, zonder schetsronde vooraf.
