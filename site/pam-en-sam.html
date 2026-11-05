@@ -25,7 +25,8 @@ html{scroll-behavior:smooth}
 body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 [hidden]{display:none!important}
-:focus-visible{outline:2px solid #C9A15F;outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid #F0C98E;outline-offset:3px;border-radius:4px;box-shadow:0 0 14px 3px rgba(255,214,150,.5)}
+.chat :focus-visible{outline-color:var(--c);box-shadow:none}
 .wrap{max-width:72rem;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 @media (min-width:760px){.wrap{padding-left:max(48px, env(safe-area-inset-left, 0px));padding-right:max(48px, env(safe-area-inset-right, 0px))}}
 h1,h2,h3{font-weight:300;letter-spacing:-.015em;text-wrap:balance;margin:0}
@@ -44,11 +45,11 @@ p{margin:0}
 .btn{font:inherit;font-size:1rem;font-weight:400;display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:13px 28px;border-radius:40px;cursor:pointer;text-decoration:none;
   background:transparent;border:1.5px solid var(--ink);color:var(--ink);transition:background .2s,color .2s,transform .2s}
 .btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--ink);color:var(--light);border-color:var(--ink)}
-.btn.primary:hover{background:#463D34}
+.btn.primary{background:var(--ink);color:var(--light);border-color:var(--ink);box-shadow:0 0 0 1px rgba(255,236,205,.35),0 10px 28px -8px rgba(232,180,110,.6);transition:background .3s,box-shadow .3s,transform .3s}
+.btn.primary:hover{background:#463D34;box-shadow:0 0 0 1px rgba(255,236,205,.45),0 12px 34px -6px rgba(232,180,110,.75)}
 .on-dusk .btn{border-color:rgba(246,239,228,.8);color:var(--dusk-text)}
-.on-dusk .btn.primary{background:var(--dusk-text);color:var(--dusk);border-color:var(--dusk-text)}
-.on-dusk .btn.primary:hover{background:#FFFFFF}
+.on-dusk .btn.primary{background:#FFF6E8;color:var(--dusk);border-color:#FFF6E8;box-shadow:0 0 0 1px rgba(255,236,205,.5),0 0 28px 6px rgba(255,222,176,.45)}
+.on-dusk .btn.primary:hover{background:#FFFFFF;box-shadow:0 0 0 1px rgba(255,236,205,.6),0 0 36px 10px rgba(255,222,176,.55)}
 
 /* ---------- kop ---------- */
 .hero{position:relative;overflow:hidden;color:var(--dusk-text);
@@ -72,6 +73,7 @@ p{margin:0}
 .topic-hero h1{font-size:var(--step-4);line-height:1.08}
 .hero .sub .you{color:var(--dusk-text)}
 .hero .cta-row{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+@media (min-width:760px){.hero .cta-row .small{margin-left:auto}}
 .hero .small{font-size:1rem;font-weight:400;line-height:1.45;color:#FFFFFF;background:rgba(47,41,36,.55);padding:8px 16px;border-radius:18px}
 
 /* ---------- secties ---------- */
@@ -88,15 +90,15 @@ section{padding-block:88px}
 /* het vlak is het gesprek in het klein: zelfde logo, zelfde introductie, zelfde schrijfregel */
 .door button.room{all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:16/10;min-height:400px;padding:22px 26px 30px;border-radius:16px;box-shadow:0 30px 60px -40px rgba(46,40,34,.45);transition:box-shadow .3s var(--ease)}
 .door button.room:hover{box-shadow:0 36px 70px -36px rgba(46,40,34,.55)}
-.door button.room:focus-visible{outline:2px solid #C9A15F;outline-offset:4px}
+.door button.room:focus-visible{outline:2px solid #F0C98E;outline-offset:4px}
 @media (max-width:760px){.door button.room{aspect-ratio:auto;min-height:440px}}
 .room > *{position:relative}
 .room span{display:block}
-.room .mini-logo{display:inline-flex;align-items:center;align-self:flex-start;font-size:calc(20px * var(--s,.7));line-height:1.6}
+.room .mini-logo{display:inline-flex;align-items:center;align-self:flex-start;font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.6}
 .room .mini-logo .cur{display:inline-block}
 .room .mini-col{margin:auto auto 0;width:calc(var(--tw,640px) * var(--s,.7))}
-.room .mini-intro{font-size:calc(20px * var(--s,.7));line-height:1.55}
-.room .mini-field{margin-top:calc(30px * var(--s,.7));padding-bottom:calc(10px * var(--s,.7));border-bottom:1px solid rgba(0,0,0,.4);font-size:calc(20px * var(--s,.7));line-height:1.45;opacity:.8}
+.room .mini-intro{font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.55}
+.room .mini-field{margin-top:calc(30px * var(--s,.7));padding-bottom:calc(10px * var(--s,.7));border-bottom:1px solid rgba(0,0,0,.4);font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.45;opacity:.8}
 .room .mini-send{display:flex;justify-content:space-between;margin-top:calc(16px * var(--s,.7))}
 .room .mini-send span{font-size:calc(16px * var(--s,.7));padding:calc(10px * var(--s,.7)) calc(22px * var(--s,.7));border-radius:30px;color:#FFFFFF;border:1.5px solid transparent}
 .room .mini-send span.out{background:transparent!important;color:inherit;border-color:currentColor}
@@ -108,11 +110,11 @@ section{padding-block:88px}
 .door.sam .mini-intro{color:var(--sam-voice)} .door.sam .mini-field{color:var(--sam-soft)} .door.sam .mini-send span{background:var(--sam-ink)}
 .door .desc{display:flex;flex-direction:column;flex:1}
 .door .desc .btn{margin-top:auto;align-self:flex-start}
-.door .desc ul{margin-bottom:24px}
-.door .desc h3{font-size:var(--step-1)}
+.door > h3{font-size:var(--step-1);margin-bottom:-12px}
+.door .tag{color:var(--ink-soft)}
 .door .desc .tag{color:var(--ink-soft)}
 .door .desc p{margin-top:10px}
-.door .desc ul{margin:14px 0 0;padding-left:1.1em;color:var(--ink-soft)}
+.door .desc ul{margin:14px 0 28px;padding-left:1.1em;color:var(--ink-soft)}
 .door .desc li{margin-top:4px}
 
 /* achtergronden van Pam en Sam (vlak, chat, verslag, overgang) */
@@ -163,7 +165,7 @@ section{padding-block:88px}
 .card:hover{transform:translateY(-2px)}
 .card h3{font-size:var(--step-1)}
 .card p{color:var(--ink-soft)}
-.card span{margin-top:auto;padding-top:8px;font-weight:400}
+.card span{margin-top:auto;padding-top:8px;font-weight:400;align-self:flex-start;text-decoration:underline;text-decoration-color:#F0C98E;text-decoration-thickness:2px;text-underline-offset:5px}
 @media (max-width:860px){.cards{grid-template-columns:1fr}}
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .price{display:flex;flex-direction:column;gap:10px;padding:32px;border-radius:16px;background:var(--paper)}
@@ -227,7 +229,33 @@ html{scrollbar-gutter:stable}
 .chat-top nav{display:flex;flex-wrap:wrap;gap:2px}
 .ghost{font:inherit;font-size:.95rem;background:none;border:0;color:var(--soft);cursor:pointer;padding:10px 12px;min-height:44px;border-radius:30px}
 .ghost:hover{color:var(--ink);background:rgba(255,255,255,.4)}
-@media (max-width:560px){.ghost .long{display:none}.chat-top nav{width:100%;justify-content:space-between}}
+.chat-top{position:relative}
+#menuBtn{display:none}
+.menu{display:contents}
+/* mobiel: het gesprek ademt */
+@media (max-width:600px){
+  .chat-top{flex-wrap:nowrap;padding-top:calc(16px + env(safe-area-inset-top, 0px));padding-bottom:8px}
+  .chat-top .logo{font-size:17px}
+  .chat-top nav{flex-wrap:nowrap}
+  #menuBtn{display:inline-flex}
+  .menu{display:flex;flex-direction:column;position:absolute;z-index:7;right:max(16px, env(safe-area-inset-right, 0px));top:calc(64px + env(safe-area-inset-top, 0px));min-width:210px;padding:8px;border-radius:14px;
+    background:rgba(255,255,255,.94);box-shadow:0 20px 50px -20px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .32s var(--ease),transform .32s var(--ease)}
+  .menu.in{opacity:1;transform:none;pointer-events:auto}
+  .menu .ghost{text-align:left;font-size:16px;padding:12px 14px}
+  .ghost{font-size:15px}
+  .log{font-size:17px;line-height:1.6;padding-top:24px}
+  .turn{margin-top:32px}
+  .msg.a{margin-top:12px}
+  .turn .name{font-size:12.5px}
+  .field textarea{font-size:17px;line-height:1.5}
+  .dock{padding-top:24px;padding-bottom:calc(28px + env(safe-area-inset-bottom, 0px))}
+  .actions{align-items:center;margin-top:18px}
+  #sumBtn{border:0;padding:10px 2px;font-size:15px;text-decoration:underline;text-decoration-color:rgba(0,0,0,.28);text-underline-offset:5px}
+  .pill{font-size:15px}
+  .report .body{font-size:17px;line-height:1.6}
+  .report h2{font-size:1.75rem}
+  .room .mini-send span.out{border-color:transparent;padding-left:0;text-decoration:underline}
+}
 .scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
 .log{width:min(var(--col),100%);margin:auto auto 0;padding:24px max(24px, env(safe-area-inset-right, 0px)) 8px max(24px, env(safe-area-inset-left, 0px));font-size:var(--step-1);line-height:1.55}
 @media (min-width:760px){.log{padding-left:0;padding-right:0}}
@@ -282,15 +310,24 @@ html{scrollbar-gutter:stable}
 .status{min-height:1.4em;margin-top:10px;font-size:.95rem;color:var(--soft)}
 /* onderwerpen */
 .drawer{position:absolute;inset:0;z-index:6;display:flex}
-.drawer .shade{flex:1;background:rgba(0,0,0,.18)}
+.drawer .shade{flex:1;background:rgba(0,0,0,.18);opacity:0;transition:opacity .42s var(--ease)}
+.drawer.in .shade{opacity:1}
 .drawer .panel{order:-1;width:min(340px,88vw);height:100%;overflow-y:auto;padding:calc(36px + env(safe-area-inset-top, 0px)) 24px 32px max(24px, env(safe-area-inset-left, 0px));display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);box-shadow:20px 0 60px -40px rgba(0,0,0,.4)}
+.drawer .panel{transform:translateX(-100%);transition:transform .42s var(--ease)}
+.drawer.in .panel{transform:none}
 .drawer h2{font-size:var(--step-2);margin-bottom:8px}
 .chat.pam .drawer h2{font-family:var(--serif);font-style:italic}
 .topic-item{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px}
 .topic-item:hover,.topic-item[aria-current="true"]{background:rgba(0,0,0,.05)}
 .topic-item small{color:var(--soft);font-size:.875rem}
 /* verslag, in de stijl van Pam of Sam */
-.report{position:absolute;inset:0;z-index:5;overflow-y:auto}
+.report{position:absolute;inset:0;z-index:5;overflow-y:auto;opacity:0;transform:translateY(12px);transition:opacity .42s var(--ease),transform .42s var(--ease)}
+.report.in{opacity:1;transform:none}
+.log .enter{animation:rise .7s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}}
+#home,#topics{transition:opacity .3s var(--ease)}
+html.page-out #home,html.page-out #topics{opacity:0}
+@media (prefers-reduced-motion: reduce){.log .enter{animation:none}#home,#topics{transition:none}}
 .report .inner{position:relative;z-index:1;width:min(var(--col),100%);margin:0 auto;padding:calc(48px + env(safe-area-inset-top, 0px)) max(24px, env(safe-area-inset-right, 0px)) 64px max(24px, env(safe-area-inset-left, 0px));display:flex;flex-direction:column;gap:20px}
 @media (min-width:760px){.report .inner{padding-left:0;padding-right:0}}
 .report .eyebrow{color:var(--soft)}
@@ -340,6 +377,7 @@ html{scrollbar-gutter:stable}
       </div>
       <div class="choose">
         <div class="door pam">
+              <h3>Pam <span class="tag">· Warm &amp; empathisch</span></h3>
           <button class="room bg-pam" type="button" data-open="pam" aria-label="Begin een gesprek met Pam">
             <span class="mini-logo" aria-hidden="true">Pam &amp; Sam<span class="cur" style="--c:var(--pam-cursor);--g:var(--pam-glow)"></span></span>
             <span class="mini-col" aria-hidden="true">
@@ -349,13 +387,13 @@ html{scrollbar-gutter:stable}
             </span>
           </button>
           <div class="desc">
-            <h3>Pam <span class="tag">· Warm &amp; empathisch</span></h3>
             <p>Pam geeft eerst ruimte aan wat je voelt. Betrokken, zorgzaam, maar ook duidelijk. Voor mensen die behoefte hebben aan begrip én richting.</p>
             <ul><li>Kies Pam als je het gevoel hebt dat er iets niet klopt, maar het niet kunt benoemen</li><li>Moeite hebt met stilstaan bij wat je echt voelt</li><li>Jezelf of je relaties beter wilt begrijpen</li><li>Ergens mee zit en het gewoon kwijt wilt</li></ul>
             <button class="btn primary" type="button" data-open="pam" data-from="room">Begin bij Pam</button>
           </div>
         </div>
         <div class="door sam">
+              <h3>Sam <span class="tag">· Direct &amp; nuchter</span></h3>
           <button class="room bg-sam" type="button" data-open="sam" aria-label="Begin een gesprek met Sam">
             <span class="mini-logo" aria-hidden="true">Pam &amp; Sam<span class="cur" style="--c:var(--sam-cursor);--g:var(--sam-glow);border-radius:0"></span></span>
             <span class="mini-col" aria-hidden="true">
@@ -365,7 +403,6 @@ html{scrollbar-gutter:stable}
             </span>
           </button>
           <div class="desc">
-            <h3>Sam <span class="tag">· Direct &amp; nuchter</span></h3>
             <p>Sam gaat snel naar de kern. Direct, nuchter, soms confronterend. Altijd goed bedoeld. Voor mensen die duidelijkheid willen zonder omwegen.</p>
             <ul><li>Kies Sam als je een keuze moet maken maar blijft hangen</li><li>Steeds dezelfde patronen herhaalt in werk of relaties</li><li>Behoefte hebt aan duidelijkheid en structuur</li><li>Een situatie wilt doorbreken die al te lang duurt</li></ul>
             <button class="btn primary" type="button" data-open="sam" data-from="room">Begin bij Sam</button>
@@ -569,15 +606,18 @@ html{scrollbar-gutter:stable}
     <div class="chat-top">
       <span class="logo" id="chatTitle">Pam &amp; Sam<span class="cur" id="chatCur"></span></span>
       <nav class="fade">
-        <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
-        <button class="ghost" type="button" id="switchBtn">Wissel</button>
-        <button class="ghost" type="button" id="reportBtn">Verslag</button>
+        <button class="ghost" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+        <div class="menu" id="menu">
+          <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
+          <button class="ghost" type="button" id="switchBtn">Wissel</button>
+          <button class="ghost" type="button" id="reportBtn">Verslag</button>
+        </div>
         <button class="ghost" type="button" id="closeBtn">Sluiten</button>
       </nav>
     </div>
     <div class="scroll" id="scroll"><div class="log" id="log" aria-live="polite"></div></div>
     <div class="dock fade">
-      <div class="tools" role="group" aria-label="Markeren en doorstrepen">
+      <div class="tools" role="group" aria-label="Markeren en doorstrepen" hidden>
         <button class="help" type="button" id="toolHelp" aria-expanded="false" aria-controls="helpCard" aria-label="Wat doen markeren en doorstrepen?">?</button>
         <button class="tool" type="button" id="toolMark" aria-pressed="false" aria-label="Markeer">
           <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="9" width="24" height="12" rx="3" fill="#EEC95E"/><text x="14" y="19" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="currentColor">ab</text></svg>
@@ -673,8 +713,16 @@ html{scrollbar-gutter:stable}
       <div class="sec-head" style="margin:64px 0 24px"><span class="eyebrow">Ook interessant</span></div><div class="cards">${others}</div></div></section>`;
     topicsEl.append(v);
   }
+  let page = null;
   function route() {
-    const h = location.hash.slice(1);
+    const h = location.hash.slice(1), next = TOPICS[h] ? h : 'home';
+    if (page !== null && next !== page && !reduce) {
+      document.documentElement.classList.add('page-out'); page = next;
+      return setTimeout(() => { swap(h); requestAnimationFrame(() => document.documentElement.classList.remove('page-out')); }, 300);
+    }
+    page = next; swap(h);
+  }
+  function swap(h) {
     const isTopic = !!TOPICS[h];
     $('home').hidden = isTopic;
     document.querySelectorAll('.topic').forEach(t => t.hidden = t.id !== 't-' + h);
@@ -717,6 +765,27 @@ Regels:
   const samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null);
   const newConv = (voice, topic) => { const c = { id: Date.now().toString(36), voice, topic: topic || null, title: topic ? TOPICS[topic].title.replace('?', '') : 'Nieuw onderwerp', msgs: [{ who: 'q', voice, text: INTRO[voice] }], marks: {}, fb: 0, at: Date.now() }; convs.unshift(c); save(); return c; };
   const hasAnswers = c => c.msgs.some(m => m.who === 'a');
+  const show = el => { clearTimeout(el._t); el.hidden = false; el.getBoundingClientRect(); el.classList.add('in'); };
+  const hide = el => { if (el.hidden) return; el.classList.remove('in'); clearTimeout(el._t); el._t = setTimeout(() => { el.hidden = true; }, reduce ? 0 : 430); };
+  const seen = new WeakMap();
+  /* het oude venster blijft even liggen en vloeit rustig weg boven het nieuwe: nooit eerst naar leeg */
+  function snapshot() {
+    if (reduce) return null;
+    const ghost = document.createElement('div'); ghost.className = 'chat ' + conv.voice; ghost.setAttribute('aria-hidden', 'true');
+    ghost.style.cssText = 'z-index:51;pointer-events:none;opacity:1;height:' + chat.style.height + ';transform:' + chat.style.transform;
+    const bg = roomBg.cloneNode(true), lay = chat.querySelector('.layer').cloneNode(true);
+    [bg, lay, ...lay.querySelectorAll('[id]')].forEach(e => e.removeAttribute('id'));
+    lay.querySelectorAll('.menu').forEach(e => e.classList.remove('in'));
+    ghost.append(bg, lay); document.body.append(ghost);
+    const sc = lay.querySelector('.scroll'); if (sc) sc.scrollTop = scroll.scrollTop;
+    return ghost;
+  }
+  function dissolve(ghost) {
+    if (!ghost) return;
+    ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .8s cubic-bezier(.4,0,.2,1)';
+    requestAnimationFrame(() => { ghost.style.opacity = '0'; });
+    setTimeout(() => ghost.remove(), 850);
+  }
   const voiceOf = m => m.voice || conv.voice;
 
   function applyVoice(v) {
@@ -730,7 +799,7 @@ Regels:
   }
   function turnEl(name, p) { const t = document.createElement('div'); t.className = 'turn'; const n = document.createElement('span'); n.className = 'name'; n.textContent = name; t.append(n, p); return t; }
   function render() {
-    log.replaceChildren();
+    log.replaceChildren(); const n = seen.has(conv) ? seen.get(conv) : conv.msgs.length;
     conv.msgs.forEach((m, mi) => {
       const p = document.createElement('p'); p.className = 'msg ' + m.who + (m.thinking ? ' thinking' : '');
       if (m.streaming) p.textContent = m.text;
@@ -739,8 +808,11 @@ Regels:
         const s = document.createElement('span'); s.className = 'w'; s.dataset.k = mi + ':' + wi; s.textContent = tok;
         const mk = conv.marks[s.dataset.k]; if (mk) s.classList.add(mk); p.append(s);
       });
-      log.append(m.who === 'q' ? turnEl(NAME[voiceOf(m)], p) : p);
+      const el = m.who === 'q' ? turnEl(NAME[voiceOf(m)], p) : p;
+      if (mi >= n && !reduce) el.classList.add('enter');
+      log.append(el);
     });
+    seen.set(conv, conv.msgs.length);
     scroll.scrollTop = scroll.scrollHeight;
   }
 
@@ -749,7 +821,7 @@ Regels:
     const vw = document.documentElement.clientWidth, tw = vw >= 760 ? Math.min(640, vw) : Math.min(640, vw) - 48;
     document.querySelectorAll('.room').forEach(r => {
       const cs = getComputedStyle(r), inner = r.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-      r.style.setProperty('--tw', tw + 'px'); r.style.setProperty('--s', Math.min(.8, inner / tw).toFixed(4));
+      r.style.setProperty('--tw', tw + 'px'); r.style.setProperty('--fs', (vw < 600 ? 17 : 20) + 'px'); r.style.setProperty('--s', Math.min(.8, inner / tw).toFixed(4));
     });
   }
   addEventListener('resize', sizeMinis); sizeMinis();
@@ -781,7 +853,7 @@ Regels:
     if (anim) return;
     conv = topic ? newConv(v, topic) : (convs.find(x => x.voice === v && hasAnswers(x)) || convs.find(x => x.voice === v) || newConv(v));
     applyVoice(v);
-    $('report').hidden = true; $('drawer').hidden = true; $('helpCard').hidden = true; status.textContent = '';
+    $('report').hidden = true; $('report').classList.remove('in'); $('drawer').hidden = true; $('drawer').classList.remove('in'); closeMenu(); status.textContent = ''; fitVV();
     origin = fromEl || null;
     chat.classList.add('noanim', 'entering'); chat.hidden = false; document.body.style.overflow = 'hidden';
     render();
@@ -802,12 +874,12 @@ Regels:
   }
   function closeChat() {
     if (anim) return; if (ctl) ctl.abort();
-    $('report').hidden = true; $('drawer').hidden = true; $('helpCard').hidden = true; if (mode) setMode(mode);
+    hide($('report')); hide($('drawer')); closeMenu(); if (mode) setMode(mode);
     const room = roomOf(conv.voice);
     const back = room || (origin && document.contains(origin) && origin.offsetParent !== null ? origin : null);
     const done = () => {
       chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ text: log.querySelector('.morph .msg'), logo: $('chatTitle') });
-      document.body.style.overflow = ''; anim = false; if (back) back.focus({ preventScroll: true });
+      document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; if (back) back.focus({ preventScroll: true });
     };
     if (reduce) return done();
     anim = true;
@@ -830,11 +902,23 @@ Regels:
     openChat(b.dataset.open, from, b.dataset.topic);
   });
   $('closeBtn').onclick = closeChat;
+  function closeMenu() { $('menu').classList.remove('in'); $('menuBtn').setAttribute('aria-expanded', 'false'); }
+  $('menuBtn').onclick = () => { const open = !$('menu').classList.contains('in'); $('menu').classList.toggle('in', open); $('menuBtn').setAttribute('aria-expanded', String(open)); };
+  chat.addEventListener('click', e => { if (!e.target.closest('#menu, #menuBtn')) closeMenu(); });
+  /* het venster volgt de ruimte boven het toetsenbord, zodat de balk en het laatste bericht in beeld blijven */
+  const vv = window.visualViewport, coarse = matchMedia('(pointer: coarse)').matches;
+  function fitVV() {
+    if (!vv || !coarse || chat.hidden) { chat.style.height = ''; chat.style.transform = ''; return; }
+    chat.style.height = vv.height + 'px'; chat.style.transform = vv.offsetTop ? `translateY(${vv.offsetTop}px)` : '';
+    scroll.scrollTop = scroll.scrollHeight;
+  }
+  if (vv) { vv.addEventListener('resize', fitVV); vv.addEventListener('scroll', fitVV); }
   addEventListener('keydown', e => {
     if (e.key !== 'Escape' || chat.hidden) return;
     if (!$('helpCard').hidden) { toggleHelp(false); }
-    else if (!$('report').hidden) { $('report').hidden = true; input.focus(); }
-    else if (!$('drawer').hidden) { $('drawer').hidden = true; }
+    else if ($('menu').classList.contains('in')) { closeMenu(); }
+    else if (!$('report').hidden) { hide($('report')); input.focus(); }
+    else if (!$('drawer').hidden) { hide($('drawer')); }
     else closeChat();
   });
 
@@ -842,25 +926,12 @@ Regels:
   $('switchBtn').onclick = () => {
     if (busy || anim) return;
     const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam';
-    let ghost = null;
-    if (!reduce) {
-      /* het oude venster blijft even liggen en vloeit rustig weg boven het nieuwe: nooit eerst naar leeg */
-      ghost = document.createElement('div'); ghost.className = 'chat ' + from; ghost.setAttribute('aria-hidden', 'true');
-      ghost.style.cssText = 'z-index:51;pointer-events:none;opacity:1';
-      const bg = roomBg.cloneNode(true), lay = chat.querySelector('.layer').cloneNode(true);
-      [bg, lay, ...lay.querySelectorAll('[id]')].forEach(e => e.removeAttribute('id'));
-      ghost.append(bg, lay); document.body.append(ghost);
-      const sc = lay.querySelector('.scroll'); if (sc) sc.scrollTop = scroll.scrollTop;
-    }
+    const ghost = snapshot(); closeMenu();
     conv.voice = to;
     const talked = hasAnswers(conv);
     if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
     applyVoice(to); render(); save(); status.textContent = '';
-    if (ghost) {
-      ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .8s cubic-bezier(.4,0,.2,1)';
-      requestAnimationFrame(() => { ghost.style.opacity = '0'; });
-      setTimeout(() => ghost.remove(), 850);
-    }
+    dissolve(ghost);
     if (talked) setTimeout(() => ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`), reduce ? 0 : 500);
   };
 
@@ -939,14 +1010,14 @@ Regels:
       const b = document.createElement('button'); b.className = 'topic-item'; b.type = 'button'; if (c === conv) b.setAttribute('aria-current', 'true');
       const d = new Date(c.at).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' });
       b.innerHTML = `<span></span><small>${NAME[c.voice]} · ${d}</small>`; b.firstChild.textContent = c.title;
-      b.onclick = () => { conv = c; applyVoice(c.voice); render(); $('drawer').hidden = true; status.textContent = ''; input.focus(); };
+      b.onclick = () => { hide($('drawer')); if (c === conv) return; const g = snapshot(); conv = c; seen.set(c, c.msgs.length); applyVoice(c.voice); render(); dissolve(g); status.textContent = ''; };
       list.append(b);
     });
-    $('drawer').hidden = false; $('newTopic').focus();
+    closeMenu(); show($('drawer')); $('newTopic').focus({ preventScroll: true });
   }
   $('topicsBtn').onclick = showTopics;
-  $('drawerShade').onclick = () => { $('drawer').hidden = true; };
-  $('newTopic').onclick = () => { if (busy) return; conv = newConv(conv.voice); render(); $('drawer').hidden = true; input.focus(); };
+  $('drawerShade').onclick = () => hide($('drawer'));
+  $('newTopic').onclick = () => { if (busy) return; hide($('drawer')); const g = snapshot(); conv = newConv(conv.voice); render(); dissolve(g); input.focus({ preventScroll: true }); };
 
   /* ---------- verslag: het hele gesprek, zonder wat je doorstreepte ---------- */
   let reportText = '';
@@ -967,10 +1038,10 @@ Regels:
     reportText = lines.join('\n\n');
     $('reportTitle').textContent = conv.title;
     $('reportMeta').textContent = 'Gesprek met ' + NAME[conv.voice] + ' · ' + new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
-    $('copyNote').textContent = ''; $('report').className = 'report bg-' + conv.voice; $('report').hidden = false; $('report').scrollTop = 0; $('backBtn').focus();
+    $('copyNote').textContent = ''; closeMenu(); $('report').className = 'report bg-' + conv.voice; show($('report')); $('report').scrollTop = 0; $('backBtn').focus();
   }
   $('sumBtn').onclick = showReport; $('reportBtn').onclick = showReport;
-  $('backBtn').onclick = () => { $('report').hidden = true; input.focus(); };
+  $('backBtn').onclick = () => { hide($('report')); input.focus({ preventScroll: true }); };
   $('copyBtn').onclick = () => {
     const note = $('copyNote');
     navigator.clipboard.writeText(reportText).then(() => { note.textContent = 'Gekopieerd.'; }, () => { note.textContent = 'Kopiëren lukte niet. Selecteer de tekst hierboven en kopieer hem zelf.'; });

@@ -68,3 +68,23 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - Wisselen vloeit nu over. Het oude venster vervaagt in 0,8 seconde boven het nieuwe, zonder eerst naar leeg te gaan. De voorstelronde van de nieuwe stem komt pas daarna.
 - De lichtbundel van Pam liep tijdens het groeien buiten het venster. Hij wordt nu afgesneden op de rand van het venster.
 - Regel in CLAUDE.md: alles beweegt rustig en comfortabel.
+
+## Ronde 5
+
+- **Accent:** licht als accent, gekozen na vergelijking met greige, salie, oudroze en stormgrijs (beelden 26 tot en met 29).
+  - In de schemering is de hoofdknop warm wit met een gloed. Op licht is hij donker met een warme gloed eronder.
+  - De focusrand en de streep onder "Lees meer" zijn warm licht. Pams goud komt niet meer voor buiten het gesprek.
+- **Kies je gesprekspartner:** het label, zoals "Pam · Warm & empathisch", staat boven het vlak. Er zit 28 px tussen de lijst en de knop.
+- **Kop:** de disclaimer lijnt rechts uit met de knop "Probeer gratis" bovenin.
+- **Mobiel, het gesprek ademt:**
+  - De tekst is 17 px met regelafstand 1,6, met meer ruimte tussen de beurten.
+  - Bovenin staan alleen het logo, "Menu" (Onderwerpen, Wissel, Verslag) en "Sluiten".
+  - "Vat het samen" is een tekstlink. Verstuur is de enige knop.
+  - Het venster volgt de ruimte boven het toetsenbord. Het inklappen van het toetsenbord doet iOS zelf, in Safari.
+  - Desktop blijft zoals het was.
+- **Markeren en doorstrepen:** voorlopig verborgen. De ontwerper kijkt hier later naar.
+- **Overgangen:**
+  - Onderwerpen schuift in en uit. Het verslag en het menu vervagen in en uit.
+  - Wisselen van onderwerp vloeit over, net als wisselen tussen Pam en Sam.
+  - Nieuwe berichten verschijnen zacht.
+  - Onderwerppagina's vloeien over.
