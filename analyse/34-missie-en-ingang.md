@@ -87,3 +87,10 @@ Er komt geen hulpskill voor de brainstorm zelf. De Studio.Edu-werkwijze (2 en 5b
 ## Afspraken voor het bouwen van de site
 - Eerst vier beelden in de kamer: de homepage, kiezen tussen Pam en Sam, de chat met Pam, en de chat met Sam. Elk beeld op laptop en telefoon tegelijk, fullscreen in 3:2, zonder de opmaak van Studio.Edu.
 - Daarna bouwen we het echt: meteen de nieuwe versie, zonder de oude site als vergelijking. De chat begint als nagespeeld gesprek, te bekijken via een privé-link. Bouwen en dan itereren, zonder schetsronde vooraf.
+
+## De kamer op de site: donker als moment (5 november 2026)
+- **Een volledig donkere site is te zwaar,** en lijkt op de beeldtaal van AI-tools. Donker werkt als moment, niet als hele site.
+- **Gekozen richting:** het licht gaat in één keer aan, zoals een lamp aanklikt, en niet geleidelijk.
+  - **Stilstaand beeld:** een harde snede tussen het donkere bovenstuk en het lichte deel (beeld 8).
+  - **De echte site:** je komt binnen in het donker, en bij scrollen of bij "Begin een gesprek" gaat het licht in één keer aan, met een korte, snelle overgang.
+- **Schemering (route 2) is losgelaten als hoofdrichting.** Die voelt minder zwaar, maar verliest het harde moment.
