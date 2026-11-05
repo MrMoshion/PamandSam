@@ -94,3 +94,4 @@ Er komt geen hulpskill voor de brainstorm zelf. De Studio.Edu-werkwijze (2 en 5b
   - **Stilstaand beeld:** een harde snede tussen het donkere bovenstuk en het lichte deel (beeld 8).
   - **De echte site:** je komt binnen in het donker, en bij scrollen of bij "Begin een gesprek" gaat het licht in één keer aan, met een korte, snelle overgang.
 - **Schemering (route 2) is losgelaten als hoofdrichting.** Die voelt minder zwaar, maar verliest het harde moment.
+- **Bijgesteld door de ontwerper:** de warmte van de schemering (route 2), gecombineerd met een verloop dat zo geleidelijk mogelijk loopt. Bovenaan staat een warme schemering met een lamp, en die loopt over de hele pagina over in warm licht (#F8F4EE). De harde snede vervalt. Zie beeld 9.
