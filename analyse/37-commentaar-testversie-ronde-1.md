@@ -53,3 +53,10 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 | Markeer en doorstreep als icoon, met een vraagteken | Twee ronde icoonknoppen met een label bij aanwijzen. Het vraagteken opent een kaartje met twee kleine animaties |
 | Van het vlak naar het venster en terug | De achtergrond groeit van het vlak naar het scherm. De introductie en het logo schuiven mee naar hun plek. De rest vervaagt daarna in beeld. Sluiten gaat precies omgekeerd |
 | De kop kleiner, en "Bespreek het met Pam of Sam" | De kop is kleiner, met daaronder "Bespreek het met Pam of Sam." en dan de getypte regel "Jij komt op het antwoord." |
+
+## Ronde 3
+
+- De kop volgt de rangorde van de originele site. De grote kop is "Bespreek het met Pam of Sam." Daarboven staat de kleine aanloopzin "Iedereen worstelt weleens met zichzelf.", en daaronder de getypte regel "Jij komt op het antwoord."
+- De regel naast de knop is: 6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers.
+- "Begin bij Pam" en "Begin bij Sam" staan op dezelfde hoogte, onderaan hun kolom.
+- Les: een fout die de ontwerper al heeft benoemd, controleer ik op het beeld vóór ik iets oplever. In dit geval was dat de kleur van Sam in het voorproefje.
