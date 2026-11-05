@@ -72,7 +72,7 @@ p{margin:0}
 .topic-hero h1{font-size:var(--step-4);line-height:1.08}
 .hero .sub .you{color:var(--dusk-text)}
 .hero .cta-row{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
-.hero .small{font-size:.95rem;color:var(--dusk-soft)}
+.hero .small{font-size:1rem;font-weight:400;line-height:1.45;color:#FFFFFF;background:rgba(47,41,36,.55);padding:8px 16px;border-radius:18px}
 
 /* ---------- secties ---------- */
 section{padding-block:88px}
@@ -198,11 +198,16 @@ footer a{text-decoration:none}
 .topic-body{display:flex;flex-direction:column;gap:18px;max-width:var(--col)}
 .topic-body .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
 .topic-body .fine{color:var(--ink-soft);font-size:.95rem}
+.topic-body .start{margin-top:16px;font-weight:400}
+.btn.v-pam,.btn.v-sam{color:#FFFFFF;border-color:transparent;min-width:9.5rem}
+.btn.v-pam{background:var(--pam-voice);font-family:var(--serif);font-style:italic}
+.btn.v-sam{background:var(--sam-voice)}
+.btn.v-pam:hover{background:#654C32}.btn.v-sam:hover{background:#2C4460}
 
 /* ---------- chat ---------- */
 html{scrollbar-gutter:stable}
 .chat{position:fixed;top:0;left:0;bottom:0;width:100vw;z-index:50;display:flex;flex-direction:column;overflow:hidden}
-.room-bg{position:absolute;inset:0;z-index:0;transform-origin:0 0}
+.room-bg{position:absolute;inset:0;z-index:0;transform-origin:0 0;overflow:hidden}
 .chat.noanim,.chat.noanim *{transition:none!important}
 .chat .fade,.log > *,.turn .name,.chat-top .logo{transition:opacity .3s var(--ease)}
 .chat.entering .fade,.chat.entering .log > :not(.morph),.chat.entering .morph .name,.chat.entering .chat-top .logo:not(.morph){opacity:0}
@@ -661,7 +666,8 @@ html{scrollbar-gutter:stable}
       <div class="hero-body"><h1>${t.title}</h1><p class="lead">${t.body[0]}</p></div></div></header>
       <section style="padding-top:24px"><div class="wrap"><div class="topic-body">
       <p>${t.body[1]}</p><p>${t.body[2]}</p>
-      <div class="cta-row"><button class="btn primary" type="button" data-open="pam" data-topic="${slug}">${t.cta} met Pam →</button><button class="btn" type="button" data-open="sam" data-topic="${slug}">Met Sam</button></div>
+      <p class="start">${t.cta}</p>
+      <div class="cta-row" style="margin-top:0"><button class="btn v-pam" type="button" data-open="pam" data-topic="${slug}">Met Pam</button><button class="btn v-sam" type="button" data-open="sam" data-topic="${slug}">Met Sam</button></div>
       ${t.fine ? `<p class="fine">${t.fine}</p>` : ''}
       <p class="fine">Pam en Sam zijn AI-gesprekspartners, geïnspireerd door gesprekken met Caren. Geen therapie of vervanging van professionele hulp.</p></div>
       <div class="sec-head" style="margin:64px 0 24px"><span class="eyebrow">Ook interessant</span></div><div class="cards">${others}</div></div></section>`;
@@ -835,16 +841,27 @@ Regels:
   /* ---------- wisselen: snelle overgang, en de nieuwe stem stelt zich voor ---------- */
   $('switchBtn').onclick = () => {
     if (busy || anim) return;
-    const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam', veil = $('veil'), layer = chat.querySelector('.layer');
-    if (!reduce) { veil.className = 'veil bg-' + from; veil.hidden = false; veil.style.opacity = '1'; layer.style.transition = 'opacity .14s'; layer.style.opacity = '0'; }
-    setTimeout(() => {
-      conv.voice = to;
-      const talked = hasAnswers(conv);
-      if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
-      applyVoice(to); render(); save(); status.textContent = '';
-      if (!reduce) requestAnimationFrame(() => { veil.style.opacity = '0'; layer.style.transition = 'opacity .24s'; layer.style.opacity = '1'; setTimeout(() => { veil.hidden = true; layer.style.transition = ''; }, 400); });
-      if (talked) ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`);
-    }, reduce ? 0 : 140);
+    const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam';
+    let ghost = null;
+    if (!reduce) {
+      /* het oude venster blijft even liggen en vloeit rustig weg boven het nieuwe: nooit eerst naar leeg */
+      ghost = document.createElement('div'); ghost.className = 'chat ' + from; ghost.setAttribute('aria-hidden', 'true');
+      ghost.style.cssText = 'z-index:51;pointer-events:none;opacity:1';
+      const bg = roomBg.cloneNode(true), lay = chat.querySelector('.layer').cloneNode(true);
+      [bg, lay, ...lay.querySelectorAll('[id]')].forEach(e => e.removeAttribute('id'));
+      ghost.append(bg, lay); document.body.append(ghost);
+      const sc = lay.querySelector('.scroll'); if (sc) sc.scrollTop = scroll.scrollTop;
+    }
+    conv.voice = to;
+    const talked = hasAnswers(conv);
+    if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
+    applyVoice(to); render(); save(); status.textContent = '';
+    if (ghost) {
+      ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .8s cubic-bezier(.4,0,.2,1)';
+      requestAnimationFrame(() => { ghost.style.opacity = '0'; });
+      setTimeout(() => ghost.remove(), 850);
+    }
+    if (talked) setTimeout(() => ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`), reduce ? 0 : 500);
   };
 
   /* ---------- versturen ---------- */

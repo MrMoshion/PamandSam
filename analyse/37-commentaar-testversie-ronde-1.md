@@ -60,3 +60,11 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - De regel naast de knop is: 6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers.
 - "Begin bij Pam" en "Begin bij Sam" staan op dezelfde hoogte, onderaan hun kolom.
 - Les: een fout die de ontwerper al heeft benoemd, controleer ik op het beeld vóór ik iets oplever. In dit geval was dat de kleur van Sam in het voorproefje.
+
+## Ronde 4
+
+- De regel met de disclaimers staat op een rustig, donker vlak in wit, zodat hij goed leesbaar is. Hij mag niet lijken op kleine lettertjes.
+- Op de onderwerppagina's staat "Begin gratis over …" met daaronder twee gelijkwaardige knoppen: "Met Pam" in Pams kleur en "Met Sam" in Sams kleur. Beide vlak, zonder verloop, zodat Pam niet meer wordt aangeprezen.
+- Wisselen vloeit nu over. Het oude venster vervaagt in 0,8 seconde boven het nieuwe, zonder eerst naar leeg te gaan. De voorstelronde van de nieuwe stem komt pas daarna.
+- De lichtbundel van Pam liep tijdens het groeien buiten het venster. Hij wordt nu afgesneden op de rand van het venster.
+- Regel in CLAUDE.md: alles beweegt rustig en comfortabel.
