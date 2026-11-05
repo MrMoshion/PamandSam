@@ -115,3 +115,9 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 
 - **"Waarom niet een gratis chatbot?":** gekozen is optie A uit beeld 30, een glazen box in Sams blauw op de gewone lichte achtergrond, zonder verloop. Pam & Sam blijft het verlichte raam erin. De box komt als geheel rustig binnen.
 - **Onderwerpen en het menu op mobiel** staan nu in de stijl van het venster waarin je zit. Bij Pam warm licht, cursief en haar kleuren. Bij Sam daglicht en zijn blauw.
+
+## Ronde 9
+
+- De warme linnen secties lopen langer en zachter uit.
+- De blauwe secties (Caren en "Belangrijk om te weten") zijn nu een vlakke, lichtblauwe box (#E9EEF2), zonder verloop. Regel: blauw staat nooit als verloop, alleen als box.
+- De FAQ klapt zacht open en dicht. Er staat steeds maar één vraag open: opent er een nieuwe, dan klapt de vorige rustig dicht.
