@@ -110,3 +110,8 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - **Rustig binnenkomen:** koppen, tekst en vlakken vervagen één keer zacht in (0,9 s). Vlakken naast elkaar komen één voor één, met 0,12 s ertussen. "Herken je jezelf hierin?" en "Klaar om te beginnen?" worden getypt, met dezelfde cursor als in de kop. Wie in het systeem minder beweging heeft ingesteld, ziet alles direct.
 - **De lichtbaan** is weg uit de secties en de koppen van de onderwerppagina's. In de kop van de homepage blijft ze, als opener (besluit ontwerper). Ze hoort alleen in de chatvensters, want daarbuiten oogde ze als een gimmick (besluit ontwerper).
 - **Favicon en app-icoon:** de witte cursor met de gloed van de lamp, op de schemering. Bestanden in `assets/icon/`: favicon.svg, en app-icon in svg, 180 en 512 pixels.
+
+## Ronde 8
+
+- **"Waarom niet een gratis chatbot?":** gekozen is optie A uit beeld 30, een glazen box in Sams blauw op de gewone lichte achtergrond, zonder verloop. Pam & Sam blijft het verlichte raam erin. De box komt als geheel rustig binnen.
+- **Onderwerpen en het menu op mobiel** staan nu in de stijl van het venster waarin je zit. Bij Pam warm licht, cursief en haar kleuren. Bij Sam daglicht en zijn blauw.

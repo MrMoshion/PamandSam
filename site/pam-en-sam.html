@@ -167,14 +167,14 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 .compare .col{display:grid;grid-row:1 / span 5;grid-template-rows:subgrid}
 .compare .col > *{padding:20px 24px}
 /* de vergelijking staat in de schemering: de chatbot in het donker, Pam & Sam als verlicht raam (neutraal wit licht) */
-.dark-sec{position:relative;overflow:hidden;color:var(--dusk-text);padding-block:clamp(220px,22vw,280px);
-  background:linear-gradient(var(--light) 0%,#D3DBE4 4%,#A9B8C8 8%,#7D93AB 12%,#566F8B 17%,#3F5772 22%,#2F445C 30%,#2F445C 70%,#3F5772 78%,#566F8B 83%,#7D93AB 88%,#A9B8C8 92%,#D3DBE4 96%,var(--light) 100%)}
-.dark-sec > .wrap{position:relative;z-index:1}
-.dark-sec .lamp{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 38% 34% at 74% 56%,rgba(255,240,215,.13),rgba(255,240,215,0) 70%)}
-@media (max-width:760px){.dark-sec .lamp{background:radial-gradient(ellipse 80% 30% at 50% 68%,rgba(255,240,215,.12),rgba(255,240,215,0) 70%)}}
-.dark-sec .eyebrow,.dark-sec .sec-head p{color:var(--dusk-soft)}
-.compare .plain > *{border-bottom:1px solid rgba(246,239,228,.14);color:var(--dusk-soft)}
-.compare .plain .h{color:var(--dusk-text)}
+/* de vergelijking: een glazen box in Sams blauw, met Pam & Sam als verlicht raam */
+.dark-sec .glass{position:relative;border-radius:28px;padding:clamp(28px,5vw,56px);color:#F3F6FA;background:rgba(79,111,146,.86);
+  backdrop-filter:blur(24px) saturate(1.1);-webkit-backdrop-filter:blur(24px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.12),0 40px 80px -40px rgba(31,46,64,.55)}
+@media (max-width:760px){.dark-sec .glass{border-radius:22px;padding:28px 20px}}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:rgba(243,246,250,.75)}
+.compare .plain > *{border-bottom:1px solid rgba(255,255,255,.18);color:rgba(243,246,250,.82)}
+.compare .plain .h{color:#FFFFFF}
 .compare .h{font-weight:400}
 .compare .lit{position:relative;border-radius:18px;overflow:hidden;color:var(--ink);
   background:radial-gradient(ellipse 90% 80% at 35% 12%,#FFFFFF 0%,#FCFAF6 50%,#F2EDE6 100%);
@@ -350,7 +350,14 @@ html{scrollbar-gutter:stable}
 .drawer h2{font-size:var(--step-2);margin-bottom:8px}
 .chat.pam .drawer h2{font-family:var(--serif);font-style:italic}
 .topic-item{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px}
-.topic-item:hover,.topic-item[aria-current="true"]{background:rgba(0,0,0,.05)}
+.topic-item:hover,.topic-item[aria-current="true"]{background:rgba(var(--g),.14)}
+.chat.pam .drawer .panel,.chat.pam .menu{background:#FCF5E4}
+.chat.sam .drawer .panel,.chat.sam .menu{background:#F8FBFE}
+.drawer .panel{color:var(--ink)}
+.drawer .panel h2{color:var(--ink)}
+.topic-item span{color:var(--voice)}
+.chat.pam .topic-item span{font-family:var(--serif);font-style:italic}
+.chat.pam .menu .ghost{font-family:var(--serif);font-style:italic}
 .topic-item small{color:var(--soft);font-size:.875rem}
 /* verslag, in de stijl van Pam of Sam */
 .report{position:absolute;inset:0;z-index:5;overflow-y:auto;opacity:0;transform:translateY(12px);transition:opacity .42s var(--ease),transform .42s var(--ease)}
@@ -489,9 +496,8 @@ html.page-out #home,html.page-out #topics{opacity:0}
     </div>
   </section>
 
-  <section class="dark-sec grain">
-    <div class="lamp"></div>
-    <div class="wrap">
+  <section class="dark-sec">
+    <div class="wrap"><div class="glass">
       <div class="sec-head"><span class="eyebrow">De eerlijke vraag</span><h2>Waarom niet gewoon een gratis chatbot?</h2></div>
       <div class="compare">
         <div class="col plain">
@@ -509,7 +515,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <p>Niets op onze servers. Je gesprek blijft in je eigen browser en jij wist het wanneer je wilt.</p>
         </div>
       </div>
-    </div>
+    </div></div>
   </section>
 
   <section class="tone-beam">
@@ -782,8 +788,8 @@ html.page-out #home,html.page-out #topics{opacity:0}
       setTimeout(() => { el.classList.remove('rv', 'shown'); el.style.transitionDelay = ''; }, 1000 + (parseInt(el.style.transitionDelay) || 0));
     }), { rootMargin: '0px 0px -8% 0px' });
     const boxes = '.step, .card, .price, .compare .col, .door, .principles > div, .two-col > div';
-    document.querySelectorAll('.sec-head, .caren img, .caren .body, .prose, details, ' + boxes).forEach(el => {
-      if (el.closest('.hero')) return;
+    document.querySelectorAll('.dark-sec .glass, .sec-head, .caren img, .caren .body, .prose, details, ' + boxes).forEach(el => {
+      if (el.closest('.hero') || (el.closest('.dark-sec') && !el.matches('.glass'))) return;
       el.classList.add('rv');
       if (el.matches(boxes)) el.style.transitionDelay = ([...el.parentNode.children].indexOf(el) * 120) + 'ms';
       io.observe(el);
