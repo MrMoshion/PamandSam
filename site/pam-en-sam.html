@@ -66,8 +66,9 @@ p{margin:0}
 @media (max-width:760px){.nav ul li:not(.keep){display:none}}
 .hero-body{position:relative;z-index:2;padding-block:clamp(56px,11vw,120px) clamp(140px,20vw,220px)}
 @media (max-width:760px){.hero-body{padding-block:56px 240px}}
-.hero h1{font-size:var(--step-4);line-height:1.08;max-width:19ch}
-.hero .sub{margin-top:28px;font-size:var(--step-1);line-height:1.5;color:var(--dusk-soft)}
+.hero h1{font-size:clamp(1.875rem,3.4vw,2.75rem);line-height:1.12;max-width:22ch}
+.hero .sub{margin-top:22px;font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.35;letter-spacing:-.01em;color:var(--dusk-soft)}
+.topic-hero h1{font-size:var(--step-4);line-height:1.08}
 .hero .sub .you{color:var(--dusk-text)}
 .hero .cta-row{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
 .hero .small{font-size:.95rem;color:var(--dusk-soft)}
@@ -83,16 +84,28 @@ section{padding-block:88px}
 .choose{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 @media (max-width:760px){.choose{grid-template-columns:1fr}}
 .door{display:flex;flex-direction:column;gap:28px}
-.door button.room{all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:300px;padding:36px;border-radius:16px;box-shadow:0 30px 60px -40px rgba(46,40,34,.45);transition:transform .3s var(--ease)}
-.door button.room:hover{transform:translateY(-2px)}
+/* het vlak is het gesprek in het klein: zelfde logo, zelfde introductie, zelfde schrijfregel */
+.door button.room{all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:16/10;min-height:400px;padding:22px 26px 30px;border-radius:16px;box-shadow:0 30px 60px -40px rgba(46,40,34,.45);transition:box-shadow .3s var(--ease)}
+.door button.room:hover{box-shadow:0 36px 70px -36px rgba(46,40,34,.55)}
 .door button.room:focus-visible{outline:2px solid #C9A15F;outline-offset:4px}
+@media (max-width:760px){.door button.room{aspect-ratio:auto;min-height:440px}}
 .room > *{position:relative}
-.room .who{display:flex;align-items:center;font-size:2.25rem;line-height:1}
-.room .first{font-size:var(--step-1);line-height:1.45;max-width:30ch}
-.room .go{display:inline-flex;align-self:flex-start;align-items:center;gap:.6em;font-size:1rem;font-weight:400;padding:12px 22px;border-radius:30px;background:rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(0,0,0,.06)}
-.door.pam .who,.door.pam .first{font-family:var(--serif);font-style:italic}
-.door.pam .room{color:var(--pam-ink)} .door.pam .first{color:var(--pam-voice)}
-.door.sam .room{color:var(--sam-ink)} .door.sam .who{font-weight:400;letter-spacing:-.02em} .door.sam .first{color:var(--sam-voice)}
+.room span{display:block}
+.room .mini-logo{display:inline-flex;align-items:center;align-self:flex-start;font-size:calc(20px * var(--s,.7));line-height:1.6}
+.room .mini-logo .cur{display:inline-block}
+.room .mini-col{margin:auto auto 0;width:calc(var(--tw,640px) * var(--s,.7))}
+.room .mini-intro{font-size:calc(20px * var(--s,.7));line-height:1.55}
+.room .mini-field{margin-top:calc(30px * var(--s,.7));padding-bottom:calc(10px * var(--s,.7));border-bottom:1px solid rgba(0,0,0,.4);font-size:calc(20px * var(--s,.7));line-height:1.45;opacity:.8}
+.room .mini-send{display:flex;justify-content:space-between;margin-top:calc(16px * var(--s,.7))}
+.room .mini-send span{font-size:calc(16px * var(--s,.7));padding:calc(10px * var(--s,.7)) calc(22px * var(--s,.7));border-radius:30px;color:#FFFFFF;border:1.5px solid transparent}
+.room .mini-send span.out{background:transparent!important;color:inherit;border-color:currentColor}
+.door.pam .room{color:var(--pam-ink)}
+.door.pam .mini-logo,.door.pam .mini-intro{font-family:var(--serif);font-style:italic}
+.door.pam .mini-intro{color:var(--pam-voice)} .door.pam .mini-field{color:var(--pam-soft)} .door.pam .mini-send span{background:var(--pam-ink)}
+.door.sam .room{color:var(--sam-ink)}
+.door.sam .mini-logo{font-weight:400}
+.door.sam .mini-intro{color:var(--sam-voice)} .door.sam .mini-field{color:var(--sam-soft)} .door.sam .mini-send span{background:var(--sam-ink)}
+.door .desc .btn{margin-top:20px}
 .door .desc h3{font-size:var(--step-1)}
 .door .desc .tag{color:var(--ink-soft)}
 .door .desc p{margin-top:10px}
@@ -100,8 +113,8 @@ section{padding-block:88px}
 .door .desc li{margin-top:4px}
 
 /* achtergronden van Pam en Sam (vlak, chat, verslag, overgang) */
-.bg-pam{background:radial-gradient(ellipse 75% 80% at 28% 40%,#FFFDF7 0%,#FCF5E4 45%,#F3E6C9 85%,#ECDCB8 100%)}
-.bg-sam{background:#EEF3F8}
+.bg-pam,.door button.room.bg-pam{background:radial-gradient(ellipse 75% 80% at 28% 40%,#FFFDF7 0%,#FCF5E4 45%,#F3E6C9 85%,#ECDCB8 100%)}
+.bg-sam,.door button.room.bg-sam{background:#EEF3F8}
 .bg-sam::before{content:"";position:absolute;inset:0;background:#F8FBFE;clip-path:polygon(0 0,72% 0,50% 100%,0 100%);pointer-events:none;transition:opacity .35s var(--ease)}
 .bg-pam::before{content:"";position:absolute;inset:-60px;filter:blur(30px);pointer-events:none;transition:opacity .35s var(--ease);
   background:linear-gradient(to bottom,rgba(255,255,250,.5),rgba(255,255,250,.12) 60%,rgba(255,255,250,0));clip-path:polygon(14% 0%,40% 0%,62% 100%,30% 100%)}
@@ -125,12 +138,21 @@ section{padding-block:88px}
 .compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);gap:0 28px}
 .compare .col{display:grid;grid-row:1 / span 5;grid-template-rows:subgrid}
 .compare .col > *{padding:20px 24px}
-.compare .plain > *{border-bottom:1px solid var(--line);color:var(--ink-soft)}
-.compare .plain .h{color:var(--ink)}
+/* de vergelijking staat in de schemering: de chatbot in het donker, Pam & Sam als verlicht raam (neutraal wit licht) */
+.dark-sec{position:relative;overflow:hidden;color:var(--dusk-text);padding-block:clamp(220px,22vw,280px);
+  background:linear-gradient(var(--light) 0%,#CFC5B8 4%,#A09384 8%,#706457 12%,#4A4138 17%,#3A322B 22%,#2F2924 30%,#2F2924 70%,#3A322B 78%,#4A4138 83%,#706457 88%,#A09384 92%,#CFC5B8 96%,var(--light) 100%)}
+.dark-sec > .wrap{position:relative;z-index:1}
+.dark-sec .lamp{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 38% 34% at 74% 56%,rgba(255,240,215,.13),rgba(255,240,215,0) 70%)}
+@media (max-width:760px){.dark-sec .lamp{background:radial-gradient(ellipse 80% 30% at 50% 68%,rgba(255,240,215,.12),rgba(255,240,215,0) 70%)}}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:var(--dusk-soft)}
+.compare .plain > *{border-bottom:1px solid rgba(246,239,228,.14);color:var(--dusk-soft)}
+.compare .plain .h{color:var(--dusk-text)}
 .compare .h{font-weight:400}
-.compare .lit{position:relative;border-radius:18px;overflow:hidden;
-  background:radial-gradient(ellipse 80% 70% at 30% 20%,#FFFFFF 0%,#FFF8EA 45%,#F6EBD3 100%);box-shadow:0 30px 60px -40px rgba(46,40,34,.45)}
-.compare .lit > *{position:relative}
+.compare .lit{position:relative;border-radius:18px;overflow:hidden;color:var(--ink);
+  background:radial-gradient(ellipse 90% 80% at 35% 12%,#FFFFFF 0%,#FCFAF6 50%,#F2EDE6 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.35),0 0 140px 24px rgba(255,238,210,.14),0 40px 80px -40px rgba(0,0,0,.6)}
+.compare .lit > *{position:relative;color:var(--ink-soft)}
+.compare .lit .h{color:var(--ink)}
 .compare .lit .h{display:flex;align-items:center}
 @media (max-width:760px){.compare{grid-template-columns:1fr;grid-template-rows:none;gap:24px}.compare .col{grid-row:auto;display:flex;flex-direction:column}}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
@@ -175,15 +197,18 @@ footer a{text-decoration:none}
 .topic-body .fine{color:var(--ink-soft);font-size:.95rem}
 
 /* ---------- chat ---------- */
-.chat{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;overflow:hidden;clip-path:inset(0 round 0);will-change:clip-path;
-  transition:clip-path .5s var(--ease)}
+html{scrollbar-gutter:stable}
+.chat{position:fixed;top:0;left:0;bottom:0;width:100vw;z-index:50;display:flex;flex-direction:column;overflow:hidden}
+.room-bg{position:absolute;inset:0;z-index:0;transform-origin:0 0}
+.chat.noanim,.chat.noanim *{transition:none!important}
+.chat .fade,.log > *,.turn .name,.chat-top .logo{transition:opacity .3s var(--ease)}
+.chat.entering .fade,.chat.entering .log > :not(.morph),.chat.entering .morph .name,.chat.entering .chat-top .logo:not(.morph){opacity:0}
+.chat.fading{transition:opacity .3s var(--ease)!important;opacity:0}
 .chat.pam{--ink:var(--pam-ink);--voice:var(--pam-voice);--soft:var(--pam-soft);--c:var(--pam-cursor);--g:var(--pam-glow);color:var(--pam-ink)}
 .chat.sam{--ink:var(--sam-ink);--voice:var(--sam-voice);--soft:var(--sam-soft);--c:var(--sam-cursor);--g:var(--sam-glow);color:var(--sam-ink)}
-.chat > .layer{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0;transition:opacity .25s var(--ease)}
-.chat.veiled > .layer{opacity:0}
-.chat.veiled::before{opacity:0}
+.chat > .layer{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0}
 .veil{position:absolute;inset:0;z-index:1;pointer-events:none;transition:opacity .38s var(--ease)}
-@media (prefers-reduced-motion: reduce){.chat,.chat > .layer,.veil{transition:none}}
+@media (prefers-reduced-motion: reduce){.chat *,.veil{transition:none!important}}
 .chat-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;
   padding-top:calc(24px + env(safe-area-inset-top, 0px));padding-bottom:12px;
   padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
@@ -198,8 +223,10 @@ footer a{text-decoration:none}
 .scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
 .log{width:min(var(--col),100%);margin:auto auto 0;padding:24px max(24px, env(safe-area-inset-right, 0px)) 8px max(24px, env(safe-area-inset-left, 0px));font-size:var(--step-1);line-height:1.55}
 @media (min-width:760px){.log{padding-left:0;padding-right:0}}
-.msg.q{color:var(--voice);margin-top:36px}
-.msg.q:first-child{margin-top:0}
+.turn{margin-top:36px}
+.turn:first-child{margin-top:0}
+.turn .name{display:block;margin-bottom:4px;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.8125rem;letter-spacing:.04em;color:var(--soft)}
+.msg.q{color:var(--voice)}
 .chat.pam .msg.q{font-family:var(--serif);font-style:italic}
 .msg.a{color:var(--ink);margin-top:10px;white-space:pre-wrap}
 .msg.q.thinking::after{content:"";display:inline-block;width:3px;height:1em;margin-left:.15em;vertical-align:-.12em;background:var(--c);border-radius:2px;
@@ -214,12 +241,29 @@ footer a{text-decoration:none}
 .chip{font:inherit;font-size:1rem;cursor:pointer;color:var(--ink);background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.18);border-radius:30px;padding:10px 16px;min-height:44px}
 .dock{position:relative;width:min(var(--col),100%);margin:0 auto;padding:16px max(24px, env(safe-area-inset-right, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px))}
 @media (min-width:760px){.dock{padding-left:0;padding-right:0;padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))}}
-.tools{display:flex;gap:10px;margin-bottom:14px}
-@media (min-width:1100px){.tools{position:absolute;right:calc(100% + 48px);top:16px;flex-direction:column;align-items:flex-start;margin:0}}
-.tool{font:inherit;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:var(--ink);background:rgba(255,255,255,.35);border:1px solid rgba(0,0,0,.28);border-radius:30px;padding:8px 16px;min-height:44px}
-.tool[aria-pressed="true"]{background:var(--mark);border-color:transparent}
-.tool .dot{width:12px;height:12px;border-radius:50%;background:#E9C150}
-.tool .bar{width:16px;border-top:1.5px solid currentColor}
+.tools{position:relative;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+@media (min-width:1100px){.tools{position:absolute;right:calc(100% + 48px);top:4px;flex-direction:column;margin:0}}
+.tool,.help{position:relative;font:inherit;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer;color:var(--ink);border-radius:50%}
+.tool{width:48px;height:48px;background:rgba(255,255,255,.45);border:1px solid rgba(0,0,0,.2)}
+.tool svg{width:28px;height:28px;overflow:visible}
+.tool[aria-pressed="true"]{background:#FFFFFF;border:1.5px solid var(--ink);box-shadow:0 0 0 5px rgba(var(--g),.2)}
+.help{width:30px;height:30px;margin:7px;font-size:.875rem;background:transparent;border:1px solid rgba(0,0,0,.28);color:var(--soft)}
+.help::before{content:"";position:absolute;inset:-7px}
+.help[aria-expanded="true"]{color:var(--ink);border-color:var(--ink)}
+.tip{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;font-size:.8125rem;line-height:1.3;padding:5px 10px;border-radius:6px;background:var(--ink);color:#FFFFFF;opacity:0;pointer-events:none;transition:opacity .15s}
+@media (min-width:1100px){.tip{left:calc(100% + 12px);bottom:auto;top:50%;transform:translateY(-50%)}}
+.tool:hover .tip,.tool:focus-visible .tip{opacity:1}
+.help-card{position:absolute;left:0;bottom:calc(100% + 12px);z-index:4;width:min(310px,calc(100vw - 48px));padding:18px;border-radius:14px;background:rgba(255,255,255,.96);box-shadow:0 20px 50px -20px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:16px;font-size:.95rem;line-height:1.45;color:var(--ink)}
+.help-card .hrow{display:flex;flex-direction:column;gap:4px}
+.help-card .hrow b{font-weight:400}
+.help-card p{color:var(--soft)}
+.demo{font-size:1.125rem;align-self:flex-start}
+.demo .ink{position:relative;display:inline-block;padding:0 2px;border-radius:3px}
+.demo.mk .ink{background:linear-gradient(var(--mark),var(--mark)) no-repeat 0 0 / 0% 100%;animation:sweep 2.8s var(--ease) infinite}
+.demo.st .ink::after{content:"";position:absolute;left:0;top:56%;height:1.5px;width:0;background:currentColor;animation:strike 2.8s var(--ease) infinite}
+@keyframes sweep{0%,18%{background-size:0% 100%}55%,88%{background-size:100% 100%}100%{background-size:0% 100%}}
+@keyframes strike{0%,18%{width:0}55%,88%{width:100%}100%{width:0}}
+@media (prefers-reduced-motion: reduce){.demo.mk .ink{animation:none;background-size:100% 100%}.demo.st .ink::after{animation:none;width:100%}}
 .field{display:flex;align-items:flex-end;border-bottom:1px solid rgba(0,0,0,.4);padding-bottom:10px}
 .field textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:var(--step-1);line-height:1.45;max-height:9em;padding:0;caret-color:var(--c)}
 .field textarea::placeholder{color:var(--soft);opacity:.85}
@@ -266,8 +310,8 @@ footer a{text-decoration:none}
     </nav>
     <div class="hero-body">
       <h1>Iedereen worstelt weleens met zichzelf.</h1>
-      <p class="sub" aria-label="Pam en Sam stellen de vragen. Jij komt op het antwoord.">
-        <span aria-hidden="true">Pam en Sam stellen de vragen.<br><span class="you" id="typed">Jij komt op het antwoord.</span><span class="cur blink" style="--c:#FFF6E8;--g:255,226,186"></span></span>
+      <p class="sub" aria-label="Bespreek het met Pam of Sam. Jij komt op het antwoord.">
+        <span aria-hidden="true">Bespreek het met Pam of Sam.<br><span class="you" id="typed">Jij komt op het antwoord.</span><span class="cur blink" style="--c:#FFF6E8;--g:255,226,186"></span></span>
       </p>
       <div class="cta-row">
         <a class="btn primary" href="#kies">Begin een gesprek</a>
@@ -288,26 +332,34 @@ footer a{text-decoration:none}
       <div class="choose">
         <div class="door pam">
           <button class="room bg-pam" type="button" data-open="pam" aria-label="Begin een gesprek met Pam">
-            <span class="who">Pam<span class="cur" style="--c:var(--pam-cursor);--g:var(--pam-glow)"></span></span>
-            <span class="first">Ik ben Pam. Vertel me gerust wat er speelt.</span>
-            <span class="go">Begin bij Pam <span aria-hidden="true">→</span></span>
+            <span class="mini-logo" aria-hidden="true">Pam &amp; Sam<span class="cur" style="--c:var(--pam-cursor);--g:var(--pam-glow)"></span></span>
+            <span class="mini-col" aria-hidden="true">
+              <span class="mini-intro">Hoi, ik ben Pam. Fijn dat je er bent. Even vooraf: ik geef je geen kant-en-klaar advies. Ik luister en stel je vragen die je helpen zelf helder te krijgen wat voor jou klopt. Vertel me rustig wat er speelt.</span>
+              <span class="mini-field">Schrijf hier…</span>
+              <span class="mini-send"><span class="out">Vat het samen</span><span>Verstuur</span></span>
+            </span>
           </button>
           <div class="desc">
             <h3>Pam <span class="tag">· Warm &amp; empathisch</span></h3>
             <p>Pam geeft eerst ruimte aan wat je voelt. Betrokken, zorgzaam, maar ook duidelijk. Voor mensen die behoefte hebben aan begrip én richting.</p>
             <ul><li>Kies Pam als je het gevoel hebt dat er iets niet klopt, maar het niet kunt benoemen</li><li>Moeite hebt met stilstaan bij wat je echt voelt</li><li>Jezelf of je relaties beter wilt begrijpen</li><li>Ergens mee zit en het gewoon kwijt wilt</li></ul>
+            <button class="btn primary" type="button" data-open="pam" data-from="room">Begin bij Pam</button>
           </div>
         </div>
         <div class="door sam">
           <button class="room bg-sam" type="button" data-open="sam" aria-label="Begin een gesprek met Sam">
-            <span class="who">Sam<span class="cur" style="--c:var(--sam-cursor);--g:var(--sam-glow);border-radius:0"></span></span>
-            <span class="first">Ik ben Sam. Waar wil je mee beginnen?</span>
-            <span class="go">Begin bij Sam <span aria-hidden="true">→</span></span>
+            <span class="mini-logo" aria-hidden="true">Pam &amp; Sam<span class="cur" style="--c:var(--sam-cursor);--g:var(--sam-glow);border-radius:0"></span></span>
+            <span class="mini-col" aria-hidden="true">
+              <span class="mini-intro">Hoi, ik ben Sam. Verwacht van mij geen kant-en-klaar advies: ik stel scherpe vragen zodat jij zelf de kern vindt. Vertel me wat er speelt.</span>
+              <span class="mini-field">Schrijf hier…</span>
+              <span class="mini-send"><span class="out">Vat het samen</span><span>Verstuur</span></span>
+            </span>
           </button>
           <div class="desc">
             <h3>Sam <span class="tag">· Direct &amp; nuchter</span></h3>
             <p>Sam gaat snel naar de kern. Direct, nuchter, soms confronterend. Altijd goed bedoeld. Voor mensen die duidelijkheid willen zonder omwegen.</p>
             <ul><li>Kies Sam als je een keuze moet maken maar blijft hangen</li><li>Steeds dezelfde patronen herhaalt in werk of relaties</li><li>Behoefte hebt aan duidelijkheid en structuur</li><li>Een situatie wilt doorbreken die al te lang duurt</li></ul>
+            <button class="btn primary" type="button" data-open="sam" data-from="room">Begin bij Sam</button>
           </div>
         </div>
       </div>
@@ -354,7 +406,8 @@ footer a{text-decoration:none}
     </div>
   </section>
 
-  <section>
+  <section class="dark-sec grain">
+    <div class="lamp"></div>
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">De eerlijke vraag</span><h2>Waarom niet gewoon een gratis chatbot?</h2></div>
       <div class="compare">
@@ -366,7 +419,7 @@ footer a{text-decoration:none}
           <p>Bewaart je gesprekken op hun servers, gekoppeld aan je account.</p>
         </div>
         <div class="col lit">
-          <p class="h">Pam &amp; Sam<span class="cur" style="--c:#C9A15F;--g:214,170,96"></span></p>
+          <p class="h">Pam &amp; Sam<span class="cur" style="--c:#2E2822;--g:255,226,186"></span></p>
           <p>Stelt vragen tot jij zelf het inzicht hebt. Dat blijft hangen.</p>
           <p>Twee vaste persoonlijkheden: Pam (warm en empathisch) en Sam (direct en nuchter). Jij kiest wie bij je past.</p>
           <p>Houdt één vaste, bevragende aanpak vast: naar de oorzaak, niet het symptoom.</p>
@@ -500,12 +553,13 @@ footer a{text-decoration:none}
 </footer>
 
 <!-- ================= CHAT ================= -->
-<div class="chat grain" id="chat" role="dialog" aria-modal="true" aria-labelledby="chatTitle" hidden>
+<div class="chat" id="chat" role="dialog" aria-modal="true" aria-labelledby="chatTitle" hidden>
+  <div class="room-bg grain" id="roomBg"></div>
   <div class="veil" id="veil" hidden></div>
   <div class="layer">
     <div class="chat-top">
       <span class="logo" id="chatTitle">Pam &amp; Sam<span class="cur" id="chatCur"></span></span>
-      <nav>
+      <nav class="fade">
         <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
         <button class="ghost" type="button" id="switchBtn">Wissel</button>
         <button class="ghost" type="button" id="reportBtn">Verslag</button>
@@ -513,10 +567,19 @@ footer a{text-decoration:none}
       </nav>
     </div>
     <div class="scroll" id="scroll"><div class="log" id="log" aria-live="polite"></div></div>
-    <div class="dock">
+    <div class="dock fade">
       <div class="tools" role="group" aria-label="Markeren en doorstrepen">
-        <button class="tool" type="button" id="toolMark" aria-pressed="false"><span class="dot"></span>Markeer</button>
-        <button class="tool" type="button" id="toolStrike" aria-pressed="false"><span class="bar"></span>Doorstreep</button>
+        <button class="help" type="button" id="toolHelp" aria-expanded="false" aria-controls="helpCard" aria-label="Wat doen markeren en doorstrepen?">?</button>
+        <button class="tool" type="button" id="toolMark" aria-pressed="false" aria-label="Markeer">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="9" width="24" height="12" rx="3" fill="#EEC95E"/><text x="14" y="19" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="currentColor">ab</text></svg>
+          <span class="tip">Markeer</span></button>
+        <button class="tool" type="button" id="toolStrike" aria-pressed="false" aria-label="Doorstreep">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><text x="14" y="19" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="currentColor">ab</text><line x1="5" y1="15" x2="23" y2="15" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span class="tip">Doorstreep</span></button>
+        <div class="help-card" id="helpCard" hidden>
+          <div class="hrow"><span class="demo mk"><span class="ink">belangrijk</span></span><b>Markeer</b><p>Zet het aan en selecteer wat je belangrijk vindt. Het blijft geel in je verslag.</p></div>
+          <div class="hrow"><span class="demo st"><span class="ink">klopt niet</span></span><b>Doorstreep</b><p>Zet het aan en selecteer wat niet meer klopt. Het valt weg uit je verslag.</p></div>
+        </div>
       </div>
       <form id="sendForm">
         <div class="field"><label class="sr" for="input">Jouw antwoord</label><textarea id="input" rows="1" placeholder="Schrijf hier…"></textarea></div>
@@ -615,7 +678,8 @@ footer a{text-decoration:none}
     pam: 'Hoi, ik ben Pam. Fijn dat je er bent. Even vooraf: ik geef je geen kant-en-klaar advies. Ik luister en stel je vragen die je helpen zelf helder te krijgen wat voor jou klopt. Vertel me rustig wat er speelt.',
     sam: 'Hoi, ik ben Sam. Verwacht van mij geen kant-en-klaar advies: ik stel scherpe vragen zodat jij zelf de kern vindt. Vertel me wat er speelt.'
   };
-  const CHIPS = ['Ik zit met een keuze waar ik niet uitkom', "Er speelt iets in m'n relatie", 'Het loopt vast op werk', 'Ik weet niet waar ik moet beginnen'];
+  const HANDOVER = { pam: 'Hoi, ik ben Pam. Ik neem het van Sam over en heb meegelezen.', sam: 'Ik ben Sam, ik neem het over.' };
+  const NAME = { pam: 'Pam', sam: 'Sam' };
   const FALLBACK = {
     pam: ['Wat raakt je daar het meest aan?', 'Wat voel je als je daar nu aan denkt?', 'Wat zou je willen dat er anders was?', 'Wat weet je eigenlijk al, diep vanbinnen?', 'Als je het in één zin zou zeggen: wat neem je hieruit mee?', 'Welke kleine stap kies je zelf voor vandaag?'],
     sam: ['Wat is precies het probleem?', 'Wat heb je al geprobeerd?', 'Wat houdt je tegen?', 'Wat wil jij, los van anderen?', 'Wat is je conclusie, in één zin?', 'Wat is je eerste stap?']
@@ -630,28 +694,31 @@ Regels:
 - Gebruik waar het kan de eigen woorden van de gebruiker.
 - Werk toe naar een conclusie. Na vier à zes vragen vraag je de gebruiker om in één zin zelf te zeggen wat hij of zij nu weet. Daarna vraag je welke ene kleine stap de gebruiker zelf kiest.
 - Heeft de gebruiker een eigen conclusie en een stap genoemd, sluit dan af met één korte zin zonder vraag, en nodig uit om met "Vat het samen" het verslag te bekijken.
+- Beurten van de andere gesprekspartner staan in het gesprek met hun naam tussen blokhaken, zoals [Sam]. Die zijn niet van jou.
 - Schrijf in het Nederlands. Geen opsommingstekens, geen vetgedrukte tekst, geen emoji, geen aanhalingstekens rond je antwoord.
 - Noem jezelf nooit therapeut. Bij signalen van acuut gevaar verwijs je rustig naar 113 Zelfmoordpreventie (113 of 0800-0113) of 112.
-- Antwoord alleen met jouw volgende beurt.`;
+- Antwoord alleen met jouw volgende beurt, zonder je naam ervoor.`;
 
-  const KEY = 'pamsam-onderwerpen-v1';
+  const KEY = 'pamsam-onderwerpen-v2';
   let convs = []; try { convs = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { convs = []; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(convs.slice(0, 30))); } catch (e) {} };
-  let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true;
-  const chat = $('chat'), log = $('log'), scroll = $('scroll'), input = $('input'), sendBtn = $('sendBtn'), status = $('status');
+  let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true, anim = false;
+  const chat = $('chat'), roomBg = $('roomBg'), log = $('log'), scroll = $('scroll'), input = $('input'), sendBtn = $('sendBtn'), status = $('status');
   const samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null);
-  const newConv = (voice, topic) => { const c = { id: Date.now().toString(36), voice, topic: topic || null, title: topic ? TOPICS[topic].title.replace('?', '') : 'Nieuw onderwerp', msgs: [{ who: 'q', text: INTRO[voice] }], marks: {}, fb: 0, at: Date.now() }; convs.unshift(c); save(); return c; };
-  const titleOf = c => c.title;
-  const style = v => getComputedStyle(document.documentElement);
+  const newConv = (voice, topic) => { const c = { id: Date.now().toString(36), voice, topic: topic || null, title: topic ? TOPICS[topic].title.replace('?', '') : 'Nieuw onderwerp', msgs: [{ who: 'q', voice, text: INTRO[voice] }], marks: {}, fb: 0, at: Date.now() }; convs.unshift(c); save(); return c; };
+  const hasAnswers = c => c.msgs.some(m => m.who === 'a');
+  const voiceOf = m => m.voice || conv.voice;
 
   function applyVoice(v) {
-    chat.classList.remove('pam', 'sam', 'bg-pam', 'bg-sam'); chat.classList.add(v, 'bg-' + v);
-    const cur = $('chatCur'), s = style();
+    chat.classList.remove('pam', 'sam'); chat.classList.add(v);
+    roomBg.className = 'room-bg grain bg-' + v;
+    const cur = $('chatCur'), s = getComputedStyle(document.documentElement);
     cur.style.setProperty('--c', s.getPropertyValue(v === 'pam' ? '--pam-cursor' : '--sam-cursor'));
     cur.style.setProperty('--g', s.getPropertyValue(v === 'pam' ? '--pam-glow' : '--sam-glow'));
     cur.style.borderRadius = v === 'sam' ? '0' : '';
     $('switchBtn').innerHTML = 'Wissel<span class="long"> naar ' + (v === 'pam' ? 'Sam' : 'Pam') + '</span>';
   }
+  function turnEl(name, p) { const t = document.createElement('div'); t.className = 'turn'; const n = document.createElement('span'); n.className = 'name'; n.textContent = name; t.append(n, p); return t; }
   function render() {
     log.replaceChildren();
     conv.msgs.forEach((m, mi) => {
@@ -662,55 +729,117 @@ Regels:
         const s = document.createElement('span'); s.className = 'w'; s.dataset.k = mi + ':' + wi; s.textContent = tok;
         const mk = conv.marks[s.dataset.k]; if (mk) s.classList.add(mk); p.append(s);
       });
-      log.append(p);
+      log.append(m.who === 'q' ? turnEl(NAME[voiceOf(m)], p) : p);
     });
-    if (conv.msgs.length === 1) {
-      const c = document.createElement('div'); c.className = 'chips';
-      CHIPS.forEach(t => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t; b.onclick = () => { input.value = t; send(); }; c.append(b); });
-      log.append(c);
-    }
     scroll.scrollTop = scroll.scrollHeight;
   }
-  const rectInset = r => `inset(${Math.max(0, r.top)}px ${Math.max(0, innerWidth - r.right)}px ${Math.max(0, innerHeight - r.bottom)}px ${Math.max(0, r.left)}px round 16px)`;
+
+  /* ---------- het vlak wordt het venster: de tekst schuift mee, de rest komt erbij ---------- */
+  function sizeMinis() {
+    const vw = document.documentElement.clientWidth, tw = vw >= 760 ? Math.min(640, vw) : Math.min(640, vw) - 48;
+    document.querySelectorAll('.room').forEach(r => {
+      const cs = getComputedStyle(r), inner = r.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      r.style.setProperty('--tw', tw + 'px'); r.style.setProperty('--s', Math.min(.8, inner / tw).toFixed(4));
+    });
+  }
+  addEventListener('resize', sizeMinis); sizeMinis();
+  if (document.fonts) document.fonts.ready.then(sizeMinis);
+
+  const MOVE = 'transform .54s cubic-bezier(.22,.61,.36,1), border-radius .54s cubic-bezier(.22,.61,.36,1)';
+  const inView = el => { const r = el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= chat.clientHeight; };
+  function bgAt(r) {
+    const sx = r.width / chat.clientWidth, sy = r.height / chat.clientHeight;
+    roomBg.style.transform = `translate(${r.left}px, ${r.top}px) scale(${sx}, ${sy})`;
+    roomBg.style.borderRadius = `${16 / sx}px / ${16 / sy}px`;
+  }
+  function flyTo(el, src) {
+    el.style.transform = ''; const t = el.getBoundingClientRect(), k = src.width / t.width;
+    el.style.transformOrigin = '0 0'; el.style.transform = `translate(${src.left - t.left}px, ${src.top - t.top}px) scale(${k})`;
+  }
+  function parts(room) {
+    log.querySelectorAll('.morph').forEach(e => e.classList.remove('morph')); $('chatTitle').classList.remove('morph');
+    const first = log.querySelector('.turn .msg');
+    const text = room && first && conv.msgs[0].text === INTRO[conv.voice] && inView(first) ? first : null;
+    if (text) text.parentNode.classList.add('morph');
+    if (room) $('chatTitle').classList.add('morph');
+    return { text, logo: room ? $('chatTitle') : null, miniText: room && room.querySelector('.mini-intro'), miniLogo: room && room.querySelector('.mini-logo') };
+  }
+  function settle(p) { [roomBg, p.text, p.logo].forEach(e => { if (e) { e.style.transition = ''; e.style.transform = ''; e.style.borderRadius = ''; } }); }
+  const roomOf = v => { const r = document.querySelector(`.door.${v} .room`); if (!r || $('home').hidden) return null; const b = r.getBoundingClientRect(); return b.bottom > 0 && b.top < innerHeight ? r : null; };
 
   function openChat(v, fromEl, topic) {
-    let c = topic ? newConv(v, topic) : (convs.find(x => x.voice === v && x.msgs.length > 1) || convs.find(x => x.voice === v) || newConv(v));
-    conv = c; conv.voice = v; applyVoice(v); render();
-    $('report').hidden = true; $('drawer').hidden = true; status.textContent = '';
-    chat.hidden = false; document.body.style.overflow = 'hidden'; origin = fromEl || null;
-    if (fromEl && !reduce) {
-      chat.style.transition = 'none'; chat.classList.add('veiled'); chat.style.clipPath = rectInset(fromEl.getBoundingClientRect());
-      chat.getBoundingClientRect(); chat.style.transition = '';
-      requestAnimationFrame(() => { chat.style.clipPath = 'inset(0px 0px 0px 0px round 0px)'; setTimeout(() => chat.classList.remove('veiled'), 260); });
-    } else { chat.style.clipPath = 'inset(0px 0px 0px 0px round 0px)'; chat.classList.remove('veiled'); }
-    setTimeout(() => input.focus({ preventScroll: true }), reduce ? 0 : 520);
+    if (anim) return;
+    conv = topic ? newConv(v, topic) : (convs.find(x => x.voice === v && hasAnswers(x)) || convs.find(x => x.voice === v) || newConv(v));
+    applyVoice(v);
+    $('report').hidden = true; $('drawer').hidden = true; $('helpCard').hidden = true; status.textContent = '';
+    origin = fromEl || null;
+    chat.classList.add('noanim', 'entering'); chat.hidden = false; document.body.style.overflow = 'hidden';
+    render();
+    if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering'); input.focus({ preventScroll: true }); return; }
+    const room = fromEl.classList.contains('room') ? fromEl : null, p = parts(room);
+    bgAt(fromEl.getBoundingClientRect());
+    if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
+    if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
+    chat.style.opacity = '0'; chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
+    chat.style.transition = 'opacity .16s linear'; chat.style.opacity = '1';
+    [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';
+      if (p.text) p.text.style.transform = 'none'; if (p.logo) p.logo.style.transform = 'none';
+      setTimeout(() => chat.classList.remove('entering'), 400);
+      setTimeout(() => { settle(p); chat.style.transition = ''; chat.style.opacity = ''; anim = false; input.focus({ preventScroll: true }); }, 720);
+    }));
   }
   function closeChat() {
-    if (ctl) ctl.abort();
-    const done = () => { chat.hidden = true; chat.classList.remove('veiled'); document.body.style.overflow = ''; if (origin && document.contains(origin)) origin.focus({ preventScroll: true }); };
-    if (origin && !reduce && origin.offsetParent !== null) {
-      chat.classList.add('veiled');
-      setTimeout(() => { chat.style.clipPath = rectInset(origin.getBoundingClientRect()); setTimeout(done, 520); }, 180);
-    } else done();
+    if (anim) return; if (ctl) ctl.abort();
+    $('report').hidden = true; $('drawer').hidden = true; $('helpCard').hidden = true; if (mode) setMode(mode);
+    const room = roomOf(conv.voice);
+    const back = room || (origin && document.contains(origin) && origin.offsetParent !== null ? origin : null);
+    const done = () => {
+      chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ text: log.querySelector('.morph .msg'), logo: $('chatTitle') });
+      document.body.style.overflow = ''; anim = false; if (back) back.focus({ preventScroll: true });
+    };
+    if (reduce) return done();
+    anim = true;
+    if (!back) { chat.classList.add('fading'); return setTimeout(done, 320); }
+    scroll.scrollTop = scroll.scrollHeight;
+    const p = parts(room);
+    chat.classList.add('entering');
+    setTimeout(() => {
+      [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
+      if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
+      if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
+      bgAt(back.getBoundingClientRect());
+      setTimeout(() => { chat.style.transition = 'opacity .18s linear'; chat.style.opacity = '0'; }, 420);
+      setTimeout(() => { done(); chat.style.transition = ''; chat.style.opacity = ''; }, 620);
+    }, 240);
   }
-  document.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) openChat(b.dataset.open, b, b.dataset.topic); });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-open]'); if (!b) return;
+    const from = b.dataset.from === 'room' ? b.closest('.door').querySelector('.room') : b;
+    openChat(b.dataset.open, from, b.dataset.topic);
+  });
   $('closeBtn').onclick = closeChat;
   addEventListener('keydown', e => {
     if (e.key !== 'Escape' || chat.hidden) return;
-    if (!$('report').hidden) { $('report').hidden = true; input.focus(); }
+    if (!$('helpCard').hidden) { toggleHelp(false); }
+    else if (!$('report').hidden) { $('report').hidden = true; input.focus(); }
     else if (!$('drawer').hidden) { $('drawer').hidden = true; }
     else closeChat();
   });
 
-  /* wisselen met een snelle overgang van licht en letter */
+  /* ---------- wisselen: snelle overgang, en de nieuwe stem stelt zich voor ---------- */
   $('switchBtn').onclick = () => {
-    const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam', veil = $('veil');
-    if (!reduce) { veil.className = 'veil bg-' + from; veil.hidden = false; veil.style.opacity = '1'; }
-    const layer = chat.querySelector('.layer'); if (!reduce) { layer.style.transition = 'opacity .14s'; layer.style.opacity = '0'; }
+    if (busy || anim) return;
+    const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam', veil = $('veil'), layer = chat.querySelector('.layer');
+    if (!reduce) { veil.className = 'veil bg-' + from; veil.hidden = false; veil.style.opacity = '1'; layer.style.transition = 'opacity .14s'; layer.style.opacity = '0'; }
     setTimeout(() => {
-      conv.voice = to; save(); applyVoice(to); render();
-      status.textContent = (to === 'pam' ? 'Pam' : 'Sam') + ' heeft het gesprek gelezen en gaat verder.';
-      if (!reduce) { requestAnimationFrame(() => { veil.style.opacity = '0'; layer.style.transition = 'opacity .24s'; layer.style.opacity = '1'; setTimeout(() => { veil.hidden = true; layer.style.transition = ''; }, 400); }); }
+      conv.voice = to;
+      const talked = hasAnswers(conv);
+      if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
+      applyVoice(to); render(); save(); status.textContent = '';
+      if (!reduce) requestAnimationFrame(() => { veil.style.opacity = '0'; layer.style.transition = 'opacity .24s'; layer.style.opacity = '1'; setTimeout(() => { veil.hidden = true; layer.style.transition = ''; }, 400); });
+      if (talked) ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`);
     }, reduce ? 0 : 140);
   };
 
@@ -718,21 +847,25 @@ Regels:
   input.addEventListener('input', () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; });
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
   $('sendForm').addEventListener('submit', e => { e.preventDefault(); send(); });
-  const clean = t => t.replace(/\*\*?|__|#+\s/g, '').replace(/^["“]|["”]$/g, '').trim();
-  async function send() {
+  const clean = t => t.replace(/\*\*?|__|#+\s/g, '').replace(/^\[?(Pam|Sam)\]?:?\s+/, '').replace(/^["“]|["”]$/g, '').trim();
+  const pushTurn = (t, role, content) => { const l = t[t.length - 1]; if (l && l.role === role) l.content += '\n\n' + content; else t.push({ role, content }); };
+  function send() {
     const text = input.value.trim(); if (!text || busy) return;
     input.value = ''; input.style.height = 'auto';
     const c = conv;
-    if (c.msgs.length === 1 && !c.topic) c.title = text.length > 42 ? text.slice(0, 40).trim() + '…' : text;
-    c.msgs.push({ who: 'a', text }); const q = { who: 'q', text: '', thinking: true, streaming: true }; c.msgs.push(q); c.at = Date.now(); render();
-    busy = true; sendBtn.disabled = true; status.textContent = '';
+    if (!hasAnswers(c) && !c.topic) c.title = text.length > 42 ? text.slice(0, 40).trim() + '…' : text;
+    c.msgs.push({ who: 'a', text }); ask(c, null);
+  }
+  async function ask(c, extra) {
+    const q = { who: 'q', voice: c.voice, text: '', thinking: true, streaming: true }; c.msgs.push(q); c.at = Date.now(); render();
+    busy = true; sendBtn.disabled = true;
     const sample = live ? await samplePromise : null;
     try {
       if (!sample) throw { code: 'no_sample' };
-      const asked = c.msgs.filter(m => m.who === 'q' && !m.thinking).length - 1;
-      const turns = [{ role: 'user', content: RULES(c.voice, c.topic) + `\n\nJe hebt in dit gesprek al ${asked} vragen gesteld na je introductie. Het gesprek begint met jouw introductie.` }];
-      turns.push({ role: 'user', content: '(De gebruiker opent het gesprek.)' });
-      c.msgs.slice(0, -1).forEach(m => turns.push({ role: m.who === 'q' ? 'assistant' : 'user', content: m.text }));
+      const asked = Math.max(0, c.msgs.filter(m => m.who === 'q' && voiceOf(m) === c.voice && m !== q).length - 1);
+      const turns = [{ role: 'user', content: RULES(c.voice, c.topic) + `\n\nJe hebt in dit gesprek al ${asked} vragen gesteld.\n\n(De gebruiker opent het gesprek.)` }];
+      c.msgs.slice(0, -1).forEach(m => pushTurn(turns, m.who === 'q' ? 'assistant' : 'user', m.who === 'q' && voiceOf(m) !== c.voice ? `[${NAME[voiceOf(m)]}] ${m.text}` : m.text));
+      if (extra) pushTurn(turns, 'user', extra);
       ctl = new AbortController();
       const { text: out } = await sample(turns, { cache: false, modelTier: 'quick', signal: ctl.signal,
         onText: ({ text }) => { q.thinking = false; q.text = clean(text); if (conv === c) render(); } });
@@ -740,13 +873,13 @@ Regels:
     } catch (e) {
       if (e && e.code === 'cancelled') { q.text = q.text || '…'; }
       else {
-        if (!e || e.code === 'no_sample' || ['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e.code)) live = false;
-        const list = FALLBACK[c.voice]; q.text = list[Math.min(c.fb++, list.length - 1)];
+        if (!e || ['no_sample','not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e.code)) live = false;
+        const list = FALLBACK[c.voice]; q.text = (extra ? HANDOVER[c.voice] + ' ' : '') + list[Math.min(c.fb++, list.length - 1)];
         status.textContent = live ? 'Dit antwoord kwam niet door. Probeer het zo nog eens.' : 'Dit is de oefenversie: Pam en Sam stellen hier vaste vragen.';
         if (!reduce) { const full = q.text; q.text = ''; q.thinking = true; render(); await new Promise(r => setTimeout(r, 700)); q.thinking = false; q.text = full; }
       }
     } finally {
-      q.thinking = false; q.streaming = false; busy = false; sendBtn.disabled = false; save(); if (conv === c) render(); input.focus({ preventScroll: true });
+      q.thinking = false; q.streaming = false; busy = false; sendBtn.disabled = false; save(); if (conv === c) render(); if (!chat.hidden) input.focus({ preventScroll: true });
     }
   }
 
@@ -757,13 +890,18 @@ Regels:
     toolMark.setAttribute('aria-pressed', String(mode === 'mk')); toolStrike.setAttribute('aria-pressed', String(mode === 'st'));
     log.classList.toggle('marking', mode === 'mk'); log.classList.toggle('striking', mode === 'st');
     status.textContent = mode ? 'Selecteer de woorden die je wilt ' + (mode === 'mk' ? 'markeren.' : 'doorstrepen.') : '';
+    applySelection();
   }
+  [toolMark, toolStrike, $('toolHelp')].forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
   toolMark.onclick = () => setMode('mk'); toolStrike.onclick = () => setMode('st');
+  function toggleHelp(open) { const c = $('helpCard'); c.hidden = !open; $('toolHelp').setAttribute('aria-expanded', String(open)); }
+  $('toolHelp').onclick = () => toggleHelp($('helpCard').hidden);
   function applySelection() {
     if (!mode) return;
     const sel = getSelection(); if (!sel || sel.isCollapsed || !sel.rangeCount) return;
-    const range = sel.getRangeAt(0); if (!log.contains(range.commonAncestorContainer)) return;
-    const hit = [...log.querySelectorAll('.w')].filter(s => range.intersectsNode(s) && s.textContent.trim() !== '' || (range.intersectsNode(s) && /^\s+$/.test(s.textContent) && s.previousSibling && s.nextSibling && range.intersectsNode(s.previousSibling) && range.intersectsNode(s.nextSibling)));
+    const range = sel.getRangeAt(0); if (!log.contains(range.commonAncestorContainer) && range.commonAncestorContainer !== log) return;
+    const all = [...log.querySelectorAll('.w')];
+    const hit = all.filter(s => range.intersectsNode(s) && (s.textContent.trim() !== '' || (s.previousSibling && s.nextSibling && range.intersectsNode(s.previousSibling) && range.intersectsNode(s.nextSibling))));
     if (!hit.length) return;
     const allSet = hit.filter(s => s.textContent.trim()).every(s => conv.marks[s.dataset.k] === mode);
     hit.forEach(s => { s.classList.remove('mk', 'st'); if (allSet) delete conv.marks[s.dataset.k]; else { conv.marks[s.dataset.k] = mode; s.classList.add(mode); } });
@@ -779,7 +917,7 @@ Regels:
     convs.forEach(c => {
       const b = document.createElement('button'); b.className = 'topic-item'; b.type = 'button'; if (c === conv) b.setAttribute('aria-current', 'true');
       const d = new Date(c.at).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' });
-      b.innerHTML = `<span></span><small>${c.voice === 'pam' ? 'Pam' : 'Sam'} · ${d}</small>`; b.firstChild.textContent = titleOf(c);
+      b.innerHTML = `<span></span><small>${NAME[c.voice]} · ${d}</small>`; b.firstChild.textContent = c.title;
       b.onclick = () => { conv = c; applyVoice(c.voice); render(); $('drawer').hidden = true; status.textContent = ''; input.focus(); };
       list.append(b);
     });
@@ -787,7 +925,7 @@ Regels:
   }
   $('topicsBtn').onclick = showTopics;
   $('drawerShade').onclick = () => { $('drawer').hidden = true; };
-  $('newTopic').onclick = () => { conv = newConv(conv.voice); render(); $('drawer').hidden = true; input.focus(); };
+  $('newTopic').onclick = () => { if (busy) return; conv = newConv(conv.voice); render(); $('drawer').hidden = true; input.focus(); };
 
   /* ---------- verslag: het hele gesprek, zonder wat je doorstreepte ---------- */
   let reportText = '';
@@ -795,19 +933,19 @@ Regels:
     const body = $('reportBody'); body.replaceChildren(); const lines = [];
     conv.msgs.forEach((m, mi) => {
       if (m.thinking) return;
-      const p = document.createElement('p'); p.className = 'msg ' + m.who; let plain = '';
-      let gap = true;
+      const p = document.createElement('p'); p.className = 'msg ' + m.who; let plain = '', gap = true;
       m.text.split(/(\s+)/).forEach((tok, wi) => {
         if (!tok) return; const mk = conv.marks[mi + ':' + wi]; if (mk === 'st') return;
         const space = /^\s+$/.test(tok); if (space && gap) return; gap = space;
         const s = document.createElement('span'); s.className = 'w' + (mk === 'mk' ? ' mk' : ''); s.textContent = tok; p.append(s); plain += tok;
       });
-      plain = plain.replace(/\s+/g, ' ').trim(); if (!plain) return;
-      body.append(p); lines.push((m.who === 'q' ? (conv.voice === 'pam' ? 'Pam' : 'Sam') + ': ' : 'Ik: ') + plain);
+      plain = plain.trim(); if (!plain) return;
+      body.append(m.who === 'q' ? turnEl(NAME[voiceOf(m)], p) : p);
+      lines.push((m.who === 'q' ? NAME[voiceOf(m)] + ': ' : 'Ik: ') + plain);
     });
     reportText = lines.join('\n\n');
-    $('reportTitle').textContent = titleOf(conv);
-    $('reportMeta').textContent = 'Gesprek met ' + (conv.voice === 'pam' ? 'Pam' : 'Sam') + ' · ' + new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+    $('reportTitle').textContent = conv.title;
+    $('reportMeta').textContent = 'Gesprek met ' + NAME[conv.voice] + ' · ' + new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
     $('copyNote').textContent = ''; $('report').className = 'report bg-' + conv.voice; $('report').hidden = false; $('report').scrollTop = 0; $('backBtn').focus();
   }
   $('sumBtn').onclick = showReport; $('reportBtn').onclick = showReport;
