@@ -124,3 +124,10 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - Lichtblauwe boxen staan nu bij Caren, bij "Belangrijk om te weten" en bij "Stel een vraag" (vertrouwen, delen en contact).
 - Cursief bij Pam staat alleen nog bij wat zij zegt en bij haar logo. Het menu, Onderwerpen en de titel van het verslag zijn roman.
 - "Sluiten" is ook op desktop een X.
+
+## Ronde 10
+
+- **Mobiel:** "Wissel naar Pam" of "Wissel naar Sam" staat onder het gesprek, naast Verstuur. In het menu staan Onderwerpen en "Vat het samen". Desktop blijft zoals het was.
+- **Mobiel:** de tekst in het gesprek is 15 px, de schrijfregel 16 px. Onder de 16 px zoomt de iPhone bij het typen vanzelf in.
+- **Oorzaak van het eerdere probleem:** de regels voor mobiel stonden in het stijlblad vóór de gewone regels en werden daardoor overschreven. De tekst bleef dus 20 px, ook nadat ik meldde dat hij kleiner was. Het mobiele blok staat nu achteraan.
+- **Les:** meet na elke wijziging de werkelijke waarde in de browser (lettergrootte, afstand), en lees die niet alleen af uit de code. En lees een opdracht van de ontwerper zin voor zin terug voordat ik bouw.
