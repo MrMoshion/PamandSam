@@ -780,15 +780,19 @@ html.page-out #home,html.page-out #topics{opacity:0}
   const EASE = 'cubic-bezier(.22,.61,.36,1)';
   function shut(d) {
     const c = d.querySelector('p'); if (reduce) { d.open = false; return; }
-    const a = c.animate([{ height: c.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 420, easing: EASE });
-    a.onfinish = () => { d.open = false; };
+    if (d._a) d._a.cancel();
+    const a = c.animate([{ height: c.offsetHeight + 'px', paddingBottom: '22px', opacity: 1 }, { height: '0px', paddingBottom: '0px', opacity: 0 }], { duration: 420, easing: EASE, fill: 'forwards' });
+    d._a = a; a.onfinish = () => { d.open = false; a.cancel(); d._a = null; };
   }
   document.querySelectorAll('details').forEach(d => d.querySelector('summary').addEventListener('click', e => {
     e.preventDefault();
-    if (d.open) return shut(d);
-    document.querySelectorAll('details[open]').forEach(shut);
+    if (d.open && !d._a) return shut(d);
+    if (d._a) return;
+    document.querySelectorAll('details[open]').forEach(x => { if (x !== d) shut(x); });
     d.open = true; if (reduce) return;
-    const c = d.querySelector('p'); c.animate([{ height: '0px', opacity: 0 }, { height: c.offsetHeight + 'px', opacity: 1 }], { duration: 480, easing: EASE });
+    const c = d.querySelector('p'), h = c.offsetHeight;
+    const a = c.animate([{ height: '0px', paddingBottom: '0px', opacity: 0 }, { height: h + 'px', paddingBottom: '22px', opacity: 1 }], { duration: 480, easing: EASE });
+    d._a = a; a.onfinish = () => { d._a = null; };
   }));
 
   /* vast menu */
