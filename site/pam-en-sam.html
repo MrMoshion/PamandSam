@@ -1068,7 +1068,11 @@ Regels:
   /* ---------- versturen ---------- */
   input.addEventListener('input', () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; });
   const touch = matchMedia('(pointer: coarse)').matches, field = input.closest('.field');
-  input.addEventListener('focus', () => { if (touch) field.classList.add('typing'); });
+  /* het icoon verschijnt alleen als het toetsenbord echt open is, of zodra je typt */
+  const kbdOpen = () => window.visualViewport && window.visualViewport.height < window.innerHeight * 0.8;
+  const syncKbd = () => field.classList.toggle('typing', touch && document.activeElement === input && (kbdOpen() || input.value.length > 0));
+  input.addEventListener('input', syncKbd);
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', syncKbd);
   input.addEventListener('blur', () => field.classList.remove('typing'));
   $('kbdBtn').addEventListener('pointerdown', e => e.preventDefault());
   $('kbdBtn').addEventListener('click', () => input.blur());
@@ -1078,7 +1082,7 @@ Regels:
   const pushTurn = (t, role, content) => { const l = t[t.length - 1]; if (l && l.role === role) l.content += '\n\n' + content; else t.push({ role, content }); };
   function send() {
     const text = input.value.trim(); if (!text || busy) return;
-    input.value = ''; input.style.height = 'auto';
+    input.value = ''; input.style.height = 'auto'; syncKbd();
     const c = conv;
     if (!hasAnswers(c) && !c.topic) c.title = text.length > 42 ? text.slice(0, 40).trim() + '…' : text;
     c.msgs.push({ who: 'a', text }); ask(c, null);
