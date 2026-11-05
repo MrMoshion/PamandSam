@@ -95,3 +95,14 @@ Er komt geen hulpskill voor de brainstorm zelf. De Studio.Edu-werkwijze (2 en 5b
   - **De echte site:** je komt binnen in het donker, en bij scrollen of bij "Begin een gesprek" gaat het licht in één keer aan, met een korte, snelle overgang.
 - **Schemering (route 2) is losgelaten als hoofdrichting.** Die voelt minder zwaar, maar verliest het harde moment.
 - **Bijgesteld door de ontwerper:** de warmte van de schemering (route 2), gecombineerd met een verloop dat zo geleidelijk mogelijk loopt. Bovenaan staat een warme schemering met een lamp, en die loopt over de hele pagina over in warm licht (#F8F4EE). De harde snede vervalt. Zie beeld 9.
+- **Homepage, gekozen (ontwerper):**
+  - de warme schemering met een geleidelijk verloop, plus de lichtval: een zachte baan licht die schuin binnenvalt, met een lichte korrel;
+  - de gloed op "Jij" vervalt;
+  - **"Jij komt op het antwoord." verschijnt alsof jij het typt,** met de oplichtende cursor erachter. Dat laat zien dat jij aan het roer staat, en niet de AI.
+  - Zie beeld 14.
+- **Voor het bouwen:**
+  - eerst staat "Pam en Sam stellen de vragen." er;
+  - daarna wordt "Jij komt op het antwoord." letter voor letter getypt, in een menselijk tempo met kleine aarzelingen;
+  - de cursor blijft daarna zacht knipperen;
+  - geen geluid;
+  - wie liever geen beweging heeft (*reduced motion*), ziet de zin meteen staan.
