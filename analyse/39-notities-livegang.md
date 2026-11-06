@@ -21,3 +21,8 @@ Dit zijn punten die voor de testversie bewust nog niet zijn opgelost. Ze moeten 
    - de focus binnen het chatvenster houden (de pagina erachter niet bereikbaar met Tab);
    - een focusrand met genoeg contrast op lichte vlakken en in Pams venster.
 7. **De echte AI-antwoorden** zijn alleen op claude.ai te testen. Voor de livegang moet de verbinding met het eigen model (of de AI-dienst) getest worden op toon, lengte, de regel "één vraag per beurt" en de verwijzing naar 113 en 112.
+
+## Toegevoegd na de derde UX-test
+
+8. **Privacy en Voorwaarden** moeten als echte pagina's bestaan voordat ze in de voet terugkomen.
+9. **De toon van twee citaten** ("Zachte heelmeesters maken stinkende wonden" en het Engelse citaat van Stephen Covey) bespreken met Pardo. De test vond ze schuldgevend voor iemand in een kwetsbaar moment.

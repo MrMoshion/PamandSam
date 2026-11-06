@@ -208,3 +208,28 @@ Doorgevoerd:
 - De onderwerppagina's hebben een lichtbaan in de kop, elk met een eigen lichtval (besluit ontwerper). "Vast in een keuze" heeft een brede baan van links, "Spanning in je relatie" een baan van rechts, en "Werk wordt te veel" twee smalle banen.
 - De schrijfregel krijgt geen gloeiende focusrand meer. Zolang je erin staat, wordt de lijn eronder donker; de cursor laat al zien waar je typt.
 - De cursor staat niet meer in het logo, nergens: niet in de kop, het vaste menu, de onderwerppagina's, de voorproefjes, het chatvenster of het verlichte vlak. Hij blijft als los beeldmerk (favicon en app-icoon) en achter de getypte regel in de kop (besluit ontwerper).
+
+## Ronde 14: na de derde UX-test (zie 42)
+
+Bugs (van mij) hersteld:
+- De kopie bij een paginawissel werd meteen weer verborgen, waardoor het scherm even leeg werd.
+- Bij een nieuw of ander onderwerp werden verborgen knoppen even zichtbaar.
+- Bij snel wisselen stapelden de kopieën zich op, waardoor de letters dubbel stonden.
+- De terugblik zakte bij het openen eerst weg.
+- De knop in de vaste balk was bij aanwijzen onleesbaar.
+- Terug naar home scrolde in één ruk omhoog.
+- Kleiner werk:
+  - De focus gaat na de terugblik weer naar de knop Terugblik.
+  - Tussen de schrijfregel en de knoppen zit 24 px.
+  - De hulpregel is 15 px.
+  - De schrijfregel, het logo en findahelpline.com hebben een raakvlak van 44 px.
+  - De randen van de formuliervelden zijn donkerder.
+
+Inhoud (op advies, met akkoord van de ontwerper):
+- Hulpnummers staan op alle drie de onderwerppagina's.
+- Er is één menu overal: Aanpak, Tarieven, Contact en Probeer gratis.
+- "Probeer gratis" komt minder vaak voor; de betaalde abonnementen zeggen "Kies je na de gratis kennismaking".
+- Overal "6" en "€60".
+- Privacy en Voorwaarden staan voorlopig niet in de voet, omdat die pagina's er nog niet zijn (zie 39).
+- De regel over de testversie en de FAQ zeggen hetzelfde: "alles wat je schrijft blijft alleen in deze browser".
+- De twee citaten blijven staan tot de ontwerper of Pardo erover beslist.
