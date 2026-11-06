@@ -339,6 +339,9 @@ html{scrollbar-gutter:stable}
 .kbd{display:none;flex:none;width:44px;height:44px;margin:-10px -10px -6px 4px;align-items:center;justify-content:center;border:0;border-radius:50%;background:transparent;color:var(--soft);cursor:pointer}
 .kbd svg{width:24px;height:24px}
 .field.typing .kbd{display:inline-flex}
+.field textarea:focus-visible{outline:none;box-shadow:none}
+.field{transition:border-color .3s var(--ease)}
+.field:focus-within{border-bottom-color:var(--ink)}
 .field textarea::placeholder{color:var(--soft);opacity:.85}
 .actions{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
 .pill{font:inherit;font-size:1rem;cursor:pointer;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:30px;padding:10px 22px;min-height:46px}
