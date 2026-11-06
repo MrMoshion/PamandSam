@@ -92,7 +92,12 @@ p{margin:0}
 .site-menu .sep{height:1px;background:var(--line);margin:6px 14px}
 .site-menu small{padding:8px 14px 2px;color:var(--ink-soft);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
 .hero-body{position:relative;z-index:2;padding-block:clamp(56px,11vw,120px) clamp(140px,20vw,220px)}
-@media (max-width:760px){.hero-body{padding-block:56px 240px}}
+@media (max-width:760px){
+  .hero-body{padding-block:48px 150px}
+  header.hero:not(.topic-hero){min-height:100vh;min-height:100svh}
+  header.hero:not(.topic-hero) .hero-body{position:static}
+  .hero .cta-row .small{position:absolute;z-index:3;left:16px;right:16px;bottom:calc(20px + env(safe-area-inset-bottom, 0px));background:rgba(47,41,36,.84);text-align:center}
+}
 .hero .kicker{font-size:var(--step-1);color:#EFE7DB;margin-bottom:18px}
 .hero h1{font-size:var(--step-4);line-height:1.08;max-width:19ch}
 .hero .sub{margin-top:24px;font-size:var(--step-2);line-height:1.35;color:var(--dusk-soft)}
@@ -1084,9 +1089,9 @@ Regels:
   function settle(p) { [roomBg, p.text, p.logo, p.dock].forEach(e => { if (e) { e.style.transition = ''; e.style.transform = ''; e.style.borderRadius = ''; e.style.transformOrigin = ''; } }); }
   /* de schrijfregel in het vlak en die in het venster zijn dezelfde: schuif hem van de ene naar de andere plek */
   function flyDock(dock, src) {
-    dock.style.transform = ''; const f = $('sendForm').getBoundingClientRect(), d = dock.getBoundingClientRect(), k = src.width / f.width;
+    dock.style.transform = ''; const f = $('sendForm').getBoundingClientRect(), d = dock.getBoundingClientRect(), sx = src.width / f.width, sy = src.height / f.height;
     dock.style.transformOrigin = `${f.left - d.left}px ${f.top - d.top}px`;
-    dock.style.transform = `translate(${src.left - f.left}px, ${src.top - f.top}px) scale(${k})`;
+    dock.style.transform = `translate(${src.left - f.left}px, ${src.top - f.top}px) scale(${sx}, ${sy})`;
   }
   const roomOf = v => { const r = document.querySelector(`.door.${v} .room`); if (!r || $('home').hidden) return null; const b = r.getBoundingClientRect(); return b.bottom > 0 && b.top < innerHeight ? r : null; };
 
@@ -1167,8 +1172,8 @@ Regels:
         roomBg.style.transition = MOVE + ', opacity .22s linear'; roomBg.style.opacity = '0';
         [p.logo, p.dock].forEach(e => { if (e) { e.style.transition = MOVE + ', opacity .22s linear'; e.style.opacity = '0'; } });
         minis.forEach(e => { e.style.transition = 'opacity .22s linear'; e.style.opacity = '1'; });
-      }, 380);
-      setTimeout(() => { done(); roomBg.style.opacity = ''; [p.logo, p.dock].forEach(e => { if (e) e.style.opacity = ''; }); minis.forEach(e => { e.style.transition = ''; e.style.opacity = ''; }); }, 640);
+      }, 550);
+      setTimeout(() => { done(); roomBg.style.opacity = ''; [p.logo, p.dock].forEach(e => { if (e) e.style.opacity = ''; }); minis.forEach(e => { e.style.transition = ''; e.style.opacity = ''; }); }, 790);
     }, 240);
   }
   document.addEventListener('click', e => {

@@ -254,3 +254,6 @@ Inhoud (op advies, met akkoord van de ontwerper):
   - "Wat mensen zeggen" heet nu "Deel jouw ervaring".
   - De belofte over wissen is eruit.
 - **Sluiten zonder schok.** Het logo in het venster had door de aantikhoogte een andere maat dan in het vlak, en de schrijfregel was hoger geworden. De maten zijn gelijkgetrokken: het logo landt op de pixel en de schrijfregel tot op 5 px. Aan het eind vloeien ze zacht over in die van het vlak, in plaats van te wisselen.
+- **De schrijfregel verspringt niet meer.** De oorzaak: het overvloeien begon al terwijl de schrijfregel nog bewoog, en hij was een paar pixels hoger dan in het vlak. Nu krimpt hij precies in de maat van het vlak en begint het overvloeien pas als hij stilstaat. Beeld voor beeld gemeten bij openen en sluiten, ook na een gesprek met wisselen, op desktop, mobiel en tablet, voor Pam en Sam: 0,0 px verschil, voor de schrijfregel en voor het logo. De test staat in `site/test-openen-sluiten.js`.
+- **De disclaimer in de kop staat op mobiel onderaan het scherm**, los van de knop. Getest op 375×667, 390×844, 430×932 en 760×1024.
+- **Les:** na elke aanpassing aan een overgang draai ik de meting beeld voor beeld op alle formaten, voordat ik iets oplever.
