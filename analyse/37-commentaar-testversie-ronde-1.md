@@ -257,3 +257,12 @@ Inhoud (op advies, met akkoord van de ontwerper):
 - **De schrijfregel verspringt niet meer.** De oorzaak: het overvloeien begon al terwijl de schrijfregel nog bewoog, en hij was een paar pixels hoger dan in het vlak. Nu krimpt hij precies in de maat van het vlak en begint het overvloeien pas als hij stilstaat. Beeld voor beeld gemeten bij openen en sluiten, ook na een gesprek met wisselen, op desktop, mobiel en tablet, voor Pam en Sam: 0,0 px verschil, voor de schrijfregel en voor het logo. De test staat in `site/test-openen-sluiten.js`.
 - **De disclaimer in de kop staat op mobiel onderaan het scherm**, los van de knop. Getest op 375×667, 390×844, 430×932 en 760×1024.
 - **Les:** na elke aanpassing aan een overgang draai ik de meting beeld voor beeld op alle formaten, voordat ik iets oplever.
+
+## Ronde 16: sluiten zonder verspringing, cursor zonder gloed
+
+- **Oorzaak van het verspringen.** De schrijfregel in het vlak was apart nagebouwd met verkleinde maten. Daardoor weken de lijn, de tekst en de knoppen een paar pixels af van het venster. Bij Pam was dat zichtbaar op de warme achtergrond, bij Sam minder.
+- **Oplossing.** De schrijfregel in het vlak heeft nu dezelfde opbouw en maten als die in het venster, en wordt als geheel verkleind. Het vlak neemt bij openen en sluiten de echte maten over. Aan het eind ligt het exemplaar in het vlak al volledig zichtbaar onder het meegeschoven exemplaar, en vervaagt alleen het bovenste. Er is dus nooit iets half doorzichtig, en daardoor geen grijs-wit moment. Bij sluiten gaat eerst de focus uit de schrijfregel.
+- **Getest:**
+  - `site/test-pixels-sluiten.js`: per beeld het pixelverschil met het eindbeeld, voor Pam en Sam, op desktop en mobiel, met en zonder gesprek. Overal loopt het verschil geleidelijk naar 0.
+  - `site/test-openen-sluiten.js`: de positie per beeld. 0 fouten.
+- **De cursor heeft geen gloed meer in de chatvensters** (voorproefje, typen en wachten), op verzoek van de ontwerper. In de kop van de homepage houdt hij zijn gloed.
