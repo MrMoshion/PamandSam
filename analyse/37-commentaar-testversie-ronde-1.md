@@ -207,3 +207,4 @@ Doorgevoerd:
 - Hersteld: de hulpnummers in de lopende tekst schoven over de woorden ernaast, door de negatieve marge die ik had gebruikt om het raakvlak groter te maken. Het raakvlak is nu onzichtbaar 44 px groot, en de tekst verschuift niet meer.
 - De onderwerppagina's hebben een lichtbaan in de kop, elk met een eigen lichtval (besluit ontwerper). "Vast in een keuze" heeft een brede baan van links, "Spanning in je relatie" een baan van rechts, en "Werk wordt te veel" twee smalle banen.
 - De schrijfregel krijgt geen gloeiende focusrand meer. Zolang je erin staat, wordt de lijn eronder donker; de cursor laat al zien waar je typt.
+- De cursor staat niet meer in het logo, nergens: niet in de kop, het vaste menu, de onderwerppagina's, de voorproefjes, het chatvenster of het verlichte vlak. Hij blijft als los beeldmerk (favicon en app-icoon) en achter de getypte regel in de kop (besluit ontwerper).
