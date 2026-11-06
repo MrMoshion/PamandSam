@@ -139,3 +139,31 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - **Toetsenbord sluiten:** in de Claude-app ontbreekt de knop die Safari zelf laat zien. Daarom staat er een eigen icoon in de schrijfregel, een toetsenbord met een pijltje omlaag. Het verschijnt alleen op een touchscreen en alleen tijdens het typen. De Enter-toets van het toetsenbord heet "verstuur".
 - Het toetsenbord-icoon verschijnt alleen als het toetsenbord echt open is of als je typt, niet al bij het openen van het venster.
 - Wisselen kan altijd direct heen en weer. Een voorstelronde of beurt die nog bezig is, wordt afgebroken en weggehaald. Getest: zes keer snel wisselen, zonder hangende beurten.
+
+## Ronde 12: na de eerste UX-test (zie 38)
+
+- **Contrast:** de blauwe box is nu dekkend #4F6F92 met tekst in 94% wit (gemeten 4,84:1). De inleiding op de onderwerppagina's staat in licht op het donkere deel van de kop, dat langer donker blijft.
+- **Onderwerpen:** nieuwe opmaak, met de titel en een X, "+ Nieuw onderwerp" en een rustige lijst met een gloeiende stip bij het huidige onderwerp. Het paneel schuift eerst in, en pas daarna wordt het gesprek zacht donkerder. Er verschijnt geen wit vlak meer vooraf.
+- **Overgangen:**
+  - Bij het wisselen blijven de balk en de schrijfregel staan; alleen het gesprek vloeit over.
+  - Snel wisselen geeft geen leeg gesprek meer.
+  - Openen via een knop toont de tekst meteen.
+  - Bij sluiten lost alleen de achtergrond op in het vlak, dus er is geen dubbel beeld meer.
+  - Een paginawissel gaat niet meer naar leeg.
+  - Het verslag opent bovenaan.
+- **Duidelijkheid:**
+  - Het voorproefje op mobiel toont "Wissel naar …", zoals het venster.
+  - Op desktop heet het verslag overal "Vat het samen".
+  - Het verslag heeft een X.
+  - De homepage heeft op mobiel een menu.
+- **Klein:**
+  - De links onderaan zijn groter aan te tikken.
+  - Er is geen gekleurde markering meer bij het tikken op mobiel.
+  - In het gesprek staat een hulpregel met aantikbare nummers: 113, 0800-0113 en 112.
+  - De FAQ-tekst over het abonnement is aangepast, en Contact is een link.
+- **Tussenkoppen** worden niet meer getypt; ze komen rustig binnen. Alleen de regel in de kop typt (besluit ontwerper).
+- **Pam:** roman (Plex Serif licht) in plaats van cursief, ook in haar logo. Haar tekstkleur is donkerder: #5A4330 (besluit ontwerper).
+- **Cursor in alle logo's:** meer ruimte tot de tekst. De gloed raakt de M net.
+- **Stijl per venster** blijft zoals de ontwerper heeft bepaald.
+- **Geparkeerd tot na deze ronde:** de focus in het venster houden en de focusrand (zie 39).
+- **Voor de livegang** (zie 39): de belofte "niets opgeslagen", de teller van de gratis vragen, en de focusmodus voor leden als open vraagstuk.
