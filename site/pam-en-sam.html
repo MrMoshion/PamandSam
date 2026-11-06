@@ -160,6 +160,8 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 .room .md-pill{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;font-size:1rem;line-height:1.6;min-height:46px;height:var(--mp-h,auto);padding:10px 22px;border-radius:30px;border:1.5px solid var(--ink-c);color:var(--ink-c)}
 .room .md-pill.primary{background:var(--ink-c);color:#FFFFFF}
 .room .md-link{display:none}
+.dock-proxy{position:absolute;z-index:4;display:block;pointer-events:none;width:var(--tw)}
+.dock-proxy .md-inner{transform:none!important}
 .door.pam .room{--ink-c:var(--pam-ink);--soft-c:var(--pam-soft)}
 .door.sam .room{--ink-c:var(--sam-ink);--soft-c:var(--sam-soft)}
 .room .mini-send .m-mini{display:none}
@@ -1110,11 +1112,23 @@ Regels:
     chat.querySelectorAll('.morph').forEach(e => e.classList.remove('morph'));
     const first = log.querySelector('.turn .msg');
     if (room) $('chatTitle').classList.add('morph');
-    const dock = room ? chat.querySelector(':scope > .layer .dock') : null; if (dock) dock.classList.add('morph');
-    return { text: null, logo: room ? $('chatTitle') : null, miniText: null, miniLogo: room && room.querySelector('.mini-logo'), dock, miniDock: room && room.querySelector('.mini-dock') };
+    return { text: null, logo: room ? $('chatTitle') : null, miniText: null, miniLogo: room && room.querySelector('.mini-logo'), dock: null, real: null, room, miniDock: room && room.querySelector('.mini-dock') };
   }
   function settle(p) { [roomBg, p.text, p.logo, p.dock].forEach(e => { if (e) { e.style.transition = ''; e.style.transform = ''; e.style.borderRadius = ''; e.style.transformOrigin = ''; } }); }
   /* de schrijfregel in het vlak en die in het venster zijn dezelfde: schuif hem van de ene naar de andere plek */
+  const realDock = () => chat.querySelector(':scope > .layer .dock');
+  function makeProxy(room) {
+    const f = $('sendForm').getBoundingClientRect(), c = chat.getBoundingClientRect(), cs = getComputedStyle(room);
+    const w = document.createElement('div'); w.className = 'room dock-proxy'; w.setAttribute('aria-hidden', 'true');
+    ['--ink-c', '--soft-c', '--mf-h', '--mp-h', '--ml-h'].forEach(k => { const v = cs.getPropertyValue(k); if (v) w.style.setProperty(k, v); });
+    w.style.setProperty('--tw', f.width + 'px'); w.style.setProperty('--s', '1');
+    w.style.left = (f.left - c.left) + 'px'; w.style.top = (f.top - c.top) + 'px';
+    w.append(room.querySelector('.md-inner').cloneNode(true)); chat.append(w); return w;
+  }
+  function flyEl(el, src) {
+    el.style.transform = ''; const f = el.getBoundingClientRect(), k = src.width / f.width;
+    el.style.transformOrigin = '0 0'; el.style.transform = `translate(${src.left - f.left}px, ${src.top - f.top}px) scale(${k})`;
+  }
   function flyDock(dock, src) {
     dock.style.transform = ''; const f = $('sendForm').getBoundingClientRect(), d = dock.getBoundingClientRect(), sx = src.width / f.width, sy = sx;
     dock.style.transformOrigin = `${f.left - d.left}px ${f.top - d.top}px`;
@@ -1135,7 +1149,7 @@ Regels:
     bgAt(fromEl.getBoundingClientRect());
     if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
     if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
-    if (p.dock) flyDock(p.dock, p.miniDock.getBoundingClientRect());
+    if (p.miniDock) { p.real = realDock(); p.dock = makeProxy(room); p.real.style.visibility = 'hidden'; flyEl(p.dock, p.miniDock.getBoundingClientRect()); }
     chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
     [roomBg, p.text, p.logo, p.dock].forEach(e => e && (e.style.transition = MOVE));
     requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1143,7 +1157,11 @@ Regels:
       if (p.logo) p.logo.style.transform = 'none'; if (p.dock) p.dock.style.transform = 'none';
       const typing = prepIntro();
       setTimeout(() => chat.classList.remove('entering'), 420);
-      setTimeout(() => { settle(p); chat.style.transition = ''; chat.style.opacity = ''; anim = false; input.focus({ preventScroll: true }); if (typing) typing(); }, 640);
+      setTimeout(() => {
+        settle({ logo: p.logo }); chat.style.transition = ''; chat.style.opacity = ''; anim = false;
+        if (p.dock) { const px = p.dock; p.real.style.visibility = ''; px.style.transition = 'opacity .15s linear'; px.style.opacity = '0'; setTimeout(() => px.remove(), 170); }
+        input.focus({ preventScroll: true }); if (typing) typing();
+      }, 640);
     }));
   }
   let typeId = 0;
@@ -1174,7 +1192,8 @@ Regels:
     if (o && o.dataset && o.dataset.open && o.dataset.open !== conv.voice) { const alt = o.parentNode && o.parentNode.querySelector(`[data-open="${conv.voice}"]`); if (alt) o = alt; }
     const back = room || (o && document.contains(o) && o.offsetParent !== null ? o : null);
     const done = () => {
-      chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ logo: $('chatTitle'), dock: chat.querySelector(':scope > .layer .dock') });
+      chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ logo: $('chatTitle') });
+      chat.querySelectorAll('.dock-proxy').forEach(e => e.remove()); const rd = realDock(); if (rd) { rd.style.visibility = ''; rd.style.transform = ''; rd.style.transition = ''; rd.style.opacity = ''; }
       document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; setInert(outside(), false);
       const fb = focusBack && document.contains(focusBack) && focusBack.offsetParent !== null && focusBack.dataset.open === conv.voice ? focusBack : back;
       if (fb) fb.focus({ preventScroll: true });
@@ -1190,7 +1209,7 @@ Regels:
       [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
       if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
       if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
-      if (p.dock) { p.dock.style.transition = MOVE; flyDock(p.dock, p.miniDock.getBoundingClientRect()); }
+      if (p.miniDock) { p.real = realDock(); p.dock = makeProxy(p.room); p.real.style.visibility = 'hidden'; p.dock.getBoundingClientRect(); p.dock.style.transition = MOVE; flyEl(p.dock, p.miniDock.getBoundingClientRect()); }
       bgAt(back.getBoundingClientRect());
       /* de tekst in het vlak wacht; alleen de achtergrond lost op in het vlak eronder, daarna wisselt de tekst onzichtbaar */
       const minis = [p.logo && p.miniLogo, p.dock && p.miniDock].filter(Boolean);

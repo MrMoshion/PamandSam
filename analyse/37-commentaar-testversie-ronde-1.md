@@ -266,3 +266,10 @@ Inhoud (op advies, met akkoord van de ontwerper):
   - `site/test-pixels-sluiten.js`: per beeld het pixelverschil met het eindbeeld, voor Pam en Sam, op desktop en mobiel, met en zonder gesprek. Overal loopt het verschil geleidelijk naar 0.
   - `site/test-openen-sluiten.js`: de positie per beeld. 0 fouten.
 - **De cursor heeft geen gloed meer in de chatvensters** (voorproefje, typen en wachten), op verzoek van de ontwerper. In de kop van de homepage houdt hij zijn gloed.
+
+## Ronde 17: dubbele "Schrijf hier…" op de iPhone
+
+- **Oorzaak.** Bij openen en sluiten werd het echte invoerveld verkleind en verschoven. Safari op de iPhone tekent de grijze voorbeeldtekst van een invoerveld dan niet mee verkleind, waardoor "Schrijf hier…" groot door het voorproefje heen bleef staan. In Chrome, waarin ik test, gebeurt dat niet; daarom zag ik het niet.
+- **Oplossing.** Het echte invoerveld beweegt nooit meer. Een kopie van alleen tekst en vlakken, met exact dezelfde opbouw als de schrijfregel, schuift mee. Bij sluiten verdwijnt het echte veld onzichtbaar onder de kopie; bij openen neemt het aan het eind de plek van de kopie weer in.
+- **Getest in Chrome:** positie per beeld en pixelverschil, bij openen en sluiten, voor Pam en Sam, op desktop, mobiel en tablet. Overal 0,0 px, en het echte veld beweegt in geen enkel beeld mee. De tests staan in `site/test-openen-sluiten.js`, `site/test-pixels-openen.js` en `site/test-pixels-sluiten.js`.
+- **Beperking.** WebKit, de motor van Safari, is in deze omgeving niet beschikbaar. De laatste controle op de iPhone ligt bij de ontwerper.

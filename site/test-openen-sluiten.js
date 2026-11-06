@@ -15,8 +15,8 @@ const { chromium } = require('playwright'); const fs = require('fs'); const S = 
         const room = document.querySelector(`.door.${v} .room`), md = room.querySelector('.mini-dock'), form = document.getElementById('sendForm'), chat = document.getElementById('chat');
         const op = el => { let o = 1, x = el; while (x) { const cs = getComputedStyle(x); if (cs.visibility === 'hidden' || cs.display === 'none') return 0; o *= +cs.opacity; x = x.parentElement; } return o; };
         const bg = document.getElementById('roomBg'); const out = []; const t0 = performance.now();
-        const f = () => { const a = form.getBoundingClientRect(), m = md.getBoundingClientRect();
-          out.push({ t: Math.round(performance.now() - t0), fb: a.bottom, ft: a.top, fo: chat.hidden ? 0 : op(form), mb: m.bottom, mt: m.top, mo: op(md) * (chat.hidden ? 1 : 1 - (+getComputedStyle(bg).opacity)) });
+        let moved = 0; const f = () => { const px = document.querySelector('.dock-proxy .md-inner'); const el = px || form; const a = el.getBoundingClientRect(), m = md.getBoundingClientRect(); const rd = document.querySelector('#chat > .layer .dock'); if (rd && getComputedStyle(rd).transform !== 'none') moved++;
+          out.push({ t: Math.round(performance.now() - t0), fb: a.bottom, ft: a.top, fo: chat.hidden ? 0 : op(el), moved, mb: m.bottom, mt: m.top, mo: op(md) * (chat.hidden ? 1 : 1 - (+getComputedStyle(bg).opacity)) });
           if (performance.now() - t0 < 1300) requestAnimationFrame(f); else res(out); };
         requestAnimationFrame(f);
       }), v);
@@ -31,8 +31,8 @@ const { chromium } = require('playwright'); const fs = require('fs'); const S = 
           const vis = x => x.fo >= x.mo ? 'f' : 'm'; if (vis(a) !== vis(c)) { const pa = vis(a) === 'f' ? a.fb : a.mb, pc = vis(c) === 'f' ? c.fb : c.mb; worst = Math.max(worst, Math.abs(pc - pa)); }
           if (c.fo > 0.05 && c.mo > 0.05) gap = Math.max(gap, Math.abs(c.fb - c.mb), Math.abs(c.ft - c.mt));
         }
-        const bad = gap > 1.5; if (bad) fail++;
-        return `${label}: sprong bij wissel van exemplaar ${worst.toFixed(1)} px, afstand tijdens overvloeien ${gap.toFixed(1)} px${bad ? '  << FOUT' : ''}`;
+        const mv = Math.max(...frames.map(x => x.moved)); const bad = gap > 1.5 || mv > 0; if (bad) fail++;
+        return `${label}: sprong bij wissel van exemplaar ${worst.toFixed(1)} px, afstand tijdens overvloeien ${gap.toFixed(1)} px, echt veld bewogen: ${mv ? 'ja' : 'nee'}${bad ? '  << FOUT' : ''}`;
       };
       console.log(n, v, '|', check(open, 'openen'), '|', check(close, 'sluiten'));
       await ctx.close();
