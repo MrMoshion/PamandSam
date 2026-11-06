@@ -253,3 +253,4 @@ Inhoud (op advies, met akkoord van de ontwerper):
 - **Tekst:**
   - "Wat mensen zeggen" heet nu "Deel jouw ervaring".
   - De belofte over wissen is eruit.
+- **Sluiten zonder schok.** Het logo in het venster had door de aantikhoogte een andere maat dan in het vlak, en de schrijfregel was hoger geworden. De maten zijn gelijkgetrokken: het logo landt op de pixel en de schrijfregel tot op 5 px. Aan het eind vloeien ze zacht over in die van het vlak, in plaats van te wisselen.
