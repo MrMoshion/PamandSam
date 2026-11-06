@@ -167,3 +167,40 @@ Skill bij deze laag: `design:design-critique` (de toets van het commentaar), daa
 - **Stijl per venster** blijft zoals de ontwerper heeft bepaald.
 - **Geparkeerd tot na deze ronde:** de focus in het venster houden en de focusrand (zie 39).
 - **Voor de livegang** (zie 39): de belofte "niets opgeslagen", de teller van de gratis vragen, en de focusmodus voor leden als open vraagstuk.
+
+## Ronde 13: op weg naar een 4 (zie 41)
+
+Besluiten van de ontwerper:
+- De cursor in de kop ademt zacht na het typen, in plaats van hard te knipperen.
+- Het verslag heet "Terugblik".
+- De focus blijft in het venster en de focusrand is sterker: beide zijn nu vrijgegeven.
+- In het gesprek staat de regel "Testversie: je gesprekken blijven alleen in deze browser".
+- "Meest gekozen" is vervangen door "Meest voordelig".
+
+Doorgevoerd:
+- **Overgangen:**
+  - Openen: het vlak is direct dekkend, zonder dubbele tekst.
+  - Sluiten: geen leeg vlak meer. Zonder meeschuivende tekst lost de achtergrond geleidelijk op in het vlak.
+  - Wisselen: eerst vervaagt het oude gesprek, daarna komt het nieuwe, met een kleine overlap en zonder leeg moment.
+  - Terugblik: eerst vervaagt het gesprek, daarna verschijnt de terugblik.
+  - Pagina's: de oude pagina vervaagt boven de nieuwe, en het vaste menu verdwijnt direct.
+  - Een sprong via het menu toont alle secties meteen.
+  - Bug hersteld: sluiten op een onderwerppagina na een wissel.
+- **Duidelijkheid:**
+  - Er zijn twee namen om te beginnen: "Probeer gratis" en "Begin bij Pam/Sam".
+  - De FAQ klopt: Sam is direct en nuchter, en de wisknop is uit de tekst.
+  - Geen dubbele onderwerpen meer.
+  - Titels worden op een heel woord afgekapt.
+- **Contrast:**
+  - De aanloopzin en de zachte tekst in de kop zijn lichter.
+  - De blauwe box heeft puur witte tekst.
+  - De randen van invoervelden en de schrijfregel zijn donkerder.
+- **Toetsenbord:**
+  - De pagina achter het venster is onbereikbaar (`inert`), net als het gesprek achter Onderwerpen en de Terugblik.
+  - Er is een duidelijke donkere focusrand, ook op elementen zonder standaardopmaak.
+  - Na sluiten keert de focus terug naar Onderwerpen of naar het menu.
+  - Het verborgen menu is niet bereikbaar met Tab.
+- **Raakvlakken:**
+  - De hulpnummers, de links in het menu en "Probeer gratis" zijn minimaal 44 px.
+  - 112, 113 en Veilig Thuis zijn overal aantikbaar.
+- **Huisstijl:** een stip in de kleur van de spreker voor de naam boven elke beurt.

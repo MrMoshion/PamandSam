@@ -12,7 +12,7 @@
    Eén bewust gekozen uitstraling (geen donker thema): alle kleuren staan hieronder vast. */
 :root{
   color-scheme: light;
-  --dusk: #2F2924; --dusk-text: #F6EFE4; --dusk-soft: rgba(246,239,228,.76);
+  --dusk: #2F2924; --dusk-text: #F6EFE4; --dusk-soft: rgba(246,239,228,.88);
   --light: #F8F4EE; --paper: #FCFAF6; --ink: #2E2822; --ink-soft: #625649; --line: rgba(46,40,34,.22);
   --lamp: rgba(255,220,170,.18);
   --mark: rgba(246,212,104,.62);
@@ -28,8 +28,10 @@ html{scroll-behavior:smooth}
 body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 [hidden]{display:none!important}
-:focus-visible{outline:2px solid #F0C98E;outline-offset:3px;border-radius:4px;box-shadow:0 0 14px 3px rgba(255,214,150,.5)}
-.chat :focus-visible{outline-color:var(--c);box-shadow:none}
+:focus-visible{outline:2px solid #2E2822;outline-offset:3px;border-radius:4px;box-shadow:0 0 0 6px rgba(255,214,150,.45)}
+.on-dusk :focus-visible,.dark-sec .glass :focus-visible{outline-color:#FFFFFF}
+.chat :focus-visible{outline-color:var(--ink);box-shadow:0 0 0 6px rgba(var(--g),.25)}
+.newtopic:focus-visible,.topic-item:focus-visible,.sizes button:focus-visible,.menu-site:focus-visible,.door button.room:focus-visible{outline:2px solid var(--ink,#2E2822);outline-offset:3px;border-radius:8px}
 .wrap{max-width:72rem;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 @media (min-width:760px){.wrap{padding-left:max(48px, env(safe-area-inset-left, 0px));padding-right:max(48px, env(safe-area-inset-right, 0px))}}
 h1,h2,h3{font-weight:300;letter-spacing:-.015em;text-wrap:balance;margin:0}
@@ -40,9 +42,9 @@ p{margin:0}
 .cur{position:relative;display:inline-block;vertical-align:-.12em;width:3px;height:1.05em;margin-left:.3em;border-radius:2px;background:var(--c,#fff)}
 .cur::before{content:"";position:absolute;left:-.45em;right:-.45em;top:-.35em;bottom:-.35em;border-radius:50%;
   background:radial-gradient(closest-side,rgba(var(--g,255,255,255),.55),rgba(var(--g,255,255,255),.22) 45%,rgba(var(--g,255,255,255),0))}
-.blink{animation:blink 1.1s steps(1) 5}
-@keyframes blink{50%{opacity:0}}
-@media (prefers-reduced-motion: reduce){.blink{animation:none}}
+.breathe{animation:breathe-cur 2.6s ease-in-out 3}
+@keyframes breathe-cur{50%{opacity:.3}}
+@media (prefers-reduced-motion: reduce){.breathe{animation:none}}
 
 /* ---------- knoppen ---------- */
 .btn{font:inherit;font-size:1rem;font-weight:400;display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:13px 28px;border-radius:40px;cursor:pointer;text-decoration:none;
@@ -66,7 +68,8 @@ p{margin:0}
 .nav ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;font-size:.95rem}
 .nav a{text-decoration:none;color:var(--dusk-soft)}
 .nav a:hover{color:var(--dusk-text)}
-.nav .btn{min-height:42px;padding:8px 18px;font-size:.95rem;border-color:rgba(255,240,220,.9);box-shadow:0 0 22px 3px rgba(255,222,176,.3);transition:box-shadow .3s,background .3s}
+.nav ul a:not(.btn){display:inline-flex;align-items:center;min-height:44px}
+.nav .btn{min-height:44px;padding:8px 18px;font-size:.95rem;border-color:rgba(255,240,220,.9);box-shadow:0 0 22px 3px rgba(255,222,176,.3);transition:box-shadow .3s,background .3s}
 .nav .btn:hover{box-shadow:0 0 30px 6px rgba(255,222,176,.45);background:rgba(255,246,232,.08)}
 @media (max-width:760px){.nav ul li:not(.keep){display:none}}
 .nav ul li.mob-only{display:none}
@@ -83,7 +86,7 @@ p{margin:0}
 .site-menu small{padding:8px 14px 2px;color:var(--ink-soft);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
 .hero-body{position:relative;z-index:2;padding-block:clamp(56px,11vw,120px) clamp(140px,20vw,220px)}
 @media (max-width:760px){.hero-body{padding-block:56px 240px}}
-.hero .kicker{font-size:var(--step-1);color:var(--dusk-soft);margin-bottom:18px}
+.hero .kicker{font-size:var(--step-1);color:#EFE7DB;margin-bottom:18px}
 .hero h1{font-size:var(--step-4);line-height:1.08;max-width:19ch}
 .hero .sub{margin-top:24px;font-size:var(--step-2);line-height:1.35;color:var(--dusk-soft)}
 .topic-hero h1{font-size:var(--step-4);line-height:1.08}
@@ -125,7 +128,7 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 /* het vlak is het gesprek in het klein: zelfde logo, zelfde introductie, zelfde schrijfregel */
 .door button.room{all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:16/10;min-height:400px;padding:22px 26px 30px;border-radius:16px;box-shadow:0 30px 60px -40px rgba(46,40,34,.45);transition:box-shadow .3s var(--ease)}
 .door button.room:hover{box-shadow:0 36px 70px -36px rgba(46,40,34,.55)}
-.door button.room:focus-visible{outline:2px solid #F0C98E;outline-offset:4px}
+
 @media (max-width:760px){.door button.room{aspect-ratio:auto;min-height:440px}}
 .room > *{position:relative}
 .room span{display:block}
@@ -187,8 +190,8 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
   backdrop-filter:blur(24px) saturate(1.1);-webkit-backdrop-filter:blur(24px);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.12),0 40px 80px -40px rgba(31,46,64,.55)}
 @media (max-width:760px){.dark-sec .glass{border-radius:22px;padding:28px 20px}}
-.dark-sec .eyebrow,.dark-sec .sec-head p{color:rgba(255,255,255,.94)}
-.compare .plain > *{border-bottom:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.94)}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:#FFFFFF}
+.compare .plain > *{border-bottom:1px solid rgba(255,255,255,.24);color:#FFFFFF}
 .compare .plain .h{color:#FFFFFF}
 .compare .h{font-weight:400}
 .compare .lit{position:relative;border-radius:18px;overflow:hidden;color:var(--ink);
@@ -228,7 +231,7 @@ details p{padding-bottom:22px;color:var(--ink-soft);max-width:var(--col);overflo
 form.simple{display:grid;gap:14px;max-width:32rem;margin-top:24px}
 form.simple .btn{margin-top:12px}
 form.simple label{display:grid;gap:6px;font-size:.95rem;color:var(--ink-soft)}
-form.simple input,form.simple textarea{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+form.simple input,form.simple textarea{font:inherit;color:var(--ink);background:var(--paper);border:1px solid rgba(46,40,34,.5);border-radius:10px;padding:12px 14px}
 .share{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 .checks{display:flex;flex-wrap:wrap;gap:12px 28px;margin:24px 0 32px;padding:0;list-style:none;color:var(--ink-soft)}
 footer{padding-block:48px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.95rem}
@@ -285,6 +288,7 @@ html{scrollbar-gutter:stable}
 @media (min-width:760px){.log{padding-left:0;padding-right:0}}
 .turn{margin-top:36px}
 .turn:first-child{margin-top:0}
+.turn .name::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:7px;vertical-align:1px;background:var(--dot)}
 .turn .name{display:block;margin-bottom:4px;font-family:var(--sans);font-style:normal;font-weight:400;font-size:.8125rem;letter-spacing:.04em;color:var(--soft)}
 .msg.q{color:var(--voice)}
 .chat.pam .msg.q{font-family:var(--serif)}
@@ -324,7 +328,7 @@ html{scrollbar-gutter:stable}
 @keyframes sweep{0%,18%{background-size:0% 100%}55%,88%{background-size:100% 100%}100%{background-size:0% 100%}}
 @keyframes strike{0%,18%{width:0}55%,88%{width:100%}100%{width:0}}
 @media (prefers-reduced-motion: reduce){.demo.mk .ink{animation:none;background-size:100% 100%}.demo.st .ink::after{animation:none;width:100%}}
-.field{display:flex;align-items:flex-end;border-bottom:1px solid rgba(0,0,0,.4);padding-bottom:10px}
+.field{display:flex;align-items:flex-end;border-bottom:1px solid rgba(0,0,0,.55);padding-bottom:10px}
 .field textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:var(--step-1);line-height:1.45;max-height:9em;padding:0;caret-color:var(--c)}
 .kbd{display:none;flex:none;width:44px;height:44px;margin:-10px -10px -6px 4px;align-items:center;justify-content:center;border:0;border-radius:50%;background:transparent;color:var(--soft);cursor:pointer}
 .kbd svg{width:24px;height:24px}
@@ -335,7 +339,7 @@ html{scrollbar-gutter:stable}
 .pill.primary{background:var(--ink);color:#FFFFFF}
 .pill:disabled{opacity:.45;cursor:default}
 .helpline{font-size:.8125rem;line-height:1.5;color:var(--soft);margin-top:2px}
-.helpline a{color:inherit;text-underline-offset:3px;display:inline-block;padding:10px 2px;margin:-10px 0}
+.helpline a,a.tel{color:inherit;text-underline-offset:3px;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin:-12px -9px;vertical-align:middle}
 .status{min-height:1.4em;margin-top:10px;font-size:.95rem;color:var(--soft)}
 /* onderwerpen */
 
@@ -367,9 +371,11 @@ html{scrollbar-gutter:stable}
 
 /* verslag, in de stijl van Pam of Sam */
 .report{position:absolute;inset:0;z-index:5;overflow-y:auto;opacity:0;transform:translateY(12px);transition:opacity .42s var(--ease),transform .42s var(--ease)}
-.report.in{opacity:1;transform:none}
+.report.in{opacity:1;transform:none;transition-delay:.18s}
+.chat > .layer{transition:opacity .25s var(--ease)}
+.chat.reporting > .layer{opacity:0}
 .log .enter{animation:rise .7s var(--ease) both}
-.log.arrive{animation:arrive .6s var(--ease) .2s both}
+.log.arrive{animation:arrive .45s var(--ease) .2s both}
 @keyframes arrive{from{opacity:0}}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}}
 #home,#topics{transition:opacity .3s var(--ease)}
@@ -404,7 +410,8 @@ html.page-out #home,html.page-out #topics{opacity:0}
   #sendBtn{margin-left:auto}
   .menu{display:flex;flex-direction:column;position:absolute;z-index:7;right:max(16px, env(safe-area-inset-right, 0px));top:calc(64px + env(safe-area-inset-top, 0px));min-width:210px;padding:8px;border-radius:14px;
     background:rgba(255,255,255,.94);box-shadow:0 20px 50px -20px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .32s var(--ease),transform .32s var(--ease)}
-  .menu.in{opacity:1;transform:none;pointer-events:auto}
+  .menu{visibility:hidden}
+  .menu.in{opacity:1;transform:none;pointer-events:auto;visibility:visible}
   .menu .ghost{text-align:left;font-size:16px;padding:12px 14px}
   .ghost{font-size:15px}
   .log{font-size:var(--chat-fs,15px);line-height:1.6;padding-top:24px}
@@ -454,10 +461,10 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <p class="kicker">Iedereen worstelt weleens met zichzelf.</p>
       <h1>Bespreek het met Pam of Sam.</h1>
       <p class="sub" aria-label="Jij komt op het antwoord.">
-        <span aria-hidden="true"><span class="you" id="typed">Jij komt op het antwoord.</span><span class="cur blink" style="--c:#FFF6E8;--g:255,226,186"></span></span>
+        <span aria-hidden="true"><span class="you" id="typed">Jij komt op het antwoord.</span><span class="cur" id="typedCur" style="--c:#FFF6E8;--g:255,226,186"></span></span>
       </p>
       <div class="cta-row">
-        <a class="btn primary" href="#kies">Begin een gesprek</a>
+        <a class="btn primary" href="#kies">Probeer gratis</a>
         <span class="small">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</span>
       </div>
     </div>
@@ -480,7 +487,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
             <span class="mini-col" aria-hidden="true">
               <span class="mini-intro">Hoi, ik ben Pam. Fijn dat je er bent. Even vooraf: ik geef je geen kant-en-klaar advies. Ik luister en stel je vragen die je helpen zelf helder te krijgen wat voor jou klopt. Vertel me rustig wat er speelt.</span>
               <span class="mini-field">Schrijf hier…</span>
-              <span class="mini-send"><span class="out d-mini">Vat het samen</span><span class="out m-mini">Wissel naar Sam</span><span>Verstuur</span></span>
+              <span class="mini-send"><span class="out d-mini">Terugblik</span><span class="out m-mini">Wissel naar Sam</span><span>Verstuur</span></span>
             </span>
           </button>
           <div class="desc">
@@ -496,7 +503,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
             <span class="mini-col" aria-hidden="true">
               <span class="mini-intro">Hoi, ik ben Sam. Verwacht van mij geen kant-en-klaar advies: ik stel scherpe vragen zodat jij zelf de kern vindt. Vertel me wat er speelt.</span>
               <span class="mini-field">Schrijf hier…</span>
-              <span class="mini-send"><span class="out d-mini">Vat het samen</span><span class="out m-mini">Wissel naar Pam</span><span>Verstuur</span></span>
+              <span class="mini-send"><span class="out d-mini">Terugblik</span><span class="out m-mini">Wissel naar Pam</span><span>Verstuur</span></span>
             </span>
           </button>
           <div class="desc">
@@ -600,9 +607,9 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <div class="sec-head"><span class="eyebrow">Tarieven</span><h2>Transparant. Geen kleine lettertjes.</h2>
         <p>Niets op onze servers, je gesprek blijft van jou. 12% van onze jaarwinst voor belasting gaat naar een goed doel voor mentale gezondheid — elk jaar maken we bekend hoeveel en aan welk doel.</p></div>
       <div class="prices">
-        <div class="price"><span class="lbl">Kennismaking</span><span class="amt">Gratis</span><span class="per">eerste 6 vragen aan Pam of Sam</span><p>Kies Pam of Sam en ontdek of Pam &amp; Sam bij jou past. Geen verplichtingen.</p><a class="btn" href="#kies">Start gratis →</a></div>
-        <div class="price"><span class="lbl">Flexibel · Maandabonnement</span><span class="amt">€5,99</span><span class="per">per maand, opzegbaar</span><p>Onbeperkt chatten met Pam én Sam. Doorlopende begeleiding. Opzegbaar per maand. Spreken of typen. Allebei mogelijk.</p><a class="btn" href="#kies">Nu starten →</a></div>
-        <div class="price best"><span class="lbl">Meest gekozen · Jaarabonnement</span><span class="amt">€60,-</span><span class="per">per jaar, vooruit betaald · 2 maanden gratis</span><p>Onbeperkt chatten met Pam én Sam. Een heel jaar begeleiding voor de prijs van tien maanden. Spreken of typen. Allebei mogelijk.</p><a class="btn primary" href="#kies">Nu starten →</a></div>
+        <div class="price"><span class="lbl">Kennismaking</span><span class="amt">Gratis</span><span class="per">eerste 6 vragen aan Pam of Sam</span><p>Kies Pam of Sam en ontdek of Pam &amp; Sam bij jou past. Geen verplichtingen.</p><a class="btn" href="#kies">Probeer gratis</a></div>
+        <div class="price"><span class="lbl">Flexibel · Maandabonnement</span><span class="amt">€5,99</span><span class="per">per maand, opzegbaar</span><p>Onbeperkt chatten met Pam én Sam. Doorlopende begeleiding. Opzegbaar per maand. Spreken of typen. Allebei mogelijk.</p><a class="btn" href="#kies">Probeer gratis</a></div>
+        <div class="price best"><span class="lbl">Meest voordelig · Jaarabonnement</span><span class="amt">€60,-</span><span class="per">per jaar, vooruit betaald · 2 maanden gratis</span><p>Onbeperkt chatten met Pam én Sam. Een heel jaar begeleiding voor de prijs van tien maanden. Spreken of typen. Allebei mogelijk.</p><a class="btn primary" href="#kies">Probeer gratis</a></div>
       </div>
       <p class="note">Na betaling ontvang je een toegangscode per e-mail. Daarmee log je in.</p>
     </div>
@@ -613,7 +620,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <div class="sec-head"><span class="eyebrow">Belangrijk om te weten</span><h2>Pam &amp; Sam is geen therapie.</h2></div>
       <div class="prose">
         <p>Pam en Sam zijn AI-gesprekspartners die je helpen nadenken over je situatie. Ze stellen vragen, geven een ander perspectief en helpen je een concrete stap te zetten. Dat is iets anders dan professionele psychologische begeleiding.</p>
-        <p>Bij ernstige psychische klachten, trauma of crisis raden we altijd aan professionele hulp te zoeken. Pam en Sam kunnen je daarbij helpen de juiste stap te zetten, maar zijn geen vervanging voor een therapeut of huisarts. Bij acuut gevaar bel 112. Voor donkere of suïcidale gedachten kun je dag en nacht terecht bij 113 Zelfmoordpreventie via 113 of 0800-0113. Ben je in een ander land? Bel dan je lokale alarmnummer en kijk op <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a> voor een hulplijn bij jou in de buurt.</p>
+        <p>Bij ernstige psychische klachten, trauma of crisis raden we altijd aan professionele hulp te zoeken. Pam en Sam kunnen je daarbij helpen de juiste stap te zetten, maar zijn geen vervanging voor een therapeut of huisarts. Bij acuut gevaar bel <a class="tel" href="tel:112">112</a>. Voor donkere of suïcidale gedachten kun je dag en nacht terecht bij 113 Zelfmoordpreventie via <a class="tel" href="tel:113">113</a> of <a class="tel" href="tel:08000113">0800-0113</a>. Ben je in een ander land? Bel dan je lokale alarmnummer en kijk op <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a> voor een hulplijn bij jou in de buurt.</p>
       </div>
       <div class="two-col">
         <div><h3>Pam &amp; Sam is goed voor</h3><ul><li>Alledaagse vraagstukken en dilemma's</li><li>Een ander perspectief op een situatie</li><li>Zakelijke en persoonlijke beslissingen</li><li>Een veilig gesprek zonder oordeel</li></ul></div>
@@ -626,12 +633,12 @@ html.page-out #home,html.page-out #topics{opacity:0}
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">Veelgestelde vragen</span><h2>Antwoorden op jouw vragen</h2></div>
       <details><summary>Is mijn gesprek echt anoniem?</summary><p>Wij bewaren je gesprekken niet op onze servers. Ben je gratis gebruiker, dan wordt er niets opgeslagen: sluit je de browser, dan is het gesprek weg. Heb je een abonnement, dan wordt je gesprek alleen lokaal in je eigen browser bewaard zodat je later verder kunt, en je kunt het op elk moment zelf wissen. Om je een antwoord te geven worden je berichten verwerkt door de AI-techniek achter Pam en Sam. Van jou kennen wij alleen je e-mailadres. Caren heeft geen toegang tot de inhoud van je gesprekken.</p></details>
-      <details><summary>Wat is het verschil tussen Pam en Sam?</summary><p>Pam is warm en empathisch. Ze geeft eerst ruimte aan wat je voelt voordat ze vragen stelt. Sam is rationeel en analytisch. Hij kijkt naar feiten, oorzaken en concrete stappen. Beide zijn geïnspireerd door gesprekken met Caren.</p></details>
+      <details><summary>Wat is het verschil tussen Pam en Sam?</summary><p>Pam is warm en empathisch. Ze geeft eerst ruimte aan wat je voelt voordat ze vragen stelt. Sam is direct en nuchter. Hij gaat snel naar de kern: feiten, oorzaken en concrete stappen. Beide zijn geïnspireerd door gesprekken met Caren.</p></details>
       <details><summary>Is dit hetzelfde als therapie?</summary><p>Nee. Pam en Sam zijn AI-gesprekspartners, geen therapeuten of psychologen. Ze helpen je nadenken en een stap te zetten. Bij ernstige psychische klachten raden we altijd professionele hulp aan.</p></details>
       <details><summary>Hoe zeg ik mijn abonnement op?</summary><p>Na het inloggen vind je onder "Mijn account" de optie "Abonnement beheren". Daar kun je op elk moment zelf opzeggen, zonder gedoe.</p></details>
       <details><summary>Kan ik wisselen tussen Pam en Sam?</summary><p>Ja, altijd. Via de wisselknop in het chatvenster schakel je direct over. Het gesprek gaat naadloos verder, de nieuwe gesprekspartner heeft de context gelezen.</p></details>
       <details><summary>Wat als ik het niet prettig vind?</summary><p>Dan zeg je het abonnement op en betaal je niets meer. Geen gedoe, geen verborgen kosten. De 6 gratis kennismakingsvragen zijn er juist voor om te ontdekken of het bij je past.</p></details>
-      <details><summary>Wordt mijn gesprek opgeslagen?</summary><p>Voor abonnees wordt het gesprek automatisch lokaal opgeslagen in je eigen browser, zodat je later verder kunt gaan waar je gebleven bent. Je kunt je gesprek op elk moment wissen via de wisknop in de chat. Voor gratis gebruikers wordt niets opgeslagen.</p></details>
+      <details><summary>Wordt mijn gesprek opgeslagen?</summary><p>Voor abonnees wordt het gesprek automatisch lokaal opgeslagen in je eigen browser, zodat je later verder kunt gaan waar je gebleven bent. Je kunt je gesprek op elk moment zelf wissen. Voor gratis gebruikers wordt niets opgeslagen.</p></details>
       <details><summary>Wat gebeurt er na de zes gratis vragen?</summary><p>Er wordt niets afgeschreven. Je ziet de keuze tussen maandelijks en jaarlijks. Let op: een gratis gesprek wordt niet bewaard, dus na betaling begin je een nieuw gesprek. De zes vragen zijn er om te ontdekken of dit bij je past.</p></details>
       <details><summary>Kan ik praten in plaats van typen?</summary><p>Ja. Als abonnee kun je spreken in plaats van typen, in hetzelfde gesprek.</p></details>
       <details><summary>Hoe log ik in?</summary><p>Na betaling krijg je een toegangscode per e-mail. Log in met je e-mailadres en die code. Code kwijt? Klik op “Code vergeten?” en we sturen je een nieuwe.</p></details>
@@ -674,7 +681,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <h2 style="font-size:var(--step-3);margin-top:64px">Klaar om te beginnen?</h2>
       <p class="note" style="margin-top:12px">Start gratis. Geen creditcard nodig. Anoniem. Altijd opzegbaar.</p>
       <ul class="checks"><li>✓ Eerste 6 vragen gratis</li><li>✓ Geen creditcard</li><li>✓ Anoniem gesprek</li></ul>
-      <a class="btn primary" href="#kies">Gratis kennismaking starten</a>
+      <a class="btn primary" href="#kies">Probeer gratis</a>
     </div>
   </section>
 </main>
@@ -706,7 +713,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
         <div class="menu" id="menu">
           <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
           <button class="ghost" type="button" id="switchBtn">Wissel</button>
-          <button class="ghost" type="button" id="reportBtn">Vat het samen</button>
+          <button class="ghost" type="button" id="reportBtn">Terugblik</button>
           <div class="sizes" role="group" aria-label="Tekstgrootte"><span>Tekstgrootte</span><button type="button" data-fs="15" aria-label="Normale tekst">A</button><button type="button" data-fs="17" aria-label="Grotere tekst">A</button><button type="button" data-fs="19" aria-label="Grootste tekst">A</button></div>
         </div>
         <button class="ghost" type="button" id="closeBtn" aria-label="Sluiten"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
@@ -730,12 +737,13 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <form id="sendForm">
         <div class="field"><label class="sr" for="input">Jouw antwoord</label><textarea id="input" rows="1" placeholder="Schrijf hier…" enterkeyhint="send"></textarea><button class="kbd" type="button" id="kbdBtn" aria-label="Toetsenbord sluiten"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 7.5h1M9 7.5h1M12 7.5h1M15 7.5h1M18 7.5h.01M6 10.5h1M9 10.5h1M12 10.5h1M15 10.5h1M18 10.5h.01M8 13h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9 18.5l3 2.5 3-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
         <div class="actions">
-          <button class="pill" type="button" id="sumBtn">Vat het samen</button>
+          <button class="pill" type="button" id="sumBtn">Terugblik</button>
           <button class="pill" type="button" id="switchBtn2">Wissel</button>
           <button class="pill primary" type="submit" id="sendBtn">Verstuur</button>
         </div>
         <p class="status" id="status" role="status"></p>
         <p class="helpline">Gaat het niet goed? Bel <a href="tel:113">113</a> of <a href="tel:08000113">0800-0113</a>. Bij direct gevaar <a href="tel:112">112</a>.</p>
+        <p class="helpline">Testversie: je gesprekken blijven alleen in deze browser.</p>
       </form>
     </div>
   </div>
@@ -748,9 +756,9 @@ html.page-out #home,html.page-out #topics{opacity:0}
     </div>
   </div>
   <div class="report" id="report" hidden>
-    <button class="ghost rclose" type="button" id="reportClose" aria-label="Sluit verslag"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    <button class="ghost rclose" type="button" id="reportClose" aria-label="Sluit terugblik"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     <div class="inner">
-      <span class="eyebrow">Verslag</span>
+      <span class="eyebrow">Terugblik</span>
       <h2 id="reportTitle">Jouw gesprek</h2>
       <p class="meta" id="reportMeta"></p>
       <div class="body" id="reportBody"></div>
@@ -772,7 +780,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
   const typed = $('typed');
   if (!reduce && typed) {
     const full = typed.textContent; typed.textContent = ''; let i = 0;
-    const tick = () => { if (i >= full.length) return; typed.textContent += full[i++]; const ch = full[i-1];
+    const tick = () => { if (i >= full.length) { const c = $('typedCur'); if (c) c.classList.add('breathe'); return; } typed.textContent += full[i++]; const ch = full[i-1];
       setTimeout(tick, i === 4 ? 380 : ch === ' ' ? 120 : 55 + Math.random()*70); };
     setTimeout(tick, 900);
   }
@@ -789,7 +797,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
       body: ['Soms gaat het niet om de afwas of de planning. Het is dezelfde discussie in een ander jasje, of juist de stilte die blijft hangen. Je weet dat er iets speelt, maar niet precies wat.',
              'Pam en Sam helpen je dat uit elkaar te halen. Wat voel jij, wat wil je eigenlijk, en wat zou je willen zeggen? Niet om te bepalen wie gelijk heeft, maar zodat jij helder hebt waar je staat voordat je het gesprek aangaat.',
              'Anoniem en zonder oordeel. Zes vragen gratis, niets opgeslagen op onze servers.'],
-      cta: 'Begin gratis over je relatie', fine: 'Voel je je niet veilig thuis? Bel Veilig Thuis op 0800-2000, gratis en 24/7. Bij direct gevaar: 112.' },
+      cta: 'Begin gratis over je relatie', fine: 'Voel je je niet veilig thuis? Bel Veilig Thuis op <a class="tel" href="tel:08002000">0800-2000</a>, gratis en 24/7. Bij direct gevaar: <a class="tel" href="tel:112">112</a>.' },
     'werk-wordt-te-veel': { title: 'Werk wordt te veel?', subject: 'je werk',
       body: ['Je lijst wordt langer, je energie korter. Je zegt ja terwijl je nee bedoelt, of je ligt \'s nachts te malen over maandag. Harder werken lost het niet op, want het probleem is zelden alleen de hoeveelheid.',
              'Pam en Sam vragen door: wat kost je het meest energie, wat houd je in stand, en wat zou je morgen anders kunnen doen? Zo krijg je grip terug, één stap tegelijk.',
@@ -807,7 +815,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
       <section style="padding-top:24px"><div class="wrap"><div class="topic-body">
       <p>${t.body[1]}</p><p>${t.body[2]}</p>
       <p class="start">${t.cta}</p>
-      <div class="cta-row" style="margin-top:0"><button class="btn v-pam" type="button" data-open="pam" data-topic="${slug}">Met Pam</button><button class="btn v-sam" type="button" data-open="sam" data-topic="${slug}">Met Sam</button></div>
+      <div class="cta-row" style="margin-top:0"><button class="btn v-pam" type="button" data-open="pam" data-topic="${slug}">Begin bij Pam</button><button class="btn v-sam" type="button" data-open="sam" data-topic="${slug}">Begin bij Sam</button></div>
       ${t.fine ? `<p class="fine">${t.fine}</p>` : ''}
       <p class="fine">Pam en Sam zijn AI-gesprekspartners, geïnspireerd door gesprekken met Caren. Geen therapie of vervanging van professionele hulp.</p></div>
       <div class="sec-head" style="margin:64px 0 24px"><span class="eyebrow">Ook interessant</span></div><div class="cards">${others}</div></div></section>`;
@@ -816,18 +824,30 @@ html.page-out #home,html.page-out #topics{opacity:0}
   let page = null;
   function route() {
     const h = location.hash.slice(1), next = TOPICS[h] ? h : 'home', changed = page !== null && next !== page;
-    page = next; swap(h);
+    let ghost = null;
     if (changed && !reduce) {
-      const pg = next === 'home' ? $('home') : document.getElementById('t-' + next), hb = pg && pg.querySelector('.hero-body');
-      if (hb) hb.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 800, easing: 'cubic-bezier(.22,.61,.36,1)' });
+      const cur = page === 'home' ? $('home') : document.getElementById('t-' + page);
+      if (cur) {
+        ghost = cur.cloneNode(true); ghost.removeAttribute('id'); ghost.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+        ghost.setAttribute('aria-hidden', 'true'); ghost.inert = true;
+        ghost.style.cssText = `position:fixed;left:0;right:0;top:${-scrollY}px;z-index:39;pointer-events:none;background:var(--light)`;
+        document.body.append(ghost);
+      }
+      $('bar').classList.remove('in');
+    }
+    page = next; swap(h);
+    if (ghost) {
+      ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .32s cubic-bezier(.4,0,.2,1)'; requestAnimationFrame(() => { ghost.style.opacity = '0'; }); setTimeout(() => ghost.remove(), 400);
+      const pg = page === 'home' ? $('home') : document.getElementById('t-' + page);
+      if (pg) pg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 220, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards' });
     }
   }
   function swap(h) {
     const isTopic = !!TOPICS[h];
     $('home').hidden = isTopic;
     document.querySelectorAll('.topic').forEach(t => t.hidden = t.id !== 't-' + h);
-    if (isTopic) scrollTo({ top: 0, behavior: 'instant' });
-    else if (h) { const el = document.getElementById(h); if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
+    if (isTopic || !h) { if (isTopic || page !== null) scrollTo({ top: 0, behavior: 'instant' }); }
+    else { const el = document.getElementById(h); if (el) { document.querySelectorAll('.rv').forEach(x => x.classList.add('shown')); el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); } }
   }
   addEventListener('hashchange', route); route();
 
@@ -913,7 +933,7 @@ Regels:
 - Elke beurt is kort (${v === 'pam' ? 'hooguit 40' : 'hooguit 25'} woorden) en eindigt met precies één vraag.
 - Gebruik waar het kan de eigen woorden van de gebruiker.
 - Werk toe naar een conclusie. Na vier à zes vragen vraag je de gebruiker om in één zin zelf te zeggen wat hij of zij nu weet. Daarna vraag je welke ene kleine stap de gebruiker zelf kiest.
-- Heeft de gebruiker een eigen conclusie en een stap genoemd, sluit dan af met één korte zin zonder vraag, en nodig uit om met "Vat het samen" het verslag te bekijken.
+- Heeft de gebruiker een eigen conclusie en een stap genoemd, sluit dan af met één korte zin zonder vraag, en nodig uit om met "Terugblik" het gesprek terug te lezen.
 - Beurten van de andere gesprekspartner staan in het gesprek met hun naam tussen blokhaken, zoals [Sam]. Die zijn niet van jou.
 - Schrijf in het Nederlands. Geen opsommingstekens, geen vetgedrukte tekst, geen emoji, geen aanhalingstekens rond je antwoord.
 - Noem jezelf nooit therapeut. Bij signalen van acuut gevaar verwijs je rustig naar 113 Zelfmoordpreventie (113 of 0800-0113) of 112.
@@ -931,7 +951,17 @@ Regels:
   const show = el => { clearTimeout(el._t); el.hidden = false; el.getBoundingClientRect(); el.classList.add('in'); };
   const hide = el => { if (el.hidden) return; el.classList.remove('in'); clearTimeout(el._t); el._t = setTimeout(() => { el.hidden = true; }, reduce ? 0 : 430); };
   const seen = new WeakMap();
-  const openDrawer = () => $('drawer').classList.add('in'), closeDrawer = () => $('drawer').classList.remove('in');
+  const outside = () => [$('home'), $('topics'), $('bar'), $('siteMenu'), document.querySelector('footer')];
+  const setInert = (els, on) => els.forEach(e => { if (e) e.inert = on; });
+  const layerEl = () => chat.querySelector(':scope > .layer');
+  const openDrawer = () => { $('drawer').classList.add('in'); setInert([layerEl()], true); };
+  const closeDrawer = (back) => {
+    if (!$('drawer').classList.contains('in')) return;
+    $('drawer').classList.remove('in'); setInert([layerEl()], false);
+    if (back) (matchMedia('(max-width:600px)').matches ? $('menuBtn') : $('topicsBtn')).focus({ preventScroll: true });
+  };
+  const openReport = () => { chat.classList.add('reporting'); show($('report')); setInert([layerEl()], true); };
+  const closeReport = () => { if ($('report').hidden) return; hide($('report')); setInert([layerEl()], false); setTimeout(() => chat.classList.remove('reporting'), reduce ? 0 : 260); };
   /* het oude venster blijft even liggen en vloeit rustig weg boven het nieuwe: nooit eerst naar leeg */
   function snapshot(keepChrome = true) {
     if (reduce) return null;
@@ -954,7 +984,7 @@ Regels:
   }
   function dissolve(ghost) {
     if (!ghost) return;
-    ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .45s cubic-bezier(.4,0,.2,1)';
+    ghost.inert = true; ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .3s cubic-bezier(.4,0,.2,1)';
     requestAnimationFrame(() => { ghost.style.opacity = '0'; });
     setTimeout(() => ghost.remove(), 850);
   }
@@ -970,7 +1000,7 @@ Regels:
     $('switchBtn').innerHTML = 'Wissel<span class="long"> naar ' + (v === 'pam' ? 'Sam' : 'Pam') + '</span>';
     $('switchBtn2').textContent = 'Wissel naar ' + (v === 'pam' ? 'Sam' : 'Pam');
   }
-  function turnEl(name, p) { const t = document.createElement('div'); t.className = 'turn'; const n = document.createElement('span'); n.className = 'name'; n.textContent = name; t.append(n, p); return t; }
+  function turnEl(name, p) { const t = document.createElement('div'); t.className = 'turn'; const n = document.createElement('span'); n.className = 'name'; n.textContent = name; n.style.setProperty('--dot', name === 'Pam' ? '#C9A15F' : '#4F6F92'); t.append(n, p); return t; }
   function render() {
     log.replaceChildren(); const n = seen.has(conv) ? seen.get(conv) : conv.msgs.length;
     conv.msgs.forEach((m, mi) => {
@@ -1024,9 +1054,9 @@ Regels:
 
   function openChat(v, fromEl, topic) {
     if (anim) return;
-    conv = topic ? newConv(v, topic) : (convs.find(x => x.voice === v && hasAnswers(x)) || convs.find(x => x.voice === v) || newConv(v));
+    conv = topic ? (convs.find(x => x.topic === topic && x.voice === v) || newConv(v, topic)) : (convs.find(x => x.voice === v && hasAnswers(x)) || convs.find(x => x.voice === v) || newConv(v));
     applyVoice(v);
-    $('report').hidden = true; $('report').classList.remove('in'); closeDrawer(); closeMenu(); status.textContent = ''; fitVV();
+    $('report').hidden = true; $('report').classList.remove('in'); chat.classList.remove('reporting'); $('drawer').classList.remove('in'); setInert([layerEl()], false); closeMenu(); setInert(outside(), true); status.textContent = ''; fitVV();
     origin = fromEl || null;
     chat.classList.add('noanim', 'entering'); chat.hidden = false; document.body.style.overflow = 'hidden';
     render();
@@ -1035,8 +1065,7 @@ Regels:
     bgAt(fromEl.getBoundingClientRect());
     if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
     if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
-    chat.style.opacity = '0'; chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
-    chat.style.transition = 'opacity .16s linear'; chat.style.opacity = '1';
+    chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
     [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
     requestAnimationFrame(() => requestAnimationFrame(() => {
       roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';
@@ -1047,13 +1076,15 @@ Regels:
   }
   function closeChat() {
     if (anim) return; if (ctl) ctl.abort();
-    hide($('report')); closeDrawer(); closeMenu(); if (mode) setMode(mode);
+    closeReport(); closeDrawer(); closeMenu(); if (mode) setMode(mode);
     let room = roomOf(conv.voice);
     if (!room && !$('home').hidden) { const r = document.querySelector(`.door.${conv.voice} .room`); if (r) { r.scrollIntoView({ block: 'center', behavior: 'instant' }); room = r; } }
-    const back = room || (origin && document.contains(origin) && origin.offsetParent !== null ? origin : null);
+    let o = origin;
+    if (o && o.dataset && o.dataset.open && o.dataset.open !== conv.voice) { const alt = o.parentNode && o.parentNode.querySelector(`[data-open="${conv.voice}"]`); if (alt) o = alt; }
+    const back = room || (o && document.contains(o) && o.offsetParent !== null ? o : null);
     const done = () => {
       chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ text: log.querySelector('.morph .msg'), logo: $('chatTitle') });
-      document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; if (back) back.focus({ preventScroll: true });
+      document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; setInert(outside(), false); if (back) back.focus({ preventScroll: true });
     };
     if (reduce) return done();
     anim = true;
@@ -1069,7 +1100,8 @@ Regels:
       /* de tekst in het vlak wacht; alleen de achtergrond lost op in het vlak eronder, daarna wisselt de tekst onzichtbaar */
       const minis = [p.text && p.miniText, p.logo && p.miniLogo].filter(Boolean);
       minis.forEach(e => { e.style.visibility = 'hidden'; });
-      setTimeout(() => { roomBg.style.transition = MOVE + ', opacity .2s linear'; roomBg.style.opacity = '0'; }, 400);
+      if (p.text) setTimeout(() => { roomBg.style.transition = MOVE + ', opacity .2s linear'; roomBg.style.opacity = '0'; }, 400);
+      else { roomBg.style.transition = MOVE + ', opacity .55s ease-in'; roomBg.style.opacity = '0'; }
       setTimeout(() => { done(); roomBg.style.opacity = ''; minis.forEach(e => { e.style.visibility = ''; }); }, 620);
     }, 240);
   }
@@ -1103,8 +1135,8 @@ Regels:
     if (e.key !== 'Escape' || chat.hidden) return;
     if (!$('helpCard').hidden) { toggleHelp(false); }
     else if ($('menu').classList.contains('in')) { closeMenu(); }
-    else if (!$('report').hidden) { hide($('report')); input.focus(); }
-    else if ($('drawer').classList.contains('in')) { closeDrawer(); }
+    else if (!$('report').hidden) { closeReport(); input.focus({ preventScroll: true }); }
+    else if ($('drawer').classList.contains('in')) { closeDrawer(true); }
     else closeChat();
   });
 
@@ -1148,7 +1180,7 @@ Regels:
     const text = input.value.trim(); if (!text || busy) return;
     input.value = ''; input.style.height = 'auto'; syncKbd();
     const c = conv;
-    if (!hasAnswers(c) && !c.topic) c.title = text.length > 42 ? text.slice(0, 40).trim().replace(/[.,;:!?]+$/, '') + '…' : text;
+    if (!hasAnswers(c) && !c.topic) c.title = text.length > 42 ? text.slice(0, 42).replace(/\s+\S*$/, '').replace(/[.,;:!?]+$/, '') + '…' : text;
     c.msgs.push({ who: 'a', text }); ask(c, null);
   }
   async function ask(c, extra) {
@@ -1221,8 +1253,8 @@ Regels:
     closeMenu(); openDrawer(); $('newTopic').focus({ preventScroll: true });
   }
   $('topicsBtn').onclick = showTopics;
-  $('drawerShade').onclick = closeDrawer;
-  $('drawerClose').onclick = closeDrawer;
+  $('drawerShade').onclick = () => closeDrawer(true);
+  $('drawerClose').onclick = () => closeDrawer(true);
   $('newTopic').onclick = () => { if (busy) return; closeDrawer(); const g = snapshot(); conv = newConv(conv.voice); render(); dissolve(g); input.focus({ preventScroll: true }); };
 
   /* ---------- verslag: het hele gesprek, zonder wat je doorstreepte ---------- */
@@ -1244,11 +1276,11 @@ Regels:
     reportText = lines.join('\n\n');
     $('reportTitle').textContent = conv.title;
     $('reportMeta').textContent = 'Gesprek met ' + NAME[conv.voice] + ' · ' + new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
-    $('copyNote').textContent = ''; closeMenu(); $('report').className = 'report bg-' + conv.voice; show($('report')); $('report').scrollTop = 0; $('reportTitle').setAttribute('tabindex', '-1'); $('reportTitle').focus({ preventScroll: true });
+    $('copyNote').textContent = ''; closeMenu(); $('report').className = 'report bg-' + conv.voice; openReport(); $('report').scrollTop = 0; $('reportTitle').setAttribute('tabindex', '-1'); $('reportTitle').focus({ preventScroll: true });
   }
   $('sumBtn').onclick = showReport; $('reportBtn').onclick = showReport;
-  $('backBtn').onclick = () => { hide($('report')); input.focus({ preventScroll: true }); };
-  $('reportClose').onclick = () => { hide($('report')); input.focus({ preventScroll: true }); };
+  $('backBtn').onclick = () => { closeReport(); input.focus({ preventScroll: true }); };
+  $('reportClose').onclick = () => { closeReport(); input.focus({ preventScroll: true }); };
   $('copyBtn').onclick = () => {
     const note = $('copyNote');
     navigator.clipboard.writeText(reportText).then(() => { note.textContent = 'Gekopieerd.'; }, () => { note.textContent = 'Kopiëren lukte niet. Selecteer de tekst hierboven en kopieer hem zelf.'; });
