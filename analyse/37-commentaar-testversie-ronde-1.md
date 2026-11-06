@@ -204,3 +204,5 @@ Doorgevoerd:
   - De hulpnummers, de links in het menu en "Probeer gratis" zijn minimaal 44 px.
   - 112, 113 en Veilig Thuis zijn overal aantikbaar.
 - **Huisstijl:** een stip in de kleur van de spreker voor de naam boven elke beurt.
+- Hersteld: de hulpnummers in de lopende tekst schoven over de woorden ernaast, door de negatieve marge die ik had gebruikt om het raakvlak groter te maken. Het raakvlak is nu onzichtbaar 44 px groot, en de tekst verschuift niet meer.
+- De onderwerppagina's hebben een lichtbaan in de kop, elk met een eigen lichtval (besluit ontwerper). "Vast in een keuze" heeft een brede baan van links, "Spanning in je relatie" een baan van rechts, en "Werk wordt te veel" twee smalle banen.

@@ -63,6 +63,12 @@ p{margin:0}
 .beam{position:absolute;inset:-60px;filter:blur(28px);pointer-events:none}
 .beam::before{content:"";position:absolute;inset:0;clip-path:polygon(60% 0%,84% 0%,52% 100%,20% 100%);
   background:linear-gradient(to bottom,rgba(255,232,196,.24),rgba(255,232,196,.12) 40%,rgba(255,232,196,.03) 75%,rgba(255,232,196,0))}
+/* elke onderwerppagina een eigen lichtval */
+.beam-1::before{clip-path:polygon(6% 0%,30% 0%,62% 100%,30% 100%)}
+.beam-2::before{clip-path:polygon(78% 0%,94% 0%,74% 100%,46% 100%)}
+.beam-3::before{clip-path:polygon(34% 0%,46% 0%,40% 100%,22% 100%)}
+.beam-3::after{content:"";position:absolute;inset:0;clip-path:polygon(60% 0%,68% 0%,70% 100%,56% 100%);opacity:.7;
+  background:linear-gradient(to bottom,rgba(255,232,196,.24),rgba(255,232,196,.12) 40%,rgba(255,232,196,.03) 75%,rgba(255,232,196,0))}
 .nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:28px}
 .logo{display:inline-flex;align-items:center;font-size:1.375rem;letter-spacing:-.01em;text-decoration:none;color:inherit;white-space:nowrap}
 .nav ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;font-size:.95rem}
@@ -339,7 +345,8 @@ html{scrollbar-gutter:stable}
 .pill.primary{background:var(--ink);color:#FFFFFF}
 .pill:disabled{opacity:.45;cursor:default}
 .helpline{font-size:.8125rem;line-height:1.5;color:var(--soft);margin-top:2px}
-.helpline a,a.tel{color:inherit;text-underline-offset:3px;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin:-12px -9px;vertical-align:middle}
+.helpline a,a.tel{color:inherit;text-underline-offset:3px;position:relative}
+.helpline a::after,a.tel::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
 .status{min-height:1.4em;margin-top:10px;font-size:.95rem;color:var(--soft)}
 /* onderwerpen */
 
@@ -808,7 +815,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
   for (const [slug, t] of Object.entries(TOPICS)) {
     const others = Object.entries(TOPICS).filter(([s]) => s !== slug).map(([s, o]) => `<a class="card" href="#${s}"><h3>${o.title}</h3><span>Lees meer →</span></a>`).join('');
     const v = document.createElement('div'); v.className = 'topic'; v.id = 't-' + slug; v.hidden = true;
-    v.innerHTML = `<header class="hero grain on-dusk topic-hero"><div class="lamp"></div><div class="wrap">
+    v.innerHTML = `<header class="hero grain on-dusk topic-hero"><div class="lamp"></div><div class="beam beam-${Object.keys(TOPICS).indexOf(slug) + 1}"></div><div class="wrap">
       <nav class="nav" aria-label="Hoofdmenu"><a class="logo" href="#top">Pam &amp; Sam<span class="cur" style="--c:#FFFFFF;--g:255,255,255"></span></a>
       <ul><li><a href="#aanpak">Aanpak</a></li><li><a href="#tarieven">Tarieven</a></li><li class="keep mob-only"><button class="menu-site" type="button" aria-expanded="false" aria-controls="siteMenu">Menu</button></li><li class="keep"><a class="btn" href="#kies">Probeer gratis</a></li></ul></nav>
       <div class="hero-body"><h1>${t.title}</h1><p class="lead">${t.body[0]}</p></div></div></header>
