@@ -1,0 +1,185 @@
+<title>Pam &amp; Sam · Kamer met kantlijn</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300;400&display=swap">
+<style>
+/* Het midden: de sfeer van de kamer (schemering, lichtval, Pams warme en Sams koele ruimte, IBM Plex)
+   met de ordening van de kantlijn (jouw woorden in het midden, hun vragen in de marge). */
+:root{
+  --dusk:#2F2924; --light:#F8F4EE; --ink:#2E2822; --ink-2:#625649; --rule:rgba(46,40,34,.16);
+  --pam:#A8662F; --pam-ink:#2A2118; --sam:#3B5876; --sam-ink:#101923;
+  --serif:"IBM Plex Serif",Georgia,serif; --sans:"IBM Plex Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+.screen{display:none;min-height:100vh}
+.screen.on{display:block}
+[hidden]{display:none!important}
+body{min-height:100vh}
+.switcher{position:fixed;z-index:20;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:4px;padding:5px;border-radius:30px;background:rgba(30,26,22,.86);box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.switcher a{font-size:13px;color:#F6EFE4;text-decoration:none;padding:9px 14px;border-radius:24px;white-space:nowrap}
+.switcher a[aria-current="true"]{background:#F6EFE4;color:#1E1A16}
+a{color:inherit;text-decoration:none}
+.screen{animation:fade .45s ease both}@keyframes fade{from{opacity:0}}
+@media (prefers-reduced-motion: reduce){.screen{animation:none}}
+@media (max-width:420px){.switcher a{padding:8px 10px;font-size:12px}}
+.btn{display:inline-flex;align-items:center;font-size:15px;font-weight:400;padding:14px 24px;border-radius:40px;border:1.5px solid currentColor}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:28px 56px;position:relative;z-index:2}
+.nav .logo{font-size:22px;letter-spacing:-.01em}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:15px;align-items:center}
+
+/* landing: schemering met lichtval, rechts een gesprek als kantlijn */
+.hero{position:relative;overflow:hidden;color:#F6EFE4;min-height:100vh;
+  background:linear-gradient(#2F2924 0%,#342D27 12%,#3D352E 26%,#4A4138 40%,#5B5045 52%,#706457 62%,#877A6C 70%,#A09384 78%,#B9AD9E 85%,#CFC5B8 91%,#ECE6DD 97%,var(--light) 100%)}
+.hero::before{content:"";position:absolute;inset:-60px;filter:blur(28px);clip-path:polygon(52% 0%,76% 0%,46% 100%,16% 100%);
+  background:linear-gradient(rgba(255,232,196,.22),rgba(255,232,196,.08) 50%,rgba(255,232,196,0))}
+.hero .nav ul{color:rgba(246,239,228,.85)}
+.hero .nav .btn{color:#F6EFE4}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:72px;padding:64px 56px 120px;align-items:start}
+.hero .kick{font-size:21px;color:rgba(246,239,228,.85)}
+.hero h1{font-weight:300;font-size:66px;line-height:1.05;letter-spacing:-.02em;margin:18px 0 24px}
+.hero .you{font-size:26px;color:#fff}
+.cur{display:inline-block;width:3px;height:1em;background:#FFF6E8;vertical-align:-.1em;margin-left:6px;border-radius:2px;box-shadow:0 0 14px 4px rgba(255,226,186,.55)}
+.hero .cta{margin-top:40px;display:flex;gap:22px;align-items:center}
+.hero .cta .btn{background:#FFF6E8;color:var(--dusk);border-color:#FFF6E8;box-shadow:0 0 30px 6px rgba(255,222,176,.4)}
+.hero .fine{font-size:13px;color:rgba(246,239,228,.85);max-width:30ch;line-height:1.5}
+.card{border-radius:18px;padding:30px 34px;background:rgba(252,250,246,.94);color:var(--ink);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.card .t-lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.row:last-of-type{border-bottom:0}
+.row .m{font-size:14px;line-height:1.4;padding-top:3px}
+.row .m small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-bottom:4px}
+.row .m.pam{color:var(--pam);font-family:var(--serif);font-size:15px}
+.row .m.sam{color:var(--sam);font-weight:400}
+.row .t{font-size:18px;line-height:1.5}
+s{color:var(--ink-2);text-decoration-thickness:1px}
+mark{background:none;box-shadow:inset 0 -.42em 0 rgba(238,200,110,.55)}
+
+/* kiezen: twee kamers */
+.ask{font-size:24px;color:var(--ink-2);padding:24px 56px 30px}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 56px 56px}
+.room{position:relative;overflow:hidden;border-radius:18px;padding:40px;min-height:620px;display:flex;flex-direction:column;gap:20px}
+.room.p{background:radial-gradient(ellipse 75% 80% at 28% 40%,#FFFDF7 0%,#FCF5E4 45%,#F3E6C9 85%,#ECDCB8 100%);color:var(--pam-ink)}
+.room.s{background:#EEF3F8;color:var(--sam-ink)}
+.room.s::before{content:"";position:absolute;inset:0;background:#F8FBFE;clip-path:polygon(0 0,72% 0,50% 100%,0 100%)}
+.room.p::before{content:"";position:absolute;inset:-60px;filter:blur(30px);background:linear-gradient(rgba(255,255,250,.55),rgba(255,255,250,0));clip-path:polygon(14% 0%,40% 0%,62% 100%,30% 100%)}
+.room > *{position:relative}
+.room .name{font-size:104px;line-height:.9;letter-spacing:-.035em}
+.room.p .name{font-family:var(--serif);font-weight:300;color:var(--pam)}
+.room.s .name{font-weight:400;color:var(--sam)}
+.room .who{font-size:19px;line-height:1.5;max-width:28ch}
+.room .btn{align-self:flex-start;color:#fff;border:0}
+.room.p .btn{background:var(--pam)} .room.s .btn{background:var(--sam)}
+.room .sample{margin-top:auto;display:grid;grid-template-columns:140px 1fr;gap:22px;padding-top:20px;border-top:1px solid var(--rule)}
+.room.p .sample .m{font-family:var(--serif);color:var(--pam);font-size:16px;line-height:1.4}
+.room.s .sample .m{color:var(--sam);font-weight:400;font-size:15px;line-height:1.4}
+.room .sample .t{font-size:16px;line-height:1.5;color:var(--ink-2)}
+
+/* gesprek: de kamer, met een kantlijn */
+.chat{position:relative;overflow:hidden;min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.chat.pam{background:radial-gradient(ellipse 75% 80% at 28% 40%,#FFFDF7 0%,#FCF5E4 45%,#F3E6C9 85%,#ECDCB8 100%);color:var(--pam-ink);--v:var(--pam)}
+.chat.sam{background:#EEF3F8;color:var(--sam-ink);--v:var(--sam)}
+.chat.sam::before{content:"";position:absolute;inset:0;background:#F8FBFE;clip-path:polygon(0 0,72% 0,50% 100%,0 100%)}
+.chat.pam::before{content:"";position:absolute;inset:-60px;filter:blur(30px);background:linear-gradient(rgba(255,255,250,.55),rgba(255,255,250,0));clip-path:polygon(14% 0%,40% 0%,62% 100%,30% 100%)}
+.chat > *{position:relative}
+.chat header{display:flex;justify-content:space-between;align-items:center;padding:30px 56px}
+.chat header .logo{font-size:20px}
+.chat.pam header .logo{font-family:var(--serif)}
+.chat header ul{display:flex;gap:26px;list-style:none;font-size:14px;opacity:.75}
+.sheet{width:min(940px,100%);margin:0 auto;padding:24px 56px 0;display:flex;flex-direction:column;justify-content:flex-end}
+.line{display:grid;grid-template-columns:230px 1fr;gap:44px;padding:18px 0}
+.line .m{color:var(--v);text-align:right;font-size:15px;line-height:1.45;padding-top:4px}
+.chat.pam .line .m{font-family:var(--serif);font-size:17px;line-height:1.4}
+.chat.sam .line .m{font-weight:400}
+.line .m small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:5px}
+.line .t{font-size:21px;line-height:1.55}
+.write{width:min(940px,100%);margin:0 auto;padding:10px 56px 44px}
+.write .t{color:color-mix(in srgb, currentColor 55%, transparent);border-bottom:1px solid currentColor;padding-bottom:12px}
+.caret{display:inline-block;width:2px;height:1.05em;background:var(--v);vertical-align:-.15em;margin-left:2px}
+.acts{display:flex;justify-content:space-between;align-items:center;margin:20px 0 0 274px;font-size:14px}
+.acts .btn{background:var(--v);color:#fff;border:0}
+.acts .alt{border-bottom:1px solid currentColor;padding-bottom:2px;opacity:.75}
+
+@media (max-width:700px){
+  .nav{padding:18px 20px} .nav ul li:not(.k){display:none}
+  .hero-grid{grid-template-columns:1fr;gap:40px;padding:36px 20px 80px}
+  .hero h1{font-size:42px} .hero .you{font-size:20px} .hero .kick{font-size:17px}
+  .hero .cta{flex-direction:column;align-items:flex-start}
+  .card{padding:22px} .row{grid-template-columns:1fr;gap:4px}
+  .ask{padding:18px 20px;font-size:19px}
+  .rooms{grid-template-columns:1fr;padding:0 16px 32px;gap:16px}
+  .room{min-height:0;padding:28px 22px} .room .name{font-size:72px}
+  .room .sample{grid-template-columns:1fr;gap:4px}
+  .chat header{padding:18px 20px} .chat header ul li:not(.k){display:none}
+  .sheet{padding:20px 22px 0} .line{grid-template-columns:1fr;gap:4px;padding:12px 0}
+  .line .m{text-align:left;padding:0} .line .t{font-size:17px}
+  .write{padding:8px 22px 28px} .acts{margin-left:0}
+}
+.write{padding-bottom:104px!important}.rooms{padding-bottom:104px}.hero-grid{padding-bottom:140px}
+</style>
+
+<div class="screen" id="home">
+  <header class="hero">
+    <nav class="nav"><a class="logo" href="#home">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn" href="#kies">Probeer gratis</a></li></ul></nav>
+    <div class="hero-grid">
+      <div>
+        <p class="kick">Iedereen worstelt weleens met zichzelf.</p>
+        <h1>Bespreek het met Pam of Sam.</h1>
+        <p class="you">Jij komt op het antwoord.<span class="cur"></span></p>
+        <div class="cta"><a class="btn" href="#kies">Probeer gratis</a><span class="fine">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</span></div>
+      </div>
+      <div class="card">
+        <p class="t-lab">Zo ziet een gesprek eruit</p>
+        <div class="row"><div class="m sam"><small>Sam</small>Wat houdt je tegen?</div><div class="t">Ik wil al een jaar weg bij mijn werk, maar ik blijf het uitstellen.</div></div>
+        <div class="row"><div class="m pam"><small>Pam</small>Wat voel je als je eraan denkt dat je blijft?</div><div class="t">Moe. <s>Het valt wel mee.</s> Eigenlijk voel ik me <mark>klein</mark> als ik daar ben.</div></div>
+        <div class="row"><div class="m sam"><small>Sam</small>Wat is je eerste stap?</div><div class="t">Vrijdag bel ik die oud-collega terug.</div></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="screen" id="kies">
+  <nav class="nav"><a class="logo" href="#home">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn" href="#kies">Probeer gratis</a></li></ul></nav>
+  <p class="ask">Bij wie wil je binnenstappen?</p>
+  <div class="rooms">
+    <section class="room p"><div class="name">Pam</div><p class="who">Warm en geduldig. Pam geeft eerst ruimte aan wat je voelt, en vraagt dan verder.</p><a class="btn" href="#pam">Begin bij Pam</a>
+      <div class="sample"><div class="m">Wat raakt je daar het meest aan?</div><div class="t">Zo vraagt Pam: zacht, en altijd vanuit wat jij al zei.</div></div></section>
+    <section class="room s"><div class="name">Sam</div><p class="who">Direct en nuchter. Sam gaat zonder omweg naar de kern, altijd goed bedoeld.</p><a class="btn" href="#sam">Begin bij Sam</a>
+      <div class="sample"><div class="m">Wat is precies het probleem?</div><div class="t">Zo vraagt Sam: kort, en nooit met een antwoord erbij.</div></div></section>
+  </div>
+</div>
+
+<div class="screen" id="pam">
+  <div class="chat pam">
+    <header><a class="logo" href="#home">Pam &amp; Sam</a><ul><li>Onderwerpen</li><li><a href="#sam">Wissel naar Sam</a></li><li>Terugblik</li><li class="k"><a href="#kies" aria-label="Sluiten">×</a></li></ul></header>
+    <div class="sheet">
+      <div class="line"><div class="m"><small>Pam</small>Fijn dat je er bent. Vertel me rustig wat er speelt.</div><div class="t">Ik slaap slecht sinds de verhuizing. Het voelt alsof ik nergens meer thuis ben.</div></div>
+      <div class="line"><div class="m"><small>Pam</small>Wat mis je het meest?</div><div class="t">De buurt. <s>Mijn oude huis.</s> Dat iemand me groette als ik naar buiten liep.</div></div>
+      <div class="line"><div class="m"><small>Pam</small>Wanneer voelde je je hier wél even gezien?</div><div class="t">Bij de bakker, vorige week. <mark>Ze wist mijn naam nog.</mark></div></div>
+      <div class="line"><div class="m"><small>Pam</small>Wat zou je morgen kunnen doen om dat vaker te voelen?</div><div class="t">&nbsp;</div></div>
+    </div>
+    <div class="write"><div class="t">Schrijf hier<span class="caret"></span></div>
+      <div class="acts"><a class="alt" href="#sam">Wissel naar Sam</a><span class="btn">Verstuur</span></div></div>
+  </div>
+</div>
+
+<div class="screen" id="sam">
+  <div class="chat sam">
+    <header><a class="logo" href="#home">Pam &amp; Sam</a><ul><li>Onderwerpen</li><li><a href="#pam">Wissel naar Pam</a></li><li>Terugblik</li><li class="k"><a href="#kies" aria-label="Sluiten">×</a></li></ul></header>
+    <div class="sheet">
+      <div class="line"><div class="m"><small>Sam</small>Vertel me wat er speelt.</div><div class="t">Ik moet kiezen tussen een promotie en minder uren werken.</div></div>
+      <div class="line"><div class="m"><small>Sam</small>Wat wil jij, los van anderen?</div><div class="t">Tijd. <s>Ik wil niemand teleurstellen.</s> Ik wil mijn dochter van school halen.</div></div>
+      <div class="line"><div class="m"><small>Sam</small>Wat is je conclusie, in één zin?</div><div class="t"><mark>Ik kies voor minder uren, en ik zeg het maandag.</mark></div></div>
+      <div class="line"><div class="m"><small>Sam</small>Wat is je eerste stap?</div><div class="t">&nbsp;</div></div>
+    </div>
+    <div class="write"><div class="t">Schrijf hier<span class="caret"></span></div>
+      <div class="acts"><a class="alt" href="#pam">Wissel naar Pam</a><span class="btn">Verstuur</span></div></div>
+  </div>
+</div>
+
+<nav class="switcher" aria-label="Schermen"><a href="#home">Start</a><a href="#kies">Kiezen</a><a href="#pam">Pam</a><a href="#sam">Sam</a></nav>
+<script>
+function show(){const h=(location.hash.slice(1)||'home');const id=['home','kies','pam','sam'].includes(h)?h:'home';
+document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));
+document.querySelectorAll('.switcher a').forEach(a=>a.setAttribute('aria-current',String(a.getAttribute('href')==='#'+id)));scrollTo(0,0);}
+addEventListener('hashchange',show);show();
+</script>
