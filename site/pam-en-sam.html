@@ -24,7 +24,7 @@
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.bar,.site-menu,.menu,.drawer .panel,.drawer .shade,.report,.helppop{transition:none!important}}
 body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 [hidden]{display:none!important}
@@ -64,7 +64,7 @@ p{margin:0}
 .beam::before{content:"";position:absolute;inset:0;clip-path:polygon(60% 0%,84% 0%,52% 100%,20% 100%);
   background:linear-gradient(to bottom,rgba(255,232,196,.24),rgba(255,232,196,.12) 40%,rgba(255,232,196,.03) 75%,rgba(255,232,196,0))}
 /* elke onderwerppagina een eigen lichtval */
-.beam-1::before{clip-path:polygon(6% 0%,30% 0%,62% 100%,30% 100%)}
+.beam-1::before{clip-path:polygon(26% 0%,46% 0%,70% 100%,40% 100%)}
 .beam-2::before{clip-path:polygon(78% 0%,94% 0%,74% 100%,46% 100%)}
 .beam-3::before{clip-path:polygon(34% 0%,46% 0%,40% 100%,22% 100%)}
 .beam-3::after{content:"";position:absolute;inset:0;clip-path:polygon(60% 0%,68% 0%,70% 100%,56% 100%);opacity:.7;
@@ -73,6 +73,7 @@ p{margin:0}
 .logo{display:inline-flex;align-items:center;min-height:44px;font-size:1.375rem;letter-spacing:-.01em;text-decoration:none;color:inherit;white-space:nowrap}
 .nav ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;font-size:.95rem}
 .nav a{text-decoration:none;color:var(--dusk-soft)}
+.on-dusk .nav .logo{color:var(--dusk-text)}
 .nav a:hover{color:var(--dusk-text)}
 .nav ul a:not(.btn){display:inline-flex;align-items:center;min-height:44px}
 .nav .btn{min-height:44px;padding:8px 18px;font-size:.95rem;border-color:rgba(255,240,220,.9);box-shadow:0 0 22px 3px rgba(255,222,176,.3);transition:box-shadow .3s,background .3s}
@@ -142,8 +143,10 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 .room .mini-logo{display:inline-flex;align-items:center;align-self:flex-start;font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.6}
 .room .mini-logo .cur{display:inline-block}
 .room .mini-col{margin:auto auto 0;width:calc(var(--tw,640px) * var(--s,.7))}
+.room .mini-cursor{display:block;font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.55}
+.room .mini-cursor .cur{display:inline-block;margin-left:0}
 .room .mini-intro{font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.55}
-.room .mini-field{margin-top:calc(30px * var(--s,.7));padding-bottom:calc(10px * var(--s,.7));border-bottom:1px solid rgba(0,0,0,.4);font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.45;opacity:.8}
+.room .mini-field{margin-top:calc(24px * var(--s,.7));padding-bottom:calc(10px * var(--s,.7));border-bottom:1px solid rgba(0,0,0,.4);font-size:calc(var(--fs,20px) * var(--s,.7));line-height:1.45;opacity:.8}
 .room .mini-send .m-mini{display:none}
 .room .mini-send{display:flex;justify-content:space-between;margin-top:calc(16px * var(--s,.7))}
 .room .mini-send span{font-size:calc(16px * var(--s,.7));padding:calc(10px * var(--s,.7)) calc(22px * var(--s,.7));border-radius:30px;color:#FFFFFF;border:1.5px solid transparent}
@@ -222,6 +225,7 @@ html.reveal-on .rv.shown{opacity:1;transform:none}
 .price .amt{font-size:var(--step-3);line-height:1;font-variant-numeric:tabular-nums}
 .price .per,.price p{color:var(--ink-soft)}
 .price .btn{margin-top:auto;align-self:flex-start}
+.price .after-free{margin-top:auto;min-height:50px;display:flex;align-items:center}
 .price p{padding-bottom:20px}
 @media (max-width:860px){.prices{grid-template-columns:1fr}}
 .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin-top:40px}
@@ -248,7 +252,7 @@ footer a{text-decoration:none;display:inline-flex;align-items:center;min-height:
 .topic-hero{background:linear-gradient(#2F2924 0%,#342D27 18%,#3D352E 36%,#4A4138 50%,#55493F 60%,#706457 70%,#A09384 80%,#CFC5B8 89%,#ECE6DD 95%,var(--light) 100%)}
 .topic-hero .hero-body{padding-block:clamp(40px,8vw,88px) clamp(260px,26vw,320px)}
 .topic-hero .lead{margin-top:24px;font-size:var(--step-1);line-height:1.5;color:var(--dusk-text);max-width:var(--col)}
-.topic-body{display:flex;flex-direction:column;gap:18px;max-width:var(--col)}
+.topic-body{display:flex;flex-direction:column;gap:24px;max-width:var(--col)}
 .topic-body .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
 .topic-body .fine{color:var(--ink-soft);font-size:.95rem}
 .topic-body .start{margin-top:16px;font-weight:400}
@@ -263,7 +267,7 @@ html{scrollbar-gutter:stable}
 .room-bg{position:absolute;inset:0;z-index:0;transform-origin:0 0;overflow:hidden}
 .chat.noanim,.chat.noanim *{transition:none!important}
 .chat .fade,.log > *,.turn .name,.chat-top .logo{transition:opacity .3s var(--ease)}
-.chat.entering .fade,.chat.entering .log > :not(.morph),.chat.entering .morph .name,.chat.entering .chat-top .logo:not(.morph){opacity:0}
+.chat.entering .fade:not(.morph),.chat.entering .log > :not(.morph),.chat.entering .morph .name,.chat.entering .chat-top .logo:not(.morph){opacity:0}
 .chat.fading{transition:opacity .3s var(--ease)!important;opacity:0}
 .chat.pam{--ink:var(--pam-ink);--voice:var(--pam-voice);--soft:var(--pam-soft);--c:var(--pam-cursor);--g:var(--pam-glow);color:var(--pam-ink)}
 .chat.sam{--ink:var(--sam-ink);--voice:var(--sam-voice);--soft:var(--sam-soft);--c:var(--sam-cursor);--g:var(--sam-glow);color:var(--sam-ink)}
@@ -281,6 +285,14 @@ html{scrollbar-gutter:stable}
 .ghost{font:inherit;font-size:.95rem;background:none;border:0;color:var(--soft);cursor:pointer;padding:10px 12px;min-height:44px;border-radius:30px}
 .ghost:hover{color:var(--ink);background:rgba(255,255,255,.4)}
 .chat-top{position:relative}
+.layer{position:relative}
+.helppop{position:absolute;z-index:8;top:calc(84px + env(safe-area-inset-top, 0px));right:max(20px, env(safe-area-inset-right, 0px));width:min(340px,calc(100vw - 40px));padding:18px 20px;border-radius:14px;
+  display:flex;flex-direction:column;gap:8px;font-size:.9375rem;line-height:1.5;color:var(--ink);box-shadow:0 20px 50px -20px rgba(0,0,0,.35);
+  opacity:0;transform:translateY(-6px);visibility:hidden;transition:opacity .32s var(--ease),transform .32s var(--ease),visibility 0s linear .32s}
+.helppop.in{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.helppop .hp-title{font-weight:400}
+.chat.pam .helppop{background:#FCF5E4}.chat.sam .helppop{background:#F8FBFE}
+@media (min-width:760px){.helppop{right:max(64px, env(safe-area-inset-right, 0px));top:calc(100px + env(safe-area-inset-top, 0px))}}
 #menuBtn{display:none}
 #reportBtn{display:none}
 #switchBtn2{display:none}
@@ -349,8 +361,9 @@ html{scrollbar-gutter:stable}
 .pill.primary{background:var(--ink);color:#FFFFFF}
 .pill:disabled{opacity:.45;cursor:default}
 .helpline{font-size:.9375rem;line-height:1.5;color:var(--soft);margin-top:2px}
-.helpline a,a.tel{color:inherit;text-underline-offset:3px;position:relative}
+.helpline a,a.tel{color:inherit;text-underline-offset:3px;position:relative;white-space:nowrap}
 .helpline a::after,a.tel::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+.status:empty{display:none}
 .status{min-height:1.4em;margin-top:10px;font-size:.95rem;color:var(--soft)}
 /* onderwerpen */
 
@@ -386,7 +399,7 @@ html{scrollbar-gutter:stable}
 .chat > .layer{transition:opacity .3s var(--ease)}
 .chat.reporting > .layer{opacity:0}
 .log .enter{animation:rise .7s var(--ease) both}
-.log.arrive{animation:arrive .45s var(--ease) .2s both}
+.log.arrive{animation:arrive .45s var(--ease) both}
 @keyframes arrive{from{opacity:0}}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}}
 #home,#topics{transition:opacity .3s var(--ease)}
@@ -496,9 +509,11 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="room bg-pam" type="button" data-open="pam" aria-label="Begin een gesprek met Pam">
             <span class="mini-logo" aria-hidden="true">Pam &amp; Sam</span>
             <span class="mini-col" aria-hidden="true">
-              <span class="mini-intro">Hoi, ik ben Pam. Fijn dat je er bent. Even vooraf: ik geef je geen kant-en-klaar advies. Ik luister en stel je vragen die je helpen zelf helder te krijgen wat voor jou klopt. Vertel me rustig wat er speelt.</span>
+              <span class="mini-cursor"><span class="cur" style="--c:var(--pam-cursor);--g:var(--pam-glow)"></span></span>
+              <span class="mini-dock">
               <span class="mini-field">Schrijf hier…</span>
               <span class="mini-send"><span class="out d-mini">Terugblik</span><span class="out m-mini">Wissel naar Sam</span><span>Verstuur</span></span>
+              </span>
             </span>
           </button>
           <div class="desc">
@@ -512,9 +527,11 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="room bg-sam" type="button" data-open="sam" aria-label="Begin een gesprek met Sam">
             <span class="mini-logo" aria-hidden="true">Pam &amp; Sam</span>
             <span class="mini-col" aria-hidden="true">
-              <span class="mini-intro">Hoi, ik ben Sam. Verwacht van mij geen kant-en-klaar advies: ik stel scherpe vragen zodat jij zelf de kern vindt. Vertel me wat er speelt.</span>
+              <span class="mini-cursor"><span class="cur" style="--c:var(--sam-cursor);--g:var(--sam-glow);border-radius:0"></span></span>
+              <span class="mini-dock">
               <span class="mini-field">Schrijf hier…</span>
               <span class="mini-send"><span class="out d-mini">Terugblik</span><span class="out m-mini">Wissel naar Pam</span><span>Verstuur</span></span>
+              </span>
             </span>
           </button>
           <div class="desc">
@@ -583,7 +600,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <p>Stelt vragen tot jij zelf het inzicht hebt. Dat blijft hangen.</p>
           <p>Twee vaste persoonlijkheden: Pam (warm en empathisch) en Sam (direct en nuchter). Jij kiest wie bij je past.</p>
           <p>Houdt één vaste, bevragende aanpak vast: naar de oorzaak, niet het symptoom.</p>
-          <p>Niets op onze servers. Je gesprek blijft in je eigen browser en jij wist het wanneer je wilt.</p>
+          <p>Niets op onze servers. Je gesprek blijft in je eigen browser.</p>
         </div>
       </div>
     </div></div>
@@ -602,8 +619,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
 
   <section class="tone-linen">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Wat mensen zeggen</span><h2>Geen marketing. Gewoon ervaringen.</h2></div>
-      <h3 style="font-size:var(--step-1)">Deel jouw ervaring</h3>
+      <div class="sec-head"><span class="eyebrow">Jouw ervaring</span><h2>Deel jouw ervaring</h2></div>
       <p class="note" style="margin-top:8px">Een korte reactie helpt anderen. Je reactie verschijnt pas na een korte controle.</p>
       <form class="simple" id="expForm">
         <label for="expText">Je ervaring<textarea id="expText" rows="3"></textarea></label>
@@ -619,8 +635,8 @@ html.page-out #home,html.page-out #topics{opacity:0}
         <p>Niets op onze servers, je gesprek blijft van jou. 12% van onze jaarwinst voor belasting gaat naar een goed doel voor mentale gezondheid — elk jaar maken we bekend hoeveel en aan welk doel.</p></div>
       <div class="prices">
         <div class="price"><span class="lbl">Kennismaking</span><span class="amt">Gratis</span><span class="per">eerste 6 vragen aan Pam of Sam</span><p>Kies Pam of Sam en ontdek of Pam &amp; Sam bij jou past. Geen verplichtingen.</p><a class="btn" href="#kies">Probeer gratis</a></div>
-        <div class="price"><span class="lbl">Flexibel · Maandabonnement</span><span class="amt">€5,99</span><span class="per">per maand, opzegbaar</span><p>Onbeperkt chatten met Pam én Sam. Doorlopende begeleiding. Opzegbaar per maand. Spreken of typen. Allebei mogelijk.</p><span class="per" style="margin-top:auto">Kies je na de gratis kennismaking.</span></div>
-        <div class="price best"><span class="lbl">Meest voordelig · Jaarabonnement</span><span class="amt">€60</span><span class="per">per jaar, vooruit betaald · 2 maanden gratis</span><p>Onbeperkt chatten met Pam én Sam. Een heel jaar begeleiding voor de prijs van tien maanden. Spreken of typen. Allebei mogelijk.</p><span class="per" style="margin-top:auto">Kies je na de gratis kennismaking.</span></div>
+        <div class="price"><span class="lbl">Flexibel · Maandabonnement</span><span class="amt">€5,99</span><span class="per">per maand, opzegbaar</span><p>Onbeperkt chatten met Pam én Sam. Doorlopende begeleiding. Opzegbaar per maand. Spreken of typen. Allebei mogelijk.</p><span class="per after-free">Kies je na de gratis kennismaking.</span></div>
+        <div class="price best"><span class="lbl">Meest voordelig · Jaarabonnement</span><span class="amt">€60</span><span class="per">per jaar, vooruit betaald · 2 maanden gratis</span><p>Onbeperkt chatten met Pam én Sam. Een heel jaar begeleiding voor de prijs van tien maanden. Spreken of typen. Allebei mogelijk.</p><span class="per after-free">Kies je na de gratis kennismaking.</span></div>
       </div>
       <p class="note">Na betaling ontvang je een toegangscode per e-mail. Daarmee log je in.</p>
     </div>
@@ -725,10 +741,16 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="ghost" type="button" id="topicsBtn">Onderwerpen</button>
           <button class="ghost" type="button" id="switchBtn">Wissel</button>
           <button class="ghost" type="button" id="reportBtn">Terugblik</button>
+          <button class="ghost" type="button" id="helpBtn" aria-expanded="false" aria-controls="helpPop">Hulp nodig?</button>
           <div class="sizes" role="group" aria-label="Tekstgrootte"><span>Tekstgrootte</span><button type="button" data-fs="15" aria-label="Normale tekst">A</button><button type="button" data-fs="17" aria-label="Grotere tekst">A</button><button type="button" data-fs="19" aria-label="Grootste tekst">A</button></div>
         </div>
         <button class="ghost" type="button" id="closeBtn" aria-label="Sluiten"><svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
       </nav>
+    </div>
+    <div class="helppop" id="helpPop" role="dialog" aria-label="Hulp nodig?">
+      <p class="hp-title">Gaat het niet goed?</p>
+      <p>Je hoeft het niet alleen te doen. Bel 113 Zelfmoordpreventie, dag en nacht: <a class="tel" href="tel:113">113</a> of <a class="tel" href="tel:08000113">0800-0113</a>.</p>
+      <p>Bij direct gevaar: <a class="tel" href="tel:112">112</a>.</p>
     </div>
     <div class="scroll" id="scroll"><div class="log" id="log" aria-live="polite"></div></div>
     <div class="dock fade">
@@ -753,8 +775,6 @@ html.page-out #home,html.page-out #topics{opacity:0}
           <button class="pill primary" type="submit" id="sendBtn">Verstuur</button>
         </div>
         <p class="status" id="status" role="status"></p>
-        <p class="helpline">Gaat het niet goed? Bel <a href="tel:113">113</a> of <a href="tel:08000113">0800-0113</a>. Bij direct gevaar <a href="tel:112">112</a>.</p>
-        <p class="helpline">Testversie: alles wat je schrijft blijft alleen in deze browser.</p>
       </form>
     </div>
   </div>
@@ -850,7 +870,7 @@ html.page-out #home,html.page-out #topics{opacity:0}
     if (ghost) {
       ghost.getBoundingClientRect(); ghost.style.transition = 'opacity .32s cubic-bezier(.4,0,.2,1)'; requestAnimationFrame(() => { ghost.style.opacity = '0'; }); setTimeout(() => ghost.remove(), 400);
       const pg = page === 'home' ? $('home') : document.getElementById('t-' + page);
-      if (pg) pg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 220, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards' });
+      if (pg) pg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 420, easing: 'cubic-bezier(.22,.61,.36,1)' });
     }
   }
   function swap(h, changed) {
@@ -954,6 +974,7 @@ Regels:
   let chatFs = 15; try { chatFs = [15, 17, 19].includes(+localStorage.getItem('pamsam-tekst')) ? +localStorage.getItem('pamsam-tekst') : 15; } catch (e) {}
   let convs = []; try { convs = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { convs = []; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(convs.slice(0, 30))); } catch (e) {} };
+  let focusBack = null;
   let conv = null, mode = null, busy = false, ctl = null, origin = null, live = true, anim = false, askId = 0, handTimer = null;
   const chat = $('chat'), roomBg = $('roomBg'), log = $('log'), scroll = $('scroll'), input = $('input'), sendBtn = $('sendBtn'), status = $('status');
   const samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null);
@@ -1024,7 +1045,7 @@ Regels:
         const mk = conv.marks[s.dataset.k]; if (mk) s.classList.add(mk); p.append(s);
       });
       const el = m.who === 'q' ? turnEl(NAME[voiceOf(m)], p) : p;
-      if (mi >= n && !reduce) el.classList.add('enter');
+      if (mi >= n && !reduce) { el.classList.add('enter'); el.addEventListener('animationend', () => el.classList.remove('enter'), { once: true }); }
       log.append(el);
     });
     seen.set(conv, conv.msgs.length);
@@ -1043,7 +1064,7 @@ Regels:
   if (document.fonts) document.fonts.ready.then(sizeMinis);
 
   const MOVE = 'transform .54s cubic-bezier(.22,.61,.36,1), border-radius .54s cubic-bezier(.22,.61,.36,1)';
-  const inView = el => { const r = el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= chat.clientHeight; };
+  const inView = el => { const r = el.getBoundingClientRect(), b = scroll.getBoundingClientRect(); return r.top >= b.top && r.bottom <= b.bottom; };
   function bgAt(r) {
     const sx = r.width / chat.clientWidth, sy = r.height / chat.clientHeight;
     roomBg.style.transform = `translate(${r.left}px, ${r.top}px) scale(${sx}, ${sy})`;
@@ -1054,14 +1075,19 @@ Regels:
     el.style.transformOrigin = '0 0'; el.style.transform = `translate(${src.left - t.left}px, ${src.top - t.top}px) scale(${k})`;
   }
   function parts(room) {
-    log.querySelectorAll('.morph').forEach(e => e.classList.remove('morph')); $('chatTitle').classList.remove('morph');
+    chat.querySelectorAll('.morph').forEach(e => e.classList.remove('morph'));
     const first = log.querySelector('.turn .msg');
-    const text = room && first && conv.msgs[0].text === INTRO[conv.voice] && inView(first) ? first : null;
-    if (text) text.parentNode.classList.add('morph');
     if (room) $('chatTitle').classList.add('morph');
-    return { text, logo: room ? $('chatTitle') : null, miniText: room && room.querySelector('.mini-intro'), miniLogo: room && room.querySelector('.mini-logo') };
+    const dock = room ? chat.querySelector(':scope > .layer .dock') : null; if (dock) dock.classList.add('morph');
+    return { text: null, logo: room ? $('chatTitle') : null, miniText: null, miniLogo: room && room.querySelector('.mini-logo'), dock, miniDock: room && room.querySelector('.mini-dock') };
   }
-  function settle(p) { [roomBg, p.text, p.logo].forEach(e => { if (e) { e.style.transition = ''; e.style.transform = ''; e.style.borderRadius = ''; } }); }
+  function settle(p) { [roomBg, p.text, p.logo, p.dock].forEach(e => { if (e) { e.style.transition = ''; e.style.transform = ''; e.style.borderRadius = ''; e.style.transformOrigin = ''; } }); }
+  /* de schrijfregel in het vlak en die in het venster zijn dezelfde: schuif hem van de ene naar de andere plek */
+  function flyDock(dock, src) {
+    dock.style.transform = ''; const f = $('sendForm').getBoundingClientRect(), d = dock.getBoundingClientRect(), k = src.width / f.width;
+    dock.style.transformOrigin = `${f.left - d.left}px ${f.top - d.top}px`;
+    dock.style.transform = `translate(${src.left - f.left}px, ${src.top - f.top}px) scale(${k})`;
+  }
   const roomOf = v => { const r = document.querySelector(`.door.${v} .room`); if (!r || $('home').hidden) return null; const b = r.getBoundingClientRect(); return b.bottom > 0 && b.top < innerHeight ? r : null; };
 
   function openChat(v, fromEl, topic) {
@@ -1072,19 +1098,40 @@ Regels:
     origin = fromEl || null;
     chat.classList.add('noanim', 'entering'); chat.hidden = false; document.body.style.overflow = 'hidden';
     render();
-    if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering'); input.focus({ preventScroll: true }); return; }
+    if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering'); input.focus({ preventScroll: true }); const t = prepIntro(); if (t) t(); return; }
     const room = fromEl.classList.contains('room') ? fromEl : null, p = parts(room);
     bgAt(fromEl.getBoundingClientRect());
     if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
     if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
+    if (p.dock) flyDock(p.dock, p.miniDock.getBoundingClientRect());
     chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
-    [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
+    [roomBg, p.text, p.logo, p.dock].forEach(e => e && (e.style.transition = MOVE));
     requestAnimationFrame(() => requestAnimationFrame(() => {
       roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';
-      if (p.text) p.text.style.transform = 'none'; if (p.logo) p.logo.style.transform = 'none';
-      setTimeout(() => chat.classList.remove('entering'), p.text ? 400 : 160);
-      setTimeout(() => { settle(p); chat.style.transition = ''; chat.style.opacity = ''; anim = false; input.focus({ preventScroll: true }); }, 720);
+      if (p.logo) p.logo.style.transform = 'none'; if (p.dock) p.dock.style.transform = 'none';
+      const typing = prepIntro();
+      setTimeout(() => chat.classList.remove('entering'), 420);
+      setTimeout(() => { settle(p); chat.style.transition = ''; chat.style.opacity = ''; anim = false; input.focus({ preventScroll: true }); if (typing) typing(); }, 640);
     }));
+  }
+  let typeId = 0;
+  function prepIntro() {
+    const c = conv; if (c.introShown || hasAnswers(c) || c.msgs.length !== 1) return null;
+    const p = log.querySelector('.turn .msg'); if (!p) return null;
+    const full = c.msgs[0].text, words = full.split(' '), id = ++typeId;
+    c.introShown = true; save();
+    if (reduce) return null;
+    p.textContent = ''; const t = document.createElement('span'), cu = document.createElement('span');
+    cu.className = 'cur'; cu.style.cssText = 'margin-left:.15em'; p.append(t, cu);
+    return () => {
+      let i = 0; const step = Math.max(45, Math.min(110, 2500 / words.length));
+      const tick = () => {
+        if (id !== typeId || conv !== c || !document.contains(p)) return;
+        if (i >= words.length) { cu.style.transition = 'opacity .6s'; cu.style.opacity = '0'; setTimeout(() => { if (conv === c && !c.msgs.some(m => m.who === 'a')) render(); }, 650); return; }
+        t.textContent += (i ? ' ' : '') + words[i++]; setTimeout(tick, step);
+      };
+      setTimeout(tick, 120);
+    };
   }
   function closeChat() {
     if (anim) return; if (ctl) ctl.abort();
@@ -1095,8 +1142,10 @@ Regels:
     if (o && o.dataset && o.dataset.open && o.dataset.open !== conv.voice) { const alt = o.parentNode && o.parentNode.querySelector(`[data-open="${conv.voice}"]`); if (alt) o = alt; }
     const back = room || (o && document.contains(o) && o.offsetParent !== null ? o : null);
     const done = () => {
-      chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ text: log.querySelector('.morph .msg'), logo: $('chatTitle') });
-      document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; setInert(outside(), false); if (back) back.focus({ preventScroll: true });
+      chat.hidden = true; chat.classList.remove('entering', 'fading'); settle({ logo: $('chatTitle'), dock: chat.querySelector(':scope > .layer .dock') });
+      document.body.style.overflow = ''; chat.style.height = ''; chat.style.transform = ''; anim = false; setInert(outside(), false);
+      const fb = focusBack && document.contains(focusBack) && focusBack.offsetParent !== null && focusBack.dataset.open === conv.voice ? focusBack : back;
+      if (fb) fb.focus({ preventScroll: true });
     };
     if (reduce) return done();
     anim = true;
@@ -1108,17 +1157,17 @@ Regels:
       [roomBg, p.text, p.logo].forEach(e => e && (e.style.transition = MOVE));
       if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
       if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
+      if (p.dock) { p.dock.style.transition = MOVE; flyDock(p.dock, p.miniDock.getBoundingClientRect()); }
       bgAt(back.getBoundingClientRect());
       /* de tekst in het vlak wacht; alleen de achtergrond lost op in het vlak eronder, daarna wisselt de tekst onzichtbaar */
-      const minis = [p.text && p.miniText, p.logo && p.miniLogo].filter(Boolean);
+      const minis = [p.logo && p.miniLogo, p.dock && p.miniDock].filter(Boolean);
       minis.forEach(e => { e.style.visibility = 'hidden'; });
-      if (p.text) setTimeout(() => { roomBg.style.transition = MOVE + ', opacity .2s linear'; roomBg.style.opacity = '0'; }, 400);
-      else { roomBg.style.transition = MOVE + ', opacity .55s ease-in'; roomBg.style.opacity = '0'; }
+      setTimeout(() => { roomBg.style.transition = MOVE + ', opacity .2s linear'; roomBg.style.opacity = '0'; }, 400);
       setTimeout(() => { done(); roomBg.style.opacity = ''; minis.forEach(e => { e.style.visibility = ''; }); }, 620);
     }, 240);
   }
   document.addEventListener('click', e => {
-    const b = e.target.closest('[data-open]'); if (!b) return;
+    const b = e.target.closest('[data-open]'); if (!b) return; focusBack = b;
     const from = b.dataset.from === 'room' ? b.closest('.door').querySelector('.room') : b;
     openChat(b.dataset.open, from, b.dataset.topic);
   });
@@ -1132,9 +1181,11 @@ Regels:
   }
   document.querySelectorAll('.sizes button').forEach(b => { b.onclick = () => setFs(+b.dataset.fs); });
   setFs(chatFs);
+  function closeHelp(back) { $('helpPop').classList.remove('in'); $('helpBtn').setAttribute('aria-expanded', 'false'); if (back) (matchMedia('(max-width:600px)').matches ? $('menuBtn') : $('helpBtn')).focus({ preventScroll: true }); }
+  $('helpBtn').onclick = () => { const open = !$('helpPop').classList.contains('in'); closeMenu(); $('helpPop').classList.toggle('in', open); $('helpBtn').setAttribute('aria-expanded', String(open)); if (open) setTimeout(() => $('helpPop').querySelector('a').focus({ preventScroll: true }), 50); };
   function closeMenu() { $('menu').classList.remove('in'); $('menuBtn').setAttribute('aria-expanded', 'false'); }
-  $('menuBtn').onclick = () => { const open = !$('menu').classList.contains('in'); $('menu').classList.toggle('in', open); $('menuBtn').setAttribute('aria-expanded', String(open)); };
-  chat.addEventListener('click', e => { if (!e.target.closest('#menu, #menuBtn')) closeMenu(); });
+  $('menuBtn').onclick = () => { const open = !$('menu').classList.contains('in'); $('menu').classList.toggle('in', open); $('menuBtn').setAttribute('aria-expanded', String(open)); if (open) setTimeout(() => $('topicsBtn').focus({ preventScroll: true }), 50); };
+  chat.addEventListener('click', e => { if (!e.target.closest('#menu, #menuBtn')) closeMenu(); if (!e.target.closest('#helpPop, #helpBtn')) closeHelp(); });
   /* het venster volgt de ruimte boven het toetsenbord, zodat de balk en het laatste bericht in beeld blijven */
   const vv = window.visualViewport, coarse = matchMedia('(pointer: coarse)').matches;
   function fitVV() {
@@ -1146,7 +1197,8 @@ Regels:
   addEventListener('keydown', e => {
     if (e.key !== 'Escape' || chat.hidden) return;
     if (!$('helpCard').hidden) { toggleHelp(false); }
-    else if ($('menu').classList.contains('in')) { closeMenu(); }
+    else if ($('helpPop').classList.contains('in')) { closeHelp(true); }
+    else if ($('menu').classList.contains('in')) { closeMenu(); $('menuBtn').focus({ preventScroll: true }); }
     else if (!$('report').hidden) { closeReport(); input.focus({ preventScroll: true }); }
     else if ($('drawer').classList.contains('in')) { closeDrawer(true); }
     else closeChat();
@@ -1164,11 +1216,11 @@ Regels:
     }
     const from = conv.voice, to = from === 'pam' ? 'sam' : 'pam';
     const ghost = snapshot(false); closeMenu();
-    if (!reduce) { log.classList.remove('arrive'); void log.offsetWidth; log.classList.add('arrive'); }
+    if (!reduce) { log.classList.remove('arrive'); void log.offsetWidth; log.classList.add('arrive'); log.addEventListener('animationend', function f(e) { if (e.target === log) { log.classList.remove('arrive'); log.removeEventListener('animationend', f); } }); }
     conv.voice = to;
     const talked = hasAnswers(conv);
     if (!talked) { conv.msgs = [{ who: 'q', voice: to, text: INTRO[to] }]; conv.marks = {}; }
-    applyVoice(to); render(); save(); status.textContent = '';
+    applyVoice(to); render(); save();
     dissolve(ghost);
     if (talked) handTimer = setTimeout(() => ask(conv, `(De gebruiker wisselt nu van ${NAME[from]} naar jou. Begin met precies deze zin: "${HANDOVER[to]}" Stel daarna één vraag die aansluit op wat er al gezegd is.)`), reduce ? 0 : 500);
   };
@@ -1192,6 +1244,7 @@ Regels:
     const text = input.value.trim(); if (!text || busy) return;
     input.value = ''; input.style.height = 'auto'; syncKbd();
     const c = conv;
+    typeId++;
     if (!hasAnswers(c) && !c.topic) c.title = text.length > 42 ? text.slice(0, 42).replace(/\s+\S*$/, '').replace(/[.,;:!?]+$/, '') + '…' : text;
     c.msgs.push({ who: 'a', text }); ask(c, null);
   }
@@ -1215,7 +1268,7 @@ Regels:
       else {
         if (!e || ['no_sample','not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e.code)) live = false;
         const list = FALLBACK[c.voice]; q.text = (extra ? HANDOVER[c.voice] + ' ' : '') + list[Math.min(c.fb++, list.length - 1)];
-        status.textContent = live ? 'Dit antwoord kwam niet door. Probeer het zo nog eens.' : 'Dit is de oefenversie: Pam en Sam stellen hier vaste vragen.';
+        status.textContent = live ? 'Dit antwoord kwam niet door. Probeer het zo nog eens.' : '';
         if (!reduce) { const full = q.text; q.text = ''; q.thinking = true; render(); await new Promise(r => setTimeout(r, 700)); if (stale()) return; q.thinking = false; q.text = full; }
       }
     } finally {
@@ -1259,7 +1312,7 @@ Regels:
       const b = document.createElement('button'); b.className = 'topic-item'; b.type = 'button'; if (c === conv) b.setAttribute('aria-current', 'true');
       const d = new Date(c.at).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' });
       b.innerHTML = `<span></span><small>${NAME[c.voice]} · ${d}</small>`; b.firstChild.textContent = c.title;
-      b.onclick = () => { closeDrawer(); if (c === conv) return; const g = snapshot(false); conv = c; seen.set(c, c.msgs.length); applyVoice(c.voice); render(); dissolve(g); status.textContent = ''; };
+      b.onclick = () => { closeDrawer(); if (c !== conv) { const g = snapshot(false); conv = c; seen.set(c, c.msgs.length); applyVoice(c.voice); render(); dissolve(g); status.textContent = ''; } input.focus({ preventScroll: true }); };
       list.append(b);
     });
     closeMenu(); openDrawer(); $('newTopic').focus({ preventScroll: true });
@@ -1267,7 +1320,7 @@ Regels:
   $('topicsBtn').onclick = showTopics;
   $('drawerShade').onclick = () => closeDrawer(true);
   $('drawerClose').onclick = () => closeDrawer(true);
-  $('newTopic').onclick = () => { if (busy) return; closeDrawer(); const g = snapshot(false); conv = newConv(conv.voice); render(); dissolve(g); input.focus({ preventScroll: true }); };
+  $('newTopic').onclick = () => { if (busy) return; closeDrawer(); const g = snapshot(false); conv = newConv(conv.voice); render(); dissolve(g); { const t = prepIntro(); if (t) t(); } input.focus({ preventScroll: true }); };
 
   /* ---------- verslag: het hele gesprek, zonder wat je doorstreepte ---------- */
   let reportText = '';

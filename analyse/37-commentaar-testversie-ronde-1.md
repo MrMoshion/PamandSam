@@ -233,3 +233,23 @@ Inhoud (op advies, met akkoord van de ontwerper):
 - Privacy en Voorwaarden staan voorlopig niet in de voet, omdat die pagina's er nog niet zijn (zie 39).
 - De regel over de testversie en de FAQ zeggen hetzelfde: "alles wat je schrijft blijft alleen in deze browser".
 - De twee citaten blijven staan tot de ontwerper of Pardo erover beslist.
+
+## Ronde 15: na de vierde UX-test (zie 43)
+
+- **Voorproefje (besluit ontwerper).** In het vlak staan alleen het logo, een oplichtende cursor en de schrijfregel met knoppen. Bij openen groeit het vlak uit tot het venster, en de schrijfregel schuift vloeiend mee naar zijn plek. Daarna typt Pam of Sam de introductie, per woord, in ongeveer 2,5 seconde. Dat gebeurt alleen bij een nieuw gesprek. Bij sluiten gaat het omgekeerd.
+- **Hulp nodig?** De hulp staat nu in het menu op mobiel en op desktop bovenin het venster. Het opent een klein vak met 113, 0800-0113 en 112.
+- **De testregel is weg.**
+- **De statusregel** verschijnt alleen als er iets misgaat en springt verder niet. De melding over de oefenversie is weg.
+- **Bugs:**
+  - Wisselen en paginawissel beginnen meteen met het nieuwe, zonder dal.
+  - Sluiten meet tegen het juiste vlak.
+  - Met minder beweging schuift er niets meer.
+  - De focus na het kiezen van een onderwerp, na het menu en na openen via een knop klopt weer.
+  - Het logo op de lichtbaan haalt het contrast.
+  - De nummers breken niet meer af.
+  - Op de onderwerppagina's is de ruimte 24 px.
+  - De onderkanten van de tarieven staan op één lijn.
+  - Een vastzittende animatie hield tekst zichtbaar tijdens het sluiten; die blokkeert niet meer.
+- **Tekst:**
+  - "Wat mensen zeggen" heet nu "Deel jouw ervaring".
+  - De belofte over wissen is eruit.
