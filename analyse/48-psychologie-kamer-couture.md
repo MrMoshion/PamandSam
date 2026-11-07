@@ -76,3 +76,22 @@ Uitgangspunt: de opbouw van Plafond (een lichte band bovenin, de inhoud laag), d
 | 4 Avond | Dezelfde opbouw, donker en gedempt, voor 's avonds | 4,68:1 |
 | 5 Twee kamers | Op de homepage staan twee kamers naast elkaar. Sam is een gedempt lavendel in plaats van grijsblauw | 5,68:1 |
 | 6 Vrij: de kamer groeit mee | Het plafond (het overzicht) is klein als je binnenkomt en groot in het gesprek. Hoe verder je komt, hoe meer overzicht je hebt (prospect) | 5,97:1 |
+
+## Gekozen kleuren (besluit ontwerper, 7 november 2026)
+
+De kleuren van opties 1, 2 en 3 worden bewaard als basis voor de verdere uitwerking:
+
+| | Muur | Plafond | Inkt | Zacht | Pam: muur / plafond / inkt / zacht | Sam: muur / plafond / inkt / zacht |
+|---|---|---|---|---|---|---|
+| 1 Plafond | #C8B5B6 | #E6DCDC | #21141A | #45323A | #CDB6B1 / #EADFDB / #24130F / #4A332C | #B4B9BF / #DFE2E5 / #121A22 / #2E3A46 |
+| 2 Licht | #E4D9DA | #F4EFEF | #2A1A21 | #5A4650 | #EADDD9 / #F7F1EF / #2C1A15 / #5E4840 | #DCE0E4 / #F0F2F4 / #15202B / #45525F |
+| 3 Midden | #B9A4A6 | #D6C8C9 | #1E1216 | #3D2C32 | #C2A8A3 / #DCCCC8 / #1F100C / #40281F | #A6ACB3 / #CDD1D6 / #0E151C / #26313D |
+
+## Volgende stap: de gesprekshiërarchie van de eerste kamer (`presentatie/route-couture-3/`)
+
+De ontwerper vindt het gesprek uit de eerste kamer perfect qua rangorde. Pam en Sam staan meer op de achtergrond. Dat is nu toegepast op 1, 2 en 3:
+- Eén kolom van 640 px, links uitgelijnd, onderaan het scherm verankerd.
+- Boven elke vraag een kleine naam in kapitalen. De vraag staat in de zachte kleur, jouw antwoord in de inkt (iets zwaarder). Beide hebben dezelfde grootte: 20 px op desktop, 15 px op mobiel.
+- Geen grote Didone meer in het gesprek. Die blijft in de kop, op de infopagina en in het logo van Pam.
+- Onderaan de schrijfregel met een lijn, links "Wissel naar …" en rechts een volle knop "Verstuur".
+- Het plafond blijft bovenin als rust, en het gesprek staat in de muurkleur.
