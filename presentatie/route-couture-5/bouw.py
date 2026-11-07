@@ -100,3 +100,22 @@ def kamer(key):
 print('zand zacht: zachte tekst', round(CR(Z['soft'], Z['wall']), 2), 'inkt', round(CR(Z['ink'], Z['wall']), 2))
 for k in F: font(k)
 for k in K: print(kamer(k))
+
+# ---------- vijf keer zand (alleen de kop, steeds met Newsreader) ----------
+ZS = {
+ '1-licht':   dict(t='1 · Licht zand', wall='#EFE8D8', ceil='#F8F5EE', soft='#5C5244', why='Het lichtst. Bijna papier, de warmte zit nog in een zweem.'),
+ '2-zacht':   dict(t='2 · Zacht zand', wall='#EAE1CC', ceil='#F6F2E8', soft='#5C5140', why='Het voorstel uit 50: B Zand met minder verzadiging.'),
+ '3-nat':     dict(t='3 · Nat zand', wall='#E1D6BF', ceil='#F2ECDF', soft='#56493A', why='Dieper en gedempter: zand vlak bij de waterlijn. Het meest geborgen.'),
+ '4-kalk':    dict(t='4 · Kalkzandsteen', wall='#E5E0D3', ceil='#F5F2EB', soft='#55503F', why='Grijzer, als steen in plaats van strand. Het minst geel, het meest nuchter.'),
+ '5-omgekeerd': dict(t='5 · Lage zoldering', wall='#F4EEE2', ceil='#E4D9C1', soft='#5A4F3D', why='Ongemakkelijk ver: het plafond is donkerder dan de muur. De kamer voelt lager en beschutter, als een nis. Gaat in tegen "een licht plafond voelt ruimer".'),
+}
+def zand(key):
+    o = ZS[key]; n = F['2-newsreader']
+    root = f":root{{--wall:{o['wall']};--ceil:{o['ceil']};--ink:#2B2419;--soft:{o['soft']};--d:{n['fam']},Georgia,serif;--w:400;--w2:400;--ls:-.02em}}"
+    html = f'''<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pam &amp; Sam · {o['t']}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={n['link']}&family=Jost:wght@300;400&display=swap"><style>{root}{HERO_CSS}h1 span{{font-style:italic}}</style></head><body>
+<div class="pg"><nav class="nav"><b>Pam &amp; Sam</b><span><span class="l">Aanpak &nbsp; Tarieven &nbsp; Contact</span><a class="b">Probeer gratis</a></span></nav>
+<section class="h"><p class="k">Iedereen worstelt weleens met zichzelf.</p><h1>Bespreek het <span>met Pam of Sam.</span></h1><p class="s">Jij komt op het antwoord.<i></i></p><a class="btn">Probeer gratis</a><p class="fine">{DISC}</p></section></div></body></html>'''
+    open(os.path.join(D, 'zand-' + key + '.html'), 'w').write(html)
+    return f"{key}: zacht {min(CR(o['soft'], o['wall']), CR(o['soft'], o['ceil'])):.2f}:1, inkt {CR('#2B2419', o['wall']):.2f}:1, knoptekst {CR(o['ceil'], '#2B2419'):.2f}:1"
+for k in ZS: print(zand(k))

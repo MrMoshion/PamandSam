@@ -51,3 +51,20 @@ Alle combinaties halen minstens 5:1 contrast (zachte tekst en witte knoptekst).
 - E is het meest eigen, maar je ziet het verschil tussen Pam en Sam minder snel. Dat weegt zwaar voor iemand in onrust.
 
 **Niet getest:** hoe echte gebruikers de warmte lezen. Dit is een keuze van smaak.
+
+## Vijf keer zand (vervolgvraag)
+Alle vijf in de kop met Newsreader, zodat alleen de kleur verschilt.
+
+| # | Naam | Muur | Plafond | Gevoel |
+|---|---|---|---|---|
+| 1 | Licht zand | #EFE8D8 | #F8F5EE | bijna papier, warmte als zweem |
+| 2 | Zacht zand | #EAE1CC | #F6F2E8 | het voorstel hierboven |
+| 3 | Nat zand | #E1D6BF | #F2ECDF | dieper en gedempter, het meest geborgen |
+| 4 | Kalkzandsteen | #E5E0D3 | #F5F2EB | grijzer, steen in plaats van strand, het meest nuchter |
+| 5 | Lage zoldering | #F4EEE2 | #E4D9C1 (plafond donkerder) | ongemakkelijk ver: een lage, beschutte kamer, als een nis |
+
+Alle vijf halen minstens 5,7:1 contrast voor de zachte tekst.
+
+**Advies:** 2, of 3 als het zand meer gewicht mag krijgen.
+- 1 en 4 verliezen het idee van zand bijna: daar ligt het cliché van "warm wit".
+- 5 is het meest eigen. Het gaat in tegen het onderzoek dat een licht plafond ruimer voelt; donkerder voelt lager en beschutter. Dat kan passen bij een gesprek, maar vraagt een test met echte mensen.
