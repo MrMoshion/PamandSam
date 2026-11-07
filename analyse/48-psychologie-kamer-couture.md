@@ -95,3 +95,13 @@ De ontwerper vindt het gesprek uit de eerste kamer perfect qua rangorde. Pam en 
 - Geen grote Didone meer in het gesprek. Die blijft in de kop, op de infopagina en in het logo van Pam.
 - Onderaan de schrijfregel met een lijn, links "Wissel naar …" en rechts een volle knop "Verstuur".
 - Het plafond blijft bovenin als rust, en het gesprek staat in de muurkleur.
+
+## Warmere neutrale kleur voor de landingspagina (`presentatie/route-couture-4/`)
+
+Volgens de ontwerper was optie 2 net iets te vrouwelijk. Hieronder drie warmere, gele varianten voor de neutrale kleur van Pam & Sam. Ze gelden alleen voor de landingspagina; de kamers van Pam en Sam blijven zoals in optie 2. De verzadiging blijft laag (zie het onderzoek hierboven).
+
+| | Muur | Plafond | Inkt | Zacht | Laagste contrast |
+|---|---|---|---|---|---|
+| A Linnen | #E8DFCC | #F5F0E4 | #2A2218 | #5C503F | 5,93:1 |
+| B Zand | #E5D6B3 | #F3EBD8 | #2B2214 | #5B4C31 | 5,79:1 |
+| C Honing | #ECDDAE | #F7F0DA | #2A2210 | #5A4D2C | 6,03:1 |
