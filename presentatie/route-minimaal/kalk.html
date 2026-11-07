@@ -1,0 +1,58 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pam &amp; Sam · kalk</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=EB+Garamond:wght@400&display=swap">
+<style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none;cursor:pointer}ul,ol{list-style:none}
+.s{display:none;min-height:100vh}body[data-s=home] #home,body[data-s=info] #info,body[data-s=pam] #pam,body[data-s=sam] #sam{display:block}
+.chat{min-height:100vh;display:flex;flex-direction:column}.chat .log{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+
+:root{--bg:#F5F2EB;--ink:#1F1D1A;--soft:#6B665E;--rule:#D8D2C6;--pam:#9A5B3C;--sam:#3E5568}
+body{background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-weight:300;font-size:14px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 40px;border-bottom:1px solid var(--rule)}.nav .logo{font-family:"EB Garamond";font-size:20px}
+.nav ul{display:flex;gap:28px;align-items:center;font-size:13px}.btn{display:inline-block;border:1px solid var(--ink);padding:10px 18px;font-size:13px;font-weight:400}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;padding:40px}
+.hero .t{grid-column:2/4;align-self:center}.hero .kick{font-size:13px;color:var(--soft)}.hero h1{font-family:"EB Garamond";font-weight:400;font-size:44px;line-height:1.15;margin:18px 0 12px}
+.hero .sub{font-size:15px}.hero .row{margin-top:36px;display:flex;gap:24px;align-items:center}.fine{font-size:12px;color:var(--soft);max-width:34ch;line-height:1.55}
+.hero .keys{grid-column:4;align-self:end;display:flex;flex-direction:column;gap:8px;font-size:13px}.hero .keys span{display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:8px}
+.hero .keys i{font-style:normal;color:var(--soft)}
+.info{display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:56px 40px}.eyebrow{font-size:12px;color:var(--soft)}
+.info h2{font-family:"EB Garamond";font-weight:400;font-size:34px;grid-column:2;margin:-6px 0 24px}.info>.eyebrow{grid-column:1;grid-row:1}
+.steps{grid-column:2;border-top:1px solid var(--ink)}.steps li{display:grid;grid-template-columns:60px 220px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.steps .n{color:var(--soft)}.steps h3{font-weight:400;font-size:14px}.steps p{color:var(--soft);line-height:1.6}
+.caren{grid-column:2;margin-top:48px;max-width:46ch}.caren .eyebrow{margin-bottom:12px}.quote{font-family:"EB Garamond";font-size:24px;line-height:1.35}.by{margin-top:10px;color:var(--soft)}
+.note{grid-column:2;margin-top:48px;color:var(--soft);max-width:70ch;line-height:1.6}
+.chat{background:var(--bg)}.chat.pam{--v:var(--pam)}.chat.sam{--v:var(--sam)}
+.ch{display:flex;justify-content:space-between;padding:22px 40px;border-bottom:1px solid var(--rule);font-size:13px}.ch .logo{font-family:"EB Garamond";font-size:18px}
+.chat.sam .ch .logo{font-family:Inter;font-weight:400;font-size:15px}.ch ul{display:flex;gap:24px;color:var(--soft)}
+.ch .logo::after{content:"";display:inline-block;width:7px;height:7px;background:var(--v);margin-left:10px;vertical-align:2px}
+.log{width:min(560px,100%);margin:0 auto;padding:40px 24px}.turn{padding:16px 0;border-bottom:1px solid var(--rule)}
+.who{display:block;font-size:11px;color:var(--v);margin-bottom:6px;font-weight:400}.q{font-size:15px;line-height:1.55;color:var(--v)}
+.chat.pam .q{font-family:"EB Garamond";font-size:18px;line-height:1.4}.chat.pam .who{font-family:Inter}.a{margin-top:10px;font-size:15px;line-height:1.65}
+.dock{width:min(560px,100%);margin:0 auto;padding:16px 24px 40px}.field{border:1px solid var(--ink);padding:14px 16px;font-size:15px;color:var(--soft)}
+.acts{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:13px}.alt{color:var(--soft)}.send{background:var(--ink);color:var(--bg);padding:10px 18px}
+@media(max-width:700px){.nav{padding:18px 20px}.nav ul li:not(.k){display:none}.hero{grid-template-columns:1fr;padding:32px 20px}.hero .t,.hero .keys{grid-column:1}
+.hero h1{font-size:34px}.hero .row{flex-direction:column;align-items:flex-start}.info{grid-template-columns:1fr;padding:32px 20px}.info>*{grid-column:1!important}
+.steps li{grid-template-columns:30px 1fr;}.steps li p{grid-column:2}.ch{padding:18px 20px}.ch ul li:not(.k){display:none}}
+</style></head><body data-s="home">
+<div class="s" id="home"><nav class="nav"><a class="logo">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn">Probeer gratis</a></li></ul></nav><section class="hero"><div class="t"><p class="kick">Iedereen worstelt weleens met zichzelf.</p><h1>Bespreek het met Pam of Sam.</h1>
+<p class="sub">Jij komt op het antwoord.</p><div class="row"><a class="btn">Probeer gratis</a><p class="fine">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p></div></div>
+<div class="keys"><span>Pam <i>warm en empathisch</i></span><span>Sam <i>direct en nuchter</i></span><span>Caren <i>de bron</i></span></div></section></div>
+<div class="s" id="info"><nav class="nav"><a class="logo">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn">Probeer gratis</a></li></ul></nav><section class="info">
+  <p class="eyebrow">Hoe het werkt</p>
+  <h2>Drie stappen. Niet meer.</h2>
+  <ol class="steps"><li><span class="n">01</span><h3>Vertel wat er speelt</h3><p>Schrijf het op zoals het in je hoofd zit. Niemand oordeelt.</p></li><li><span class="n">02</span><h3>Beantwoord één vraag</h3><p>Pam of Sam stelt telkens één vraag. Geen advies, geen lijstjes.</p></li><li><span class="n">03</span><h3>Kies je eigen stap</h3><p>Je eindigt met één ding dat je zelf kiest, in je eigen woorden.</p></li></ol>
+  <div class="caren"><p class="eyebrow">Waar het vandaan komt</p>
+    <p class="quote">“Wat je overkomt hoeft je leven niet te bepalen, je kunt kiezen hoe je erop reageert.”</p>
+    <p class="by">Caren Pardovitch, adviseur bij Pam &amp; Sam</p></div>
+  <p class="note">Pam en Sam zijn AI-gesprekspartners. Geen therapie of vervanging van professionele hulp. Gaat het niet goed? Bel 113 of 0800-0113, bij direct gevaar 112.</p>
+</section></div>
+<div class="s" id="pam"><div class="chat pam">
+  <header class="ch"><span class="logo">Pam &amp; Sam</span><ul><li>Onderwerpen</li><li>Terugblik</li><li class="k">×</li></ul></header>
+  <main class="log"><div class="turn"><p class="q"><span class="who">Pam</span>Fijn dat je er bent. Vertel me rustig wat er speelt.</p><p class="a">Ik slaap slecht sinds de verhuizing. Het voelt alsof ik nergens thuis ben.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wat mis je het meest?</p><p class="a">De buurt. Dat iemand me groette als ik naar buiten liep.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wanneer voelde je je hier wél even gezien?</p><p class="a">Bij de bakker, vorige week. Ze wist mijn naam nog.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wat zou je morgen kunnen doen om dat vaker te voelen?</p></div></main>
+  <footer class="dock"><div class="field">Schrijf hier…</div><div class="acts"><a class="alt">Wissel naar Sam</a><a class="send">Verstuur</a></div></footer>
+</div></div>
+<div class="s" id="sam"><div class="chat sam">
+  <header class="ch"><span class="logo">Pam &amp; Sam</span><ul><li>Onderwerpen</li><li>Terugblik</li><li class="k">×</li></ul></header>
+  <main class="log"><div class="turn"><p class="q"><span class="who">Sam</span>Vertel me wat er speelt.</p><p class="a">Ik moet kiezen tussen een promotie en minder uren werken.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat wil jij, los van anderen?</p><p class="a">Tijd. Ik wil mijn dochter van school halen.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat is je conclusie, in één zin?</p><p class="a">Ik kies voor minder uren, en ik zeg het maandag.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat is je eerste stap?</p></div></main>
+  <footer class="dock"><div class="field">Schrijf hier…</div><div class="acts"><a class="alt">Wissel naar Pam</a><a class="send">Verstuur</a></div></footer>
+</div></div>
+<script>const s=new URLSearchParams(location.search).get('s');if(s)document.body.dataset.s=s;</script></body></html>

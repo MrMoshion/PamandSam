@@ -1,0 +1,62 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pam &amp; Sam · toneel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Libre+Franklin:wght@300;400;600&display=swap">
+<style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none;cursor:pointer}ul,ol{list-style:none}
+.s{display:none;min-height:100vh}body[data-s=home] #home,body[data-s=info] #info,body[data-s=pam] #pam,body[data-s=sam] #sam{display:block}
+.chat{min-height:100vh;display:flex;flex-direction:column}.chat .log{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+
+:root{--bg:#FBFAF7;--ink:#141414;--soft:#6A6A66;--rule:#E3E1DB;--pam:#A3532B;--sam:#2F5274}
+body{background:var(--bg);color:var(--ink);font-family:"Libre Franklin",sans-serif;font-weight:300}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 56px}.nav .logo{font-family:"Courier Prime";font-weight:700;font-size:18px;letter-spacing:.02em}
+.nav ul{display:flex;gap:32px;align-items:center;font-size:14px}.btn{display:inline-block;font-family:"Courier Prime";font-weight:700;border:2px solid var(--ink);padding:12px 22px;font-size:15px}
+.hero{min-height:calc(100vh - 96px);display:flex;align-items:center;justify-content:center;padding:40px 24px 80px}
+.script{width:min(620px,100%);font-family:"Courier Prime";font-size:18px;line-height:1.55}
+.script .scene{font-weight:700;margin-bottom:28px}.script .act{margin:0 0 28px}.script .role{text-align:center;margin-top:18px;font-weight:700}
+.script .par{text-align:center;color:var(--soft)}.script .say{width:70%;margin:0 auto 18px}
+.script .role.p{color:var(--pam)}.script .role.sr{color:var(--sam)}.script h1{font:inherit;font-weight:700;font-size:42px;line-height:1.15;margin:8px 0 26px;font-family:"Libre Franklin";letter-spacing:-.02em}
+.script .row{margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px}.fine{font-family:"Libre Franklin";font-size:13px;color:var(--soft);text-align:center;max-width:40ch;line-height:1.5}
+.info{width:min(760px,100%);margin:0 auto;padding:48px 24px 90px}.eyebrow{font-family:"Courier Prime";font-weight:700;font-size:14px;margin-bottom:12px}
+.info h2{font-weight:600;font-size:44px;letter-spacing:-.02em;margin-bottom:40px}.steps li{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--rule)}
+.steps .n{font-family:"Courier Prime";font-weight:700}.steps h3{font-weight:600;font-size:19px;margin-bottom:8px}.steps p{grid-column:2;color:var(--soft);line-height:1.6}.steps h3{grid-column:2;grid-row:1}
+.caren{margin-top:56px;font-family:"Courier Prime";font-size:18px;line-height:1.55}.quote{width:70%;margin:0 auto}.by{text-align:center;font-weight:700;margin-bottom:8px;order:-1}.caren{display:flex;flex-direction:column}
+.note{margin-top:56px;font-size:14px;color:var(--soft);line-height:1.6}
+.chat{background:var(--bg)}.chat.pam{--v:var(--pam)}.chat.sam{--v:var(--sam)}
+.ch{display:flex;justify-content:space-between;padding:24px 56px;font-size:14px;border-bottom:1px solid var(--rule)}.ch .logo{font-family:"Courier Prime";font-weight:700;color:var(--v)}.ch ul{display:flex;gap:28px;color:var(--soft)}
+.log{width:min(620px,100%);margin:0 auto;padding:40px 24px;font-family:"Courier Prime";font-size:17px;line-height:1.55}
+.turn{padding:8px 0}.q{width:72%;margin:0 auto;color:var(--v)}.who{display:block;text-align:center;font-weight:700;margin-bottom:2px}
+.a{width:72%;margin:16px auto 0}.a::before{content:"JIJ";display:block;text-align:center;font-weight:700;margin-bottom:2px}
+.dock{width:min(620px,100%);margin:0 auto;padding:12px 24px 44px;font-family:"Courier Prime"}.field{width:72%;margin:0 auto;padding:12px 0;border-bottom:2px solid var(--ink);color:var(--soft);font-size:17px}
+.field::before{content:"JIJ";display:block;text-align:center;font-weight:700;color:var(--ink);margin-bottom:6px}
+.acts{width:72%;margin:18px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:15px}.alt{color:var(--soft)}.send{font-weight:700;color:#fff;background:var(--v);padding:11px 20px}
+@media(max-width:700px){.nav{padding:18px 20px}.nav ul li:not(.k){display:none}.script{font-size:15px}.script h1{font-size:30px}.script .say{width:88%}
+.info{padding:28px 20px}.info h2{font-size:32px}.steps li{grid-template-columns:1fr;gap:4px}.steps p,.steps h3{grid-column:1;grid-row:auto}.quote{width:88%}
+.ch{padding:18px 20px}.ch ul li:not(.k){display:none}.log{font-size:15px}.q,.a,.field,.acts{width:88%}.field{font-size:16px}}
+</style></head><body data-s="home">
+<div class="s" id="home"><nav class="nav"><a class="logo">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn">Probeer gratis</a></li></ul></nav><section class="hero"><div class="script">
+<p class="scene">BINNEN. EEN RUSTIGE KAMER. AVOND.</p>
+<p class="act">Iedereen worstelt weleens met zichzelf. Jij ook. Je gaat zitten.</p>
+<h1>Bespreek het met Pam of Sam.</h1>
+<p class="role p">PAM</p><p class="par">(warm)</p><p class="say">Vertel me rustig wat er speelt.</p>
+<p class="role sr">SAM</p><p class="par">(nuchter)</p><p class="say">Wat is precies het probleem?</p>
+<p class="role">JIJ</p><p class="say">Ik kom zelf op het antwoord.</p>
+<div class="row"><a class="btn">Probeer gratis</a><p class="fine">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p></div></div></section></div>
+<div class="s" id="info"><nav class="nav"><a class="logo">Pam &amp; Sam</a><ul><li>Hoe het werkt</li><li>Caren</li><li>Tarieven</li><li class="k"><a class="btn">Probeer gratis</a></li></ul></nav><section class="info">
+  <p class="eyebrow">Hoe het werkt</p>
+  <h2>Drie stappen. Niet meer.</h2>
+  <ol class="steps"><li><span class="n">01</span><h3>Vertel wat er speelt</h3><p>Schrijf het op zoals het in je hoofd zit. Niemand oordeelt.</p></li><li><span class="n">02</span><h3>Beantwoord één vraag</h3><p>Pam of Sam stelt telkens één vraag. Geen advies, geen lijstjes.</p></li><li><span class="n">03</span><h3>Kies je eigen stap</h3><p>Je eindigt met één ding dat je zelf kiest, in je eigen woorden.</p></li></ol>
+  <div class="caren"><p class="eyebrow">Waar het vandaan komt</p>
+    <p class="quote">“Wat je overkomt hoeft je leven niet te bepalen, je kunt kiezen hoe je erop reageert.”</p>
+    <p class="by">Caren Pardovitch, adviseur bij Pam &amp; Sam</p></div>
+  <p class="note">Pam en Sam zijn AI-gesprekspartners. Geen therapie of vervanging van professionele hulp. Gaat het niet goed? Bel 113 of 0800-0113, bij direct gevaar 112.</p>
+</section></div>
+<div class="s" id="pam"><div class="chat pam">
+  <header class="ch"><span class="logo">Pam &amp; Sam</span><ul><li>Onderwerpen</li><li>Terugblik</li><li class="k">×</li></ul></header>
+  <main class="log"><div class="turn"><p class="q"><span class="who">Pam</span>Fijn dat je er bent. Vertel me rustig wat er speelt.</p><p class="a">Ik slaap slecht sinds de verhuizing. Het voelt alsof ik nergens thuis ben.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wat mis je het meest?</p><p class="a">De buurt. Dat iemand me groette als ik naar buiten liep.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wanneer voelde je je hier wél even gezien?</p><p class="a">Bij de bakker, vorige week. Ze wist mijn naam nog.</p></div><div class="turn"><p class="q"><span class="who">Pam</span>Wat zou je morgen kunnen doen om dat vaker te voelen?</p></div></main>
+  <footer class="dock"><div class="field">Schrijf hier…</div><div class="acts"><a class="alt">Wissel naar Sam</a><a class="send">Verstuur</a></div></footer>
+</div></div>
+<div class="s" id="sam"><div class="chat sam">
+  <header class="ch"><span class="logo">Pam &amp; Sam</span><ul><li>Onderwerpen</li><li>Terugblik</li><li class="k">×</li></ul></header>
+  <main class="log"><div class="turn"><p class="q"><span class="who">Sam</span>Vertel me wat er speelt.</p><p class="a">Ik moet kiezen tussen een promotie en minder uren werken.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat wil jij, los van anderen?</p><p class="a">Tijd. Ik wil mijn dochter van school halen.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat is je conclusie, in één zin?</p><p class="a">Ik kies voor minder uren, en ik zeg het maandag.</p></div><div class="turn"><p class="q"><span class="who">Sam</span>Wat is je eerste stap?</p></div></main>
+  <footer class="dock"><div class="field">Schrijf hier…</div><div class="acts"><a class="alt">Wissel naar Pam</a><a class="send">Verstuur</a></div></footer>
+</div></div>
+<script>const s=new URLSearchParams(location.search).get('s');if(s)document.body.dataset.s=s;</script></body></html>
