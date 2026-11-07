@@ -44,3 +44,25 @@ Previews staan in `presentatie/route-couture-6/`. De site zelf is nog niet aange
 D is het zachtst, maar voor iemand in onrust is een knop die je moet zoeken een drempel.
 
 **Niet getest:** hoe het zachtere geheel werkt bij echte mensen, en of A op een oud of dimmend scherm nog goed opvalt.
+
+## Keuze en uitvoering (ontwerper, 7 november 2026)
+- **Letter:** Crimson Pro *alleen voor Pam*: wat zij zegt, haar logo en haar naam in de kamer.
+  - De huisstijl houdt Literata voor koppen en logo. Jost blijft voor de rest en voor Sam.
+  - Crimson Pro heeft een kleinere x-hoogte (de hoogte van een kleine letter zoals de x). Die is gelijkgetrokken met `font-size-adjust`, zodat Pams tekst even groot leest.
+- **Kleuren:** de zachtere set uit deze notitie (huisstijl #F0EADD, Pam #EEE3D5, Sam #EEEDEA).
+- **Knoppen in de huisstijl:** zacht gevuld (#7A6D58, witte tekst 5,1:1). Dat geldt voor "Probeer gratis", de formulieren en de balk bovenin.
+- **"Begin bij Pam / Sam":** ook zacht gevuld, in hun eigen middentoon (#8A6849 en #5F676D).
+- **Knoppen bij Pam en Sam:** licht gevuld, in hun eigen muur iets donkerder (#D9CFC2 en #D9D8D6, donkere tekst 9,3 en 9,9:1). Dat geldt voor de chat, de voorbeeldkamers en de menu's.
+
+Gevonden en hersteld tijdens het testen:
+- Tijdens het openen van de kamer staat er even een kopie van de invoerbalk (nodig voor Safari).
+- Die kopie toonde de verstuurknop nog donker, waardoor het beeld kort versprong.
+- Na het herstel komt de pixeltest weer rustig tot 0 (grootste afwijking 5,9).
+
+Overige tests:
+- openen en sluiten frame voor frame: 0 fouten;
+- toetsenbord en focus werken;
+- nergens horizontaal scrollen;
+- de disclaimer overlapt nergens.
+
+Artifact versie 3.

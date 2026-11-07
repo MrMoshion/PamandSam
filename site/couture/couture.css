@@ -1,11 +1,11 @@
 
-/* ===== Couture met de kamer als gevoel (48–50): licht zand, Pam in hout, Sam in papier, Literata zonder cursief ===== */
+/* ===== Couture met de kamer als gevoel (48–51): zacht zand, Pam in hout, Sam in papier; Literata voor de huisstijl, Crimson Pro alleen voor Pam ===== */
 :root{
-  --wall:#EFE8D8; --ceil:#F8F5EE; --ink:#2B2419; --ink-soft:#5C5244; --line:rgba(43,36,25,.2);
+  --wall:#F0EADD; --ceil:#F9F6F0; --ink:#2F2A22; --ink-soft:#5E564A; --line:rgba(47,42,34,.2);
   --light:var(--wall); --paper:var(--ceil); --dusk:var(--ink); --dusk-text:var(--ink); --dusk-soft:var(--ink-soft);
   --accent:#7A5C2A;
-  --pw:#E8D6C0; --pc:#F6EDE2; --pam-ink:#2C2014; --pam-voice:#5E4A33; --pam-soft:#5E4A33; --pam-cursor:#85562C; --pam-glow:133,86,44; --pam-acc:#85562C;
-  --sw:#ECEBE6; --sc:#F9F8F5; --sam-ink:#1A2228; --sam-voice:#4A5157; --sam-soft:#4A5157; --sam-cursor:#1F2A30; --sam-glow:31,42,48; --sam-acc:#1F2A30;
+  --pw:#EEE3D5; --pc:#F9F4EE; --pam-ink:#33281D; --pam-voice:#63523F; --pam-soft:#63523F; --pam-cursor:#8A6849; --pam-glow:138,104,73; --pam-acc:#8A6849; --pam-btn:#D9CFC2; --pam-serif:"Crimson Pro",Georgia,serif;
+  --sw:#EEEDEA; --sc:#FAF9F7; --sam-ink:#262C30; --sam-voice:#51575C; --sam-soft:#51575C; --sam-cursor:#5F676D; --sam-glow:95,103,109; --sam-acc:#5F676D; --sam-btn:#D9D8D6; --mid:#7A6D58;
   --sans:"Jost","Helvetica Neue",Arial,sans-serif; --serif:"Literata",Georgia,serif;
   --step-4:clamp(2.75rem,7.2vw,6.6rem);
 }
@@ -17,13 +17,13 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 .eyebrow{font-size:.75rem;letter-spacing:.18em}
 /* knoppen: vlak, klein gezet, als een label */
 .btn,.pill{border-radius:2px;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
-.btn.primary,.on-dusk .btn.primary,.pill.primary{background:var(--ink);color:var(--ceil);border-color:var(--ink);box-shadow:none}
-.btn.primary:hover,.on-dusk .btn.primary:hover{background:#463822;box-shadow:none}
+.btn.primary,.on-dusk .btn.primary,.pill.primary{background:var(--mid);color:#fff;border-color:var(--mid);box-shadow:none}
+.btn.primary:hover,.on-dusk .btn.primary:hover{background:#6B5F4C;border-color:#6B5F4C;box-shadow:none}
 .on-dusk .btn,.nav .btn{border-color:var(--ink);color:var(--ink);box-shadow:none}
 .nav .btn:hover{box-shadow:none;background:transparent}
-.bar .nav .btn{background:var(--ink);color:var(--ceil);box-shadow:none}
+.bar .nav .btn{background:var(--mid);border-color:var(--mid);color:#fff;box-shadow:none}
 .btn.v-pam{background:var(--pam-acc);color:#fff}.btn.v-sam{background:var(--sam-acc);color:#fff}
-.btn.v-pam:hover{background:#6E4723}.btn.v-sam:hover{background:#34424B}
+.btn.v-pam:hover{background:#7A5B3F}.btn.v-sam:hover{background:#535A5F}
 .door.pam > h3::before{background:var(--pam-acc)}.door.sam > h3::before{background:var(--sam-acc)}
 .card span{text-decoration-color:var(--accent)}
 /* de kop: plafond boven, muur onder; alles gecentreerd */
@@ -61,7 +61,7 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 .bg-pam,.door button.room.bg-pam{background:linear-gradient(var(--pc) 0 24%,var(--pw) 24%)}
 .bg-sam,.door button.room.bg-sam{background:linear-gradient(var(--sc) 0 24%,var(--sw) 24%)}
 .door button.room{border-radius:4px;box-shadow:none}
-.door button.room:hover{box-shadow:0 20px 40px -32px rgba(43,36,25,.45)}
+.door button.room:hover{box-shadow:0 20px 40px -32px rgba(47,42,34,.45)}
 .chat-top .logo,.chat.pam .chat-top .logo{font-family:var(--serif);font-weight:400}.chat.sam .chat-top .logo{font-family:var(--sans);font-weight:400}
 .door.sam .mini-logo{font-family:var(--sans);font-weight:400}
 .msg.a{font-weight:400}
@@ -74,6 +74,14 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 #switchBtn2{text-transform:none;letter-spacing:0;font-size:15px;font-weight:300}
 html{background:var(--ceil)}
 /* velden: vlak, zelfde hoek als de knoppen */
-form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(43,36,25,.68);box-shadow:none}
+form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(47,42,34,.68);box-shadow:none}
 .tone-linen form.simple input,.tone-linen form.simple textarea{background:var(--wall)}
 .daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}
+
+/* Pam: alleen haar stem en haar naam in Crimson Pro (51); kleinere x-hoogte gelijkgetrokken */
+.door.pam .mini-logo,.door.pam .mini-intro,.chat.pam .chat-top .logo,.chat.pam .msg.q{font-family:var(--pam-serif);font-weight:400;font-size-adjust:.47}
+/* knoppen bij Pam en Sam: licht gevuld, eigen muur iets donkerder, donkere tekst (51) */
+.chat.pam .pill.primary,.chat.pam .dock-proxy .md-pill.primary,.door.pam .md-pill.primary,.door.pam .mini-send span:not(.out){background:var(--pam-btn)!important;color:var(--pam-ink)!important;border-color:var(--pam-btn)!important}
+.chat.sam .pill.primary,.chat.sam .dock-proxy .md-pill.primary,.door.sam .md-pill.primary,.door.sam .mini-send span:not(.out){background:var(--sam-btn)!important;color:var(--sam-ink)!important;border-color:var(--sam-btn)!important}
+.chat.pam .pill.primary:hover:not(:disabled){background:#CEC3B5!important;border-color:#CEC3B5!important}
+.chat.sam .pill.primary:hover:not(:disabled){background:#CDCCCA!important;border-color:#CDCCCA!important}
