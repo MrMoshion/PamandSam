@@ -45,3 +45,21 @@ Basis: Couture, richting 4 uit 47. Opdracht: het gevoel van de kamer introducere
 - [Gnambs 2020, rood en prestaties](https://link.springer.com/article/10.3758/s13423-020-01772-1), [Meta-analyse rood en romantiek](https://journals.sagepub.com/doi/10.1177/1474704918802412)
 - [Dosen & Ostwald 2016, prospect-refuge](https://link.springer.com/article/10.1186/s40410-016-0033-1), [Cathedral effect](https://en.wikipedia.org/wiki/Cathedral_effect)
 - [Fluency in gezondheidsmateriaal (BMC Research Notes)](https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-017-2524-x/tables/1), [Cognitive fluency](https://atticusli.com/behavioral-science-glossary/cognitive-fluency/)
+
+## Is rood een risico? (vraag van de ontwerper bij schets D)
+
+**Wat het onderzoek zegt**
+- **Rood is de kleur met de meeste emotionele lading.** In een studie met 4.598 mensen uit 30 landen (Jonauskaite e.a., 2020) waren rood en zwart de kleuren die het vaakst aan emoties werden gekoppeld. Bij rood ging het om liefde, woede en, in sommige landen, angst.
+- **De betekenis hangt af van de context** (Meier e.a., 2012; overzichten van Elliot). Waar je beoordeeld wordt of moet presteren, lees je rood als gevaar en word je voorzichtiger. In een relationele context leest het als warmte en aantrekking. Het mechanisme erachter is onbekend.
+- **De harde effecten zijn klein of niet herhaald.** Een voorbeeld is "rood verlaagt je prestatie" (Gnambs, 2020).
+- **Bijna al het onderzoek gaat over fel, verzadigd rood.** Over donker, gedempt bordeaux is weinig bekend. Wat hier volgt, is dus een afleiding.
+- **Trauma-informed design** raadt aan om rood niet als signaal te gebruiken (zie 46).
+
+**Wat dat betekent voor Pam & Sam**
+- Bij ons komt iemand in een kwetsbaar moment binnen, en gaat het gesprek over jezelf. Dat ligt dichter bij een context waarin je je beoordeeld voelt dan bij een romantische. Het risico is dus reëel, al is het niet groot.
+- **Bordeaux als hele achtergrond** maakt de kleur met de meeste emotionele lading tot het eerste wat je ziet. Als accent is dat geen probleem, als kamer wel.
+- **Dubbele betekenis.** Rood draagt ook "liefde" en "warmte", zoals in de gelichte bordeaux van D. Voor de ene gebruiker voelt dat warm, voor de andere alarmerend.
+
+**Oordeel:** gebruik geen rood als hoofdkleur van de kamer. Houd het hooguit als een kleine, gedempte toets, en nooit voor fouten of waarschuwingen. De mauve van Nis is een veiliger keuze: dezelfde warmte, maar met minder verzadiging en minder emotionele lading.
+
+Bronnen: [Jonauskaite e.a. 2020 (Psychological Science)](https://journals.sagepub.com/doi/10.1177/0956797620948810), [Meier e.a. 2012 (PLOS One)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3394796), [overzicht rood en motivatie](https://pmc.ncbi.nlm.nih.gov/articles/PMC4177848), [Gnambs 2020](https://link.springer.com/article/10.3758/s13423-020-01772-1)
