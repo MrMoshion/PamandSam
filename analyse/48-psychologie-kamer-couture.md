@@ -63,3 +63,16 @@ Basis: Couture, richting 4 uit 47. Opdracht: het gevoel van de kamer introducere
 **Oordeel:** gebruik geen rood als hoofdkleur van de kamer. Houd het hooguit als een kleine, gedempte toets, en nooit voor fouten of waarschuwingen. De mauve van Nis is een veiliger keuze: dezelfde warmte, maar met minder verzadiging en minder emotionele lading.
 
 Bronnen: [Jonauskaite e.a. 2020 (Psychological Science)](https://journals.sagepub.com/doi/10.1177/0956797620948810), [Meier e.a. 2012 (PLOS One)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3394796), [overzicht rood en motivatie](https://pmc.ncbi.nlm.nih.gov/articles/PMC4177848), [Gnambs 2020](https://link.springer.com/article/10.3758/s13423-020-01772-1)
+
+## Zes opties: Plafond × Nis × Tegenover (`presentatie/route-couture-2/`)
+
+Uitgangspunt: de opbouw van Plafond (een lichte band bovenin, de inhoud laag), de kleuren van Nis (gedempt mauve, voor Pam warmer, voor Sam grijsblauw) en het gesprek van Tegenover (hun vraag boven, een lijn als tafel, jouw tekst onder). Geen rood als hoofdkleur. Het contrast is gemeten: de zachte tekst haalt in alle opties minimaal 4,68:1, de inkt minimaal 6,5:1.
+
+| Optie | Wat er anders is | Laagste contrast |
+|---|---|---|
+| 1 Plafond en nis | De basis. De eerdere beurten staan zacht in het plafond, als overzicht boven je hoofd | 5,87:1 |
+| 2 Licht | Lichter en luchtiger. De eerdere beurten zijn ingeklapt tot "Eerder in dit gesprek · 2 vragen" | 6,03:1 |
+| 3 Midden | Een middentoon, het dichtst bij Nis. De eerdere beurten staan in de kamer zelf, boven de vraag | 5,56:1 |
+| 4 Avond | Dezelfde opbouw, donker en gedempt, voor 's avonds | 4,68:1 |
+| 5 Twee kamers | Op de homepage staan twee kamers naast elkaar. Sam is een gedempt lavendel in plaats van grijsblauw | 5,68:1 |
+| 6 Vrij: de kamer groeit mee | Het plafond (het overzicht) is klein als je binnenkomt en groot in het gesprek. Hoe verder je komt, hoe meer overzicht je hebt (prospect) | 5,97:1 |
