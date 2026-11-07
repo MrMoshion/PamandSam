@@ -1,0 +1,79 @@
+
+/* ===== Couture met de kamer als gevoel (48): plafond en muur, zand voor Pam & Sam, gedempte kamers voor Pam en Sam ===== */
+:root{
+  --wall:#E5D6B3; --ceil:#F3EBD8; --ink:#2B2214; --ink-soft:#5B4C31; --line:rgba(43,34,20,.2);
+  --light:var(--wall); --paper:var(--ceil); --dusk:var(--ink); --dusk-text:var(--ink); --dusk-soft:var(--ink-soft);
+  --accent:#7A5C2A;
+  --pw:#EADDD9; --pc:#F7F1EF; --pam-ink:#2C1A15; --pam-voice:#5E4840; --pam-soft:#5E4840; --pam-cursor:#8C5A44; --pam-glow:140,90,68; --pam-acc:#8C5A44;
+  --sw:#DCE0E4; --sc:#F0F2F4; --sam-ink:#15202B; --sam-voice:#45525F; --sam-soft:#45525F; --sam-cursor:#44596E; --sam-glow:68,89,110; --sam-acc:#44596E;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif; --serif:"Bodoni Moda",Georgia,serif;
+  --step-4:clamp(2.75rem,7.2vw,6.6rem);
+}
+body{margin:0;background:var(--wall);font-weight:300}
+.lamp,.beam,.grain::after,.cur::before,.bg-pam::before,.bg-sam::before{display:none!important}
+:focus-visible{outline:2px solid var(--ink);box-shadow:none}
+.chat :focus-visible{box-shadow:none}
+h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+.eyebrow{font-size:.75rem;letter-spacing:.18em}
+/* knoppen: vlak, klein gezet, als een label */
+.btn,.pill{border-radius:2px;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+.btn.primary,.on-dusk .btn.primary,.pill.primary{background:var(--ink);color:var(--ceil);border-color:var(--ink);box-shadow:none}
+.btn.primary:hover,.on-dusk .btn.primary:hover{background:#463822;box-shadow:none}
+.on-dusk .btn,.nav .btn{border-color:var(--ink);color:var(--ink);box-shadow:none}
+.nav .btn:hover{box-shadow:none;background:transparent}
+.bar .nav .btn{background:var(--ink);color:var(--ceil);box-shadow:none}
+.btn.v-pam{background:var(--pam-acc);color:#fff}.btn.v-sam{background:var(--sam-acc);color:#fff}
+.btn.v-pam:hover{background:#7A4D39}.btn.v-sam:hover{background:#3A4D60}
+.door.pam > h3::before{background:var(--pam-acc)}.door.sam > h3::before{background:var(--sam-acc)}
+.card span{text-decoration-color:var(--accent)}
+/* de kop: plafond boven, muur onder; alles gecentreerd */
+.hero,.topic-hero{background:linear-gradient(var(--ceil) 0 34%,var(--wall) 34%);color:var(--ink)}
+.hero .nav{color:var(--ink)}.nav a{color:var(--ink-soft)}.on-dusk .nav .logo{color:var(--ink)}
+.nav .logo{font-family:var(--serif);font-weight:400}
+.hero-body{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:400;max-width:none;line-height:.98;letter-spacing:-.02em}
+.hero h1 span{display:block;font-style:italic}
+.hero .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.hero .sub{color:var(--ink);font-size:var(--step-1)}.hero .sub .you{color:var(--ink)}
+.hero .cur{background:var(--ink)!important}
+.hero .cta-row{flex-direction:column;gap:16px}.hero .small{background:none!important;color:var(--ink-soft);font-weight:300;font-size:.8125rem;padding:0;margin:0!important;text-align:center}
+@media (min-width:760px){.hero-body{padding-block:clamp(120px,24vh,220px) 96px}}
+@media (max-width:760px){.hero-body{padding-block:28vh 150px}.hero .cta-row .small{position:absolute;left:16px;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px))}}
+.topic-hero .hero-body{text-align:center;align-items:center}.topic-hero .lead{color:var(--ink-soft);margin-inline:auto}
+/* binnenkomen in de kop: één keer, regel voor regel, uit de waas (21st 'Blur In Text', ingetogen) */
+@keyframes arrive-in{from{opacity:0;filter:blur(6px);transform:translateY(8px)}}
+.hero:not(.topic-hero) .hero-body > :not(.cta-row),.hero:not(.topic-hero) .cta-row > .btn{animation:arrive-in 1.1s var(--ease) both}
+.hero:not(.topic-hero) .cta-row > .btn{animation-delay:.55s}
+.hero:not(.topic-hero) .hero-body > :nth-child(2){animation-delay:.15s}.hero:not(.topic-hero) .hero-body > :nth-child(3){animation-delay:.35s}
+@media (prefers-reduced-motion: reduce){.hero .hero-body > *{animation:none!important}}
+.bar{background:color-mix(in srgb,var(--ceil) 94%,transparent)}
+/* vlakken */
+.step,.card,.price{border-radius:2px;box-shadow:none;background:var(--ceil)}
+.price.best{outline-color:var(--ink)}
+.tone-linen{background:var(--ceil)}.daybox{background:var(--ceil);border-radius:2px}
+.daybox .card,.daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}
+.caren img{border-radius:2px}
+.dark-sec .glass{background:var(--sw);color:var(--sam-ink);border-radius:2px;box-shadow:none}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:var(--sam-soft)!important}
+.compare .plain > *{color:var(--sam-soft)!important;border-bottom-color:rgba(21,32,43,.14)!important}.compare .plain .h{color:var(--sam-ink)!important}
+.compare .lit{background:var(--ceil);border-radius:2px;box-shadow:none}
+/* de kamers van Pam en Sam: plafond boven, muur onder, vlak */
+.bg-pam,.door button.room.bg-pam{background:linear-gradient(var(--pc) 0 24%,var(--pw) 24%)}
+.bg-sam,.door button.room.bg-sam{background:linear-gradient(var(--sc) 0 24%,var(--sw) 24%)}
+.door button.room{border-radius:4px;box-shadow:none}
+.door button.room:hover{box-shadow:0 20px 40px -32px rgba(43,34,20,.45)}
+.chat-top .logo,.chat.pam .chat-top .logo{font-family:var(--serif);font-weight:400}.chat.sam .chat-top .logo{font-family:var(--sans);font-weight:400}
+.door.sam .mini-logo{font-family:var(--sans);font-weight:400}
+.msg.a{font-weight:400}
+.chat.pam .drawer .panel,.chat.pam .menu,.chat.pam .helppop{background:var(--pc)}
+.chat.sam .drawer .panel,.chat.sam .menu,.chat.sam .helppop{background:var(--sc)}
+.room .md-pill{border-radius:2px;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+.field textarea{font-family:var(--sans)}
+
+.nav .btn{font-size:.75rem;letter-spacing:.12em;white-space:nowrap;padding:8px 14px}
+#switchBtn2{text-transform:none;letter-spacing:0;font-size:15px;font-weight:300}
+html{background:var(--ceil)}
+/* velden: vlak, zelfde hoek als de knoppen */
+form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(43,34,20,.68);box-shadow:none}
+.tone-linen form.simple input,.tone-linen form.simple textarea{background:var(--wall)}
+.daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}
