@@ -1,12 +1,12 @@
 
-/* ===== Couture met de kamer als gevoel (48): plafond en muur, zand voor Pam & Sam, gedempte kamers voor Pam en Sam ===== */
+/* ===== Couture met de kamer als gevoel (48–50): licht zand, Pam in hout, Sam in papier, Literata zonder cursief ===== */
 :root{
-  --wall:#E5D6B3; --ceil:#F3EBD8; --ink:#2B2214; --ink-soft:#5B4C31; --line:rgba(43,34,20,.2);
+  --wall:#EFE8D8; --ceil:#F8F5EE; --ink:#2B2419; --ink-soft:#5C5244; --line:rgba(43,36,25,.2);
   --light:var(--wall); --paper:var(--ceil); --dusk:var(--ink); --dusk-text:var(--ink); --dusk-soft:var(--ink-soft);
   --accent:#7A5C2A;
-  --pw:#EADDD9; --pc:#F7F1EF; --pam-ink:#2C1A15; --pam-voice:#5E4840; --pam-soft:#5E4840; --pam-cursor:#8C5A44; --pam-glow:140,90,68; --pam-acc:#8C5A44;
-  --sw:#DCE0E4; --sc:#F0F2F4; --sam-ink:#15202B; --sam-voice:#45525F; --sam-soft:#45525F; --sam-cursor:#44596E; --sam-glow:68,89,110; --sam-acc:#44596E;
-  --sans:"Jost","Helvetica Neue",Arial,sans-serif; --serif:"Bodoni Moda",Georgia,serif;
+  --pw:#E8D6C0; --pc:#F6EDE2; --pam-ink:#2C2014; --pam-voice:#5E4A33; --pam-soft:#5E4A33; --pam-cursor:#85562C; --pam-glow:133,86,44; --pam-acc:#85562C;
+  --sw:#ECEBE6; --sc:#F9F8F5; --sam-ink:#1A2228; --sam-voice:#4A5157; --sam-soft:#4A5157; --sam-cursor:#1F2A30; --sam-glow:31,42,48; --sam-acc:#1F2A30;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif; --serif:"Literata",Georgia,serif;
   --step-4:clamp(2.75rem,7.2vw,6.6rem);
 }
 body{margin:0;background:var(--wall);font-weight:300}
@@ -23,7 +23,7 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 .nav .btn:hover{box-shadow:none;background:transparent}
 .bar .nav .btn{background:var(--ink);color:var(--ceil);box-shadow:none}
 .btn.v-pam{background:var(--pam-acc);color:#fff}.btn.v-sam{background:var(--sam-acc);color:#fff}
-.btn.v-pam:hover{background:#7A4D39}.btn.v-sam:hover{background:#3A4D60}
+.btn.v-pam:hover{background:#6E4723}.btn.v-sam:hover{background:#34424B}
 .door.pam > h3::before{background:var(--pam-acc)}.door.sam > h3::before{background:var(--sam-acc)}
 .card span{text-decoration-color:var(--accent)}
 /* de kop: plafond boven, muur onder; alles gecentreerd */
@@ -31,8 +31,8 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 .hero .nav{color:var(--ink)}.nav a{color:var(--ink-soft)}.on-dusk .nav .logo{color:var(--ink)}
 .nav .logo{font-family:var(--serif);font-weight:400}
 .hero-body{text-align:center;display:flex;flex-direction:column;align-items:center}
-.hero h1{font-family:var(--serif);font-weight:400;max-width:none;line-height:.98;letter-spacing:-.02em}
-.hero h1 span{display:block;font-style:italic}
+.hero h1{font-family:var(--serif);font-weight:400;max-width:none;line-height:1.04;letter-spacing:-.025em}
+.hero h1 span{display:block}
 .hero .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
 .hero .sub{color:var(--ink);font-size:var(--step-1)}.hero .sub .you{color:var(--ink)}
 .hero .cur{background:var(--ink)!important}
@@ -61,7 +61,7 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 .bg-pam,.door button.room.bg-pam{background:linear-gradient(var(--pc) 0 24%,var(--pw) 24%)}
 .bg-sam,.door button.room.bg-sam{background:linear-gradient(var(--sc) 0 24%,var(--sw) 24%)}
 .door button.room{border-radius:4px;box-shadow:none}
-.door button.room:hover{box-shadow:0 20px 40px -32px rgba(43,34,20,.45)}
+.door button.room:hover{box-shadow:0 20px 40px -32px rgba(43,36,25,.45)}
 .chat-top .logo,.chat.pam .chat-top .logo{font-family:var(--serif);font-weight:400}.chat.sam .chat-top .logo{font-family:var(--sans);font-weight:400}
 .door.sam .mini-logo{font-family:var(--sans);font-weight:400}
 .msg.a{font-weight:400}
@@ -74,6 +74,6 @@ h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:
 #switchBtn2{text-transform:none;letter-spacing:0;font-size:15px;font-weight:300}
 html{background:var(--ceil)}
 /* velden: vlak, zelfde hoek als de knoppen */
-form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(43,34,20,.68);box-shadow:none}
+form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(43,36,25,.68);box-shadow:none}
 .tone-linen form.simple input,.tone-linen form.simple textarea{background:var(--wall)}
 .daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}

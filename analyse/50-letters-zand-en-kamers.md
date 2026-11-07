@@ -68,3 +68,18 @@ Alle vijf halen minstens 5,7:1 contrast voor de zachte tekst.
 **Advies:** 2, of 3 als het zand meer gewicht mag krijgen.
 - 1 en 4 verliezen het idee van zand bijna: daar ligt het cliché van "warm wit".
 - 5 is het meest eigen. Het gaat in tegen het onderzoek dat een licht plafond ruimer voelt; donkerder voelt lager en beschutter. Dat kan passen bij een gesprek, maar vraagt een test met echte mensen.
+
+## Keuze (ontwerper, 7 november 2026)
+- **Zand:** 1 · Licht zand. Muur #EFE8D8, plafond #F8F5EE, zachte tekst #5C5244 (6,3:1).
+- **Letter:** Literata, voor koppen en voor wat Pam zegt. Jost voor de rest en voor Sam.
+- **Cursief:** bijna nooit. De tweede regel van de kop staat nu ook rechtop.
+- **Kamers:** Pam in hout, Sam in papier.
+  - Pam: muur #E8D6C0, plafond #F6EDE2, accent #85562C. Witte knoptekst haalt 6,2:1.
+  - Sam: muur #ECEBE6, plafond #F9F8F5, accent inkt #1F2A30. Zachte tekst haalt 6,8:1.
+
+Doorgevoerd in de klikbare site (`site/couture/`, artifact versie 2). Opnieuw getest:
+- openen en sluiten frame voor frame: 0 fouten;
+- de pixeltests voor openen en sluiten komen tot rust op 0;
+- toetsenbord en focus werken;
+- nergens horizontaal scrollen;
+- er staat geen Bodoni en geen cursief meer in de pagina.
