@@ -90,3 +90,24 @@ Getest:
 1. De kamer: https://claude.ai/artifact/84bDmMXcAXSoYf1CryUXQx
 2. Couture: https://claude.ai/artifact/X18b7gD4h9jELpjFuiY2CK
 3. Het register: https://claude.ai/artifact/KRG2p6k7NDBdEWTGvfj7bB
+
+## Ronde 63: rustiger scrollen, het gesprek als vel, witte kamers hersteld (9 november 2026; artifact versie 8)
+- **Witte kamers na navigeren.**
+  - Oorzaak: na het sluiten van een gesprek op een onderwerppagina rekende de site de maat van de kleine kamers opnieuw uit, terwijl de homepage verborgen was. De kamers waren toen 0 px breed, wat een schaal van −0,08 gaf in plaats van 0,71. Bij terugkeer werd dat niet herberekend, dus de kamers bleven leeg en wit.
+  - Oplossing: verborgen kamers slaat de site over bij het rekenen, en bij elke paginawissel rekent hij opnieuw.
+  - Nagemeten: na terugkeer is de schaal 0,71 (desktop) en 0,80 (mobiel), en de schrijfregel in de kamer is weer te zien.
+- **Rustiger scrollen naar de kamer.** Een eigen beweging in plaats van die van de browser:
+  - 0,8 tot 1,25 seconde, afhankelijk van de afstand;
+  - zacht aanzetten en zacht uitlopen;
+  - een korte adempauze voordat het gesprek opent.
+- **Het gesprek op de onderwerppagina's als vel.**
+  - Op desktop schuift het vel vanaf rechts naar binnen; op mobiel van onderen. Het verschijnt tegelijk, en de pagina eronder vervaagt.
+  - Openen duurt 0,6 seconde. Sluiten gaat in 0,5 seconde terug, en de pagina komt op dezelfde plek weer tevoorschijn.
+  - Vanuit de kleine kamers op de homepage blijft het uitvergroten zoals het was.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests: sluiten 2,3, openen 6,7;
+- toetsenbord en focus werken;
+- nergens horizontaal scrollen;
+- het vel op de onderwerppagina en het scrollen naar de kamer zijn frame voor frame bekeken op desktop en mobiel.

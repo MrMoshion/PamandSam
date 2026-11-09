@@ -75,14 +75,43 @@ rep("""    const from = b.dataset.from === 'room' ? b.closest('.door').querySele
       const r = b.closest('.door').querySelector('.room'), rr = r.getBoundingClientRect(), barH = 80;
       if (reduce || (rr.top >= barH && rr.bottom <= innerHeight)) return openChat(b.dataset.open, r, b.dataset.topic);
       if (scrollingTo) return; scrollingTo = true;
-      scrollTo({ top: scrollY + rr.top - Math.max(barH + 16, (innerHeight - rr.height) / 2), behavior: 'smooth' });
-      let last = -1, still = 0; const t0 = performance.now();
-      const wait = () => { const y = scrollY; if (Math.abs(y - last) < .5) still++; else { still = 0; last = y; }
-        if (still > 5 || performance.now() - t0 > 1600) { scrollingTo = false; openChat(b.dataset.open, r, b.dataset.topic); } else requestAnimationFrame(wait); };
-      requestAnimationFrame(wait); return;
+      const y0 = scrollY, y1 = Math.max(0, scrollY + rr.top - Math.max(barH + 16, (innerHeight - rr.height) / 2)), d = y1 - y0;
+      const dur = Math.min(1250, 800 + Math.abs(d) * .3), ease = x => -(Math.cos(Math.PI * x) - 1) / 2, html = document.documentElement, prev = html.style.scrollBehavior;
+      html.style.scrollBehavior = 'auto'; const t0 = performance.now();
+      const step = now => { const x = Math.min(1, (now - t0) / dur); scrollTo(0, y0 + d * ease(x));
+        if (x < 1) requestAnimationFrame(step); else { html.style.scrollBehavior = prev; setTimeout(() => { scrollingTo = false; openChat(b.dataset.open, r, b.dataset.topic); }, 140); } };
+      requestAnimationFrame(step); return;
     }
     openChat(b.dataset.open, b, b.dataset.topic);""")
 rep("  document.addEventListener('click', e => {\n    const b = e.target.closest('[data-open]');", "  let scrollingTo = false;\n  document.addEventListener('click', e => {\n    const b = e.target.closest('[data-open]');")
+# kleine kamers: niet rekenen als ze verborgen zijn; opnieuw rekenen als je terug op de homepage bent
+rep("""    document.querySelectorAll('.room').forEach(r => {
+      const cs = getComputedStyle(r), inner""", """    document.querySelectorAll('.room').forEach(r => {
+      if (!r.clientWidth) return;
+      const cs = getComputedStyle(r), inner""")
+rep("  addEventListener('resize', sizeMinis); sizeMinis();", "  addEventListener('resize', sizeMinis); sizeMinis();\n  addEventListener('hashchange', () => { requestAnimationFrame(() => requestAnimationFrame(sizeMinis)); setTimeout(sizeMinis, 480); });")
+# onderwerppagina: het gesprek schuift als een vel over de pagina, en terug
+rep("""    if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering');""", """    if (!reduce && fromEl && fromEl.closest && fromEl.closest('.tright')) {
+      const mob = innerWidth < 761, pg = fromEl.closest('.topic'); anim = true;
+      roomBg.style.transition = 'none'; roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px'; roomBg.style.opacity = '';
+      chat.classList.remove('noanim', 'entering'); chat.style.transition = 'none';
+      chat.style.transform = mob ? 'translate3d(0,22%,0)' : 'translate3d(28%,0,0)'; chat.style.opacity = '0'; chat.getBoundingClientRect();
+      chat.style.transition = 'transform .6s cubic-bezier(.22,.61,.36,1), opacity .45s ease-out'; chat.style.transform = 'none'; chat.style.opacity = '1';
+      if (pg) { pg.style.transition = 'opacity .6s ease'; pg.style.opacity = '.4'; }
+      const typing = prepIntro();
+      setTimeout(() => { chat.style.transition = ''; chat.style.transform = ''; chat.style.opacity = ''; roomBg.style.transition = ''; anim = false; input.focus({ preventScroll: true }); if (typing) typing(); }, 620);
+      return;
+    }
+    if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering');""")
+rep("""    if (reduce) return done();
+    anim = true;""", """    if (reduce) { document.querySelectorAll('.topic').forEach(t => { t.style.opacity = ''; t.style.transition = ''; }); return done(); }
+    anim = true;
+    if (origin && origin.closest && origin.closest('.tright') && document.contains(origin) && origin.offsetParent !== null) {
+      const mob = innerWidth < 761, pg = origin.closest('.topic');
+      chat.style.transition = 'transform .5s cubic-bezier(.4,0,.2,1), opacity .42s ease-in'; chat.style.transform = mob ? 'translate3d(0,22%,0)' : 'translate3d(28%,0,0)'; chat.style.opacity = '0';
+      if (pg) { pg.style.transition = 'opacity .5s ease'; pg.style.opacity = '1'; }
+      return setTimeout(() => { chat.style.transition = ''; chat.style.opacity = ''; if (pg) { pg.style.transition = ''; pg.style.opacity = ''; } done(); }, 520);
+    }""")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
