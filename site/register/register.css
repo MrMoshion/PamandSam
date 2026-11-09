@@ -1,0 +1,193 @@
+
+/* ===== Couture met de kamer als gevoel (48–51): zacht zand, Pam in hout, Sam in papier; Literata voor de huisstijl, Crimson Pro alleen voor Pam ===== */
+:root{
+  --wall:#F0EADD; --ceil:#F9F6F0; --ink:#2F2A22; --ink-soft:#5E564A; --line:rgba(47,42,34,.2);
+  --light:var(--wall); --paper:var(--ceil); --dusk:var(--ink); --dusk-text:var(--ink); --dusk-soft:var(--ink-soft);
+  --accent:#7A5C2A;
+  --pw:#EEE3D5; --pc:#F9F4EE; --pam-ink:#33281D; --pam-voice:#63523F; --pam-soft:#63523F; --pam-cursor:#8A6849; --pam-glow:138,104,73; --pam-acc:#8A6849; --pam-btn:#D9CFC2; --pam-serif:"Crimson Pro",Georgia,serif;
+  --sw:#EEEDEA; --sc:#FAF9F7; --sam-ink:#262C30; --sam-voice:#51575C; --sam-soft:#51575C; --sam-cursor:#5F676D; --sam-glow:95,103,109; --sam-acc:#5F676D; --sam-btn:#D9D8D6; --mid:#7A6D58;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif; --serif:"Literata",Georgia,serif;
+  --step-4:clamp(2.75rem,7.2vw,6.6rem);
+}
+body{margin:0;background:var(--wall);font-weight:300}
+.lamp,.beam,.grain::after,.cur::before,.bg-pam::before,.bg-sam::before{display:none!important}
+:focus-visible{outline:2px solid var(--ink);box-shadow:none}
+.chat :focus-visible{box-shadow:none}
+h2,.sec-head h2,.say,.drawer h2,.report h2{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+.eyebrow{font-size:.75rem;letter-spacing:.18em}
+/* knoppen: vlak, klein gezet, als een label */
+.btn,.pill{border-radius:2px;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+.btn.primary,.on-dusk .btn.primary,.pill.primary{background:var(--mid);color:#fff;border-color:var(--mid);box-shadow:none}
+.btn.primary:hover,.on-dusk .btn.primary:hover{background:#6B5F4C;border-color:#6B5F4C;box-shadow:none}
+.on-dusk .btn,.nav .btn{border-color:var(--ink);color:var(--ink);box-shadow:none}
+.nav .btn:hover{box-shadow:none;background:transparent}
+.bar .nav .btn{background:var(--mid);border-color:var(--mid);color:#fff;box-shadow:none}
+.btn.v-pam{background:var(--pam-acc);color:#fff}.btn.v-sam{background:var(--sam-acc);color:#fff}
+.btn.v-pam:hover{background:#7A5B3F}.btn.v-sam:hover{background:#535A5F}
+.door.pam > h3::before{background:var(--pam-acc)}.door.sam > h3::before{background:var(--sam-acc)}
+.card span{text-decoration-color:var(--accent)}
+/* de kop: plafond boven, muur onder; alles gecentreerd */
+.hero,.topic-hero{background:linear-gradient(var(--ceil) 0 34%,var(--wall) 34%);color:var(--ink)}
+.hero .nav{color:var(--ink)}.nav a{color:var(--ink-soft)}.on-dusk .nav .logo{color:var(--ink)}
+.nav .logo{font-family:var(--serif);font-weight:400}
+.hero-body{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:400;max-width:none;line-height:1.04;letter-spacing:-.025em}
+.hero h1 span{display:block}
+.hero .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.hero .sub{color:var(--ink);font-size:var(--step-1)}.hero .sub .you{color:var(--ink)}
+.hero .cur{background:var(--ink)!important}
+.hero .cta-row{flex-direction:column;gap:16px}.hero .small{background:none!important;color:var(--ink-soft);font-weight:300;font-size:.8125rem;padding:0;margin:0!important;text-align:center}
+@media (min-width:760px){.hero-body{padding-block:clamp(120px,24vh,220px) 96px}}
+@media (max-width:760px){.hero-body{padding-block:28vh 150px}.hero .cta-row .small{position:absolute;left:16px;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px))}}
+.topic-hero .hero-body{text-align:center;align-items:center}.topic-hero .lead{color:var(--ink-soft);margin-inline:auto}
+/* binnenkomen in de kop: één keer, regel voor regel, uit de waas (21st 'Blur In Text', ingetogen) */
+@keyframes arrive-in{from{opacity:0;filter:blur(6px);transform:translateY(8px)}}
+.hero:not(.topic-hero) .hero-body > :not(.cta-row),.hero:not(.topic-hero) .cta-row > .btn{animation:arrive-in 1.1s var(--ease) both}
+.hero:not(.topic-hero) .cta-row > .btn{animation-delay:.55s}
+.hero:not(.topic-hero) .hero-body > :nth-child(2){animation-delay:.15s}.hero:not(.topic-hero) .hero-body > :nth-child(3){animation-delay:.35s}
+@media (prefers-reduced-motion: reduce){.hero .hero-body > *{animation:none!important}}
+.bar{background:color-mix(in srgb,var(--ceil) 94%,transparent)}
+/* vlakken */
+.step,.card,.price{border-radius:2px;box-shadow:none;background:var(--ceil)}
+.price.best{outline-color:var(--ink)}
+.tone-linen{background:var(--ceil)}.daybox{background:var(--ceil);border-radius:2px}
+.daybox .card,.daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}
+.caren img{border-radius:2px}
+.dark-sec .glass{background:var(--sw);color:var(--sam-ink);border-radius:2px;box-shadow:none}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:var(--sam-soft)!important}
+.compare .plain > *{color:var(--sam-soft)!important;border-bottom-color:rgba(21,32,43,.14)!important}.compare .plain .h{color:var(--sam-ink)!important}
+.compare .lit{background:var(--ceil);border-radius:2px;box-shadow:none}
+/* de kamers van Pam en Sam: plafond boven, muur onder, vlak */
+.bg-pam,.door button.room.bg-pam{background:linear-gradient(var(--pc) 0 24%,var(--pw) 24%)}
+.bg-sam,.door button.room.bg-sam{background:linear-gradient(var(--sc) 0 24%,var(--sw) 24%)}
+.door button.room{border-radius:4px;box-shadow:none}
+.door button.room:hover{box-shadow:0 20px 40px -32px rgba(47,42,34,.45)}
+.chat-top .logo,.chat.pam .chat-top .logo{font-family:var(--serif);font-weight:400}.chat.sam .chat-top .logo{font-family:var(--sans);font-weight:400}
+.door.sam .mini-logo{font-family:var(--sans);font-weight:400}
+.msg.a{font-weight:400}
+.chat.pam .drawer .panel,.chat.pam .menu,.chat.pam .helppop{background:var(--pc)}
+.chat.sam .drawer .panel,.chat.sam .menu,.chat.sam .helppop{background:var(--sc)}
+.room .md-pill{border-radius:2px;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+.field textarea{font-family:var(--sans)}
+
+.nav .btn{font-size:.75rem;letter-spacing:.12em;white-space:nowrap;padding:8px 14px}
+#switchBtn2{text-transform:none;letter-spacing:0;font-size:15px;font-weight:300}
+html{background:var(--ceil)}
+/* velden: vlak, zelfde hoek als de knoppen */
+form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea{border-radius:2px;background:var(--ceil);border:1px solid rgba(47,42,34,.68);box-shadow:none}
+.tone-linen form.simple input,.tone-linen form.simple textarea{background:var(--wall)}
+.daybox form.simple input,.daybox form.simple textarea{background:var(--wall)}
+
+/* Pam: alleen haar stem en haar naam in Crimson Pro (51); kleinere x-hoogte gelijkgetrokken */
+.door.pam .mini-logo,.door.pam .mini-intro,.chat.pam .chat-top .logo,.chat.pam .msg.q{font-family:var(--pam-serif);font-weight:400;font-size-adjust:.47}
+/* knoppen bij Pam en Sam: licht gevuld, eigen muur iets donkerder, donkere tekst (51) */
+.chat.pam .pill.primary,.chat.pam .dock-proxy .md-pill.primary,.door.pam .md-pill.primary,.door.pam .mini-send span:not(.out){background:var(--pam-btn)!important;color:var(--pam-ink)!important;border-color:var(--pam-btn)!important}
+.chat.sam .pill.primary,.chat.sam .dock-proxy .md-pill.primary,.door.sam .md-pill.primary,.door.sam .mini-send span:not(.out){background:var(--sam-btn)!important;color:var(--sam-ink)!important;border-color:var(--sam-btn)!important}
+.chat.pam .pill.primary:hover:not(:disabled){background:#CEC3B5!important;border-color:#CEC3B5!important}
+.chat.sam .pill.primary:hover:not(:disabled){background:#CDCCCA!important;border-color:#CDCCCA!important}
+
+/* ======================= HET REGISTER (55–56) =======================
+   Gebaseerd op de spread "Requiem" (Emergence Vol. 6). Vel, typemachine-labels, markeren als huisstijl.
+   Pam en Sam zijn het verloop; de algemene accentkleur is markeerstiftgeel. */
+:root{
+  --wall:#F1F1EE; --ceil:#F1F1EE; --ink:#222321; --ink-soft:#55574F; --line:rgba(34,35,33,.16);
+  --light:#F1F1EE; --paper:#F7F7F4; --dusk:#222321; --dusk-text:#222321; --dusk-soft:#55574F; --mid:#222321;
+  --serif:"Newsreader",Georgia,serif; --pam-serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif; --mono:"Courier Prime",ui-monospace,monospace;
+  --pamG:linear-gradient(100deg,#C6C8EA 0%,#D5D9F2 50%,#DCEAE7 100%); --samG:linear-gradient(100deg,#DCEAE7 0%,#CFE3DE 50%,#BFE1D3 100%);
+  --pamV:linear-gradient(180deg,#B5B9EA,#D5D9F2 60%,#DCEAE7); --samV:linear-gradient(180deg,#DCEAE7,#BFE1D3 50%,#7FCBB0);
+  --pw:#F7F7F4; --pc:#F7F7F4; --pam-ink:#222321; --pam-voice:#55574F; --pam-soft:#55574F; --pam-cursor:#8E92D6; --pam-acc:#C9CBEB; --pam-btn:#C9CBEB;
+  --sw:#F7F7F4; --sc:#F7F7F4; --sam-ink:#222321; --sam-voice:#55574F; --sam-soft:#55574F; --sam-cursor:#3FA884; --sam-acc:#BFE0D3; --sam-btn:#BFE0D3;
+  --mark:#F4E86E; --yel:#F4E86E;
+  --step-4:clamp(2.5rem,4.1vw,4rem);
+}
+html{background:#F1F1EE}
+body{background:#F1F1EE;color:var(--ink);font-family:var(--sans);font-weight:300}
+/* labels in typemachineletter */
+.eyebrow,.hero .kicker,.nav a,.nav .menu-site,.turn .name,.tag,.step .n,.foot,.role,.small{font-family:var(--mono)!important;font-weight:400;text-transform:none!important;letter-spacing:0!important}
+.eyebrow{font-size:.8125rem;color:var(--ink-soft)}.eyebrow::before{content:"("}.eyebrow::after{content:")"}
+.nav a:not(.btn):not(.logo){font-size:.8125rem}.nav a:not(.btn):not(.logo)::before{content:"("}.nav a:not(.btn):not(.logo)::after{content:")"}
+.nav .logo,.chat-top .logo{font-family:var(--mono)!important;font-weight:400!important;font-size:.875rem!important;letter-spacing:0}
+h2,.sec-head h2,.say,.drawer h2,.report h2,.hero h1{font-family:var(--serif);font-weight:300;letter-spacing:-.015em}
+/* knoppen: geen zwart; de huisstijl markeert in geel (varianten via script), Pam en Sam in hun verloop */
+.btn,.pill{font-family:var(--mono);text-transform:none;letter-spacing:0;font-weight:400;border-radius:0;font-size:.9375rem}
+.btn.primary,.on-dusk .btn.primary,.pill.primary,.bar .nav .btn{background:var(--yel);color:var(--ink);border-color:transparent;box-shadow:none}
+.btn.primary:hover,.on-dusk .btn.primary:hover,.bar .nav .btn:hover{filter:saturate(1.25) brightness(.97)}
+.nav .btn,.on-dusk .nav .btn{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.v-pam{background:var(--pamG);color:var(--ink)}.btn.v-sam{background:var(--samG);color:var(--ink)}
+.btn.v-pam:hover,.btn.v-sam:hover{filter:saturate(1.3) brightness(.97);background-color:transparent}
+.door.pam > h3::before{background:#9DA2E0}.door.sam > h3::before{background:#5DBB98}
+/* kop: rustig, twee kolommen; links de zin, rechts alleen Pam en Sam */
+.hero,.topic-hero{background:#F1F1EE!important;color:var(--ink)}
+.hero-body{text-align:left;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:6vw;align-items:start;padding-block:clamp(72px,14vh,150px) 96px!important}
+.hero .kicker{font-size:.875rem;color:var(--ink-soft);margin-bottom:28px}
+.hero h1{font-size:var(--step-4);line-height:1.04;max-width:none}.hero h1 span{display:inline;font-style:normal}
+.hero .sub{color:var(--ink-soft);font-size:var(--step-1);margin-top:18px}.hero .sub .you{color:var(--ink-soft)}.hero .cur{background:var(--ink)!important}
+.hero .cta-row{flex-direction:row;align-items:center;gap:18px 24px;margin-top:40px}
+.hero .small{position:static!important;color:var(--ink-soft);font-size:.75rem;max-width:44ch;text-align:left}
+.hero-left,.hero-right{min-width:0}
+.hero-right{display:flex;flex-direction:column;gap:8px;padding-top:calc(.875rem * 1.6 + 28px)}
+.reg-row{display:grid;grid-template-columns:7ch 1fr auto;column-gap:2ch;align-items:start;text-align:left;width:100%;border:0;cursor:pointer;padding:22px 20px;font:inherit;color:var(--ink)}
+.reg-row.pam{background:var(--pamG)}.reg-row.sam{background:var(--samG)}
+.reg-row .n,.reg-row .go{font-family:var(--mono);font-size:.875rem;color:var(--ink-soft);padding-top:3px}
+.reg-row b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.2}
+.reg-row.sam b{font-family:var(--sans);font-weight:400}
+.reg-row .d{display:block;color:var(--ink-soft);margin-top:4px;font-size:1rem}
+.reg-row:hover{filter:saturate(1.3)}.reg-row:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (max-width:760px){
+  .hero-body{grid-template-columns:1fr;padding-block:40px 64px!important;row-gap:36px}
+  .hero-right{padding-top:0}.reg-row{grid-template-columns:5.5ch 1fr;padding:18px 16px}.reg-row .go{display:none}.reg-row b{font-size:1.25rem}
+  .hero .cta-row{flex-direction:column;align-items:flex-start}
+  .nav .btn{font-size:.8125rem;padding:8px 12px}
+}
+/* geen binnenkomen met waas in dit spoor: alleen zacht */
+@keyframes arrive-in{from{opacity:0}}
+/* rand: Pam en Sam als strook, zoals de duimindex in het tijdschrift */
+.edge{position:fixed;top:0;bottom:0;right:0;width:10px;display:flex;flex-direction:column;gap:4px;z-index:30;pointer-events:none}
+.edge i{flex:1}.edge .ep{background:var(--pamV)}.edge .es{background:var(--samV)}
+.chat::after{content:"";position:absolute;top:0;bottom:0;right:0;width:10px;z-index:9;pointer-events:none}
+.chat.pam::after{background:var(--pamV)}.chat.sam::after{background:var(--samV)}
+@media (max-width:760px){.edge,.chat::after{width:6px}}
+/* vlakken: plat, op het vel */
+.step,.card,.price,.daybox,.tone-linen,.compare .lit{background:#F7F7F4!important;border-radius:0!important;box-shadow:none!important}
+.dark-sec .glass{background:#F7F7F4!important;color:var(--ink)!important;border-radius:0!important}
+.dark-sec .eyebrow,.dark-sec .sec-head p{color:var(--ink-soft)!important}
+.compare .plain > *{color:var(--ink-soft)!important;border-bottom-color:var(--line)!important}.compare .plain .h{color:var(--ink)!important}
+.price.best{outline:1px solid var(--ink)}
+.step .n{font-size:.875rem;color:var(--ink-soft)}.step .n::before{content:"("}.step .n::after{content:")"}
+.card span{text-decoration:none;background-image:linear-gradient(var(--yel),var(--yel));background-size:100% 45%;background-position:0 88%;background-repeat:no-repeat}
+form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen form.simple textarea,.daybox form.simple input,.daybox form.simple textarea{background:#FCFCFA!important;border-radius:0;border:1px solid rgba(34,35,33,.55)}
+.caren img{border-radius:0}
+/* de kamers: het vel, met het verloop van de stem alleen waar het telt */
+.bg-pam,.door button.room.bg-pam,.bg-sam,.door button.room.bg-sam{background:#F7F7F4}
+.door button.room{border-radius:0;box-shadow:none;outline:1px solid var(--line)}
+.door button.room:hover{box-shadow:none;outline-color:rgba(34,35,33,.35)}
+.door.pam button.room{border-right:8px solid transparent;border-image:var(--pamV) 1}.door.sam button.room{border-right:8px solid transparent;border-image:var(--samV) 1}
+.chat.pam .drawer .panel,.chat.pam .menu,.chat.pam .helppop,.chat.sam .drawer .panel,.chat.sam .menu,.chat.sam .helppop{background:#F7F7F4}
+.chat.pam .msg.q{font-family:var(--serif);font-weight:300;font-size-adjust:none}.chat.sam .msg.q{font-family:var(--sans);font-weight:300}
+.door.pam .mini-logo,.door.pam .mini-intro,.chat.pam .chat-top .logo{font-family:var(--mono)!important;font-size-adjust:none}
+.chat.pam .chat-top .logo,.chat.sam .chat-top .logo{font-family:var(--mono)!important}
+/* genummerd verslag: (01) Pam, (02) Jij */
+.log{counter-reset:beurt}
+.turn,.msg.a{counter-increment:beurt}
+.turn .name::before{content:"(" counter(beurt, decimal-leading-zero) ")\00a0";width:auto;height:auto;border-radius:0;background:none!important;margin:0;vertical-align:0}
+.turn .name{font-size:.8125rem;color:var(--ink-soft)}
+.msg.a{font-weight:400;color:var(--ink)}
+.msg.a::before{content:"(" counter(beurt, decimal-leading-zero) ") Jij";display:block;font-family:var(--mono);font-size:.8125rem;font-weight:400;color:var(--ink-soft);margin-bottom:4px;white-space:normal}
+.msg.a{margin-top:30px}
+/* de vraag die nu openstaat krijgt het verloop van de stem */
+.chat.pam .log > .turn:last-child:not(:first-child) .msg.q:not(.thinking){background:var(--pamG);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.chat.sam .log > .turn:last-child:not(:first-child) .msg.q:not(.thinking){background:var(--samG);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.chat .log > .turn:last-child:not(:first-child) .msg.q{color:var(--ink)}
+/* verstuur: effen lavendel (Pam) of mint (Sam) */
+.chat.pam .pill.primary,.chat.pam .dock-proxy .md-pill.primary,.door.pam .md-pill.primary,.door.pam .mini-send span:not(.out){background:var(--pam-btn)!important;color:var(--ink)!important;border-color:var(--pam-btn)!important}
+.chat.sam .pill.primary,.chat.sam .dock-proxy .md-pill.primary,.door.sam .md-pill.primary,.door.sam .mini-send span:not(.out){background:var(--sam-btn)!important;color:var(--ink)!important;border-color:var(--sam-btn)!important}
+.chat.pam .pill.primary:hover:not(:disabled){background:#BDBFE8!important;border-color:#BDBFE8!important}
+.chat.sam .pill.primary:hover:not(:disabled){background:#AEDAC8!important;border-color:#AEDAC8!important}
+.pill,.room .md-pill{border-radius:0!important;font-family:var(--mono)!important;text-transform:none!important;letter-spacing:0!important}
+.field textarea{font-family:var(--sans)}
+:focus-visible{outline:2px solid var(--ink)}
+/* één menu, altijd bovenaan; bij scrollen glas met 60% dekking */
+.bar{transform:none!important;opacity:1!important;visibility:visible!important;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,-webkit-backdrop-filter .4s ease,backdrop-filter .4s ease!important}
+.bar.glass{background:rgba(241,241,238,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(34,35,33,.08)}
+.hero .nav{visibility:hidden}
+.card span{background-size:100% 50%!important;background-position:0 92%!important;background-repeat:no-repeat!important;padding:0 2px}
