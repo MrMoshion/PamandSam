@@ -116,3 +116,23 @@ Bronnen over de WBTR: [VNG](https://vng.nl/sites/default/files/2021-05/wbtr-aand
 - Wil Pardo afzien van "gratis voor een maand" voor de achterban van de stichting?
 - Wanneer treedt de ontwerper toe tot het bestuur, en kan het besluit over Pam & Sam daarvoor vallen?
 - Wat vindt een fiscalist van de samenwerking in het licht van de ANBI-status?
+
+## 6. Wat wint Pam & Sam ermee?
+
+De winst is geen geld, en dat hoort zo. Komt er wel omzet uit, dan is er een trechter, en die is uitgesloten.
+
+**Winst:**
+1. **Bewijs.**
+   - Een zorgvuldige proef met een kwetsbare groep, met een rouwdeskundige erbij en een goede evaluatie, levert aantoonbare zorgvuldigheid op.
+   - Daarmee kun je naar toezichthouders, en later naar partners zoals werkgevers en verzekeraars.
+   - Positioneringstoets: ChatGPT kan niet zeggen "getoetst met mensen die het zwaarste meemaken". Pam & Sam wel.
+2. **Een veiliger product voor iedereen.** Wie ontwerpt voor het moeilijkste geval, verbetert het geheel: ontwerp voor de rand, dan verbetert het midden. De grenzen, de weg naar een mens en de zachtere toon beschermen ook de gebruiker met werkstress.
+3. **Betekenis en verhaal.** Het sluit aan op de missie van Pardo (34): mensen zelf laten nadenken, ontstaan uit zelfhulpboeken. Het blijft een verhaal, geen reclame met de stichting.
+4. **Geleend vertrouwen.** De naam van de stichting straalt af. Dat is de grootste winst en het grootste risico tegelijk: één misser in een gesprek met een stervende, en het vertrouwen is voor beide weg.
+
+**Geen winst, wel kosten:**
+- **Geen omzet.** Pardo betaalt de AI-kosten voor deze gebruikers. Bij een paar honderd mensen per jaar is dat te overzien, maar het dient het doel "zichzelf terugbetalen" (08) niet direct.
+- **Meer regels.** Pam & Sam komt dichter bij de zorg: meer werk rond privacy (AVG artikel 9) en mogelijk de regels voor medische hulpmiddelen (MDR).
+- **Een vager merk.** "Iedereen worstelt weleens met zichzelf" is breed; sterven en rouw is iets anders. Houd de stichtingsversie zichtbaar apart, als eigen kamer, niet als een onderwerp tussen de andere.
+
+**Oordeel:** de moeite waard als Pardo het ziet als investering in bewijs en kwaliteit. Zoekt hij er omzet in, dan is het de verkeerde deal, voor iedereen.
