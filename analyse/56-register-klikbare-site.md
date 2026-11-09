@@ -51,3 +51,14 @@ Gebouwd in een nieuwe artifact: https://claude.ai/artifact/KRG2p6k7NDBdEWTGvfj7b
 **Kritische lezing:**
 - Het register leunt nu op de werking van de kamer. Dat maakt het volledig, maar sommige onderdelen, zoals de deuren met mini-kamers bij "Pam of Sam?", komen nog uit die wereld. Een eigen vorm voor die sectie zou het spoor zuiverder maken.
 - Het geel is de luidste kleur van de site. Dat is goed voor één knop, maar het moet schaars blijven.
+
+## De eerlijke vraag met een lichtbeeld (previews)
+De ontwerper leverde een foto: bladschaduw op een warme muur. De vraag was die op drie manieren te plaatsen in de sectie "Waarom niet gewoon een gratis chatbot?". Previews staan in `presentatie/route-register-beeld/`.
+
+- **A · Als achtergrond:** de foto vult de sectie; de vergelijking ligt erop als twee vellen, het vel van Pam & Sam lichter. Het meest sfeervol, maar de foto concurreert met de tekst.
+- **B · Als plaat in het grid:** de foto staat naast de vergelijking, zoals de foto op de linkerpagina van de spread, met een bijschrift in typemachineletter. Het rustigst.
+- **C · Licht op één kolom (ongemakkelijk ver):** alleen de kolom van Pam & Sam krijgt het licht, met een dun licht waas erover. Het beeld draagt de boodschap: hier valt het licht. Het meest eigen.
+
+**Leesbaarheid:** de donkere tekst haalt op het donkerste deel van de foto ongeveer 8:1 (A en C).
+
+**Advies:** C, omdat de foto daar iets zegt in plaats van alleen sfeer te maken. B als het rustiger moet.
