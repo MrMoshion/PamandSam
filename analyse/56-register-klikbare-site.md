@@ -93,3 +93,29 @@ Getest:
 - de lettergrootte op desktop gaat van 20 naar 24 px;
 - de antwoorden hebben gewicht 300;
 - de hover-kleur blijft donker op geel.
+
+## Ronde 58: onderwerppagina's als spread en het lijstje (ontwerper, 9 november 2026)
+Gekozen: opmaak A · De spread (zie 57), met alles links uitgelijnd, ook de tweede alinea, en zonder inspringing.
+
+Doorgevoerd (artifact versie 3):
+- **Onderwerppagina's als spread.** Links de foto op een eigen vlak; die blijft staan terwijl je de tekst leest. Rechts staan:
+  - een kopregel in typemachineletter met paginanummer;
+  - de titel;
+  - de eerste alinea iets groter, daarna gewone alinea's met witregels;
+  - Pam en Sam als twee regels in hun verloop;
+  - de kleine regel over hulp.
+  - Per onderwerp een eigen foto: de twijg (keuze), de lathyrussen (relatie) en de pioen (werk).
+- **"Drie stappen":** de muurfoto op 70%. Het kleine label "(Hoe het werkt)" haalt nu 4,9:1 (was 4,3); de kop haalt 10,3:1.
+- **Knoppen met een lijn** (Terugblik, WhatsApp, LinkedIn, de kaartknoppen): de lijn is weg; bij hover verschijnt een dunne onderstreping.
+- **Tarieven:**
+  - het jaarabonnement heeft de verlooplijn links in plaats van een omlijning;
+  - "Probeer gratis" in de gratis kaart heeft een gele markeerstreep, zonder vlak, en is daarmee ondergeschikt aan het jaarabonnement.
+- **"Waarom niet gewoon een gratis chatbot?":** de verlooplijn staat links van de kolom Pam & Sam.
+- **Menu:** geen lijn en geen schaduw meer onderaan.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests komen rustig tot 0;
+- toetsenbord, focus en Escape werken;
+- nergens horizontaal scrollen;
+- de drie onderwerppagina's op desktop en mobiel bekeken.

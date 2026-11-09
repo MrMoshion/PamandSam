@@ -195,11 +195,11 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 /* ===== ronde 57: secties, gesprek, lettergrootte, hover ===== */
 .hl{background-image:linear-gradient(var(--yel),var(--yel));background-size:100% 46%;background-position:0 88%;background-repeat:no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em}
 /* eerlijke vraag: alleen de titel van Pam & Sam gemarkeerd, verlooplijn rechts langs de box */
-.compare .lit{border-style:solid;border-width:0 8px 0 0;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
+.compare .lit{border-style:solid;border-width:0 0 0 8px;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
 /* geen therapie: zelfde lijn, titel gemarkeerd */
 .daybox.lined{border-style:solid;border-width:0 8px 0 0;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
 /* drie stappen: de muurfoto als achtergrond, de stappen als lichte vellen */
-#aanpak.tone-linen{background:url(data:image/jpeg;base64,__MUUR__) center/cover no-repeat!important}
+#aanpak.tone-linen{background:linear-gradient(rgba(241,241,238,.3),rgba(241,241,238,.3)),url(data:image/jpeg;base64,__MUUR__) center/cover no-repeat!important}
 #aanpak .step{background:rgba(247,247,244,.84)!important;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 /* klaar om te beginnen: de foto links, zonder bijschrift */
 .start{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5vw;align-items:center;margin-top:80px}
@@ -229,3 +229,36 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 .btn.v-pam:hover{background:var(--pamG)!important;color:var(--ink)!important;box-shadow:none!important}
 .btn.v-sam:hover{background:var(--samG)!important;color:var(--ink)!important;box-shadow:none!important}
 .start h2{line-height:1.1}
+
+/* ===== ronde 58: onderwerppagina als spread, knoppen zonder lijn, tarieven, menu ===== */
+/* knoppen met een lijn: lijn weg, dunne onderstreping bij hover */
+.btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn),.pill:not(.primary),.room .md-pill:not(.primary){border-color:transparent!important;background:transparent!important;box-shadow:none!important;padding-left:0!important;padding-right:0!important}
+.btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn):hover,.pill:not(.primary):hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transform:none}
+/* tarieven: jaarabonnement met verlooplijn links, geen omlijning */
+.price.best{outline:none!important;border-style:solid!important;border-width:0 0 0 8px!important;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1!important}
+/* "Probeer gratis" in de gratis kaart: markeerstreep, geen vlak; ondergeschikt aan het jaarabonnement */
+.price:not(.best) .btn:not(.primary){background:linear-gradient(var(--yel),var(--yel)) 0 88%/100% 46% no-repeat!important;padding:2px 3px!important;align-self:flex-start}
+/* menu: geen lijn of schaduw eronder */
+.bar,.bar.glass{border-bottom:0!important;box-shadow:none!important}
+/* onderwerppagina als spread: foto links, tekst rechts, alles links uitgelijnd, geen inspringing */
+.topic-hero .hero-body{display:none}
+section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 72px);padding:0!important}
+.tleft{background:#E9E9E5;display:flex;align-items:center;justify-content:center;padding:6vh 6vw}
+.tleft img{display:block;width:min(30vw,56vh);height:auto;aspect-ratio:4/5;object-fit:cover}
+.tright{padding:8vh 6vw 10vh 5vw;max-width:780px}
+.tright .rh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8125rem;color:var(--ink-soft);margin-bottom:8vh}
+.tright h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,4vw,60px);line-height:1.05;letter-spacing:-.015em;margin-bottom:36px;text-align:left}
+.tright .topic-body{gap:20px;max-width:none}
+.tright .topic-body p{font-family:var(--serif);font-weight:300;font-size:1.25rem;line-height:1.62;color:#2c2d2a;text-indent:0;text-align:left}
+.tright .topic-body p.lead{font-size:1.5rem;line-height:1.5;color:var(--ink)}
+.tright .topic-body p.fine{font-family:var(--mono);font-size:.75rem;line-height:1.6;color:var(--ink-soft)}
+.tright .cta-row{flex-direction:column;align-items:stretch;gap:8px!important;margin-top:16px!important}
+.tright .reg-row{width:100%}
+.tright .sec-head{margin:56px 0 18px!important}.tright .cards{grid-template-columns:1fr 1fr}
+@media (max-width:760px){section.tspread{grid-template-columns:1fr;min-height:0}.tleft{padding:36px 16px}.tleft img{width:72vw}
+  .tright{padding:40px 22px 64px 16px}.tright .rh{margin-bottom:32px}.tright .cards{grid-template-columns:1fr}
+  .tright .topic-body p{font-size:1.125rem}.tright .topic-body p.lead{font-size:1.3125rem}}
+.tleft{align-items:flex-start;padding-top:10vh}
+.tleft img{position:sticky;top:12vh}
+@media (max-width:760px){.tleft{padding-top:36px}.tleft img{position:static}}
+.prices .price:not(.best) .btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn){background:linear-gradient(var(--yel),var(--yel)) 0 88%/100% 46% no-repeat!important;padding:2px 3px!important;align-self:flex-start}
