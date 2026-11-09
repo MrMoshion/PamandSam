@@ -119,3 +119,42 @@ Getest:
 - toetsenbord, focus en Escape werken;
 - nergens horizontaal scrollen;
 - de drie onderwerppagina's op desktop en mobiel bekeken.
+
+## Ronde 59: sluiten, hover, menu en een voorstel voor "Pam of Sam?" (ontwerper, 9 november 2026)
+**Oordeel over de versie (Claude):** dit is het sterkste spoor; je herkent het zonder logo.
+- **Sterk:** de kop is rustig en Pam en Sam zijn gelijkwaardig; de onderwerppagina's lezen als een boek, met één fotoreeks; in het gesprek staat jouw tekst voorop.
+- **Zwakker:**
+  - er zijn veel middelen tegelijk;
+  - haakjes in de menulinks worden een maniertje;
+  - "Pam of Sam?" met de kleine kamers komt uit de eerste kamer;
+  - de secties zijn even zwaar.
+- **Besluit ontwerper:**
+  - de haakjes in de menulinks gaan weg;
+  - de verlooplijnen langs de boxen blijven;
+  - er komt een voorstel voor "Pam of Sam?".
+
+Doorgevoerd (artifact versie 4):
+- **Verkleinen van de chatbox hersteld.**
+  - Open je het gesprek vanuit een regel (in de kop of op een onderwerppagina), dan krimpt het venster bij sluiten terug naar die regel. Eerder ging het naar de kleine kamer verderop, en de pagina sprong mee.
+  - Bij openen uit een regel komt het vel zacht op, in plaats van van kleur te verspringen.
+  - Frame voor frame gecontroleerd op desktop en mobiel.
+- **Hover op alle knoppen:**
+  - een dunne lijn loopt in 0,5 seconde van links naar rechts onder de tekst door;
+  - bij de regels van Pam en Sam loopt de lijn onder "begin →";
+  - geen rand en geen schaduw meer bij hover; die zat nog op de gevulde knoppen;
+  - wie minder beweging heeft ingesteld, krijgt de lijn zonder animatie.
+- **Menulinks zonder haakjes.** De haakjes blijven bij labels en paginanummers.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests komen rustig tot 0;
+- toetsenbord en focus werken;
+- de hover gemeten op 5 soorten knoppen: geen rand, de lijn loopt door.
+
+**Voorstel "Pam of Sam?" als spread** (preview `presentatie/route-register-boek/overzicht-pam-of-sam.png`, nog niet gebouwd):
+- twee pagina's naast elkaar, één per stem;
+- boven elk een vlak in het verloop van de stem, met de naam groot in de eigen letter;
+- daaronder één zin over de stem, een genummerde lijst "(Kies Pam als)" en de regel "Begin bij Pam";
+- de kleine kamers vervallen; de keuze wordt een tekst in plaats van een nagebootst scherm.
+
+**Kritische lezing:** zonder de kleine kamers zie je niet meer hoe een gesprek eruitziet voordat je begint. Dat was juist een sterk punt van de eerste kamer. Het groeien van de kamer uit de deur verdwijnt dan ook; het gesprek groeit voortaan uit de regel.

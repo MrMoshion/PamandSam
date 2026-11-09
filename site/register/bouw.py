@@ -43,12 +43,24 @@ rep("""      <div class="hero-body"><h1>${t.title}</h1><p class="lead">${t.body[
       <p>${t.body[1]}</p><p>${t.body[2]}</p>
       <div class="cta-row" style="margin-top:0"><button class="reg-row pam" type="button" data-open="pam" data-topic="${slug}"><span class="n">(Pam)</span><span><b>Begin bij Pam</b><span class="d">Warm en empathisch</span></span><span class="go">begin →</span></button><button class="reg-row sam" type="button" data-open="sam" data-topic="${slug}"><span class="n">(Sam)</span><span><b>Begin bij Sam</b><span class="d">Direct en nuchter</span></span><span class="go">begin →</span></button></div>""")
 rep("  const topicsEl = $('topics');", "  const TIMG = {'vast-in-een-keuze':'data:image/jpeg;base64,__TWIJG__','spanning-in-je-relatie':'data:image/jpeg;base64,__LATHYRUS__','werk-wordt-te-veel':'data:image/jpeg;base64,__PIOEN__'};\n  const topicsEl = $('topics');")
+# sluiten: terug naar de regel waaruit je opende, niet naar de kamer verderop
+rep("""    let room = roomOf(conv.voice);
+    if (!room && !$('home').hidden) {""", """    const fromRow = !!(origin && origin.classList && origin.classList.contains('reg-row') && document.contains(origin) && origin.offsetParent !== null);
+    let room = fromRow ? null : roomOf(conv.voice);
+    if (!room && !fromRow && !$('home').hidden) {""")
+# openen uit een regel: het vel komt zacht op in plaats van te verspringen
+rep("""    bgAt(fromEl.getBoundingClientRect());
+    if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());""", """    bgAt(fromEl.getBoundingClientRect()); if (!room) roomBg.style.opacity = '0';
+    if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());""")
+rep("""      roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';""", """      if (!room) { roomBg.style.transition = MOVE + ', opacity .38s ease-out'; roomBg.style.opacity = ''; }
+      roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';""")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
 function mk(i){var r=rnd(i*7+3),c=Y.slice().sort(function(){return r()-.5}),a=84+Math.round(r()*28),s1=Math.round(r()*12),s2=38+Math.round(r()*20),s3=88+Math.round(r()*12);
 return 'linear-gradient('+a+'deg,'+c[0]+' '+s1+'%,'+c[1]+' '+s2+'%,'+c[2]+' '+s3+'%)'}
-function paint(){document.querySelectorAll('.btn.primary,.bar .nav .btn,.card span,.hl').forEach(function(el,i){if(!el.dataset.mk){el.dataset.mk=1;el.style.backgroundImage=mk(i+1)}})}
+function wrap(){document.querySelectorAll('.btn,.pill,.reg-row .go').forEach(function(el){if(el.querySelector(':scope > .ul'))return;var ns=[].slice.call(el.childNodes).filter(function(n){return n.nodeType===3&&n.textContent.trim()});if(!ns.length)return;var s=document.createElement('span');s.className='ul';ns[0].parentNode.insertBefore(s,ns[0]);ns.forEach(function(n){s.appendChild(n)})})}
+function paint(){wrap();document.querySelectorAll('.btn.primary,.bar .nav .btn,.card span,.hl').forEach(function(el,i){if(!el.dataset.mk){el.dataset.mk=1;el.style.backgroundImage=mk(i+1)}})}
 paint();new MutationObserver(paint).observe(document.body,{childList:true,subtree:true});})();</script>'''
 s = s + YEL
 open('../register/register.src.html', 'w').write(s)

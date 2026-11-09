@@ -233,7 +233,7 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 /* ===== ronde 58: onderwerppagina als spread, knoppen zonder lijn, tarieven, menu ===== */
 /* knoppen met een lijn: lijn weg, dunne onderstreping bij hover */
 .btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn),.pill:not(.primary),.room .md-pill:not(.primary){border-color:transparent!important;background:transparent!important;box-shadow:none!important;padding-left:0!important;padding-right:0!important}
-.btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn):hover,.pill:not(.primary):hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transform:none}
+
 /* tarieven: jaarabonnement met verlooplijn links, geen omlijning */
 .price.best{outline:none!important;border-style:solid!important;border-width:0 0 0 8px!important;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1!important}
 /* "Probeer gratis" in de gratis kaart: markeerstreep, geen vlak; ondergeschikt aan het jaarabonnement */
@@ -262,3 +262,12 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
 .tleft img{position:sticky;top:12vh}
 @media (max-width:760px){.tleft{padding-top:36px}.tleft img{position:static}}
 .prices .price:not(.best) .btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn){background:linear-gradient(var(--yel),var(--yel)) 0 88%/100% 46% no-repeat!important;padding:2px 3px!important;align-self:flex-start}
+/* menulinks zonder haakjes; haakjes blijven voor labels en paginanummers */
+.nav a:not(.btn):not(.logo)::before,.nav a:not(.btn):not(.logo)::after{content:none!important}
+
+/* hover: een dunne lijn loopt van links naar rechts onder de tekst, op alle knoppen; geen lijn of rand eromheen */
+.ul{background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0% 1px;padding-bottom:2px;transition:background-size .5s cubic-bezier(.2,.7,.2,1)}
+.btn:hover .ul,.pill:hover:not(:disabled) .ul,.reg-row:hover .go .ul,.btn:focus-visible .ul,.pill:focus-visible .ul,.reg-row:focus-visible .go .ul{background-size:100% 1px}
+.btn:hover,.pill:hover{transform:none!important;box-shadow:none!important;outline:none}
+@media (prefers-reduced-motion: reduce){.ul{transition:none}}
+.btn:hover,.pill:hover,.btn:active,.pill:active{border-color:transparent!important}

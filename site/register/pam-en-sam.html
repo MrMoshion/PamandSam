@@ -712,7 +712,7 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 /* ===== ronde 58: onderwerppagina als spread, knoppen zonder lijn, tarieven, menu ===== */
 /* knoppen met een lijn: lijn weg, dunne onderstreping bij hover */
 .btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn),.pill:not(.primary),.room .md-pill:not(.primary){border-color:transparent!important;background:transparent!important;box-shadow:none!important;padding-left:0!important;padding-right:0!important}
-.btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn):hover,.pill:not(.primary):hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transform:none}
+
 /* tarieven: jaarabonnement met verlooplijn links, geen omlijning */
 .price.best{outline:none!important;border-style:solid!important;border-width:0 0 0 8px!important;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1!important}
 /* "Probeer gratis" in de gratis kaart: markeerstreep, geen vlak; ondergeschikt aan het jaarabonnement */
@@ -741,6 +741,15 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
 .tleft img{position:sticky;top:12vh}
 @media (max-width:760px){.tleft{padding-top:36px}.tleft img{position:static}}
 .prices .price:not(.best) .btn:not(.primary):not(.v-pam):not(.v-sam):not(.nav .btn){background:linear-gradient(var(--yel),var(--yel)) 0 88%/100% 46% no-repeat!important;padding:2px 3px!important;align-self:flex-start}
+/* menulinks zonder haakjes; haakjes blijven voor labels en paginanummers */
+.nav a:not(.btn):not(.logo)::before,.nav a:not(.btn):not(.logo)::after{content:none!important}
+
+/* hover: een dunne lijn loopt van links naar rechts onder de tekst, op alle knoppen; geen lijn of rand eromheen */
+.ul{background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0% 1px;padding-bottom:2px;transition:background-size .5s cubic-bezier(.2,.7,.2,1)}
+.btn:hover .ul,.pill:hover:not(:disabled) .ul,.reg-row:hover .go .ul,.btn:focus-visible .ul,.pill:focus-visible .ul,.reg-row:focus-visible .go .ul{background-size:100% 1px}
+.btn:hover,.pill:hover{transform:none!important;box-shadow:none!important;outline:none}
+@media (prefers-reduced-motion: reduce){.ul{transition:none}}
+.btn:hover,.pill:hover,.btn:active,.pill:active{border-color:transparent!important}
 </style>
 
 <span class="edge" aria-hidden="true"><i class="ep"></i><i class="es"></i></span>
@@ -1418,13 +1427,14 @@ Regels:
     render(); syncMini();
     if (reduce || !fromEl) { chat.classList.remove('noanim', 'entering'); input.focus({ preventScroll: true }); const t = prepIntro(); if (t) t(); return; }
     const room = fromEl.classList.contains('room') ? fromEl : null, p = parts(room);
-    bgAt(fromEl.getBoundingClientRect());
+    bgAt(fromEl.getBoundingClientRect()); if (!room) roomBg.style.opacity = '0';
     if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());
     if (p.logo) flyTo(p.logo, p.miniLogo.getBoundingClientRect());
     if (p.miniDock) { p.real = realDock(); p.dock = makeProxy(room); p.real.style.visibility = 'hidden'; flyEl(p.dock, p.miniDock.getBoundingClientRect()); }
     chat.getBoundingClientRect(); chat.classList.remove('noanim'); anim = true;
     [roomBg, p.text, p.logo, p.dock].forEach(e => e && (e.style.transition = MOVE));
     requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (!room) { roomBg.style.transition = MOVE + ', opacity .38s ease-out'; roomBg.style.opacity = ''; }
       roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';
       if (p.logo) p.logo.style.transform = 'none'; if (p.dock) p.dock.style.transform = 'none';
       const typing = prepIntro();
@@ -1458,8 +1468,9 @@ Regels:
   function closeChat() {
     if (anim) return; if (ctl) ctl.abort(); input.blur();
     closeReport(); closeDrawer(); closeMenu(); if (mode) setMode(mode);
-    let room = roomOf(conv.voice);
-    if (!room && !$('home').hidden) { const r = document.querySelector(`.door.${conv.voice} .room`); if (r) { r.scrollIntoView({ block: 'center', behavior: 'instant' }); room = r; } }
+    const fromRow = !!(origin && origin.classList && origin.classList.contains('reg-row') && document.contains(origin) && origin.offsetParent !== null);
+    let room = fromRow ? null : roomOf(conv.voice);
+    if (!room && !fromRow && !$('home').hidden) { const r = document.querySelector(`.door.${conv.voice} .room`); if (r) { r.scrollIntoView({ block: 'center', behavior: 'instant' }); room = r; } }
     let o = origin;
     if (o && o.dataset && o.dataset.open && o.dataset.open !== conv.voice) { const alt = o.parentNode && o.parentNode.querySelector(`[data-open="${conv.voice}"]`); if (alt) o = alt; }
     const back = room || (o && document.contains(o) && o.offsetParent !== null ? o : null);
@@ -1685,5 +1696,6 @@ Regels:
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
 function mk(i){var r=rnd(i*7+3),c=Y.slice().sort(function(){return r()-.5}),a=84+Math.round(r()*28),s1=Math.round(r()*12),s2=38+Math.round(r()*20),s3=88+Math.round(r()*12);
 return 'linear-gradient('+a+'deg,'+c[0]+' '+s1+'%,'+c[1]+' '+s2+'%,'+c[2]+' '+s3+'%)'}
-function paint(){document.querySelectorAll('.btn.primary,.bar .nav .btn,.card span,.hl').forEach(function(el,i){if(!el.dataset.mk){el.dataset.mk=1;el.style.backgroundImage=mk(i+1)}})}
+function wrap(){document.querySelectorAll('.btn,.pill,.reg-row .go').forEach(function(el){if(el.querySelector(':scope > .ul'))return;var ns=[].slice.call(el.childNodes).filter(function(n){return n.nodeType===3&&n.textContent.trim()});if(!ns.length)return;var s=document.createElement('span');s.className='ul';ns[0].parentNode.insertBefore(s,ns[0]);ns.forEach(function(n){s.appendChild(n)})})}
+function paint(){wrap();document.querySelectorAll('.btn.primary,.bar .nav .btn,.card span,.hl').forEach(function(el,i){if(!el.dataset.mk){el.dataset.mk=1;el.style.backgroundImage=mk(i+1)}})}
 paint();new MutationObserver(paint).observe(document.body,{childList:true,subtree:true});})();</script>
