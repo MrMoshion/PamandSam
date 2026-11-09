@@ -25,6 +25,12 @@ rep('<div class="bar" id="bar">', '<span class="edge" aria-hidden="true"><i clas
 rep("bar.classList.toggle('in', scrollY > lim); };", "bar.classList.add('in'); bar.classList.toggle('glass', scrollY > 8); };")
 rep("roomBg.style.borderRadius = `${16 / sx}px / ${16 / sy}px`;", "roomBg.style.borderRadius = '0';")
 rep("n.style.setProperty('--dot', name === 'Pam' ? '#C9A15F' : '#4F6F92');", "n.style.setProperty('--dot', 'transparent');")
+rep('<h2>Eerlijk, ook als het ongemakkelijk is.</h2>', '<h2><span class="hl">Eerlijk, ook als het ongemakkelijk is.</span></h2>')
+rep('<div class="col lit">\n          <p class="h">Pam &amp; Sam</p>', '<div class="col lit">\n          <p class="h"><span class="hl">Pam &amp; Sam</span></p>')
+rep('<div class="wrap"><div class="daybox">\n      <div class="sec-head"><span class="eyebrow">Belangrijk om te weten</span><h2>Pam &amp; Sam is geen therapie.</h2>', '<div class="wrap"><div class="daybox lined">\n      <div class="sec-head"><span class="eyebrow">Belangrijk om te weten</span><h2><span class="hl">Pam &amp; Sam is geen therapie.</span></h2>')
+rep('<h2 style="font-size:var(--step-3);margin-top:64px">Klaar om te beginnen?</h2>', '<div class="start"><figure><img src="data:image/jpeg;base64,__BLOEM__" alt="" width="1400" height="1120" loading="lazy"></figure><div>\n      <h2 style="font-size:var(--step-3);margin-top:64px">Klaar om te beginnen?</h2>')
+rep('<ul class="checks"><li>✓ Eerste 6 vragen gratis</li><li>✓ Geen creditcard</li><li>✓ Anoniem gesprek</li></ul>\n      <a class="btn primary" href="#kies">Probeer gratis</a>', '<ul class="checks"><li>✓ Eerste 6 vragen gratis</li><li>✓ Geen creditcard</li><li>✓ Anoniem gesprek</li></ul>\n      <a class="btn primary" href="#kies">Probeer gratis</a></div></div>')
+rep("(vw < 600 ? chatFs : 20) + 'px')", "(vw < 600 ? chatFs : chatFs + 5) + 'px')")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
@@ -35,5 +41,6 @@ paint();new MutationObserver(paint).observe(document.body,{childList:true,subtre
 s = s + YEL
 open('../register/register.src.html', 'w').write(s)
 b = open('../site-src/caren.b64').read().strip()
-open('../register/pam-en-sam.html', 'w').write(s.replace('__CAREN__', b))
+m = open('../site-src/muur.b64').read().strip(); f = open('../site-src/bloem.b64').read().strip()
+open('../register/pam-en-sam.html', 'w').write(s.replace('__CAREN__', b).replace('__MUUR__', m).replace('__BLOEM__', f))
 print('built')

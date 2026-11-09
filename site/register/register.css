@@ -191,3 +191,41 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 .bar.glass{background:rgba(241,241,238,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(34,35,33,.08)}
 .hero .nav{visibility:hidden}
 .card span{background-size:100% 50%!important;background-position:0 92%!important;background-repeat:no-repeat!important;padding:0 2px}
+
+/* ===== ronde 57: secties, gesprek, lettergrootte, hover ===== */
+.hl{background-image:linear-gradient(var(--yel),var(--yel));background-size:100% 46%;background-position:0 88%;background-repeat:no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em}
+/* eerlijke vraag: alleen de titel van Pam & Sam gemarkeerd, verlooplijn rechts langs de box */
+.compare .lit{border-style:solid;border-width:0 8px 0 0;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
+/* geen therapie: zelfde lijn, titel gemarkeerd */
+.daybox.lined{border-style:solid;border-width:0 8px 0 0;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
+/* drie stappen: de muurfoto als achtergrond, de stappen als lichte vellen */
+#aanpak.tone-linen{background:url(data:image/jpeg;base64,__MUUR__) center/cover no-repeat!important}
+#aanpak .step{background:rgba(247,247,244,.84)!important;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+/* klaar om te beginnen: de foto links, zonder bijschrift */
+.start{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5vw;align-items:center;margin-top:80px}
+.start figure{margin:0}.start img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+.start h2{margin-top:0!important}
+@media (max-width:760px){.start{grid-template-columns:1fr;row-gap:32px;margin-top:56px}.start img{aspect-ratio:4/3}}
+/* gesprek: alleen het label van de laatste vraag gemarkeerd, in de kleur van de stem */
+.chat .log > .turn:last-child:not(:first-child) .msg.q{background:none!important;color:var(--voice)}
+.log > .turn:last-child:not(:first-child) .name{display:inline-block;padding:1px 6px;margin-left:-6px}
+.chat.pam .log > .turn:last-child:not(:first-child) .name{background:var(--pam-btn);color:var(--ink)}
+.chat.sam .log > .turn:last-child:not(:first-child) .name{background:var(--sam-btn);color:var(--ink)}
+/* jouw antwoorden: gewone letter, niet vet */
+.msg.a{font-weight:300!important}
+/* lettergrootte ook op desktop, in het menu van het gesprek */
+@media (min-width:601px){
+  .log{font-size:calc(var(--chat-fs,15px) + 5px)}
+  .chat-top .sizes{display:flex;align-items:center;gap:0;margin:0 0 0 6px;padding:0;border:0;font-size:13px;color:var(--soft)}
+  .chat-top .sizes span{display:none}
+  .chat-top .sizes button{all:unset;cursor:pointer;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--ink)}
+  .chat-top .sizes button:nth-of-type(1){font-size:13px}.chat-top .sizes button:nth-of-type(2){font-size:16px}.chat-top .sizes button:nth-of-type(3){font-size:19px}
+  .chat-top .sizes button[aria-pressed="true"]{background:var(--yel)}
+  .chat-top .sizes button:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+}
+@media (max-width:600px){.sizes button[aria-pressed="true"]{background:var(--yel)}}
+/* hover: tekst blijft donker, vlak blijft staan */
+.btn.primary:hover,.on-dusk .btn.primary:hover,.bar .nav .btn:hover,.pill.primary:hover{color:var(--ink)!important;background-color:var(--yel)!important;box-shadow:none!important}
+.btn.v-pam:hover{background:var(--pamG)!important;color:var(--ink)!important;box-shadow:none!important}
+.btn.v-sam:hover{background:var(--samG)!important;color:var(--ink)!important;box-shadow:none!important}
+.start h2{line-height:1.1}

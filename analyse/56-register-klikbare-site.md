@@ -62,3 +62,34 @@ De ontwerper leverde een foto: bladschaduw op een warme muur. De vraag was die o
 **Leesbaarheid:** de donkere tekst haalt op het donkerste deel van de foto ongeveer 8:1 (A en C).
 
 **Advies:** C, omdat de foto daar iets zegt in plaats van alleen sfeer te maken. B als het rustiger moet.
+
+## Ronde 57: secties, foto's en gesprek (ontwerper, 9 november 2026)
+Keuze: optie A (achtergrond), maar niet voor de eerlijke vraag. De ontwerper leverde twee nieuwe foto's: een groene muur met bladschaduw, en een bloemknop.
+
+Doorgevoerd (artifact versie 2):
+- **"Eerlijk, ook als het ongemakkelijk is.":** de hele kop is geel gemarkeerd.
+- **"Waarom niet gewoon een gratis chatbot?":**
+  - alleen de titel "Pam & Sam" boven die kolom is geel gemarkeerd;
+  - rechts langs de kolom loopt een verlooplijn van Pam (lavendel) naar Sam (mint);
+  - geen foto.
+- **"Drie stappen. Niet meer.":** de groene muurfoto als achtergrond (optie A), met de stappen als lichte vellen erop.
+- **"Pam & Sam is geen therapie.":** dezelfde verlooplijn rechts langs de box, en de titel geel gemarkeerd.
+- **"Klaar om te beginnen?":** de bloemfoto links, zonder bijschrift (optie B). Op mobiel staat de foto boven de tekst.
+- **In het gesprek:**
+  - bij de laatste vraag is alleen het label gemarkeerd, zoals "(03) Sam", in de effen kleur van de stem;
+  - jouw antwoorden staan in gewone letter (300), niet vet.
+- **Lettergrootte:** op desktop weer in het menu van het gesprek (drie maten A, A, A; de gekozen maat geel). Op desktop is dat 20, 22 of 24 px; op mobiel 15, 17 of 19 px.
+- **Hover hersteld:**
+  - "Probeer gratis" kreeg bij hover lichte tekst op geel en viel daardoor weg;
+  - "Begin bij Pam/Sam" verloor bij hover zijn verloop.
+  - Beide blijven nu staan, met donkere tekst.
+- **Gevonden tijdens het testen:** de bloemfoto werd 1120 px hoog, omdat de hoogte in de afbeelding zelf won van de verhouding. Hersteld.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests komen rustig tot 0;
+- toetsenbord, focus en Escape werken;
+- nergens horizontaal scrollen;
+- de lettergrootte op desktop gaat van 20 naar 24 px;
+- de antwoorden hebben gewicht 300;
+- de hover-kleur blijft donker op geel.
