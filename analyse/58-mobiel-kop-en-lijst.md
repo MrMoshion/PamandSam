@@ -62,3 +62,31 @@ Getest:
   - de pixeltest aan het eind van sluiten is nog rustiger (grootste afwijking 2,3, was 3,1);
   - openen: 6,7;
   - frame voor frame bekeken vanuit de kleine kamer en vanuit een onderwerppagina, op desktop en mobiel.
+
+## Ronde 62: menu, geen opsmuk, "Begin bij" scrolt eerst (ontwerper, 9 november 2026; artifact versie 7)
+- **Menu:** glas met 57% dekking bij scrollen.
+- **Hover in het menu:** alle menulinks krijgen bij hover de doorlopende lijn, net als de knoppen. Dat geldt voor de balk, het mobiele menu en het menu in het gesprek.
+- **Geen opsmuk** ("het moet ergens voor dienen"). Weggehaald:
+  - alle haakjes;
+  - de paginanummers zoals "P. 08";
+  - de kopregel "Waar gaat het over?" op de onderwerppagina's;
+  - de subkopjes boven de koppen op de homepage, zoals "Hoe het werkt", "De eerlijke vraag" en "Tarieven";
+  - de nummering in het gesprek; daar staat nu alleen "Pam", "Sam" of "Jij".
+  - Ook het dubbele label "Pam" naast "Begin bij Pam" op de onderwerppagina's is weg.
+  - Blijven staan, zonder haakjes: de namen in de kop (die zeggen welke stem het is) en de nummers van de drie stappen (die geven de volgorde).
+- **"Begin bij Pam/Sam" bij de uitleg:** de pagina scrolt eerst rustig naar de kleine kamer erboven, en pas als die stilstaat groeit het gesprek eruit open.
+  - Staat de kamer al in beeld, dan opent het meteen.
+  - Wie minder beweging heeft ingesteld, gaat direct.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests: sluiten 2,3, openen 6,7;
+- toetsenbord en focus werken;
+- nergens horizontaal scrollen;
+- in de zichtbare tekst staan geen haakjes of paginanummers meer, op desktop en mobiel;
+- het scrollen naar de kamer en daarna openen is frame voor frame bekeken op desktop en mobiel.
+
+## De drie sporen
+1. De kamer: https://claude.ai/artifact/84bDmMXcAXSoYf1CryUXQx
+2. Couture: https://claude.ai/artifact/X18b7gD4h9jELpjFuiY2CK
+3. Het register: https://claude.ai/artifact/KRG2p6k7NDBdEWTGvfj7bB

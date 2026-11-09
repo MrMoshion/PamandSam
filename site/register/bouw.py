@@ -18,8 +18,8 @@ rep('''        <span class="small">6 vragen gratis · geen creditcard · anoniem
       </div>
     </div>
     <div class="hero-right">
-      <a class="reg-row pam" href="#kies-pam"><span class="n">(Pam)</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">lees meer →</span></a>
-      <a class="reg-row sam" href="#kies-sam"><span class="n">(Sam)</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">lees meer →</span></a>
+      <a class="reg-row pam" href="#kies-pam"><span class="n">Pam</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">lees meer →</span></a>
+      <a class="reg-row sam" href="#kies-sam"><span class="n">Sam</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">lees meer →</span></a>
       <p class="fine-m">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p>
     </div></div>''')
 rep('<div class="bar" id="bar">', '<span class="edge" aria-hidden="true"><i class="ep"></i><i class="es"></i></span>\n<div class="bar" id="bar">')
@@ -42,7 +42,7 @@ rep("""      <div class="hero-body"><h1>${t.title}</h1><p class="lead">${t.body[
       <div class="rh"><span>(Waar gaat het over?)</span><span>(P. ${['08','20','32'][Object.keys(TOPICS).indexOf(slug)]})</span></div>
       <h1>${t.title}</h1><div class="topic-body"><p class="lead">${t.body[0]}</p>
       <p>${t.body[1]}</p><p>${t.body[2]}</p>
-      <div class="cta-row" style="margin-top:0"><button class="reg-row pam" type="button" data-open="pam" data-topic="${slug}"><span class="n">(Pam)</span><span><b>Begin bij Pam</b><span class="d">Warm en empathisch</span></span><span class="go">begin →</span></button><button class="reg-row sam" type="button" data-open="sam" data-topic="${slug}"><span class="n">(Sam)</span><span><b>Begin bij Sam</b><span class="d">Direct en nuchter</span></span><span class="go">begin →</span></button></div>""")
+      <div class="cta-row" style="margin-top:0"><button class="reg-row pam" type="button" data-open="pam" data-topic="${slug}"><span class="n">Pam</span><span><b>Begin bij Pam</b><span class="d">Warm en empathisch</span></span><span class="go">begin →</span></button><button class="reg-row sam" type="button" data-open="sam" data-topic="${slug}"><span class="n">Sam</span><span><b>Begin bij Sam</b><span class="d">Direct en nuchter</span></span><span class="go">begin →</span></button></div>""")
 rep("  const topicsEl = $('topics');", "  const TIMG = {'vast-in-een-keuze':'data:image/jpeg;base64,__TWIJG__','spanning-in-je-relatie':'data:image/jpeg;base64,__LATHYRUS__','werk-wordt-te-veel':'data:image/jpeg;base64,__PIOEN__'};\n  const topicsEl = $('topics');")
 # sluiten: terug naar de regel waaruit je opende, niet naar de kamer verderop
 rep("""    let room = roomOf(conv.voice);
@@ -69,6 +69,20 @@ rep("""      setTimeout(() => { minis.forEach(e => { e.style.transition = 'none'
       setTimeout(() => { [p.logo, p.dock].forEach(e => { if (e) { e.style.transition = 'opacity .16s linear'; e.style.opacity = '0'; } }); }, 830);""",
 """      setTimeout(() => { minis.forEach(e => { e.style.transition = 'none'; e.style.opacity = '1'; }); }, 700);
       setTimeout(() => { [p.logo, p.dock].forEach(e => { if (e) { e.style.transition = 'opacity .16s linear'; e.style.opacity = '0'; } }); }, 770);""")
+# "Begin bij Pam/Sam": eerst rustig naar de kleine kamer scrollen, dan vanuit die kamer uitvergroten
+rep("""    const from = b.dataset.from === 'room' ? b.closest('.door').querySelector('.room') : b;
+    openChat(b.dataset.open, from, b.dataset.topic);""", """    if (b.dataset.from === 'room') {
+      const r = b.closest('.door').querySelector('.room'), rr = r.getBoundingClientRect(), barH = 80;
+      if (reduce || (rr.top >= barH && rr.bottom <= innerHeight)) return openChat(b.dataset.open, r, b.dataset.topic);
+      if (scrollingTo) return; scrollingTo = true;
+      scrollTo({ top: scrollY + rr.top - Math.max(barH + 16, (innerHeight - rr.height) / 2), behavior: 'smooth' });
+      let last = -1, still = 0; const t0 = performance.now();
+      const wait = () => { const y = scrollY; if (Math.abs(y - last) < .5) still++; else { still = 0; last = y; }
+        if (still > 5 || performance.now() - t0 > 1600) { scrollingTo = false; openChat(b.dataset.open, r, b.dataset.topic); } else requestAnimationFrame(wait); };
+      requestAnimationFrame(wait); return;
+    }
+    openChat(b.dataset.open, b, b.dataset.topic);""")
+rep("  document.addEventListener('click', e => {\n    const b = e.target.closest('[data-open]');", "  let scrollingTo = false;\n  document.addEventListener('click', e => {\n    const b = e.target.closest('[data-open]');")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}

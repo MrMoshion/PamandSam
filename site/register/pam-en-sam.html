@@ -667,7 +667,7 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 :focus-visible{outline:2px solid var(--ink)}
 /* één menu, altijd bovenaan; bij scrollen glas met 60% dekking */
 .bar{transform:none!important;opacity:1!important;visibility:visible!important;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,-webkit-backdrop-filter .4s ease,backdrop-filter .4s ease!important}
-.bar.glass{background:rgba(241,241,238,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(34,35,33,.08)}
+.bar.glass{background:rgba(241,241,238,.57);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(34,35,33,.08)}
 .hero .nav{visibility:hidden}
 .card span{background-size:100% 50%!important;background-position:0 92%!important;background-repeat:no-repeat!important;padding:0 2px}
 
@@ -779,6 +779,18 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
 #contact h3.kop{font-family:var(--serif)!important;font-weight:300!important;font-size:1.75rem!important;line-height:1.2!important;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 12px!important;text-transform:none!important}
 #contact h3.kop.later{margin-top:40px!important}
 @media (max-width:760px){#contact h3.kop{font-size:1.5rem!important}}
+/* menu: alle links krijgen de doorlopende lijn bij hover */
+.nav a:not(.btn):not(.logo),.site-menu a,.chat-top .ghost{background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0% 1px;padding-bottom:2px;text-decoration:none!important;transition:background-size .5s cubic-bezier(.2,.7,.2,1)}
+.nav a:not(.btn):not(.logo):hover,.site-menu a:hover,.chat-top .ghost:hover,.nav a:not(.btn):not(.logo):focus-visible,.site-menu a:focus-visible,.chat-top .ghost:focus-visible{background-size:100% 1px}
+@media (prefers-reduced-motion: reduce){.nav a,.site-menu a,.chat-top .ghost{transition:none}}
+/* ===== ronde 62: geen opsmuk. Geen haakjes, geen paginanummers, geen subkopjes die de kop herhalen ===== */
+#home .eyebrow{display:none!important}
+.eyebrow::before,.eyebrow::after,.step .n::before,.step .n::after,.col .h::before,.col .h::after{content:none!important}
+.turn .name::before{content:none!important}
+.msg.a::before{content:"Jij"!important}
+.tright .rh{display:none!important}
+.tright h1{margin-top:2vh}
+.tright .reg-row{grid-template-columns:1fr auto}.tright .reg-row .n{display:none}
 </style>
 
 <span class="edge" aria-hidden="true"><i class="ep"></i><i class="es"></i></span>
@@ -817,8 +829,8 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
       </div>
     </div>
     <div class="hero-right">
-      <a class="reg-row pam" href="#kies-pam"><span class="n">(Pam)</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">lees meer →</span></a>
-      <a class="reg-row sam" href="#kies-sam"><span class="n">(Sam)</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">lees meer →</span></a>
+      <a class="reg-row pam" href="#kies-pam"><span class="n">Pam</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">lees meer →</span></a>
+      <a class="reg-row sam" href="#kies-sam"><span class="n">Sam</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">lees meer →</span></a>
       <p class="fine-m">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p>
     </div></div>
   </div>
@@ -1178,7 +1190,7 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
       <div class="rh"><span>(Waar gaat het over?)</span><span>(P. ${['08','20','32'][Object.keys(TOPICS).indexOf(slug)]})</span></div>
       <h1>${t.title}</h1><div class="topic-body"><p class="lead">${t.body[0]}</p>
       <p>${t.body[1]}</p><p>${t.body[2]}</p>
-      <div class="cta-row" style="margin-top:0"><button class="reg-row pam" type="button" data-open="pam" data-topic="${slug}"><span class="n">(Pam)</span><span><b>Begin bij Pam</b><span class="d">Warm en empathisch</span></span><span class="go">begin →</span></button><button class="reg-row sam" type="button" data-open="sam" data-topic="${slug}"><span class="n">(Sam)</span><span><b>Begin bij Sam</b><span class="d">Direct en nuchter</span></span><span class="go">begin →</span></button></div>
+      <div class="cta-row" style="margin-top:0"><button class="reg-row pam" type="button" data-open="pam" data-topic="${slug}"><span class="n">Pam</span><span><b>Begin bij Pam</b><span class="d">Warm en empathisch</span></span><span class="go">begin →</span></button><button class="reg-row sam" type="button" data-open="sam" data-topic="${slug}"><span class="n">Sam</span><span><b>Begin bij Sam</b><span class="d">Direct en nuchter</span></span><span class="go">begin →</span></button></div>
       ${t.fine ? `<p class="fine">${t.fine}</p>` : ''}
       <p class="fine">Pam en Sam zijn AI-gesprekspartners, geïnspireerd door gesprekken met Caren. Geen therapie of vervanging van professionele hulp.</p></div>
       <div class="sec-head" style="margin:64px 0 24px"><span class="eyebrow">Ook interessant</span></div><div class="cards">${others}</div></div></section>`;
@@ -1535,10 +1547,20 @@ Regels:
       setTimeout(() => { done(); roomBg.style.opacity = ''; [p.logo, p.dock].forEach(e => { if (e) { e.style.opacity = ''; e.style.transition = ''; } }); minis.forEach(e => { e.style.transition = ''; e.style.opacity = ''; }); }, room ? 950 : 640);
     }, 90);
   }
+  let scrollingTo = false;
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-open]'); if (!b) return; focusBack = b;
-    const from = b.dataset.from === 'room' ? b.closest('.door').querySelector('.room') : b;
-    openChat(b.dataset.open, from, b.dataset.topic);
+    if (b.dataset.from === 'room') {
+      const r = b.closest('.door').querySelector('.room'), rr = r.getBoundingClientRect(), barH = 80;
+      if (reduce || (rr.top >= barH && rr.bottom <= innerHeight)) return openChat(b.dataset.open, r, b.dataset.topic);
+      if (scrollingTo) return; scrollingTo = true;
+      scrollTo({ top: scrollY + rr.top - Math.max(barH + 16, (innerHeight - rr.height) / 2), behavior: 'smooth' });
+      let last = -1, still = 0; const t0 = performance.now();
+      const wait = () => { const y = scrollY; if (Math.abs(y - last) < .5) still++; else { still = 0; last = y; }
+        if (still > 5 || performance.now() - t0 > 1600) { scrollingTo = false; openChat(b.dataset.open, r, b.dataset.topic); } else requestAnimationFrame(wait); };
+      requestAnimationFrame(wait); return;
+    }
+    openChat(b.dataset.open, b, b.dataset.topic);
   });
   $('closeBtn').onclick = closeChat;
   $('switchBtn2').onclick = () => $('switchBtn').onclick();
