@@ -59,6 +59,16 @@ rep('<div class="door pam">', '<div class="door pam" id="kies-pam">')
 rep('<div class="door sam">', '<div class="door sam" id="kies-sam">')
 rep('<span class="eyebrow">Jouw vertrouwen staat voorop</span>', '<h3 class="kop"><span class="hl">Jouw vertrouwen staat voorop</span></h3>')
 rep('<span class="eyebrow" style="margin-top:28px">Ken je iemand die hier iets aan heeft?</span>', '<h3 class="kop later">Ken je iemand die hier iets aan heeft?</h3>')
+# sluiten zonder lege tussenstap: krimpen begint meteen; naar een regel lost het vlak tijdens het krimpen op
+rep("""      setTimeout(() => { roomBg.style.transition = MOVE + ', opacity .4s ease-in-out'; roomBg.style.opacity = '0'; }, 420);""",
+    """      setTimeout(() => { roomBg.style.transition = MOVE + (room ? ', opacity .4s ease-in-out' : ', opacity .5s ease-out'); roomBg.style.opacity = '0'; }, room ? 360 : 60);""")
+rep("""      setTimeout(() => { done(); roomBg.style.opacity = ''; [p.logo, p.dock].forEach(e => { if (e) { e.style.opacity = ''; e.style.transition = ''; } }); minis.forEach(e => { e.style.transition = ''; e.style.opacity = ''; }); }, 1010);
+    }, 240);""", """      setTimeout(() => { done(); roomBg.style.opacity = ''; [p.logo, p.dock].forEach(e => { if (e) { e.style.opacity = ''; e.style.transition = ''; } }); minis.forEach(e => { e.style.transition = ''; e.style.opacity = ''; }); }, room ? 950 : 640);
+    }, 90);""")
+rep("""      setTimeout(() => { minis.forEach(e => { e.style.transition = 'none'; e.style.opacity = '1'; }); }, 760);
+      setTimeout(() => { [p.logo, p.dock].forEach(e => { if (e) { e.style.transition = 'opacity .16s linear'; e.style.opacity = '0'; } }); }, 830);""",
+"""      setTimeout(() => { minis.forEach(e => { e.style.transition = 'none'; e.style.opacity = '1'; }); }, 700);
+      setTimeout(() => { [p.logo, p.dock].forEach(e => { if (e) { e.style.transition = 'opacity .16s linear'; e.style.opacity = '0'; } }); }, 770);""")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}

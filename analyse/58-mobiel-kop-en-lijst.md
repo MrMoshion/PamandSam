@@ -47,3 +47,18 @@ Getest:
 - een klik op Sam in de kop gaat naar de uitleg over Sam, zonder dat het gesprek opent.
 
 **Kritische lezing:** schuivende kaarten zijn een bekend effect. Het blijft rustig zolang het alleen bij deze twee secties staat; niet verder uitbreiden.
+
+## Ronde 61: geen schuivende kaarten, naadloos openen en sluiten (ontwerper, 9 november 2026)
+- **De schuivende kaarten zijn weg** (eerlijke vraag en tarieven). De gewone opstelling is terug, met de verlooplijnen links.
+- **Openen en sluiten naadloos**, zoals in de eerdere versies. Frame voor frame gevonden:
+  1. Bij sluiten verdween eerst alle inhoud en stond er ongeveer 0,25 seconde een leeg vlak, voordat het venster ging krimpen. Omdat het vel bijna de kleur van de pagina heeft, leek de pagina even weg.
+  2. Bij sluiten naar een regel landde een wit blok op de gekleurde regel van Pam of Sam en vervaagde pas daarna.
+- **Hersteld:**
+  - het krimpen begint na 0,09 seconde in plaats van 0,24, terwijl de inhoud nog vervaagt;
+  - bij een regel lost het vlak tijdens het krimpen op in die regel;
+  - bij een kleine kamer blijft de overvloeiing zoals die was, alleen iets eerder.
+- **Getest:**
+  - openen en sluiten: 0 fouten;
+  - de pixeltest aan het eind van sluiten is nog rustiger (grootste afwijking 2,3, was 3,1);
+  - openen: 6,7;
+  - frame voor frame bekeken vanuit de kleine kamer en vanuit een onderwerppagina, op desktop en mobiel.
