@@ -105,6 +105,20 @@ def a_build():
 <body data-s="home"><div class="scr" id="home">{home}</div><div class="scr" id="info">{info}</div><div class="scr" id="pam">{room('pam', PAMLOG)}</div><div class="scr" id="sam">{room('sam', SAMLOG)}</div>{SWITCH}</body></html>'''
     open(os.path.join(D, 'a-katern.html'), 'w').write(html)
 
+
+import random
+FAM = {'pam': ['#CACBE6', '#D5D9F2', '#DCEAE7'], 'sam': ['#DCEAE7', '#CFE3DE', '#C3E3D6'], 'mix': ['#CACBE6', '#D3DDEA', '#CFE3DE'],
+       'pamB': ['#AEB2E4', '#C3CBEE', '#C9E0DA'], 'samB': ['#C9E0DA', '#AFD8CA', '#9FD3BF'], 'mixB': ['#AEB2E4', '#C4D2EA', '#AFD8CA']}
+def mark(seed, fam='mix'):
+    r = random.Random(seed); c = FAM[fam][:]
+    if r.random() < .5: c.reverse()
+    a = r.randint(84, 112); s1 = r.randint(0, 12); s2 = r.randint(38, 58); s3 = r.randint(88, 100)
+    return f'linear-gradient({a}deg,{c[0]} {s1}%,{c[1]} {s2}%,{c[2]} {s3}%)'
+def btn(label, seed, style, fam='mix'):
+    if style == 'grad':
+        return f'<a class="bt bt-g" style="background:{mark(seed, fam + "B")}">{label}</a>'
+    return f'<a class="bt bt-s"><span style="background-image:{mark(seed, fam + "B")};background-size:100% 62%;background-position:0 85%;background-repeat:no-repeat">{label}</span></a>'
+
 # ================= B · HET REGISTER =================
 B_CSS = COMMON + f'''
 body{{background:{SHEET}}}
@@ -119,8 +133,8 @@ h1.t span{{display:block;color:{SOFT}}}
 .rows{{font-family:"Courier Prime",monospace;font-size:15px;line-height:1.4}}
 .row{{display:grid;grid-template-columns:8ch 1fr 9ch;column-gap:2ch;padding:16px 14px;margin:0 -14px}}
 .row .n,.row .r{{color:{SOFT}}}.row .r{{text-align:right}}.row b{{font-weight:400;display:block}}.row span.d{{color:{SOFT};display:block;margin-top:2px}}
-.row.mark{{background:linear-gradient(100deg,{LAV},#D3DDEA 45%,{MINT})}}
-.row.go{{margin-top:18px}}.row.go b{{background:{INK};color:{SHEET};display:inline-block;padding:10px 16px}}
+.row.mk{{margin-bottom:6px}}
+.row.go{{margin-top:18px}}.bt{{display:inline-block;font-family:"Courier Prime",monospace;font-size:15px;color:{INK};padding:11px 18px}}.bt-s{{border:1px solid {INK};padding:10px 17px}}.bt-s span{{padding:0 3px}}
 .foot{{position:absolute;left:5vw;bottom:4vh;font-family:"Courier Prime",monospace;font-size:12px;color:{SOFT}}}
 /* info */
 .cols{{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:3vw;margin-top:6vh}}.cols p{{font-family:Newsreader,serif;font-size:18px;line-height:1.6;color:#33342f}}
@@ -132,20 +146,20 @@ h1.t span{{display:block;color:{SOFT}}}
 .e{{display:grid;grid-template-columns:8ch 1fr;column-gap:2ch;padding:14px 14px;margin:0 -14px}}.e .n{{font-family:"Courier Prime",monospace;font-size:13px;color:{SOFT};padding-top:5px}}
 .e .v{{font-size:19px;line-height:1.55}}.e.v-ai .v{{font-family:Newsreader,serif;color:{SOFT}}}.sam .e.v-ai .v{{font-family:"Hanken Grotesk",sans-serif;font-weight:300}}
 .e.me .v{{font-family:"Hanken Grotesk",sans-serif;font-weight:400;color:{INK}}}
-.e.now{{background:linear-gradient(100deg,{LAV},#D3DDEA 45%,{MINT})}}.sam .e.now{{background:linear-gradient(100deg,{ICE},{MINT})}}
+.e.now{{}}
 .e.now .v{{color:{INK}}}
 .ip{{display:grid;grid-template-columns:8ch 1fr;column-gap:2ch;padding:22px 0 0}}.ip .n{{font-family:"Courier Prime",monospace;font-size:13px;color:{SOFT};padding-top:12px}}.ip .f{{border-bottom:1px solid {INK};padding:10px 0;font-size:18px;color:{SOFT}}}
-.ip .acts{{grid-column:2;display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:"Courier Prime",monospace;font-size:13px;color:{SOFT}}}.ip .acts a.s{{background:{INK};color:{SHEET};padding:10px 16px}}
+.ip .acts{{grid-column:2;display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:"Courier Prime",monospace;font-size:13px;color:{SOFT}}}.ip .acts .bt{{font-size:13px;padding:9px 15px}}.ip .acts .bt-s{{padding:8px 14px}}
 @media(max-width:760px){{.pg{{padding:20px 22px 40px 16px}}.reg{{grid-template-columns:1fr;margin-top:8vh}}.rows{{margin-top:6vh;font-size:14px}}.row{{grid-template-columns:8ch 1fr;column-gap:1ch}}.row .r{{display:none}}
  .cols{{grid-template-columns:1fr;row-gap:24px}}.edge{{width:6px}}.e,.ip{{grid-template-columns:1fr}}.e .n,.ip .n{{padding:0 0 2px}}.e .v{{font-size:16px}}.foot{{position:static;margin-top:6vh}}.ip .acts{{grid-column:1}}}}
 '''
-def b_build():
+def b_build(style='grad'):
     edge = '<span class="edge"><i class="g"></i><i class="p"></i></span>'
     hd = '<header class="hd"><b>Pam &amp; Sam</b><span>(Aanpak) &nbsp; (Tarieven) &nbsp; (Contact)</span></header>'
-    rows = (f'<div class="row mark"><span class="n">(Pam)</span><a><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></a><span class="r">begin →</span></div>'
-            f'<div class="row"><span class="n">(Sam)</span><a><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></a><span class="r">begin →</span></div>'
+    rows = (f'<div class="row mk" style="background:{mark(11, "pam")}"><span class="n">(Pam)</span><a><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></a><span class="r">begin →</span></div>'
+            f'<div class="row mk" style="background:{mark(23, "sam")}"><span class="n">(Sam)</span><a><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></a><span class="r">begin →</span></div>'
             + ''.join(f'<div class="row"><span class="n">(P. {i*12+8:02d})</span><a><b>{t}</b><span class="d">{d}</span></a><span class="r">lees</span></div>' for i, (t, d) in enumerate(TOPICS))
-            + '<div class="row go"><span class="n">(→)</span><a><b>Probeer gratis</b></a><span class="r"></span></div>')
+            + f'<div class="row go"><span class="n">(→)</span><span>{btn("Probeer gratis", 5, style)}</span><span class="r"></span></div>')
     home = f'''<div class="pg">{hd}<div class="reg"><div><h1 class="t">Bespreek het met Pam of Sam.<span>Jij komt op het antwoord.</span></h1><p class="intro">Iedereen worstelt weleens met zichzelf. Kies een stem, of begin bij wat er speelt.</p></div>
 <div class="rows">{rows}</div></div><p class="foot">{DISC}</p>{edge}</div>'''
     info = f'''<div class="pg">{hd}<div style="margin-top:14vh"><h1 class="t">Hoe het werkt.<span>Drie stappen. Niet meer.</span></h1></div>
@@ -153,14 +167,14 @@ def b_build():
 <p class="q">“Wat je overkomt hoeft je leven niet te bepalen, je kunt kiezen hoe je erop reageert.”</p><p class="by">(Caren, adviseur bij Pam &amp; Sam)</p>{edge}</div>'''
     def room(v, log):
         nm = 'Pam' if v == 'pam' else 'Sam'; ot = 'Sam' if v == 'pam' else 'Pam'
-        ents = ''.join(f'<div class="e {"me" if w == "Jij" else "v-ai"}{" now" if i == len(log)-1 else ""}"><span class="n">({i+1:02d}) {w}</span><p class="v">{x}</p></div>' for i, (w, x) in enumerate(log))
+        ents = ''.join(f'<div class="e {"me" if w == "Jij" else "v-ai"}{" now" if i == len(log)-1 else ""}"' + (f' style="background:{mark(31, v)}"' if i == len(log)-1 else '') + f'><span class="n">({i+1:02d}) {w}</span><p class="v">{x}</p></div>' for i, (w, x) in enumerate(log))
         return f'''<div class="pg {v}"><header class="hd"><b>{nm}</b><span>(Onderwerpen) &nbsp; (Terugblik) &nbsp; (×)</span></header><div class="chat"><div class="log">{ents}</div>
-<div class="ip"><span class="n">({len(log)+1:02d}) Jij</span><div class="f">Schrijf hier…</div><div class="acts"><a>(Wissel naar {ot})</a><a class="s">Verstuur →</a></div></div></div>{edge}</div>'''
+<div class="ip"><span class="n">({len(log)+1:02d}) Jij</span><div class="f">Schrijf hier…</div><div class="acts"><a>(Wissel naar {ot})</a>{btn('Verstuur →', 47, style, v)}</div></div></div>{edge}</div>'''
     html = f'''<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pam &amp; Sam · Het register</title>{FONTS}<style>{B_CSS}</style></head>
 <body data-s="home"><div class="scr" id="home">{home}</div><div class="scr" id="info">{info}</div><div class="scr" id="pam">{room('pam', PAMLOG)}</div><div class="scr" id="sam">{room('sam', SAMLOG)}</div>{SWITCH}</body></html>'''
-    open(os.path.join(D, 'b-register.html'), 'w').write(html)
+    open(os.path.join(D, 'b-register.html' if style == 'grad' else 'b-register-lijn.html'), 'w').write(html)
 
-a_build(); b_build()
+a_build(); b_build('grad'); b_build('lijn')
 for nm, a, b in [('zachte tekst op vel', SOFT, SHEET), ('zachte tekst op mint', SOFT, MINT), ('zachte tekst op lavendel', SOFT, LAV), ('inkt op lavendel', INK, LAV),
                  ('wit op mint (alleen woordmerk)', '#FFFFFF', MINT), ('groene strook naast vel', GREEN, SHEET)]:
     print(f'{nm}: {CR(a, b):.2f}:1')

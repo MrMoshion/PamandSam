@@ -135,3 +135,34 @@ Geen beeld en geen ceremonie. Alleen de inhoudsopgave rechtsonder in de spread w
 - Welke route, of welke onderdelen uit beide?
 - Is het koele van de spread gewenst, nu Pam eerder warmte kreeg (hout)?
 - Hoe verhoudt dit zich tot de gekozen Couture-richting (49–52)? Vervangt het die, of is het een tweede spoor?
+
+## Keuze en tweede ronde (ontwerper, 9 november 2026)
+
+**Besluit:** dit wordt een derde spoor, naast de kamer (17–43) en de minimalistische versie Couture (47–52). Gekozen is **B · Het register**.
+
+Opdrachten van de ontwerper:
+- Het markeren uit de chat wordt huisstijl, ook in knoppen, in willekeurige varianten.
+- Pam en Sam zijn op de homepage even sterk uitgelicht, elk met een eigen markering.
+- De zwarte knop is te hard. Kies een variatie op het verloop, of een lijn met een lichtere manier van opvallen.
+
+Uitwerking (preview `presentatie/route-katern/overzicht-register-2.png`):
+- **Markeren als systeem.** Elke markering is een eigen variant van het verloop:
+  - de hoek varieert tussen 84 en 112 graden;
+  - de kleurstops verschuiven;
+  - soms loopt het verloop andersom.
+  - De variant ligt per element vast en verandert niet bij elk bezoek. Zo trekt een markeerstift nooit twee keer dezelfde streep, en blijft het toch rustig.
+- **Pam en Sam even sterk.**
+  - Pam markeert van lavendel naar ijs.
+  - Sam markeert van ijs naar mint.
+  - Ze staan als eerste twee regels van het register, met een kleine ruimte ertussen.
+- **Twee knopstijlen, ter keuze:**
+  - *Verloop:* de knop is gevuld met een markering, een tint dieper dan in de tekst.
+  - *Lijn:* een dunne lijn met een markeerstreep door de onderste tweederde van de tekst.
+  - De donkere tekst op de diepste knoptint haalt 7,7:1.
+- **In het gesprek** krijgt alleen de laatste vraag een markering, in de kleur van de stem. De verstuurknop volgt die stem.
+
+**Kritische lezing:**
+- Willekeur kan rommelig worden als er veel markeringen op één scherm staan. Houd het bij weinig markeringen tegelijk.
+- De lijnknop is het rustigst, maar op een telefoon is de streep klein. De verloopknop valt beter op.
+
+**Open:** welke knopstijl? En hoe verhoudt het register zich tot de kamer en Couture: wordt het de site, of blijft het een studie?
