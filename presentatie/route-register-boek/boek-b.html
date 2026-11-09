@@ -1,0 +1,58 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vast in een keuze · B · De kantlijn</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..500&family=Courier+Prime&family=Hanken+Grotesk:wght@300;400&display=swap"><style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none}
+:root{--ink:#222321;--soft:#55574F;--sheet:#F1F1EE;--paper:#F7F7F4;--yel:#F4E86E;--pamG:linear-gradient(100deg,#C6C8EA,#D5D9F2 50%,#DCEAE7);--samG:linear-gradient(100deg,#DCEAE7,#CFE3DE 50%,#BFE1D3);
+--mono:"Courier Prime",monospace;--serif:Newsreader,Georgia,serif;--sans:"Hanken Grotesk",sans-serif}
+body{background:var(--sheet);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;font-feature-settings:"kern","liga","onum"}
+.edge{position:fixed;top:0;bottom:0;right:0;width:10px;display:flex;flex-direction:column;gap:4px;z-index:5}.edge i{flex:1}
+.edge .p{background:linear-gradient(180deg,#B5B9EA,#D5D9F2 60%,#DCEAE7)}.edge .s{background:linear-gradient(180deg,#DCEAE7,#BFE1D3 50%,#7FCBB0)}
+.bar{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;padding:16px max(32px,calc((100vw - 1070px)/2));font-family:var(--mono);font-size:13px}
+.bar b{font-weight:400}.bar span{display:flex;gap:26px;align-items:center}.bar .yel{background:var(--yel);padding:11px 16px}
+.mono{font-family:var(--mono);font-size:13px;color:var(--soft)}
+.serifbody p{font-family:var(--serif);font-size:20px;line-height:1.62;color:#2c2d2a;hanging-punctuation:first}
+.serifbody p + p{text-indent:1.6em}
+.lead{font-family:var(--serif);font-size:25px;line-height:1.5;color:var(--ink)}
+.rows{display:flex;flex-direction:column;gap:8px;margin-top:40px}
+.row{display:grid;grid-template-columns:7ch 1fr auto;column-gap:2ch;padding:18px 18px}.row.pam{background:var(--pamG)}.row.sam{background:var(--samG)}
+.row .n,.row .go{font-family:var(--mono);font-size:13px;color:var(--soft);padding-top:4px}.row b{display:block;font-family:var(--serif);font-weight:400;font-size:21px}.row.sam b{font-family:var(--sans)}
+.row i{font-style:normal;color:var(--soft);font-size:15px}
+.fine{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--soft);margin-top:28px;max-width:56ch}.fine u{text-decoration-thickness:1px;text-underline-offset:3px}
+img{display:block;width:100%;height:auto}
+.serifbody p.fine{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--soft);text-indent:0}
+/* A · de spread */
+.va .spread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 60px)}
+.va .left{display:flex;align-items:center;justify-content:center;padding:6vh 6vw;background:#E9E9E5}
+.va .left img{width:min(30vw,52vh);aspect-ratio:4/5;object-fit:cover}
+.va .right{padding:9vh 6vw 8vh 5vw;max-width:720px;position:relative}
+.va .rh{display:flex;justify-content:space-between;margin-bottom:9vh}
+.va h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,4vw,60px);line-height:1.05;letter-spacing:-.015em;margin-bottom:36px}
+.va .lead{margin-bottom:22px}
+.va .folio{position:absolute;bottom:3vh;left:5vw}
+/* B · de kantlijn */
+.vb .page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);column-gap:4vw;padding:10vh max(32px,calc((100vw - 1070px)/2)) 12vh;max-width:1400px}
+.vb h1{grid-column:2;grid-row:1;font-family:var(--serif);font-weight:300;font-size:clamp(44px,4.6vw,68px);line-height:1.02;letter-spacing:-.015em;margin-bottom:6vh}
+.vb .marg{grid-column:1;grid-row:1/3;text-align:right;align-self:start;padding-top:12px}.vb .marg img{width:64%;margin-left:auto;aspect-ratio:4/5;object-fit:cover}
+.vb .note{display:block;margin-top:2px}
+.vb .main{grid-column:2;max-width:60ch}
+.vb .pr{display:grid;grid-template-columns:subgrid;grid-column:1/3;align-items:start;margin-bottom:22px}
+.vb .pr .note{text-align:right}
+/* C · het hoofdstuk */
+.vc .open{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:calc(100vh - 60px);align-items:end}
+.vc .open .t{padding:0 0 12vh max(32px,calc((100vw - 1070px)/2))}
+.vc .chap{margin-bottom:5vh}
+.vc h1{font-family:var(--serif);font-weight:300;font-size:clamp(56px,7vw,112px);line-height:.98;letter-spacing:-.025em}
+.vc .open figure{height:100%;min-height:calc(100vh - 60px)}.vc .open img{height:100%;object-fit:cover;object-position:50% 40%}
+.vc .text{max-width:62ch;margin:14vh 0 16vh max(32px,calc((100vw - 1070px)/2) + 6vw)}
+.vc .ini::first-letter{float:left;font-family:var(--serif);font-weight:300;font-size:5.2em;line-height:.8;padding:.06em .08em 0 0;color:var(--ink)}
+.vc .text .lead{margin-bottom:24px}
+@media(max-width:760px){.bar{padding:14px 16px}.bar span a:not(.yel){display:none}.serifbody p{font-size:18px}.lead{font-size:21px}.edge{width:6px}
+ .va .spread{grid-template-columns:1fr}.va .left{padding:36px 16px}.va .left img{width:72vw}.va .right{padding:40px 22px 64px 16px}.va .rh{margin-bottom:36px}.va .folio{position:static;margin-top:32px}
+ .vb .page{grid-template-columns:1fr;padding:44px 22px 64px 16px}.vb h1,.vb .main,.vb .marg{grid-column:1}.vb .marg{text-align:left;margin-bottom:28px;grid-row:auto;padding-top:0}.vb h1{grid-row:auto}.vb .pr[style]{grid-row:auto!important}.vb .marg img{width:62%;margin-left:0}
+ .vb .pr{grid-template-columns:1fr;grid-column:1}.vb .pr .note{text-align:left;margin-bottom:6px}
+ .vc .open{grid-template-columns:1fr}.vc .open figure{min-height:auto;height:auto;order:-1}.vc .open img{aspect-ratio:4/5;height:auto}.vc .open .t{padding:36px 22px 8px 16px}
+ .vc .text{margin:28px 22px 64px 16px}.row{grid-template-columns:6ch 1fr}.row .go{display:none}}
+</style></head>
+<body class="vb"><span class="edge"><i class="p"></i><i class="s"></i></span><header class="bar"><b>Pam &amp; Sam</b><span><a>(Aanpak)</a><a>(Tarieven)</a><a>(Contact)</a><a class="yel">Probeer gratis</a></span></header><div class="page"><div class="marg"><img src="twijg.jpg" alt=""></div><h1>Vast in een keuze?</h1>
+<div class="pr" style="grid-row:2"><span></span><div class="main serifbody"><p class="lead">Sommige beslissingen overleven elke lijst met voor- en nadelen. Je denkt erover onder de douche, in de auto, om drie uur ’s nachts, en je komt geen stap verder. Dat is meestal een teken dat de echte vraag niet de vraag is die je stelt.</p></div></div>
+<div class="pr"><span class="note mono">(Wat Pam en Sam doen)</span><div class="main serifbody"><p>Pam en Sam blijven vragen tot je hem vindt. Geen kant-en-klaar advies dat je morgen weer kwijt bent. Alleen de vragen die je jezelf niet stelde, en één stap die je vandaag kunt zetten.</p></div></div>
+<div class="pr"><span class="note mono">(Kies een stem)</span><div class="main serifbody"><p>Kies Pam voor warm en empathisch. Kies Sam voor direct en nuchter. 6 vragen gratis, anoniem, niets opgeslagen op onze servers.</p><div class="rows"><a class="row pam"><span class="n">(Pam)</span><span><b>Begin bij Pam</b><i>Warm en empathisch</i></span><span class="go">begin →</span></a><a class="row sam"><span class="n">(Sam)</span><span><b>Begin bij Sam</b><i>Direct en nuchter</i></span><span class="go">begin →</span></a></div></div></div>
+<div class="pr"><span class="note mono">(Als het zwaar wordt)</span><div class="main"><p class="fine" style="margin-top:0">Zit je er zo doorheen dat je donkere gedachten krijgt? Bel <u>113</u> of <u>0800-0113</u>, dag en nacht. Bij direct gevaar: <u>112</u>.</p></div></div></div></body></html>

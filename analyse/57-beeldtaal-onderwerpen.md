@@ -47,3 +47,27 @@ Het lijstje uit de vorige ronde wacht op akkoord:
 - "Probeer gratis" met een markeerstreep;
 - de verlooplijn links bij de eerlijke vraag;
 - geen lijn onder het glazen menu.
+
+## Beelden geleverd (ontwerper, 9 november 2026)
+- **Vast in een keuze:** een twijg die zich splitst in twee gelijke takken, elk met één blad (suggestie 1).
+- **Spanning in je relatie:** twee lathyrussen waarvan de stengels elkaar kruisen en daarna uit elkaar buigen.
+- **Werk wordt te veel:** een volle witte pioen op een steel die doorbuigt maar niet breekt.
+
+## Drie boekopmaken voor een onderwerppagina (previews)
+Voor "Vast in een keuze", in het register, steeds met dezelfde tekst en foto. Preview: `presentatie/route-register-boek/overzicht-boek.png`.
+
+**Het cliché om te vermijden:** alles gecentreerd onder elkaar, zoals een webtemplate. Dat leest slecht en voelt amateuristisch.
+
+- **A · De spread.** Links de foto als plaat op een eigen pagina, rechts een boekpagina:
+  - een kopregel in typemachineletter met paginanummer;
+  - de eerste alinea iets groter;
+  - daarna alinea's met een inspringing in plaats van witregels, zoals in een boek.
+- **B · De kantlijn.** Eén tekstkolom met een kantlijn ernaast, zoals in een studieboek. In de kantlijn staan de foto en korte notities in typemachineletter: "(Wat Pam en Sam doen)", "(Kies een stem)", "(Als het zwaar wordt)".
+- **C · Het hoofdstuk.** Een hoofdstukopening: de titel groot links, de foto loopt rechts tot de rand. Daaronder de tekst in één kolom met een initiaal, de grote eerste letter van een hoofdstuk.
+
+**Kritische lezing:**
+- A is het rustigst en het dichtst bij de spread van Emergence.
+- B is het meest "register" en helpt bij scannen. Maar de notities herhalen soms wat er al staat.
+- C is het meest uitgesproken. De initiaal is een sterk boekgebaar, maar kan ouderwets voelen als hij overal terugkomt.
+
+**Advies:** C voor de onderwerppagina's. Het eerste scherm geeft het beeld de ruimte; de tekst leest daarna als een hoofdstuk.
