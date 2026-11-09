@@ -1,0 +1,30 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kop mobiel · C · De namen zijn de knoppen</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..500&family=Courier+Prime&family=Hanken+Grotesk:wght@300;400&display=swap"><style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none}
+:root{--ink:#222321;--soft:#55574F;--sheet:#F1F1EE;--paper:#F7F7F4;--yel:#F4E86E;--pamG:linear-gradient(100deg,#C6C8EA,#D5D9F2 50%,#DCEAE7);--samG:linear-gradient(100deg,#DCEAE7,#CFE3DE 50%,#BFE1D3);
+--mono:"Courier Prime",monospace;--serif:Newsreader,Georgia,serif;--sans:"Hanken Grotesk",sans-serif}
+body{background:var(--sheet);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+.edge{position:fixed;top:0;bottom:0;right:0;width:6px;display:flex;flex-direction:column;gap:4px}.edge i{flex:1}
+.edge .p{background:linear-gradient(180deg,#B5B9EA,#D5D9F2 60%,#DCEAE7)}.edge .s{background:linear-gradient(180deg,#DCEAE7,#BFE1D3 50%,#7FCBB0)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 14px 16px;font-family:var(--mono);font-size:13px}
+.bar span{display:flex;gap:18px;align-items:center}.bar .menu{font-family:var(--sans);font-size:15px}.bar .yel{background:linear-gradient(97deg,#F7F0A0,#F4E86E 50%,#F1E15A);padding:10px 14px}
+.hero{min-height:calc(100svh - 62px);display:flex;flex-direction:column;padding:11vh 22px 26px 16px}.tiles,.slim,.hint{margin-top:auto!important}
+.k{font-family:var(--mono);font-size:13px;color:var(--soft);margin-bottom:22px}
+h1{font-family:var(--serif);font-weight:300;font-size:40px;line-height:1.06;letter-spacing:-.015em}
+.sub{font-size:19px;color:var(--soft);margin-top:14px}.sub i{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-.12em;margin-left:4px}
+.fine{font-family:var(--mono);font-size:11px;line-height:1.6;color:var(--soft);margin-top:22px}
+/* A · twee tegels naast elkaar */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:36px}
+.tile{aspect-ratio:1/1;padding:14px;display:flex;flex-direction:column}.tile.pam{background:var(--pamG)}.tile.sam{background:var(--samG)}
+.tile .n{font-family:var(--mono);font-size:12px;color:var(--soft)}.tile b{margin-top:auto;font-family:var(--serif);font-weight:300;font-size:38px;line-height:1}.tile.sam b{font-family:var(--sans)}
+.tile span.d{font-size:14px;color:var(--soft);margin-top:6px}.tile .go{font-family:var(--mono);font-size:12px;margin-top:10px}
+/* B · twee smalle regels */
+.slim{display:flex;flex-direction:column;gap:6px;margin-top:36px}
+.sl{display:grid;grid-template-columns:5.5ch 1fr auto;column-gap:1ch;align-items:baseline;padding:13px 14px}.sl.pam{background:var(--pamG)}.sl.sam{background:var(--samG)}
+.sl .n{font-family:var(--mono);font-size:12px;color:var(--soft)}.sl b{font-family:var(--serif);font-weight:400;font-size:19px}.sl.sam b{font-family:var(--sans)}.sl .go{font-family:var(--mono);font-size:12px;color:var(--soft)}
+/* C · de namen in de kop zijn de knoppen */
+.vc h1{font-size:44px;line-height:1.12}
+.vc h1 a{padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.vc h1 a.pam{background:var(--pamG)}.vc h1 a.sam{background:var(--samG);font-family:var(--sans);font-weight:300;letter-spacing:-.02em}
+.vc .hint{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:30px;font-size:14px;color:var(--soft)}
+.vc .hint span b{display:block;font-family:var(--mono);font-weight:400;font-size:12px;margin-bottom:2px;color:var(--ink)}
+</style></head><body class="vc"><span class="edge"><i class="p"></i><i class="s"></i></span><header class="bar"><span>Pam &amp; Sam</span><span><a class="menu">Menu</a><a class="yel">Probeer gratis</a></span></header><section class="hero"><p class="k">Iedereen worstelt weleens met zichzelf.</p><h1>Bespreek het met <a class="pam">Pam</a> of <a class="sam">Sam</a>.</h1><p class="sub">Jij komt op het antwoord.<i></i></p><div class="hint"><span><b>Pam</b>Warm en empathisch</span><span><b>Sam</b>Direct en nuchter</span></div><p class="fine">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p></section></body></html>
