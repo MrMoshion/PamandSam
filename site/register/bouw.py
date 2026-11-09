@@ -18,8 +18,9 @@ rep('''        <span class="small">6 vragen gratis · geen creditcard · anoniem
       </div>
     </div>
     <div class="hero-right">
-      <button class="reg-row pam" type="button" data-open="pam" aria-label="Begin een gesprek met Pam"><span class="n">(Pam)</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">begin →</span></button>
-      <button class="reg-row sam" type="button" data-open="sam" aria-label="Begin een gesprek met Sam"><span class="n">(Sam)</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">begin →</span></button>
+      <a class="reg-row pam" href="#kies-pam"><span class="n">(Pam)</span><span><b>Warm en empathisch</b><span class="d">Ze geeft eerst ruimte aan wat je voelt.</span></span><span class="go">lees meer →</span></a>
+      <a class="reg-row sam" href="#kies-sam"><span class="n">(Sam)</span><span><b>Direct en nuchter</b><span class="d">Hij gaat zonder omweg naar de kern.</span></span><span class="go">lees meer →</span></a>
+      <p class="fine-m">6 vragen gratis · geen creditcard · anoniem · gesprekken niet opgeslagen op onze servers</p>
     </div></div>''')
 rep('<div class="bar" id="bar">', '<span class="edge" aria-hidden="true"><i class="ep"></i><i class="es"></i></span>\n<div class="bar" id="bar">')
 rep("bar.classList.toggle('in', scrollY > lim); };", "bar.classList.add('in'); bar.classList.toggle('glass', scrollY > 8); };")
@@ -54,6 +55,10 @@ rep("""    bgAt(fromEl.getBoundingClientRect());
     if (p.text) flyTo(p.text, p.miniText.getBoundingClientRect());""")
 rep("""      roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';""", """      if (!room) { roomBg.style.transition = MOVE + ', opacity .38s ease-out'; roomBg.style.opacity = ''; }
       roomBg.style.transform = 'none'; roomBg.style.borderRadius = '0px';""")
+rep('<div class="door pam">', '<div class="door pam" id="kies-pam">')
+rep('<div class="door sam">', '<div class="door sam" id="kies-sam">')
+rep('<span class="eyebrow">Jouw vertrouwen staat voorop</span>', '<h3 class="kop"><span class="hl">Jouw vertrouwen staat voorop</span></h3>')
+rep('<span class="eyebrow" style="margin-top:28px">Ken je iemand die hier iets aan heeft?</span>', '<h3 class="kop later">Ken je iemand die hier iets aan heeft?</h3>')
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}

@@ -26,3 +26,24 @@ De zin staat bovenaan; de keuze voor Pam of Sam onderaan het eerste scherm. Daar
 3. "Waarom niet gewoon een gratis chatbot?": bij scrollen schuiven twee kaarten over elkaar, eerst de chatbot, dan Pam & Sam eroverheen.
 4. De tariefkaarten bij "Transparant" stapelen op dezelfde manier.
 5. "Jouw vertrouwen staat voorop" en "Ken je iemand die hier iets aan heeft?" worden echte kopjes in plaats van labels tussen haakjes, op desktop en mobiel. "Jouw vertrouwen staat voorop" krijgt de gele markering.
+
+## Gebouwd (ontwerper koos B, 9 november 2026; artifact versie 5)
+- **De kop.**
+  - Op mobiel: optie B. De zin staat bovenaan; onderaan het eerste scherm staan twee smalle regels voor Pam en Sam, met alleen een pijl, en de kleine regel.
+  - Op desktop staan de regels naast de zin, zoals eerst.
+  - "Probeer gratis" is weg uit de kop, op beide; hij staat alleen in het menu.
+- **Pam en Sam in de kop openen niet meer het gesprek.** Ze brengen je naar de uitleg over Pam of Sam bij "Pam of Sam?" verderop op de pagina, op desktop en mobiel. Op desktop staat er "lees meer →".
+- **"Drie stappen":** de foto is uitgesneden vanaf de linkerbovenkant, zodat de bladschaduwen goed te zien zijn.
+- **"Waarom niet gewoon een gratis chatbot?":** twee kaarten die bij scrollen over elkaar schuiven. Eerst de chatbot, dan schuift Pam & Sam eroverheen.
+- **Tarieven:** de drie kaarten schuiven op dezelfde manier over elkaar. Het jaarabonnement komt als laatste bovenop.
+- **Contact:** "Jouw vertrouwen staat voorop" (geel gemarkeerd) en "Ken je iemand die hier iets aan heeft?" zijn echte kopjes, op desktop en mobiel.
+
+Getest:
+- openen en sluiten: 0 fouten;
+- de pixeltests komen rustig tot 0;
+- toetsenbord en focus werken;
+- nergens horizontaal scrollen;
+- op 375×667 tot 760×1024 overlapt niets in de kop, en de kleine regel staat op het eerste scherm;
+- een klik op Sam in de kop gaat naar de uitleg over Sam, zonder dat het gesprek opent.
+
+**Kritische lezing:** schuivende kaarten zijn een bekend effect. Het blijft rustig zolang het alleen bij deze twee secties staat; niet verder uitbreiden.

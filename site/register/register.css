@@ -199,7 +199,7 @@ form.simple input,form.simple textarea,.tone-linen form.simple input,.tone-linen
 /* geen therapie: zelfde lijn, titel gemarkeerd */
 .daybox.lined{border-style:solid;border-width:0 8px 0 0;border-image:linear-gradient(180deg,#B5B9EA,#D5D9F2 35%,#DCEAE7 55%,#BFE1D3 75%,#7FCBB0) 1}
 /* drie stappen: de muurfoto als achtergrond, de stappen als lichte vellen */
-#aanpak.tone-linen{background:linear-gradient(rgba(241,241,238,.3),rgba(241,241,238,.3)),url(data:image/jpeg;base64,__MUUR__) center/cover no-repeat!important}
+#aanpak.tone-linen{background:linear-gradient(rgba(241,241,238,.3),rgba(241,241,238,.3)),url(data:image/jpeg;base64,__MUUR__) 0% 8%/cover no-repeat!important}
 #aanpak .step{background:rgba(247,247,244,.84)!important;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 /* klaar om te beginnen: de foto links, zonder bijschrift */
 .start{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5vw;align-items:center;margin-top:80px}
@@ -271,3 +271,44 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
 .btn:hover,.pill:hover{transform:none!important;box-shadow:none!important;outline:none}
 @media (prefers-reduced-motion: reduce){.ul{transition:none}}
 .btn:hover,.pill:hover,.btn:active,.pill:active{border-color:transparent!important}
+
+/* ===== ronde 60: kop zonder knop, Pam en Sam leiden naar hun uitleg, stapelkaarten, kopjes ===== */
+/* kop: geen "Probeer gratis" meer; die staat in het menu */
+.hero:not(.topic-hero) .cta-row .btn{display:none!important}
+.hero:not(.topic-hero) .cta-row{margin-top:28px}
+.reg-row{text-decoration:none}
+.door{scroll-margin-top:96px}
+.fine-m{display:none}
+/* mobiel: zin bovenaan, twee smalle regels onderaan het eerste scherm (optie B) */
+@media (max-width:760px){
+  header.hero:not(.topic-hero) > .wrap{min-height:100svh;display:flex;flex-direction:column}
+  header.hero:not(.topic-hero) .hero-body{flex:1;display:flex!important;flex-direction:column;padding:11vh 0 26px!important}
+  .hero:not(.topic-hero) .hero-right{margin-top:auto;gap:6px}
+  .hero:not(.topic-hero) .cta-row{display:none}
+  .hero:not(.topic-hero) .reg-row{grid-template-columns:5.5ch 1fr auto;align-items:baseline;padding:13px 14px}
+  .hero:not(.topic-hero) .reg-row .d{display:none}
+  .hero:not(.topic-hero) .reg-row b{font-size:1.1875rem}
+  .hero:not(.topic-hero) .reg-row .go{display:block;font-size:.75rem}
+  .fine-m{display:block;font-family:var(--mono);font-size:.6875rem;line-height:1.6;color:var(--ink-soft);margin-top:16px}
+}
+/* de eerlijke vraag: twee kaarten die bij scrollen over elkaar schuiven */
+.dark-sec,.dark-sec .wrap,.dark-sec .glass,#tarieven,#tarieven .wrap{overflow:visible!important}
+.compare{display:block!important;max-width:820px}
+.compare .col{display:flex!important;flex-direction:column;grid-row:auto!important;position:sticky;top:96px;background:#F1F1EE;padding:8px 0 18px}
+.compare .col.lit{top:120px;background:#F7F7F4!important;margin-top:28px;box-shadow:0 -22px 34px -30px rgba(34,35,33,.35)}
+.compare .col.plain{background:#EDEDE9!important}
+.compare .col > *{padding:16px 24px!important}
+/* tarieven: drie kaarten die over elkaar schuiven */
+.prices{display:block!important;max-width:760px}
+.price{position:sticky;top:96px;margin-bottom:24px;min-height:300px;box-shadow:0 -22px 34px -30px rgba(34,35,33,.35)}
+.price:nth-child(2){top:118px}.price:nth-child(3){top:140px}
+.price:first-child{box-shadow:none}
+/* kopjes in plaats van labels tussen haakjes */
+.kop{font-family:var(--serif);font-weight:300;font-size:1.75rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 12px;color:var(--ink)}
+.kop + p{margin-top:0}
+.prose .kop.later{margin-top:40px}
+@media (max-width:760px){.compare .col{top:76px}.compare .col.lit{top:96px}.price{top:76px;min-height:0}.price:nth-child(2){top:96px}.price:nth-child(3){top:116px}.kop{font-size:1.5rem}}
+@media (max-width:760px){.hero:not(.topic-hero) .reg-row .go .ul{font-size:0}.hero:not(.topic-hero) .reg-row .go .ul::after{content:"→";font-size:.875rem}}
+#contact h3.kop{font-family:var(--serif)!important;font-weight:300!important;font-size:1.75rem!important;line-height:1.2!important;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 12px!important;text-transform:none!important}
+#contact h3.kop.later{margin-top:40px!important}
+@media (max-width:760px){#contact h3.kop{font-size:1.5rem!important}}
