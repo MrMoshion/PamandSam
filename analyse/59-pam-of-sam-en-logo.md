@@ -40,3 +40,20 @@ Preview: `presentatie/route-register-logo/overzicht.png`. Elk voorstel is getoon
   - Het gesprek en de kleine kamers blijven zoals ze waren; daar staat de markering al.
   - Het aantikbare vlak van het logo is 44 px hoog, zonder dat de streep verschuift.
   - Gebouwd in artifact versie 9. Alle tests zijn gedraaid: openen en sluiten 0 fouten, pixeltests 2,3 en 6,7, toetsenbord en focus, geen horizontaal scrollen.
+
+## Rustig scrollen naar secties (10 november 2026; artifact versie 10)
+- **Wat de ontwerper vroeg:** scrollen naar een sectie, vanuit het menu en vanuit alle knoppen die dat doen, met easing. Het ging net iets te snel.
+- **Oorzaak:** de browser sprong zelf naar de sectie bij een klik op de link, met zijn eigen korte beweging.
+- **Oplossing:**
+  - Klikken op links naar een sectie vangt de site nu zelf op, en scrolt met dezelfde rustige beweging als naar de kleine kamers.
+  - De duur is 0,9 tot 1,4 seconde, afhankelijk van de afstand, met zacht aanzetten en zacht uitlopen.
+  - Scroll je zelf tijdens de beweging, dan stopt die meteen.
+  - Bij de instelling voor minder beweging springt de pagina direct.
+  - Het adres en de terugknop van de browser blijven werken.
+- **Nagemeten:** menu naar Tarieven ongeveer 1,35 seconde; kop naar de uitleg over Sam en via "Probeer gratis" ongeveer 1 seconde. Vanaf een onderwerppagina terug naar een sectie werkt.
+- **Getest:**
+  - openen en sluiten: 0 fouten;
+  - de pixeltests: 2,3 en 6,7;
+  - toetsenbord en focus werken;
+  - nergens horizontaal scrollen;
+  - de kleine kamers blijven gevuld na navigeren.

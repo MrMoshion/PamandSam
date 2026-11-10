@@ -112,6 +112,26 @@ rep("""    if (reduce) return done();
       if (pg) { pg.style.transition = 'opacity .5s ease'; pg.style.opacity = '1'; }
       return setTimeout(() => { chat.style.transition = ''; chat.style.opacity = ''; if (pg) { pg.style.transition = ''; pg.style.opacity = ''; } done(); }, 520);
     }""")
+# scrollen naar een sectie (menu, knoppen, links): dezelfde rustige beweging overal
+rep("html{scroll-behavior:smooth}", "html{scroll-behavior:auto}")
+rep("""    else { const el = document.getElementById(h); if (el) { document.querySelectorAll('.rv').forEach(x => x.classList.add('shown')); el.scrollIntoView({ behavior: reduce || changed ? 'auto' : 'smooth' }); } }""",
+    """    else { const el = document.getElementById(h); if (el) { document.querySelectorAll('.rv').forEach(x => x.classList.add('shown')); if (reduce || changed) el.scrollIntoView({ behavior: 'auto' }); else calmTo(el); } }""")
+rep("  let page = null;\n  function route() {", """  let calmId = 0;
+  function calmTo(el) {
+    const m = parseFloat(getComputedStyle(el).scrollMarginTop) || 0, max = document.documentElement.scrollHeight - innerHeight;
+    const y0 = scrollY, y1 = Math.max(0, Math.min(max, el.getBoundingClientRect().top + scrollY - m)), d = y1 - y0; if (Math.abs(d) < 2) return;
+    const dur = Math.min(1400, 900 + Math.abs(d) * .12), ease = x => -(Math.cos(Math.PI * x) - 1) / 2, id = ++calmId, t0 = performance.now();
+    const stop = () => { calmId++; }; addEventListener('wheel', stop, { once: true, passive: true }); addEventListener('touchstart', stop, { once: true, passive: true });
+    const step = now => { if (id !== calmId) return; const x = Math.min(1, (now - t0) / dur); scrollTo(0, y0 + d * ease(x)); if (x < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+  window.calmTo = calmTo;
+  /* een link naar de sectie waar de hash al op staat: geen hashchange, dus zelf rustig scrollen */
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return; const h = a.getAttribute('href').slice(1);
+    if (!h || TOPICS[h]) return; const el = document.getElementById(h); if (!el || el.offsetParent === null) return;
+    e.preventDefault(); if (h !== location.hash.slice(1)) { history.pushState(null, '', '#' + h); route(); } else if (reduce) el.scrollIntoView(); else calmTo(el); });
+  let page = null;
+  function route() {""")
 # markeerstift: elke gele markering een eigen, vaste variant
 YEL = '''<script>(function(){var Y=['#F7F0A0','#F4E86E','#F1E15A','#F6EC86','#EFE36F'];
 function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}

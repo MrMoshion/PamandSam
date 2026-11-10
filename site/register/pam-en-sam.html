@@ -23,7 +23,7 @@
   --col:40rem; --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.bar,.site-menu,.menu,.drawer .panel,.drawer .shade,.report,.helppop{transition:none!important}}
 body{background:var(--light);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -1201,6 +1201,20 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
       <div class="sec-head" style="margin:64px 0 24px"><span class="eyebrow">Ook interessant</span></div><div class="cards">${others}</div></div></section>`;
     topicsEl.append(v);
   }
+  let calmId = 0;
+  function calmTo(el) {
+    const m = parseFloat(getComputedStyle(el).scrollMarginTop) || 0, max = document.documentElement.scrollHeight - innerHeight;
+    const y0 = scrollY, y1 = Math.max(0, Math.min(max, el.getBoundingClientRect().top + scrollY - m)), d = y1 - y0; if (Math.abs(d) < 2) return;
+    const dur = Math.min(1400, 900 + Math.abs(d) * .12), ease = x => -(Math.cos(Math.PI * x) - 1) / 2, id = ++calmId, t0 = performance.now();
+    const stop = () => { calmId++; }; addEventListener('wheel', stop, { once: true, passive: true }); addEventListener('touchstart', stop, { once: true, passive: true });
+    const step = now => { if (id !== calmId) return; const x = Math.min(1, (now - t0) / dur); scrollTo(0, y0 + d * ease(x)); if (x < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+  window.calmTo = calmTo;
+  /* een link naar de sectie waar de hash al op staat: geen hashchange, dus zelf rustig scrollen */
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return; const h = a.getAttribute('href').slice(1);
+    if (!h || TOPICS[h]) return; const el = document.getElementById(h); if (!el || el.offsetParent === null) return;
+    e.preventDefault(); if (h !== location.hash.slice(1)) { history.pushState(null, '', '#' + h); route(); } else if (reduce) el.scrollIntoView(); else calmTo(el); });
   let page = null;
   function route() {
     const h = location.hash.slice(1), next = TOPICS[h] ? h : 'home', changed = page !== null && next !== page;
@@ -1227,7 +1241,7 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
     $('home').hidden = isTopic;
     document.querySelectorAll('.topic').forEach(t => t.hidden = t.id !== 't-' + h);
     if (isTopic || !h) { if (isTopic || page !== null) scrollTo({ top: 0, behavior: 'instant' }); }
-    else { const el = document.getElementById(h); if (el) { document.querySelectorAll('.rv').forEach(x => x.classList.add('shown')); el.scrollIntoView({ behavior: reduce || changed ? 'auto' : 'smooth' }); } }
+    else { const el = document.getElementById(h); if (el) { document.querySelectorAll('.rv').forEach(x => x.classList.add('shown')); if (reduce || changed) el.scrollIntoView({ behavior: 'auto' }); else calmTo(el); } }
   }
   addEventListener('hashchange', route); route();
 
