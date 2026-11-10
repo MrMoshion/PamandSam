@@ -31,3 +31,12 @@ Preview: `presentatie/route-register-logo/overzicht.png`. Elk voorstel is getoon
 5. **Het &-teken als vorm (vrij).** Pam in schreef, Sam in schreefloos, en een groot &-teken in het verloop ertussen. Het &-teken kan los het icoon zijn. Het meest gewaagd; klein kan het druk worden.
 
 **Advies:** 1 voor de site, omdat het het rustigst is en de cursor de essentie draagt: jij schrijft verder. 5 als je het merk meer eigen wilt maken; het &-teken is dan ook het app-icoon.
+
+## Besluit (ontwerper, 10 november 2026)
+- **"Pam of Sam?" blijft zoals het is.** Het huidige onderscheid, met alleen de stippen, is binnen de huisstijl juist subtiel en goed. Het voorstel vervalt.
+- **Les voor Claude:** je hoeft niet alles te benoemen of te herontwerpen. Vertrouw op eigen eerdere ontwerpkeuzes. De vrije interpretaties werken het best.
+- **Logo: 4, de markering.**
+  - Alleen in de menubalk: "Pam & Sam" in Newsreader, met één streep van lavendel naar mint onder het hele woord.
+  - Het gesprek en de kleine kamers blijven zoals ze waren; daar staat de markering al.
+  - Het aantikbare vlak van het logo is 44 px hoog, zonder dat de streep verschuift.
+  - Gebouwd in artifact versie 9. Alle tests zijn gedraaid: openen en sluiten 0 fouten, pixeltests 2,3 en 6,7, toetsenbord en focus, geen horizontaal scrollen.

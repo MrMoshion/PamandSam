@@ -312,3 +312,8 @@ section.tspread{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh
 .tright .rh{display:none!important}
 .tright h1{margin-top:2vh}
 .tright .reg-row{grid-template-columns:1fr auto}.tright .reg-row .n{display:none}
+/* ===== ronde 64: logo 4, de markering. Alleen in de menubalk; het gesprek en de kleine kamers blijven zoals ze waren ===== */
+.nav .logo,.bar .logo{font-family:var(--serif)!important;font-weight:300!important;font-size:1.25rem!important;letter-spacing:-.005em!important;line-height:1.1!important;display:inline-block;
+  background-image:linear-gradient(90deg,#C6C8EA,#D5D9F2 40%,#CFE3DE 65%,#BFE1D3)!important;background-repeat:no-repeat!important;background-size:100% 40%!important;background-position:0 82%!important;
+  padding:0 .08em!important;color:var(--ink)!important;text-decoration:none!important;min-height:0!important;height:auto!important;display:inline-block!important}
+.nav .logo,.bar .logo{position:relative}.nav .logo::before,.bar .logo::before{content:"";position:absolute;left:0;right:0;top:-11px;bottom:-11px}
