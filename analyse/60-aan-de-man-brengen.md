@@ -59,6 +59,13 @@ Een gesprek met Pam of Sam rondt af, op het moment dat je voldaan bent. ChatGPT 
 ## 6. Technische eis: niemand kijkt mee
 Bij organisaties wordt de belofte "niemand kijkt mee" een harde eis. Een werknemer gebruikt het alleen als hij zeker weet dat zijn werkgever niets ziet. Dat moet je kunnen bewijzen, niet alleen beloven. De uitwerking staat in de notities voor het bouwen (39, punt 10).
 
+## Peiler: wat doet een organisatie zonder Pam & Sam? (besluit ontwerper, 24 november 2026)
+Bij elke organisatie en elke groep vragen we eerst: wat doen ze nu, zonder Pam & Sam? Bijvoorbeeld een bedrijfsarts, een vertrouwenspersoon, een hulplijn voor medewerkers, een gratis kennismakingsgesprek, of niets.
+- **Daar vergelijken ze ons mee,** niet met niets.
+- **Pam & Sam wint pas als het beter, makkelijker of goedkoper is dan dát.**
+
+Deze vraag loopt door elke stap van het marktplan (Go-to-Market Planner): intake, de markt in kaart, positionering, vraag creëren en het plan.
+
 ## Is dit de juiste route? (oordeel Claude, 24 november 2026)
 Bekeken met de kaders uit de werkwijze: Roger Martin (*Playing to Win*), Jobs to be Done en April Dunford. Daarnaast Geoffrey Moore (*Crossing the Chasm*): begin bij één groep die je volledig wint, en breid pas daarna uit. De Go-to-Market Planner was nog niet geïnstalleerd.
 
