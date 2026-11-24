@@ -12,7 +12,7 @@
 | Step | Status | Confirmed on | Output location |
 |------|--------|--------------|-----------------|
 | 1. Intake — Business Snapshot | confirmed | 2026-11-24 | analyse/61-marktplan-1-momentopname.md (+ PDF) |
-| 2. Market Map | not started | | |
+| 2. Market Map | draft | | |
 | 3. Positioning Architecture | not started | | |
 | 4. Demand Plan | not started | | |
 | 5. Roadmap + GTM Plan | not started | | |
@@ -48,6 +48,7 @@ Statuses: `not started` / `draft` / `confirmed`
 - Materials provided (decks, docs, URLs): analyses in analyse/ (01, 02, 03, 08, 34, 39, 53, 54, 60), testsites in site/
 
 ## Notes
+- Bronnen stap 2 (24-11-2026): Similarweb, Ahrefs en klantsysteem niet beschikbaar; ontwerper koos voor onderzoek op internet (optie a). Schattingen worden gemarkeerd.
 - Werk in het Nederlands, helder en zonder jargon (zie CLAUDE.md).
 - Vaste peiler van de ontwerper: vraag bij elke groep wat ze nu doen zonder Pam & Sam.
 - Fase: product eerst, nog geen marktbewijs. De eerste verkoop is ook het bewijs.
