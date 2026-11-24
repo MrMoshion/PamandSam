@@ -26,3 +26,17 @@ Dit zijn punten die voor de testversie bewust nog niet zijn opgelost. Ze moeten 
 
 8. **Privacy en Voorwaarden** moeten als echte pagina's bestaan voordat ze in de voet terugkomen.
 9. **De toon van twee citaten** ("Zachte heelmeesters maken stinkende wonden" en het Engelse citaat van Stephen Covey) bespreken met Pardo. De test vond ze schuldgevend voor iemand in een kwetsbaar moment.
+
+## Toegevoegd vanuit "aan de man brengen" (60, 24 november 2026)
+
+10. **Bewijsbaar dat niemand meekijkt, voor organisaties.** Als een werkgever betaalt, gebruikt een werknemer Pam & Sam alleen als hij zeker weet dat de werkgever niets ziet. Dat moet technisch kloppen en uit te leggen zijn, niet alleen beloofd. Uit te zoeken:
+    - **Toegang zonder naam.** Toegang via een code per organisatie, niet per persoon. Geen koppeling tussen een gesprek en een medewerker.
+    - **Gesprekken blijven bij de gebruiker.** Zoals nu: in de eigen browser, niet op onze servers. Nagaan wat de AI-dienst wel verwerkt, en wat die bewaart.
+    - **Wat de organisatie wel krijgt.** Alleen anonieme, opgetelde cijfers: hoeveel mensen het gebruiken, en eventueel een vrijwillige vraag na afloop. Vanaf een minimum aantal gebruikers, zodat niemand herleidbaar is.
+    - **Laten toetsen.** Een privacy-analyse (DPIA) vooraf, en eventueel een onafhankelijke toets. Een uitspraak van een derde overtuigt een werknemer meer dan onze eigen belofte.
+    - **In gewone taal uitleggen** op een pagina voor werknemers: wat je werkgever ziet, en wat niet.
+11. **Kennismaking voor praktijken: vijf vragen, dan een afspraak.** Voor een praktijk is Pam & Sam een ingang: een twijfelaar maakt kennis met de manier van werken, en wordt zo over de streep geholpen. Uit te werken:
+    - Een gesprek van vijf vragen, in de stem en methode van de praktijk. Daarna sluit het af, met de mogelijkheid een afspraak te maken.
+    - Rustig tellen, net als de gratis vragen (punt 2): geen aftellen, geen druk.
+    - De praktijk ziet niets van het gesprek, tenzij de gebruiker zelf iets meestuurt bij de afspraak.
+    - Vraag: draagt het de naam van de praktijk, van Pam & Sam, of van beide?
