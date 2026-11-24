@@ -12,7 +12,7 @@
 | Step | Status | Confirmed on | Output location |
 |------|--------|--------------|-----------------|
 | 1. Intake — Business Snapshot | confirmed | 2026-11-24 | analyse/61-marktplan-1-momentopname.md (+ PDF) |
-| 2. Market Map | draft | | |
+| 2. Market Map | draft | | analyse/62-marktplan-2-marktkaart.md (+ PDF) |
 | 3. Positioning Architecture | not started | | |
 | 4. Demand Plan | not started | | |
 | 5. Roadmap + GTM Plan | not started | | |
@@ -29,7 +29,7 @@ Statuses: `not started` / `draft` / `confirmed`
 - [missing-data] O3 Hoe ervaren vreemden Pam & Sam? — leren van de eerste echte gebruikers. Zekerheid: laag.
 - [decision] O4 Welke groep eerst? — beslissen na stap 2 en 3.
 - [assumption] O5 Wie beslist bij een werkgever en bij een praktijk? — gesprekken met kopers. Zekerheid: laag.
-- [assumption] O6 Wat doen ze nu zonder Pam & Sam? (vaste peiler) — onderzoeken in stap 2. Zekerheid: laag.
+- [assumption] O6 Wat doen ze nu zonder Pam & Sam? (vaste peiler) — grotendeels ingevuld in 62; nog toetsen bij kopers. Zekerheid: middel.
 - [missing-data] O7 Wat meten we vanaf de eerste gebruiker? — vastleggen in stap 4.
 - [missing-data] O8 Welke systemen nog meer (mailing, klantbestand)? — vragen aan Pardo. Zekerheid: middel.
 - [missing-data] O9 Rol van Caren en haar praktijk — vragen aan Pardo en Caren. Zekerheid: laag.
@@ -37,6 +37,11 @@ Statuses: `not started` / `draft` / `confirmed`
 - [missing-data] O11 Budget en terugverdientijd — vragen aan Pardo. Zekerheid: laag.
 - [missing-data] O12 AI-kosten per gebruiker per maand — uitrekenen met Pardo. Zekerheid: laag.
 - [conflict] O13 "Werk eerst" (02, 03) of "iedereen worstelt" (34, 60) — de nieuwere lijn volgen, beslissen in stap 3. Zekerheid: middel.
+- [missing-data] O15 Fenna (Aon/Fello) nagaan bij de aanbieder.
+- [assumption] O16 Willen mediators een voorbereiding? — gesprekken.
+- [missing-data] O17 Grens met MDR — jurist.
+- [decision] O18 OpenUp tegenstander of partner — stap 3.
+- [missing-data] O19 Letterlijke kopteksten Mindsera, OpenUp, Rosebud.
 - [assumption] O14 Wie ziet Pardo als gebruiker en koper? — zijn beeld vastleggen, toetsen in stap 2. Zekerheid: middel.
 
 ## Connected sources
