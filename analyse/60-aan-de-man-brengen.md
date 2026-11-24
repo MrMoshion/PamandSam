@@ -59,6 +59,35 @@ Een gesprek met Pam of Sam rondt af, op het moment dat je voldaan bent. ChatGPT 
 ## 6. Technische eis: niemand kijkt mee
 Bij organisaties wordt de belofte "niemand kijkt mee" een harde eis. Een werknemer gebruikt het alleen als hij zeker weet dat zijn werkgever niets ziet. Dat moet je kunnen bewijzen, niet alleen beloven. De uitwerking staat in de notities voor het bouwen (39, punt 10).
 
+## Is dit de juiste route? (oordeel Claude, 24 november 2026)
+Bekeken met de kaders uit de werkwijze: Roger Martin (*Playing to Win*), Jobs to be Done en April Dunford. Daarnaast Geoffrey Moore (*Crossing the Chasm*): begin bij één groep die je volledig wint, en breid pas daarna uit. De Go-to-Market Planner was nog niet geïnstalleerd.
+
+**Oordeel:** de route is goed en de volgorde klopt. Maar we staan op het punt waar hij smaller moet worden.
+
+**Wat klopt**
+1. **We beginnen bij het probleem, niet bij het product.** Dat is Jobs to be Done: welke klus wil iemand gedaan hebben?
+2. **Betaler en gebruiker zijn gescheiden.** Dat is de belangrijkste keuze in elk verdienmodel, en hij is vroeg en goed gemaakt.
+3. **Er is een onderscheid dat een concurrent niet kan claimen:** het gesprek sluit af. Bij Dunford heet dat de unieke waarde.
+
+**Wat nog ontbreekt, in volgorde van belang**
+1. **Een keuze voor waar we beginnen.** Werkgevers, praktijken, mediators en particulieren zijn nog een lijst, geen keuze. Martin: een strategie sluit iets uit. Moore: kies één groep die je helemaal wint. Dit is de grootste valkuil.
+2. **Het alternatief van de klant.** Wat doet de klant nu, zonder Pam & Sam? Een werkgever heeft vaak al een bedrijfsarts, een vertrouwenspersoon of een hulplijn voor medewerkers. Een praktijk heeft een gratis kennismakingsgesprek. We winnen pas als we beter zijn dan dát.
+3. **Hoe we bij de klant komen.** Wie kennen Pardo en Caren, via wie verkopen we, en wat kost het om één klant binnen te halen?
+4. **Bewijs vóór groei.** Eén klant die betaalt en terugkomt, voordat we de tweede groep aanpakken.
+
+**Kanttekening:** de praktijk is een ander verdienmodel dan de werkgever.
+- Bij de werkgever verkoop je gebruik: mensen die terugkomen.
+- Bij de praktijk verkoop je een kennismaking die leidt tot een afspraak; de praktijk is de echte klant.
+- Beide kunnen goed zijn, maar het zijn twee producten. Dat versterkt punt 1: eerst één kiezen.
+
+**Volgende stap:** de groepen naast elkaar leggen op vier vragen:
+1. Hoe groot is hun probleem?
+2. Hebben ze geld?
+3. Zijn ze bereikbaar via wie Pardo of Caren kent?
+4. Wat doen ze nu, als Pam & Sam niet bestaat?
+
+De groep die het best scoort, wordt het begin.
+
 ## Woorden om op te letten
 Woorden die zeggen wat elke chatbot ook kan, of die botsen met "je komt zelf op het antwoord". Claude benoemt ze wanneer ze opduiken, met een beter alternatief.
 
