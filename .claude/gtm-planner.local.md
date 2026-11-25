@@ -12,7 +12,7 @@
 | Step | Status | Confirmed on | Output location |
 |------|--------|--------------|-----------------|
 | 1. Intake — Business Snapshot | confirmed | 2026-11-24 | analyse/61-marktplan-1-momentopname.md (+ PDF) |
-| 2. Market Map | draft | | analyse/62-marktplan-2-marktkaart.md (+ PDF) |
+| 2. Market Map | draft | | analyse/62-marktplan-2-marktkaart.md (+ PDF); case 63 (bewijs en stichting) |
 | 3. Positioning Architecture | not started | | |
 | 4. Demand Plan | not started | | |
 | 5. Roadmap + GTM Plan | not started | | |
@@ -42,6 +42,10 @@ Statuses: `not started` / `draft` / `confirmed`
 - [missing-data] O17 Grens met MDR — jurist.
 - [decision] O18 OpenUp tegenstander of partner — stap 3.
 - [missing-data] O19 Letterlijke kopteksten Mindsera, OpenUp, Rosebud.
+- [missing-data] O20 Kunnen Pardo en Caren 20-30 mensen uit de kerngroep vinden voor een proef?
+- [decision] O21 Wat telt als "het werkt"? — vastleggen met Pardo.
+- [missing-data] O22 Schenking privé of via de BV; fiscalist.
+- [decision] O23 Wil de stichting de proef, los van de schenking? — bestuur zonder ontwerper.
 - [assumption] O14 Wie ziet Pardo als gebruiker en koper? — zijn beeld vastleggen, toetsen in stap 2. Zekerheid: middel.
 
 ## Connected sources
@@ -56,5 +60,6 @@ Statuses: `not started` / `draft` / `confirmed`
 - Bronnen stap 2 (24-11-2026): Similarweb, Ahrefs en klantsysteem niet beschikbaar; ontwerper koos voor onderzoek op internet (optie a). Schattingen worden gemarkeerd.
 - Werk in het Nederlands, helder en zonder jargon (zie CLAUDE.md).
 - Vaste peiler van de ontwerper: vraag bij elke groep wat ze nu doen zonder Pam & Sam.
+- Onderscheid (63): de logische route versus wat binnen handbereik ligt. Stichting = aanvullend bewijs (zorgvuldigheid), kerngroep = bewijs dat het werkt.
 - Fase: product eerst, nog geen marktbewijs. De eerste verkoop is ook het bewijs.
 - Nooit "therapie" naar buiten; geen verzonnen reviews.
