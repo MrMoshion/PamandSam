@@ -12,8 +12,8 @@
 | Step | Status | Confirmed on | Output location |
 |------|--------|--------------|-----------------|
 | 1. Intake — Business Snapshot | confirmed | 2026-11-24 | analyse/61-marktplan-1-momentopname.md (+ PDF) |
-| 2. Market Map | draft | | analyse/62-marktplan-2-marktkaart.md (+ PDF); case 63 (bewijs en stichting) |
-| 3. Positioning Architecture | not started | | |
+| 2. Market Map | confirmed | 2026-11-25 | analyse/62-marktplan-2-marktkaart.md (+ PDF); case 63 (bewijs en stichting) |
+| 3. Positioning Architecture | draft | | |
 | 4. Demand Plan | not started | | |
 | 5. Roadmap + GTM Plan | not started | | |
 
